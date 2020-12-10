@@ -1,0 +1,20 @@
+#!/bin/bash
+
+#SBATCH --time=23:55:00
+#SBATCH --partition=gpu
+#SBATCH --gres=gpu:v100:1
+#SBATCH --mem=32GB
+#SBATCH --job-name=g_EMEA13
+
+ml CUDA/10.1.243-GCC-8.3.0
+ml Python/3.8.2-GCCcore-9.3.0
+
+source ../venv/bin/activate
+
+MODEL_DIR=checkpoints/EMEA_13
+fairseq-generate ../data-bin/custom_EMEA/orig_EMEA    \
+  --path $MODEL_DIR/checkpoint_best.pt  \
+  --batch-size 128 --beam 5   \
+  --remove-bpe \
+  --fp16  --eval-bleu  --scoring sacrebleu  \
+  --task translation  | tee gen_results/g_EMEA13.out
