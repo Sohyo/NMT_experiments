@@ -97,3 +97,13 @@ fairseq-preprocess \
     --testpref ../extract_phrases/fastBPE/GNOME/phrase4_tag/test  \
     --destdir ../data-bin/phrase_4_tag_GNOME/ --workers 20 \
     --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+
+
+
+fairseq-preprocess \
+    --source-lang de --target-lang en \
+    --trainpref ../extract_phrases/fastBPE/JRC/phrase4_tag/train \
+    --validpref ../extract_phrases/fastBPE/JRC/phrase4_tag/valid \
+    --testpref ../extract_phrases/fastBPE/JRC/phrase4_tag/test  \
+    --destdir ../data-bin/phrase_4_tag_JRC/ --workers 20 \
+    --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
