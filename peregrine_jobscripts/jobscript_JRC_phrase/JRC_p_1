@@ -8,7 +8,7 @@
 ml CUDA/10.1.243-GCC-8.3.0
 ml Python/3.8.2-GCCcore-9.3.0
 
-source ../venv/bin/activate
+source ../../../venv/bin/activate
 
 MODEL_DIR=../../../models/wmt19.de-en.joined-dict.ensemble/
 DATA_DIR=../../../data-bin/phrase_4_tag_JRC
