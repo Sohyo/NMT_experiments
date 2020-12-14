@@ -1,0 +1,89 @@
+
+fairseq-preprocess \
+    --source-lang de --target-lang en \
+    --trainpref ../custom_data_nmt/fastBPE/EMEA/train \
+    --validpref ../custom_data_nmt/fastBPE/EMEA/valid \
+    --testpref ../custom_data_nmt/fastBPE/EMEA/test \
+    --destdir ../data-bin/custom_EMEA/orig_EMEA --workers 20 \
+    --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+
+
+$TEXT=../custom_data_nmt/fastBPE/GNOME
+fairseq-preprocess \
+    --source-lang de --target-lang en \
+    --trainpref ../custom_data_nmt/fastBPE/GNOME/train \
+    --validpref ../custom_data_nmt/fastBPE/GNOME/valid \
+    --testpref ../custom_data_nmt/fastBPE/GNOME/test \
+    --destdir ../data-bin/custom_GNOME/orig_GNOME --workers 20 \
+    --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+
+
+$TEXT=../custom_data_nmt/fastBPE/JRC
+fairseq-preprocess \
+    --source-lang de --target-lang en \
+    --trainpref ../custom_data_nmt/fastBPE/JRC/train \
+    --validpref ../custom_data_nmt/fastBPE/JRC/valid \
+    --testpref ../custom_data_nmt/fastBPE/JRC/test \
+    --destdir ../data-bin/custom_JRC/orig_JRC --workers 20 \
+    --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+
+
+
+
+
+
+=====================
+fairseq-preprocess \
+    --source-lang de --target-lang en \
+    --trainpref ../custom_data_nmt/fastBPE/EMEA/train \
+    --validpref ../custom_data_nmt/fastBPE/EMEA/valid \
+    --testpref ../custom_data_nmt/fastBPE/EMEA/test \
+    --destdir ../data-bin/custom_EMEA/orig_EMEA --workers 20 \
+    --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+
+fairseq-preprocess \
+    --source-lang de --target-lang en \
+    --trainpref ../custom_data_nmt/fastBPE/GNOME/train \
+    --validpref ../custom_data_nmt/fastBPE/GNOME/valid \
+    --testpref ../custom_data_nmt/fastBPE/GNOME/test \
+    --destdir ../data-bin/custom_GNOME/orig_GNOME --workers 20 \
+    --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+
+fairseq-preprocess \
+    --source-lang de --target-lang en \
+    --trainpref ../custom_data_nmt/fastBPE/JRC/train \
+    --validpref ../custom_data_nmt/fastBPE/JRC/valid \
+    --testpref ../custom_data_nmt/fastBPE/JRC/test \
+    --destdir ../data-bin/custom_JRC/orig_JRC --workers 20 \
+    --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+
+
+
+fairseq-preprocess \
+    --source-lang de --target-lang en \
+    --trainpref ../custom_data_nmt/fastBPE/JRC_dev/train \
+    --validpref ../custom_data_nmt/fastBPE/JRC_dev/valid \
+    --testpref ../custom_data_nmt/fastBPE/JRC_dev/test \
+    --destdir ../data-bin/custom_JRC/orig_JRC_dev --workers 20 \
+    --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+
+
+
+
+fairseq-preprocess \
+    --source-lang de --target-lang en \
+    --trainpref ../extract_phrases/fastBPE/EMEA/train \
+    --validpref ../extract_phrases/fastBPE/EMEA/valid \
+    --testpref ../extract_phrases/fastBPE/EMEA/test \
+    --destdir ../data-bin/phrase_EMEA/ --workers 20 \
+    --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+
+
+
+fairseq-preprocess \
+    --source-lang de --target-lang en \
+    --trainpref ../extract_phrases/fastBPE/EMEA/phrase4_tag/train \
+    --validpref ../extract_phrases/fastBPE/EMEA/phrase4_tag/valid \
+    --testpref ../extract_phrases/fastBPE/EMEA/phrase4_tag/test  \
+    --destdir ../data-bin/phrase_4_tag_EMEA/ --workers 20 \
+    --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
