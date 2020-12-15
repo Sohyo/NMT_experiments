@@ -17,4 +17,4 @@ fairseq-generate ../../../data-bin/custom_JRC/orig_JRC  \
   --batch-size 128 --beam 5   \
   --remove-bpe \
   --fp16  --eval-bleu  --scoring sacrebleu  \
-  --task translation | tee ../results/g_JRC_base.out
+  --task translation | tee ../../results/g_JRC_base.out

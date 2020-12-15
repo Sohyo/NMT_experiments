@@ -17,4 +17,4 @@ fairseq-generate ../../../data-bin/custom_EMEA/orig_EMEA  \
   --batch-size 128 --beam 5   \
   --remove-bpe \
   --fp16  --eval-bleu  --scoring sacrebleu  \
-  --task translation | tee ../results/g_EMEA_base.out
+  --task translation | tee ../../results/g_EMEA_base.out
