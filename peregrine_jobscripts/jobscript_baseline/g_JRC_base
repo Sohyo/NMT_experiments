@@ -11,7 +11,7 @@ ml Python/3.8.2-GCCcore-9.3.0
 
 source ../../../venv/bin/activate
 
-MODEL_DIR=../../../wmt19.de-en.joined-dict.ensemble
+MODEL_DIR=../../../models/wmt19.de-en.joined-dict.ensemble
 fairseq-generate ../../../data-bin/custom_JRC/orig_JRC  \
   --path $MODEL_DIR/model1.pt  \
   --batch-size 128 --beam 5   \
