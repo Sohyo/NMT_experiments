@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #SBATCH --time=23:55:00
 #SBATCH --partition=gpu
 #SBATCH --gres=gpu:v100:1
