@@ -1,0 +1,62 @@
+
+The following have been reloaded with a version change:
+  1) GCCcore/9.3.0 => GCCcore/8.3.0
+  2) binutils/2.34-GCCcore-9.3.0 => binutils/2.32-GCCcore-8.3.0
+  3) zlib/1.2.11-GCCcore-9.3.0 => zlib/1.2.11-GCCcore-8.3.0
+
+
+The following have been reloaded with a version change:
+  1) GCCcore/8.3.0 => GCCcore/9.3.0
+  2) binutils/2.32-GCCcore-8.3.0 => binutils/2.34-GCCcore-9.3.0
+  3) zlib/1.2.11-GCCcore-8.3.0 => zlib/1.2.11-GCCcore-9.3.0
+
+Traceback (most recent call last):
+  File "/data/s3475743/myver_fairseq/venv/bin/fairseq-generate", line 33, in <module>
+    sys.exit(load_entry_point('fairseq', 'console_scripts', 'fairseq-generate')())
+  File "/data/s3475743/myver_fairseq/fairseq/fairseq_cli/generate.py", line 281, in cli_main
+    main(args)
+  File "/data/s3475743/myver_fairseq/fairseq/fairseq_cli/generate.py", line 26, in main
+    assert args.path is not None, '--path required for generation!'
+AssertionError: --path required for generation!
+/var/spool/slurmd/job16200006/slurm_script: line 16: --path: command not found
+
+
+###############################################################################
+Peregrine Cluster
+Job 16200006 for user 's3475743'
+Finished at: Wed Dec 16 16:40:09 CET 2020
+
+Job details:
+============
+
+Job ID              : 16200006
+Name                : g_EMEA_p3
+User                : s3475743
+Partition           : gpu
+Nodes               : pg-gpu12
+Number of Nodes     : 1
+Cores               : 12
+State               : COMPLETED
+Submit              : 2020-12-16T16:31:58
+Start               : 2020-12-16T16:39:41
+End                 : 2020-12-16T16:40:08
+Reserved walltime   : 23:55:00
+Used walltime       : 00:00:27
+Used CPU time       : 00:00:03 (efficiency:  1.12%)
+% User (Computation): 52.85%
+% System (I/O)      : 47.15%
+Mem reserved        : 32G/node
+Max Mem used        : 0.00  (pg-gpu12)
+Max Disk Write      : 0.00  (pg-gpu12)
+Max Disk Read       : 0.00  (pg-gpu12)
+Average GPU usage   : No GPU metrics available (pg-gpu12)
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/additional_information/scientific_output
+
+################################################################################
