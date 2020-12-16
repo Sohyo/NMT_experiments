@@ -1,0 +1,6 @@
+# Finally, for the evaluation, you'll need to detokenize:
+cat /tmp/gen.out.models.4 |grep ^H | sort -nr -k1.2 | cut -f3- | ~/mosesdecoder/scripts/tokenizer/detokenizer.perl | sacrebleu -t wmt19 -l $PAIR
+
+cat tmp/gen_wmt19EMEA_ensem.out ~/mosesdecoder/scripts/tokenizer/detokenizer.perl  | grep ^H tmp/gen_wmt19EMEA_ensem.out | cut -f3- > tmp/gen_wmt19EMEA_ensem.sys
+cat tmp/gen_wmt19EMEA_ensem.out ~/mosesdecoder/scripts/tokenizer/detokenizer.perl  | grep ^T tmp/gen_wmt19EMEA_ensem.out | cut -f2- > tmp/gen_wmt19EMEA_ensem.ref
+cat /tmp/gen_wmt19EMEA_ensem.out | grep ^H | sort -nr -k1.2 | cut -f3- | ~/mosesdecoder/scripts/tokenizer/detokenizer.perl | sacrebleu -t wmt19 -l $PAIR

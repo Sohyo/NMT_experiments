@@ -1,0 +1,14 @@
+#!/bin/bash
+# Compute BLEU score
+# Don't forget the change the name of the files!
+source ../../fairseq/venv/bin/activate
+
+# For analysis
+# grep "^[HT]" g_EMEA_base.out > ../meaningful_results/example.out
+
+results_file=g_GNOME5.out
+# For computing BLEU score
+grep ^H ../results/$results_file |  ./../../NMT/moses_git/mosesdecoder_soyo/scripts/tokenizer/detokenizer.perl | cut -f3- > ../meaningful_results/$results_file.sys
+grep ^T ../results/$results_file |  ./../../NMT/moses_git/mosesdecoder_soyo/scripts/tokenizer/detokenizer.perl | cut -f2- > ../meaningful_results/$results_file.ref
+
+cd ../../fairseq | fairseq-score --sys ../meaningful_results/$results_file.sys --ref ../meaningful_results/$results_file.ref --sacrebleu
