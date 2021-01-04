@@ -17,4 +17,4 @@ fairseq-generate ../../../data-bin/phrase_4_tag_GNOME/    \
   --batch-size 128 --beam 5   \
   --remove-bpe \
   --fp16  --eval-bleu  --scoring sacrebleu  \
-  --task translation  | tee ../../results/g_GNOME_p_1.out
+  --task translation  | tee ../../results/g_GNOME_p_5.out
