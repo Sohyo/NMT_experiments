@@ -11,7 +11,8 @@ ml Python/3.8.2-GCCcore-9.3.0
 
 source ../../../venv/bin/activate
 
-MODEL_DIR=../../../new_ver_nmt/checkpoints/EMEA_p_4
+
+MODEL_DIR=../checkpoints/EMEA_p_4
 fairseq-generate ../../../data-bin/phrase_4_0.5_tag_EMEA/  \
   --path $MODEL_DIR/checkpoint_best.pt  \
   --batch-size 128 --beam 5   \
