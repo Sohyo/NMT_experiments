@@ -155,3 +155,12 @@ fairseq-preprocess \
     --testpref ../extract_phrases/fastBPE/JRC/phrase_4/test  \
     --destdir ../data-bin/phrase_4_JRC/ --workers 20 \
     --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+
+
+fairseq-preprocess \
+    --source-lang de --target-lang en \
+    --trainpref ../extract_phrases/fastBPE/GNOME/phrase_4/train \
+    --validpref ../extract_phrases/fastBPE/GNOME/phrase_4/valid \
+    --testpref ../extract_phrases/fastBPE/GNOME/phrase_4/test  \
+    --destdir ../data-bin/phrase_4_GNOME/ --workers 20 \
+    --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt

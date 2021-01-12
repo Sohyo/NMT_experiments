@@ -163,3 +163,16 @@ dict.de.txt  dict.en.txt
 
 ./fast applybpe ../extract_phrases/fastBPE/JRC/phrase_4/test.de  ../extract_phrases/JRC/phrase_4/test.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
 ./fast applybpe ../extract_phrases/fastBPE/JRC/phrase_4/test.en  ../extract_phrases/JRC/phrase_4/test.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+
+======== phrase_4 GNOME
+
+
+./fast applybpe ../extract_phrases/fastBPE/GNOME/phrase_4/train.de  ../extract_phrases/GNOME/phrase_4/train.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../extract_phrases/fastBPE/GNOME/phrase_4/train.en  ../extract_phrases/GNOME/phrase_4/train.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+./fast applybpe ../extract_phrases/fastBPE/GNOME/phrase_4/valid.de  ../extract_phrases/GNOME/phrase_4/valid.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../extract_phrases/fastBPE/GNOME/phrase_4/valid.en  ../extract_phrases/GNOME/phrase_4/valid.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+./fast applybpe ../extract_phrases/fastBPE/GNOME/phrase_4/test.de  ../extract_phrases/GNOME/phrase_4/test.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../extract_phrases/fastBPE/GNOME/phrase_4/test.en  ../extract_phrases/GNOME/phrase_4/test.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
