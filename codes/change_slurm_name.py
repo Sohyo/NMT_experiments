@@ -28,8 +28,6 @@ def change_names(file_path):
             # In the slurm file, need to find line where 'job name' is.
             if line.startswith('Name                : '):
                 new_name = line.split()[-1]
-            # elif line.startswith('End                 :'):
-            #     date = line.split([-1])
 
     rename(file_path, f'../slurms/slurm_{new_name}')
 
