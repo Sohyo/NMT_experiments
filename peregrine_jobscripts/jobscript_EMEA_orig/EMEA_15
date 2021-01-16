@@ -5,13 +5,14 @@
 #SBATCH --gres=gpu:v100:1
 #SBATCH --mem=32GB
 #SBATCH --job-name=EMEA_15
+
 ml CUDA/10.1.243-GCC-8.3.0
 ml Python/3.8.2-GCCcore-9.3.0
 
-source ../venv/bin/activate
+source ../../../venv/bin/activate
 
-MODEL_DIR=../models/wmt19.de-en.joined-dict.ensemble/
-DATA_DIR=../data-bin/custom_EMEA/orig_EMEA
+MODEL_DIR=../../../models/wmt19.de-en.joined-dict.ensemble/
+DATA_DIR=../../../data-bin/custom_EMEA/orig_EMEA
 
 
 CUDA_VISIBLE_DEVICES=0 fairseq-train \
@@ -20,8 +21,8 @@ CUDA_VISIBLE_DEVICES=0 fairseq-train \
     --save-dir checkpoints/EMEA_15 \
     --arch transformer_vaswani_wmt_en_de_big --share-decoder-input-output-embed \
     --optimizer adam --adam-betas '(0.9, 0.98)' --clip-norm 0.0 \
-    --lr 0.000125 --lr-scheduler inverse_sqrt --warmup-updates 4000 \
-    --dropout 0.2 --weight-decay 0 \
+    --lr 0.000005 --lr-scheduler inverse_sqrt --warmup-updates 4000 \
+    --dropout 0.2 --weight-decay 1e-07 \
     --criterion label_smoothed_cross_entropy --label-smoothing 0.1 \
     --eval-bleu \
     --eval-bleu-args '{"beam": 5, "max_len_a": 1.2, "max_len_b": 10}' \
@@ -31,4 +32,4 @@ CUDA_VISIBLE_DEVICES=0 fairseq-train \
     --best-checkpoint-metric bleu --maximize-best-checkpoint-metric   \
     --max-tokens 4096  \
     --reset-dataloader --reset-optimizer --encoder-ffn-embed-dim=8192   \
-    --max-epoch 100 --fp16 --no-epoch-checkpoints
+    --max-epoch 30 --fp16 --no-epoch-checkpoints
