@@ -100,14 +100,26 @@ def main():
     root_path = "../slurms"
     file_list = get_sorted_file_list_by_name(root_path)
 
-    for file_name in file_list:
-        train_loss, valid_loss = get_loss(file_path=join(root_path, file_name))
-        valid_bleu = get_BLEU(file_path=join(root_path, file_name))
+    ###  To run every files at \slurms  ###
 
-        plot_loss(train_loss, valid_loss, filename=file_name)
-        plot_BLEU(valid_bleu, filename=file_name)
-        plot_loss_BLEU(train_loss, valid_loss, valid_bleu, filename=file_name)
+    # for file_name in file_list:
+    #     train_loss, valid_loss = get_loss(file_path=join(root_path, file_name))
+    #     valid_bleu = get_BLEU(file_path=join(root_path, file_name))
+    #
+    #     plot_loss(train_loss, valid_loss, filename=file_name)
+    #     plot_BLEU(valid_bleu, filename=file_name)
+    #     plot_loss_BLEU(train_loss, valid_loss, valid_bleu, filename=file_name)
 
+
+
+    ###  To run specific file  ###
+    file_name = "slurm_EMEA_15"
+    train_loss, valid_loss = get_loss(file_path=join(root_path, file_name))
+    valid_bleu = get_BLEU(file_path=join(root_path, file_name))
+
+    plot_loss(train_loss, valid_loss, filename=file_name)
+    plot_BLEU(valid_bleu, filename=file_name)
+    plot_loss_BLEU(train_loss, valid_loss, valid_bleu, filename=file_name)
 
 
 if __name__ == '__main__':
