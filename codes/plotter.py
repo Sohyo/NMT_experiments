@@ -113,7 +113,7 @@ def main():
 
 
     ###  To run specific file  ###
-    file_name = "slurm_EMEA_15"
+    file_name = "slurm_EMEA_16"
     train_loss, valid_loss = get_loss(file_path=join(root_path, file_name))
     valid_bleu = get_BLEU(file_path=join(root_path, file_name))
 
