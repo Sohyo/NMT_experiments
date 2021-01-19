@@ -78,7 +78,7 @@ def plot_loss_BLEU(train_loss, valid_loss, valid_bleu, filename):
     plt.plot(list(map(float, train_loss)), label=f'Train loss', color="tab:blue")
     plt.plot(list(map(float, valid_loss)), label=f'Validation loss', color="tab:orange")
     ax1.tick_params(axis='y', labelcolor=color)
-    plt.title(filename)
+    plt.title("EMEA")
     plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
     ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
 
@@ -89,6 +89,7 @@ def plot_loss_BLEU(train_loss, valid_loss, valid_bleu, filename):
     plt.legend(bbox_to_anchor=(1.05, 1), loc='lower left')
     fig.tight_layout()  # otherwise the right y-label is slightly clipped
     plt.savefig(f"../plots/all_{filename}.png")
+    plt.show()
     plt.close()
 
 def get_sorted_file_list_by_name(files_path):
@@ -113,6 +114,8 @@ def main():
 
 
     ###  To run specific file  ###
+
+
     file_name = "slurm_EMEA_16"
     train_loss, valid_loss = get_loss(file_path=join(root_path, file_name))
     valid_bleu = get_BLEU(file_path=join(root_path, file_name))
