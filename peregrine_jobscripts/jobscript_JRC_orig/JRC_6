@@ -1,0 +1,35 @@
+#!/bin/bash
+
+#SBATCH --time=23:55:00
+#SBATCH --partition=gpu
+#SBATCH --gres=gpu:v100:1
+#SBATCH --mem=32GB
+#SBATCH --job-name=JRC_6
+
+ml CUDA/10.1.243-GCC-8.3.0
+ml Python/3.8.2-GCCcore-9.3.0
+
+source ../../../venv/bin/activate
+
+MODEL_DIR=../../../models/wmt19.de-en.joined-dict.ensemble/
+DATA_DIR=.../../../data-bin/custom_JRC/orig_JRC
+
+
+CUDA_VISIBLE_DEVICES=0 fairseq-train \
+    $DATA_DIR \
+    --restore-file $MODEL_DIR/model1.pt  \
+    --save-dir ../checkpoints/JRC_6  \
+    --arch transformer_vaswani_wmt_en_de_big --share-decoder-input-output-embed \
+    --optimizer adam --adam-betas '(0.9, 0.98)' --clip-norm 0.0 \
+    --lr 0.000008  --lr-scheduler inverse_sqrt --warmup-updates 4000 \
+    --dropout 0.2 --weight-decay 0.0000001  \
+    --criterion label_smoothed_cross_entropy --label-smoothing 0.1 \
+    --eval-bleu \
+    --eval-bleu-args '{"beam": 5, "max_len_a": 1.2, "max_len_b": 10}' \
+    --eval-bleu-detok moses \
+    --eval-bleu-remove-bpe \
+    --eval-bleu-print-samples \
+    --best-checkpoint-metric loss    \
+    --max-tokens 4096  \
+    --reset-dataloader --reset-optimizer --encoder-ffn-embed-dim=8192   \
+    --max-epoch 50 --fp16 --no-epoch-checkpoints
