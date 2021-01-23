@@ -164,3 +164,91 @@ fairseq-preprocess \
     --testpref ../extract_phrases/fastBPE/GNOME/phrase_4/test  \
     --destdir ../data-bin/phrase_4_GNOME/ --workers 20 \
     --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+
+
+======================== length
+
+
+fairseq-preprocess \
+    --source-lang de --target-lang en \
+    --trainpref ../custom_data_nmt/fastBPE/short_EMEA/train \
+    --validpref ../custom_data_nmt/fastBPE/short_EMEA/valid \
+    --testpref ../custom_data_nmt/fastBPE/short_EMEA/test \
+    --destdir ../data-bin/custom_EMEA/short_EMEA  --workers 20 \
+    --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+
+
+fairseq-preprocess \
+    --source-lang de --target-lang en \
+    --trainpref ../custom_data_nmt/fastBPE/middle_EMEA/train \
+    --validpref ../custom_data_nmt/fastBPE/middle_EMEA/valid \
+    --testpref ../custom_data_nmt/fastBPE/middle_EMEA/test \
+    --destdir ../data-bin/custom_EMEA/middle_EMEA  --workers 20 \
+    --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+
+
+fairseq-preprocess \
+    --source-lang de --target-lang en \
+    --trainpref ../custom_data_nmt/fastBPE/long_EMEA/train \
+    --validpref ../custom_data_nmt/fastBPE/long_EMEA/valid \
+    --testpref ../custom_data_nmt/fastBPE/long_EMEA/test \
+    --destdir ../data-bin/custom_EMEA/long_EMEA  --workers 20 \
+    --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+
+
+=============== GNOME
+
+fairseq-preprocess \
+    --source-lang de --target-lang en \
+    --trainpref ../custom_data_nmt/fastBPE/short_GNOME/train \
+    --validpref ../custom_data_nmt/fastBPE/short_GNOME/valid \
+    --testpref ../custom_data_nmt/fastBPE/short_GNOME/test \
+    --destdir ../data-bin/custom_EMEA/short_GNOME  --workers 20 \
+    --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+
+
+fairseq-preprocess \
+    --source-lang de --target-lang en \
+    --trainpref ../custom_data_nmt/fastBPE/middle_GNOME/train \
+    --validpref ../custom_data_nmt/fastBPE/middle_GNOME/valid \
+    --testpref ../custom_data_nmt/fastBPE/middle_GNOME/test \
+    --destdir ../data-bin/custom_EMEA/middle_GNOME  --workers 20 \
+    --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+
+
+fairseq-preprocess \
+    --source-lang de --target-lang en \
+    --trainpref ../custom_data_nmt/fastBPE/long_GNOME/train \
+    --validpref ../custom_data_nmt/fastBPE/long_GNOME/valid \
+    --testpref ../custom_data_nmt/fastBPE/long_GNOME/test \
+    --destdir ../data-bin/custom_EMEA/long_GNOME  --workers 20 \
+    --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+
+
+========================= JRC
+
+fairseq-preprocess \
+    --source-lang de --target-lang en \
+    --trainpref ../custom_data_nmt/fastBPE/short_JRC/train \
+    --validpref ../custom_data_nmt/fastBPE/short_JRC/valid \
+    --testpref ../custom_data_nmt/fastBPE/short_JRC/test \
+    --destdir ../data-bin/custom_EMEA/short_JRC  --workers 20 \
+    --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+
+
+fairseq-preprocess \
+    --source-lang de --target-lang en \
+    --trainpref ../custom_data_nmt/fastBPE/middle_JRC/train \
+    --validpref ../custom_data_nmt/fastBPE/middle_JRC/valid \
+    --testpref ../custom_data_nmt/fastBPE/middle_JRC/test \
+    --destdir ../data-bin/custom_EMEA/middle_JRC  --workers 20 \
+    --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+
+
+fairseq-preprocess \
+    --source-lang de --target-lang en \
+    --trainpref ../custom_data_nmt/fastBPE/long_JRC/train \
+    --validpref ../custom_data_nmt/fastBPE/long_JRC/valid \
+    --testpref ../custom_data_nmt/fastBPE/long_JRC/test \
+    --destdir ../data-bin/custom_EMEA/long_JRC  --workers 20 \
+    --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt

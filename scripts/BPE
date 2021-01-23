@@ -176,3 +176,112 @@ dict.de.txt  dict.en.txt
 
 ./fast applybpe ../extract_phrases/fastBPE/GNOME/phrase_4/test.de  ../extract_phrases/GNOME/phrase_4/test.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
 ./fast applybpe ../extract_phrases/fastBPE/GNOME/phrase_4/test.en  ../extract_phrases/GNOME/phrase_4/test.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+
+========= short EMEA
+
+./fast applybpe ../custom_data_nmt/fastBPE/short_EMEA/train.de  ../custom_data_nmt/orig/short_EMEA/train.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../custom_data_nmt/fastBPE/short_EMEA/train.en  ../custom_data_nmt/orig/short_EMEA/train.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+./fast applybpe ../custom_data_nmt/fastBPE/short_EMEA/valid.de  ../custom_data_nmt/orig/short_EMEA/valid.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../custom_data_nmt/fastBPE/short_EMEA/valid.en  ../custom_data_nmt/orig/short_EMEA/valid.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+./fast applybpe ../custom_data_nmt/fastBPE/short_EMEA/test.de  ../custom_data_nmt/orig/short_EMEA/test.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../custom_data_nmt/fastBPE/short_EMEA/test.en  ../custom_data_nmt/orig/short_EMEA/test.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+
+========= middle EMEA
+
+./fast applybpe ../custom_data_nmt/fastBPE/middle_EMEA/train.de  ../custom_data_nmt/orig/middle_EMEA/train.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../custom_data_nmt/fastBPE/middle_EMEA/train.en  ../custom_data_nmt/orig/middle_EMEA/train.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+./fast applybpe ../custom_data_nmt/fastBPE/middle_EMEA/valid.de  ../custom_data_nmt/orig/middle_EMEA/valid.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../custom_data_nmt/fastBPE/middle_EMEA/valid.en  ../custom_data_nmt/orig/middle_EMEA/valid.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+./fast applybpe ../custom_data_nmt/fastBPE/middle_EMEA/test.de  ../custom_data_nmt/orig/middle_EMEA/test.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../custom_data_nmt/fastBPE/middle_EMEA/test.en  ../custom_data_nmt/orig/middle_EMEA/test.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+========= long EMEA
+
+./fast applybpe ../custom_data_nmt/fastBPE/long_EMEA/train.de  ../custom_data_nmt/orig/long_EMEA/train.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../custom_data_nmt/fastBPE/long_EMEA/train.en  ../custom_data_nmt/orig/long_EMEA/train.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+./fast applybpe ../custom_data_nmt/fastBPE/long_EMEA/valid.de  ../custom_data_nmt/orig/long_EMEA/valid.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../custom_data_nmt/fastBPE/long_EMEA/valid.en  ../custom_data_nmt/orig/long_EMEA/valid.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+./fast applybpe ../custom_data_nmt/fastBPE/long_EMEA/test.de  ../custom_data_nmt/orig/long_EMEA/test.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../custom_data_nmt/fastBPE/long_EMEA/test.en  ../custom_data_nmt/orig/long_EMEA/test.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+
+
+========= short GNOME
+
+./fast applybpe ../custom_data_nmt/fastBPE/short_GNOME/train.de  ../custom_data_nmt/orig/short_GNOME/train.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../custom_data_nmt/fastBPE/short_GNOME/train.en  ../custom_data_nmt/orig/short_GNOME/train.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+./fast applybpe ../custom_data_nmt/fastBPE/short_GNOME/valid.de  ../custom_data_nmt/orig/short_GNOME/valid.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../custom_data_nmt/fastBPE/short_GNOME/valid.en  ../custom_data_nmt/orig/short_GNOME/valid.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+./fast applybpe ../custom_data_nmt/fastBPE/short_GNOME/test.de  ../custom_data_nmt/orig/short_GNOME/test.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../custom_data_nmt/fastBPE/short_GNOME/test.en  ../custom_data_nmt/orig/short_GNOME/test.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+
+========= middle GNOME
+
+./fast applybpe ../custom_data_nmt/fastBPE/middle_GNOME/train.de  ../custom_data_nmt/orig/middle_GNOME/train.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../custom_data_nmt/fastBPE/middle_GNOME/train.en  ../custom_data_nmt/orig/middle_GNOME/train.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+./fast applybpe ../custom_data_nmt/fastBPE/middle_GNOME/valid.de  ../custom_data_nmt/orig/middle_GNOME/valid.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../custom_data_nmt/fastBPE/middle_GNOME/valid.en  ../custom_data_nmt/orig/middle_GNOME/valid.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+./fast applybpe ../custom_data_nmt/fastBPE/middle_GNOME/test.de  ../custom_data_nmt/orig/middle_GNOME/test.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../custom_data_nmt/fastBPE/middle_GNOME/test.en  ../custom_data_nmt/orig/middle_GNOME/test.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+
+========= long GNOME
+
+./fast applybpe ../custom_data_nmt/fastBPE/long_GNOME/train.de  ../custom_data_nmt/orig/long_GNOME/train.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../custom_data_nmt/fastBPE/long_GNOME/train.en  ../custom_data_nmt/orig/long_GNOME/train.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+./fast applybpe ../custom_data_nmt/fastBPE/long_GNOME/valid.de  ../custom_data_nmt/orig/long_GNOME/valid.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../custom_data_nmt/fastBPE/long_GNOME/valid.en  ../custom_data_nmt/orig/long_GNOME/valid.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+./fast applybpe ../custom_data_nmt/fastBPE/long_GNOME/test.de  ../custom_data_nmt/orig/long_GNOME/test.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../custom_data_nmt/fastBPE/long_GNOME/test.en  ../custom_data_nmt/orig/long_GNOME/test.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+
+========= short JRC
+
+./fast applybpe ../custom_data_nmt/fastBPE/short_JRC/train.de  ../custom_data_nmt/orig/short_JRC/train.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../custom_data_nmt/fastBPE/short_JRC/train.en  ../custom_data_nmt/orig/short_JRC/train.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+./fast applybpe ../custom_data_nmt/fastBPE/short_JRC/valid.de  ../custom_data_nmt/orig/short_JRC/valid.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../custom_data_nmt/fastBPE/short_JRC/valid.en  ../custom_data_nmt/orig/short_JRC/valid.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+./fast applybpe ../custom_data_nmt/fastBPE/short_JRC/test.de  ../custom_data_nmt/orig/short_JRC/test.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../custom_data_nmt/fastBPE/short_JRC/test.en  ../custom_data_nmt/orig/short_JRC/test.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+
+========= middle JRC
+
+./fast applybpe ../custom_data_nmt/fastBPE/middle_JRC/train.de  ../custom_data_nmt/orig/middle_JRC/train.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../custom_data_nmt/fastBPE/middle_JRC/train.en  ../custom_data_nmt/orig/middle_JRC/train.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+./fast applybpe ../custom_data_nmt/fastBPE/middle_JRC/valid.de  ../custom_data_nmt/orig/middle_JRC/valid.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../custom_data_nmt/fastBPE/middle_JRC/valid.en  ../custom_data_nmt/orig/middle_JRC/valid.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+./fast applybpe ../custom_data_nmt/fastBPE/middle_JRC/test.de  ../custom_data_nmt/orig/middle_JRC/test.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../custom_data_nmt/fastBPE/middle_JRC/test.en  ../custom_data_nmt/orig/middle_JRC/test.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+
+========= long JRC
+
+./fast applybpe ../custom_data_nmt/fastBPE/long_JRC/train.de  ../custom_data_nmt/orig/long_JRC/train.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../custom_data_nmt/fastBPE/long_JRC/train.en  ../custom_data_nmt/orig/long_JRC/train.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+./fast applybpe ../custom_data_nmt/fastBPE/long_JRC/valid.de  ../custom_data_nmt/orig/long_JRC/valid.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../custom_data_nmt/fastBPE/long_JRC/valid.en  ../custom_data_nmt/orig/long_JRC/valid.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+./fast applybpe ../custom_data_nmt/fastBPE/long_JRC/test.de  ../custom_data_nmt/orig/long_JRC/test.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../custom_data_nmt/fastBPE/long_JRC/test.en  ../custom_data_nmt/orig/long_JRC/test.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+

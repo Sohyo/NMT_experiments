@@ -66,7 +66,7 @@ def plot_BLEU(valid_bleu, filename):
     plt.xlabel('Epochs')
     plt.legend(loc='lower right')
     plt.savefig(f"../plots/{filename}_BLEU.png")
-    plt.close()
+    plt.close(fig)
 
 
 def plot_loss_BLEU(train_loss, valid_loss, valid_bleu, filename):
@@ -75,16 +75,16 @@ def plot_loss_BLEU(train_loss, valid_loss, valid_bleu, filename):
     color = 'navy'
     ax1.set_xlabel('Epoch')
     ax1.set_ylabel('Loss', color=color)
-    plt.plot(list(map(float, train_loss)), label=f'Train loss', color="tab:blue")
-    plt.plot(list(map(float, valid_loss)), label=f'Validation loss', color="tab:orange")
+    plt.plot(list(map(float, train_loss)), label=f'Train loss', color="tab:blue", marker='.')
+    plt.plot(list(map(float, valid_loss)), label=f'Validation loss', color="tab:orange", marker='.')
     ax1.tick_params(axis='y', labelcolor=color)
-    plt.title("EMEA_phrase")
+    plt.title("EMEA")
     plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
     ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
 
     color = 'navy'
     ax2.set_ylabel('BLEU', color=color)  # we already handled the x-label with ax1
-    plt.plot(list(map(float, valid_bleu)), label=f'Validation BLEU', color="tab:green")
+    plt.plot(list(map(float, valid_bleu)), label=f'Validation BLEU', color="tab:green", marker='.')
     ax2.tick_params(axis='y', labelcolor=color)
     plt.legend(bbox_to_anchor=(1.05, 1), loc='lower left')
     fig.tight_layout()  # otherwise the right y-label is slightly clipped
@@ -116,13 +116,14 @@ def main():
     ###  To run specific file  ###
 
 
-    file_name = "slurm_EMEA_p_3"
+    file_name = "slurm_EMEA_11"
     train_loss, valid_loss = get_loss(file_path=join(root_path, file_name))
     valid_bleu = get_BLEU(file_path=join(root_path, file_name))
+    plot_loss_BLEU(train_loss[:40], valid_loss[:40], valid_bleu[:40], filename=file_name)
+    # plot_loss(train_loss, valid_loss, filename=file_name)
+    # plot_BLEU(valid_bleu, filename=file_name)
 
-    plot_loss(train_loss, valid_loss, filename=file_name)
-    plot_BLEU(valid_bleu, filename=file_name)
-    plot_loss_BLEU(train_loss[:5], valid_loss[:5], valid_bleu[:5], filename=file_name)
+# TODO : add argparse for file name, save name and range
 
 
 if __name__ == '__main__':
