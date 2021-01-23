@@ -20,7 +20,7 @@ CUDA_VISIBLE_DEVICES=0 fairseq-train \
     --save-dir checkpoints/EMEA_12 \
     --arch transformer_vaswani_wmt_en_de_big --share-decoder-input-output-embed \
     --optimizer adam --adam-betas '(0.9, 0.98)' --clip-norm 0.0 \
-    --lr 0.0005 --lr-scheduler inverse_sqrt --warmup-updates 4000 \
+    --lr 0.001 --lr-scheduler inverse_sqrt --warmup-updates 4000 \
     --dropout 0.2 --weight-decay 0.0001 \
     --criterion label_smoothed_cross_entropy --label-smoothing 0.1 \
     --eval-bleu \
