@@ -1,0 +1,49 @@
+
+The following have been reloaded with a version change:
+  1) GCCcore/8.3.0 => GCCcore/9.3.0
+  2) binutils/2.32-GCCcore-8.3.0 => binutils/2.34-GCCcore-9.3.0
+  3) zlib/1.2.11-GCCcore-8.3.0 => zlib/1.2.11-GCCcore-9.3.0
+
+/var/spool/slurmd/job17602434/slurm_script: line 11: ../venv/bin/activate: No such file or directory
+/var/spool/slurmd/job17602434/slurm_script: line 17: fairseq-train: command not found
+
+
+###############################################################################
+Peregrine Cluster
+Job 17602434 for user 's3475743'
+Finished at: Sat Jan 23 16:16:30 CET 2021
+
+Job details:
+============
+
+Job ID              : 17602434
+Name                : JRC_4
+User                : s3475743
+Partition           : gpu
+Nodes               : pg-gpu13
+Number of Nodes     : 1
+Cores               : 12
+State               : FAILED
+Submit              : 2021-01-23T15:04:14
+Start               : 2021-01-23T16:16:28
+End                 : 2021-01-23T16:16:29
+Reserved walltime   : 23:55:00
+Used walltime       : 00:00:01
+Used CPU time       : --
+% User (Computation): 68.52%
+% System (I/O)      : 31.48%
+Mem reserved        : 32G/node
+Max Mem used        : 0.00  (pg-gpu13)
+Max Disk Write      : 0.00  (pg-gpu13)
+Max Disk Read       : 0.00  (pg-gpu13)
+Average GPU usage   : 20.0% (pg-gpu13)
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
+
+################################################################################
