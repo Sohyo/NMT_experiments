@@ -252,3 +252,98 @@ fairseq-preprocess \
     --testpref ../custom_data_nmt/fastBPE/long_JRC/test \
     --destdir ../data-bin/custom_EMEA/long_JRC  --workers 20 \
     --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+
+
+
+
+==================== length phrases
+
+
+
+fairseq-preprocess \
+    --source-lang de --target-lang en \
+    --trainpref ../extract_phrases/fastBPE/EMEA/phrase4_0.5_tag_long/train  \
+    --validpref ../extract_phrases/fastBPE/EMEA/phrase4_0.5_tag_long/valid \
+    --testpref ../extract_phrases/fastBPE/EMEA/phrase4_0.5_tag_long/test \
+    --destdir ../data-bin/phrase4_0.5_tag_EMEA_long  --workers 20 \
+    --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+
+
+fairseq-preprocess \
+    --source-lang de --target-lang en \
+    --trainpref ../extract_phrases/fastBPE/EMEA/phrase4_0.5_tag_middle/train  \
+    --validpref ../extract_phrases/fastBPE/EMEA/phrase4_0.5_tag_middle/valid \
+    --testpref ../extract_phrases/fastBPE/EMEA/phrase4_0.5_tag_middle/test \
+    --destdir ../data-bin/phrase4_0.5_tag_EMEA_middle  --workers 20 \
+    --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+
+
+fairseq-preprocess \
+    --source-lang de --target-lang en \
+    --trainpref ../extract_phrases/fastBPE/EMEA/phrase4_0.5_tag_short/train  \
+    --validpref ../extract_phrases/fastBPE/EMEA/phrase4_0.5_tag_short/valid \
+    --testpref ../extract_phrases/fastBPE/EMEA/phrase4_0.5_tag_short/test \
+    --destdir ../data-bin/phrase4_0.5_tag_EMEA_short  --workers 20 \
+    --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+
+
+=============== GNOME
+
+
+
+fairseq-preprocess \
+    --source-lang de --target-lang en \
+    --trainpref ../extract_phrases/fastBPE/GNOME/phrase4_0.5_tag_long/train  \
+    --validpref ../extract_phrases/fastBPE/GNOME/phrase4_0.5_tag_long/valid \
+    --testpref ../extract_phrases/fastBPE/GNOME/phrase4_0.5_tag_long/test \
+    --destdir ../data-bin/phrase4_0.5_tag_GNOME_long  --workers 20 \
+    --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+
+
+fairseq-preprocess \
+    --source-lang de --target-lang en \
+    --trainpref ../extract_phrases/fastBPE/GNOME/phrase4_0.5_tag_middle/train  \
+    --validpref ../extract_phrases/fastBPE/GNOME/phrase4_0.5_tag_middle/valid \
+    --testpref ../extract_phrases/fastBPE/GNOME/phrase4_0.5_tag_middle/test \
+    --destdir ../data-bin/phrase4_0.5_tag_GNOME_middle  --workers 20 \
+    --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+
+
+fairseq-preprocess \
+    --source-lang de --target-lang en \
+    --trainpref ../extract_phrases/fastBPE/GNOME/phrase4_0.5_tag_short/train  \
+    --validpref ../extract_phrases/fastBPE/GNOME/phrase4_0.5_tag_short/valid \
+    --testpref ../extract_phrases/fastBPE/GNOME/phrase4_0.5_tag_short/test \
+    --destdir ../data-bin/phrase4_0.5_tag_GNOME_short  --workers 20 \
+    --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+
+
+========================= JRC
+
+
+
+fairseq-preprocess \
+    --source-lang de --target-lang en \
+    --trainpref ../extract_phrases/fastBPE/JRC/phrase4_0.5_tag_long/train  \
+    --validpref ../extract_phrases/fastBPE/JRC/phrase4_0.5_tag_long/valid \
+    --testpref ../extract_phrases/fastBPE/JRC/phrase4_0.5_tag_long/test \
+    --destdir ../data-bin/phrase4_0.5_tag_JRC_long  --workers 20 \
+    --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+
+
+fairseq-preprocess \
+    --source-lang de --target-lang en \
+    --trainpref ../extract_phrases/fastBPE/JRC/phrase4_0.5_tag_middle/train  \
+    --validpref ../extract_phrases/fastBPE/JRC/phrase4_0.5_tag_middle/valid \
+    --testpref ../extract_phrases/fastBPE/JRC/phrase4_0.5_tag_middle/test \
+    --destdir ../data-bin/phrase4_0.5_tag_JRC_middle  --workers 20 \
+    --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+
+
+fairseq-preprocess \
+    --source-lang de --target-lang en \
+    --trainpref ../extract_phrases/fastBPE/JRC/phrase4_0.5_tag_short/train  \
+    --validpref ../extract_phrases/fastBPE/JRC/phrase4_0.5_tag_short/valid \
+    --testpref ../extract_phrases/fastBPE/JRC/phrase4_0.5_tag_short/test \
+    --destdir ../data-bin/phrase4_0.5_tag_JRC_short  --workers 20 \
+    --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt

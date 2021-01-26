@@ -78,7 +78,7 @@ def plot_loss_BLEU(train_loss, valid_loss, valid_bleu, filename):
     plt.plot(list(map(float, train_loss)), label=f'Train loss', color="tab:blue", marker='.')
     plt.plot(list(map(float, valid_loss)), label=f'Validation loss', color="tab:orange", marker='.')
     ax1.tick_params(axis='y', labelcolor=color)
-    plt.title("EMEA")
+    plt.title(filename)
     plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
     ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
 
@@ -89,7 +89,7 @@ def plot_loss_BLEU(train_loss, valid_loss, valid_bleu, filename):
     plt.legend(bbox_to_anchor=(1.05, 1), loc='lower left')
     fig.tight_layout()  # otherwise the right y-label is slightly clipped
     plt.savefig(f"../plots/all_{filename}.png")
-    plt.show()
+    # plt.show()
     plt.close()
 
 def get_sorted_file_list_by_name(files_path):
@@ -103,25 +103,25 @@ def main():
 
     ###  To run every files at \slurms  ###
 
-    # for file_name in file_list:
-    #     train_loss, valid_loss = get_loss(file_path=join(root_path, file_name))
-    #     valid_bleu = get_BLEU(file_path=join(root_path, file_name))
-    #
-    #     plot_loss(train_loss, valid_loss, filename=file_name)
-    #     plot_BLEU(valid_bleu, filename=file_name)
-    #     plot_loss_BLEU(train_loss, valid_loss, valid_bleu, filename=file_name)
+    for file_name in file_list:
+        train_loss, valid_loss = get_loss(file_path=join(root_path, file_name))
+        valid_bleu = get_BLEU(file_path=join(root_path, file_name))
+
+        plot_loss(train_loss, valid_loss, filename=file_name)
+        plot_BLEU(valid_bleu, filename=file_name)
+        plot_loss_BLEU(train_loss, valid_loss, valid_bleu, filename=file_name)
 
 
 
     ###  To run specific file  ###
 
 
-    file_name = "slurm_EMEA_11"
-    train_loss, valid_loss = get_loss(file_path=join(root_path, file_name))
-    valid_bleu = get_BLEU(file_path=join(root_path, file_name))
-    plot_loss_BLEU(train_loss[:40], valid_loss[:40], valid_bleu[:40], filename=file_name)
-    # plot_loss(train_loss, valid_loss, filename=file_name)
-    # plot_BLEU(valid_bleu, filename=file_name)
+    # file_name = "slurm_JRC_2"
+    # train_loss, valid_loss = get_loss(file_path=join(root_path, file_name))
+    # valid_bleu = get_BLEU(file_path=join(root_path, file_name))
+    # plot_loss_BLEU(train_loss[:10], valid_loss[:10], valid_bleu[:10], filename=file_name)
+    # # plot_loss(train_loss, valid_loss, filename=file_name)
+    # # plot_BLEU(valid_bleu, filename=file_name)
 
 # TODO : add argparse for file name, save name and range
 
