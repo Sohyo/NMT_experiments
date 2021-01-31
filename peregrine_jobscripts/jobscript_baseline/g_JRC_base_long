@@ -4,7 +4,7 @@
 #SBATCH --partition=gpu
 #SBATCH --gres=gpu:v100:1
 #SBATCH --mem=32GB
-#SBATCH --job-name=g_JRC_base_middle
+#SBATCH --job-name=g_JRC_b_long
 
 ml CUDA/10.1.243-GCC-8.3.0
 ml Python/3.8.2-GCCcore-9.3.0
@@ -12,9 +12,9 @@ ml Python/3.8.2-GCCcore-9.3.0
 source ../../../venv/bin/activate
 
 MODEL_DIR=../../../models/wmt19.de-en.joined-dict.ensemble
-fairseq-generate ../../../data-bin/custom_EMEA/orig_EMEA  \
+fairseq-generate ../../../data-bin/custom_JRC/long_JRC  \
   --path $MODEL_DIR/model1.pt  \
   --batch-size 128 --beam 5   \
   --remove-bpe \
   --fp16  --eval-bleu  --scoring sacrebleu  \
-  --task translation | tee ../../results/g_EMEA_base.out
+  --task translation | tee ../../results/g_JRC_base_long.out
