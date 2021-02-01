@@ -1,0 +1,1613 @@
+2021-02-01 15:29:45 | INFO | fairseq_cli.generate | Namespace(all_gather_list_size=16384, beam=5, bf16=False, bpe=None, broadcast_buffers=False, bucket_cap_mb=25, checkpoint_suffix='', cpu=False, criterion='cross_entropy', data='../../../data-bin/custom_EMEA/short_EMEA', data_buffer_size=10, dataset_impl=None, ddp_backend='c10d', decoding_format=None, device_id=0, distributed_backend='nccl', distributed_init_method=None, distributed_no_spawn=False, distributed_port=-1, distributed_rank=0, distributed_world_size=1, distributed_wrapper='DDP', diverse_beam_groups=-1, diverse_beam_strength=0.5, diversity_rate=-1.0, empty_cache_freq=0, eval_bleu=True, eval_bleu_args=None, eval_bleu_detok='space', eval_bleu_detok_args=None, eval_bleu_print_samples=False, eval_bleu_remove_bpe=None, eval_tokenized_bleu=False, fast_stat_sync=False, find_unused_parameters=False, fix_batches_to_gpus=False, force_anneal=None, fp16=True, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, gen_subset='test', iter_decode_eos_penalty=0.0, iter_decode_force_max_iter=False, iter_decode_max_iter=10, iter_decode_with_beam=1, iter_decode_with_external_reranker=False, left_pad_source='True', left_pad_target='False', lenpen=1, load_alignments=False, localsgd_frequency=3, log_format=None, log_interval=100, lr_scheduler='fixed', lr_shrink=0.1, match_source_len=False, max_len_a=0, max_len_b=200, max_sentences=128, max_source_positions=1024, max_target_positions=1024, max_tokens=None, memory_efficient_bf16=False, memory_efficient_fp16=False, min_len=1, min_loss_scale=0.0001, model_overrides='{}', model_parallel_size=1, momentum=0.99, nbest=1, no_beamable_mm=False, no_early_stop=False, no_progress_bar=False, no_repeat_ngram_size=0, no_seed_provided=True, nprocs_per_node=1, num_batch_buckets=0, num_shards=1, num_workers=1, optimizer='nag', path='../checkpoints/EMEA_19/checkpoint_best.pt', prefix_size=0, print_alignment=False, print_step=False, profile=False, quantization_config_path=None, quiet=False, remove_bpe='@@ ', replace_unk=None, required_batch_size_multiple=8, results_path=None, retain_dropout=False, retain_dropout_modules=None, retain_iter_history=False, sacrebleu=False, sampling=False, sampling_topk=-1, sampling_topp=-1.0, score_reference=False, scoring='sacrebleu', seed=1, shard_id=0, skip_invalid_size_inputs_valid_test=False, slowmo_algorithm='LocalSGD', slowmo_momentum=None, source_lang=None, target_lang=None, task='translation', temperature=1.0, tensorboard_logdir='', threshold_loss_scale=None, tokenizer=None, tpu=False, truncate_source=False, unkpen=0, unnormalized=False, upsample_primary=1, user_dir=None, warmup_updates=0, weight_decay=0.0)
+2021-02-01 15:29:45 | INFO | fairseq.tasks.translation | [de] dictionary: 42024 types
+2021-02-01 15:29:45 | INFO | fairseq.tasks.translation | [en] dictionary: 42024 types
+2021-02-01 15:29:45 | INFO | fairseq.data.data_utils | loaded 320 examples from: ../../../data-bin/custom_EMEA/short_EMEA/test.de-en.de
+2021-02-01 15:29:45 | INFO | fairseq.data.data_utils | loaded 320 examples from: ../../../data-bin/custom_EMEA/short_EMEA/test.de-en.en
+2021-02-01 15:29:45 | INFO | fairseq.tasks.translation | ../../../data-bin/custom_EMEA/short_EMEA test de-en 320 examples
+2021-02-01 15:29:45 | INFO | fairseq_cli.generate | loading model(s) from ../checkpoints/EMEA_19/checkpoint_best.pt
+S-122	Die Durchstechflaschen auf eine ebene Oberfläche stellen .
+T-122	Place the vials on a flat clean surface .
+H-122	-0.4385092854499817	Place the vials on a level surface .
+D-122	-0.4385092854499817	Place the vials on a level surface .
+P-122	-1.9050 -0.1382 -0.0740 -0.1471 -0.1349 -0.8134 -0.7849 -0.0662 -0.1640 -0.1573
+S-195	- Innerhalb von drei Stunden nach Rekonstitution verwenden .
+T-195	- Use within three hours after reconstitution .
+H-195	-0.3920425772666931	- Use within 3 hours after reconstitution .
+D-195	-0.3920425772666931	- Use within 3 hours after reconstitution .
+P-195	-0.1079 -1.1175 -0.0873 -1.1211 -0.1156 -0.6827 -0.2284 -0.1077 -0.1810 -0.1713
+S-95	- Innerhalb von drei Stunden nach Rekonstitution verwenden .
+T-95	- Use within three hours after reconstitution .
+H-95	-0.3920425772666931	- Use within 3 hours after reconstitution .
+D-95	-0.3920425772666931	- Use within 3 hours after reconstitution .
+P-95	-0.1079 -1.1175 -0.0873 -1.1211 -0.1156 -0.6827 -0.2284 -0.1077 -0.1810 -0.1713
+S-120	- Innerhalb von drei Stunden nach Rekonstitution verwenden .
+T-120	- Use within three hours after reconstitution .
+H-120	-0.3920425772666931	- Use within 3 hours after reconstitution .
+D-120	-0.3920425772666931	- Use within 3 hours after reconstitution .
+P-120	-0.1079 -1.1175 -0.0873 -1.1211 -0.1156 -0.6827 -0.2284 -0.1077 -0.1810 -0.1713
+S-170	- Innerhalb von drei Stunden nach Rekonstitution verwenden .
+T-170	- Use within three hours after reconstitution .
+H-170	-0.3920425772666931	- Use within 3 hours after reconstitution .
+D-170	-0.3920425772666931	- Use within 3 hours after reconstitution .
+P-170	-0.1079 -1.1175 -0.0873 -1.1211 -0.1156 -0.6827 -0.2284 -0.1077 -0.1810 -0.1713
+S-145	- Innerhalb von drei Stunden nach Rekonstitution verwenden .
+T-145	- Use within three hours after reconstitution .
+H-145	-0.3920425772666931	- Use within 3 hours after reconstitution .
+D-145	-0.3920425772666931	- Use within 3 hours after reconstitution .
+P-145	-0.1079 -1.1175 -0.0873 -1.1211 -0.1156 -0.6827 -0.2284 -0.1077 -0.1810 -0.1713
+S-221	- Innerhalb von drei Stunden nach Rekonstitution verwenden .
+T-221	- Use within three hours after reconstitution .
+H-221	-0.3920425772666931	- Use within 3 hours after reconstitution .
+D-221	-0.3920425772666931	- Use within 3 hours after reconstitution .
+P-221	-0.1079 -1.1175 -0.0873 -1.1211 -0.1156 -0.6827 -0.2284 -0.1077 -0.1810 -0.1713
+S-72	Welchen Nutzen hat Advate in diesen Studien gezeigt ?
+T-72	What benefit has Advate shown during the studies ?
+H-72	-0.20552214980125427	What benefit has Advate shown during the studies ?
+D-72	-0.20552214980125427	What benefit has Advate shown during the studies ?
+P-72	-0.1103 -0.1032 -0.1386 -0.8551 -0.1473 -0.0752 -0.1093 -0.3217 -0.0949 -0.1369 -0.1682
+S-97	Die Durchstechflaschen auf eine ebene Oberfläche stellen .
+T-97	Place the vials on a flat clean surface .
+H-97	-0.4385092854499817	Place the vials on a level surface .
+D-97	-0.4385092854499817	Place the vials on a level surface .
+P-97	-1.9050 -0.1382 -0.0740 -0.1471 -0.1349 -0.8134 -0.7849 -0.0662 -0.1640 -0.1573
+S-134	Durchfall Oberbauchschmerzen Übelkeit Erbrechen
+T-134	Gastrointestinal Diarrhoea disorders Abdominal pain upper Nausea Vomiting Skin and subcutaneous Pruritus tissue disorders Rash Hyperhidrosis Dermatitis diaper General disorders and Pyrexia administration site Oedema peripheral conditions
+H-134	-0.29518356919288635	Diarrhoea Abdominal pain Nausea Vomiting
+D-134	-0.29518356919288635	Diarrhoea Abdominal pain Nausea Vomiting
+P-134	-1.0077 -0.0513 -0.0504 -0.0314 -1.6084 -0.0225 -0.0453 -0.1338 -0.5602 -0.0550 -0.1661 -0.0295 -0.1097 -0.2614
+S-147	Die Durchstechflaschen auf eine ebene Oberfläche stellen .
+T-147	Place the vials on a flat clean surface .
+H-147	-0.4385092854499817	Place the vials on a level surface .
+D-147	-0.4385092854499817	Place the vials on a level surface .
+P-147	-1.9050 -0.1382 -0.0740 -0.1471 -0.1349 -0.8134 -0.7849 -0.0662 -0.1640 -0.1573
+S-197	Die Durchstechflaschen auf eine ebene Oberfläche stellen .
+T-197	Place the vials on a flat clean surface .
+H-197	-0.4385092854499817	Place the vials on a level surface .
+D-197	-0.4385092854499817	Place the vials on a level surface .
+P-197	-1.9050 -0.1382 -0.0740 -0.1471 -0.1349 -0.8134 -0.7849 -0.0662 -0.1640 -0.1573
+S-311	Tablette mit veränderter Wirkstofffreisetzung
+T-311	Oral use Oral use Oral use Oral use Oral use Oral use
+H-311	-0.7724549770355225	Tablet with altered active substance release
+D-311	-0.7724549770355225	Tablet with altered active substance release
+P-311	-3.0305 -0.2169 -0.2324 -0.4766 -0.0988 -1.5829 -0.4911 -0.5742 -0.2486
+S-223	Die Durchstechflaschen auf eine ebene Oberfläche stellen .
+T-223	Place the vials on a flat clean surface .
+H-223	-0.4385092854499817	Place the vials on a level surface .
+D-223	-0.4385092854499817	Place the vials on a level surface .
+P-223	-1.9050 -0.1382 -0.0740 -0.1471 -0.1349 -0.8134 -0.7849 -0.0662 -0.1640 -0.1573
+S-2	Reproduction is authorised provided the source is acknowledged .
+T-2	Reproduction is authorised provided the source is acknowledged .
+H-2	-0.10594199597835541	Reproduction is authorised provided the source is acknowledged .
+D-2	-0.10594199597835541	Reproduction is authorised provided the source is acknowledged .
+P-2	-0.0880 -0.2016 -0.1130 -0.0521 -0.1138 -0.0705 -0.1401 -0.0427 -0.1125 -0.0166 -0.1582 -0.1623
+S-302	Reproduction is authorised provided the source is acknowledged .
+T-302	Reproduction is authorised provided the source is acknowledged .
+H-302	-0.10594199597835541	Reproduction is authorised provided the source is acknowledged .
+D-302	-0.10594199597835541	Reproduction is authorised provided the source is acknowledged .
+P-302	-0.0880 -0.2016 -0.1130 -0.0521 -0.1138 -0.0705 -0.1401 -0.0427 -0.1125 -0.0166 -0.1582 -0.1623
+S-172	Die Durchstechflaschen auf eine ebene Oberfläche stellen .
+T-172	Place the vials on a flat clean surface .
+H-172	-0.4385092854499817	Place the vials on a level surface .
+D-172	-0.4385092854499817	Place the vials on a level surface .
+P-172	-1.9050 -0.1382 -0.0740 -0.1471 -0.1349 -0.8134 -0.7849 -0.0662 -0.1640 -0.1573
+S-310	Tablette mit veränderter Wirkstofffreisetzung
+T-310	Modified-release tablet Modified-release tablet Modified-release tablet Modified-release tablet Modified-release tablet Modified-release tablet
+H-310	-0.7724549770355225	Tablet with altered active substance release
+D-310	-0.7724549770355225	Tablet with altered active substance release
+P-310	-3.0305 -0.2169 -0.2324 -0.4766 -0.0988 -1.5829 -0.4911 -0.5742 -0.2486
+S-109	Durchfall Oberbauchschmerzen Übelkeit Erbrechen
+T-109	Gastrointestinal Diarrhoea disorders Abdominal pain upper Nausea Vomiting Skin and subcutaneous Pruritus tissue disorders Rash Hyperhidrosis Dermatitis diaper General disorders and Pyrexia administration site Oedema peripheral conditions
+H-109	-0.29518356919288635	Diarrhoea Abdominal pain Nausea Vomiting
+D-109	-0.29518356919288635	Diarrhoea Abdominal pain Nausea Vomiting
+P-109	-1.0077 -0.0513 -0.0504 -0.0314 -1.6084 -0.0225 -0.0453 -0.1338 -0.5602 -0.0550 -0.1661 -0.0295 -0.1097 -0.2614
+S-96	- Nach Rekonstitution nicht mehr kühlen .
+T-96	- Do not refrigerate the preparation after reconstitution .
+H-96	-0.24311216175556183	- Do not refrigerate after reconstitution .
+D-96	-0.24311216175556183	- Do not refrigerate after reconstitution .
+P-96	-0.1213 -0.1409 -0.1206 -1.0669 -0.3689 -0.0699 -0.1396 -0.2155 -0.2124 -0.1442 -0.1514 -0.1658
+S-146	- Nach Rekonstitution nicht mehr kühlen .
+T-146	- Do not refrigerate the preparation after reconstitution .
+H-146	-0.24311216175556183	- Do not refrigerate after reconstitution .
+D-146	-0.24311216175556183	- Do not refrigerate after reconstitution .
+P-146	-0.1213 -0.1409 -0.1206 -1.0669 -0.3689 -0.0699 -0.1396 -0.2155 -0.2124 -0.1442 -0.1514 -0.1658
+S-284	Im Zweifelsfall fragen Sie Ihren Arzt .
+T-284	If you are unsure about this , ask your doctor .
+H-284	-0.30849605798721313	If in doubt , ask your doctor .
+D-284	-0.30849605798721313	If in doubt , ask your doctor .
+P-284	-1.1743 -0.1397 -0.3273 -0.2160 -0.3314 -0.1268 -0.1237 -0.1773 -0.1600
+S-121	- Nach Rekonstitution nicht mehr kühlen .
+T-121	- Do not refrigerate the preparation after reconstitution .
+H-121	-0.24311216175556183	- Do not refrigerate after reconstitution .
+D-121	-0.24311216175556183	- Do not refrigerate after reconstitution .
+P-121	-0.1213 -0.1409 -0.1206 -1.0669 -0.3689 -0.0699 -0.1396 -0.2155 -0.2124 -0.1442 -0.1514 -0.1658
+S-24	Vitamin D einmal pro Tag wurde nicht untersucht .
+T-24	The equivalence of intake of 5600 IU of vitamin D3 weekly in ADROVANCE to daily dosing of vitamin D 800 IU has not been studied .
+H-24	-0.33511680364608765	Vitamin D once a day has not been studied .
+D-24	-0.33511680364608765	Vitamin D once a day has not been studied .
+P-24	-1.2654 -0.0671 -0.1062 -0.7846 -0.2370 -0.0879 -0.2246 -0.1234 -0.1240 -0.6863 -0.1528 -0.1620
+S-300	Wofür sollte Advexin angewendet werden ?
+T-300	What was Advexin expected to be used for ?
+H-300	-0.31695523858070374	What should Advexin be used for ?
+D-300	-0.31695523858070374	What should Advexin be used for ?
+P-300	-0.3803 -0.7808 -0.8954 -0.1413 -0.1403 -0.0990 -0.0839 -0.1285 -0.3555 -0.1645
+S-196	- Nach Rekonstitution nicht mehr kühlen .
+T-196	- Do not refrigerate the preparation after reconstitution .
+H-196	-0.24311216175556183	- Do not refrigerate after reconstitution .
+D-196	-0.24311216175556183	- Do not refrigerate after reconstitution .
+P-196	-0.1213 -0.1409 -0.1206 -1.0669 -0.3689 -0.0699 -0.1396 -0.2155 -0.2124 -0.1442 -0.1514 -0.1658
+S-171	- Nach Rekonstitution nicht mehr kühlen .
+T-171	- Do not refrigerate the preparation after reconstitution .
+H-171	-0.24311216175556183	- Do not refrigerate after reconstitution .
+D-171	-0.24311216175556183	- Do not refrigerate after reconstitution .
+P-171	-0.1213 -0.1409 -0.1206 -1.0669 -0.3689 -0.0699 -0.1396 -0.2155 -0.2124 -0.1442 -0.1514 -0.1658
+S-222	- Nach Rekonstitution nicht mehr kühlen .
+T-222	- Do not refrigerate the preparation after reconstitution .
+H-222	-0.24311216175556183	- Do not refrigerate after reconstitution .
+D-222	-0.24311216175556183	- Do not refrigerate after reconstitution .
+P-222	-0.1213 -0.1409 -0.1206 -1.0669 -0.3689 -0.0699 -0.1396 -0.2155 -0.2124 -0.1442 -0.1514 -0.1658
+S-89	Verletzung , Vergiftung und durch Eingriffe
+T-89	Haematocrit decreased Laboratory test abnormal Injury , poisoning and Post procedural procedural complications complication
+H-89	-0.6735246181488037	Injury , poisoning and procedures
+D-89	-0.6735246181488037	Injury , poisoning and procedures
+P-89	-0.1712 -0.3539 -0.1680 -0.6092 -0.2323 -0.1976 -3.2489 -0.4072
+S-100	Nur klare , farblose Lösungen verwenden .
+T-100	Only a clear and colourless solution should be used .
+H-100	-0.1754423975944519	Use only clear , colourless solutions .
+D-100	-0.1754423975944519	Use only clear , colourless solutions .
+P-100	-0.1240 -0.4716 -0.1230 -0.2203 -0.1592 -0.1017 -0.0788 -0.1381 -0.1734 -0.1643
+S-73	Die Genehmigung wurde am 2. März 2009 verlängert .
+T-73	The marketing authorisation was renewed on 2 March 2009.
+H-73	-0.22675007581710815	The marketing authorisation was renewed on 2 March 2009 .
+D-73	-0.22675007581710815	The marketing authorisation was renewed on 2 March 2009 .
+P-73	-0.1962 -0.4282 -0.0212 -0.0750 -0.1586 -0.1574 -0.0993 -0.1214 -0.2991 -0.8363 -0.1674 -0.1610
+S-150	Nur klare , farblose Lösungen verwenden .
+T-150	Only a clear and colourless solution should be used .
+H-150	-0.1754423975944519	Use only clear , colourless solutions .
+D-150	-0.1754423975944519	Use only clear , colourless solutions .
+P-150	-0.1240 -0.4716 -0.1230 -0.2203 -0.1592 -0.1017 -0.0788 -0.1381 -0.1734 -0.1643
+S-307	In der zweiten Studie wurden ähnliche Ergebnisse beobachtet .
+T-307	Similar results were seen in the second study .
+H-307	-0.2920541763305664	Similar results were observed in the second study .
+D-307	-0.2920541763305664	Similar results were observed in the second study .
+P-307	-0.7687 -0.0780 -1.1038 -0.0845 -0.2556 -0.1470 -0.1585 -0.1388 -0.1593 -0.1590 -0.1594
+S-303	Was waren die wesentlichen Bedenken des CHMP ?
+T-303	What were the main concerns of the CHMP ?
+H-303	-0.2033921778202057	What were the main concerns of the CHMP ?
+D-303	-0.2033921778202057	What were the main concerns of the CHMP ?
+P-303	-0.1340 -0.3369 -0.1309 -0.5833 -0.0668 -0.2656 -0.1664 -0.1209 -0.0409 -0.2257 -0.1660
+S-125	Nur klare , farblose Lösungen verwenden .
+T-125	Only a clear and colourless solution should be used .
+H-125	-0.1754423975944519	Use only clear , colourless solutions .
+D-125	-0.1754423975944519	Use only clear , colourless solutions .
+P-125	-0.1240 -0.4716 -0.1230 -0.2203 -0.1592 -0.1017 -0.0788 -0.1381 -0.1734 -0.1643
+S-280	- Dieses Arzneimittel wurde Ihnen verschrieben .
+T-280	- This medicine has been prescribed for you .
+H-280	-0.12653858959674835	- This medicine has been prescribed for you .
+D-280	-0.12653858959674835	- This medicine has been prescribed for you .
+P-280	-0.1172 -0.1603 -0.0759 -0.0922 -0.0894 -0.0421 -0.1064 -0.2349 -0.1421 -0.1591 -0.1724
+S-175	Nur klare , farblose Lösungen verwenden .
+T-175	Only a clear and colourless solution should be used .
+H-175	-0.1754423975944519	Use only clear , colourless solutions .
+D-175	-0.1754423975944519	Use only clear , colourless solutions .
+P-175	-0.1240 -0.4716 -0.1230 -0.2203 -0.1592 -0.1017 -0.0788 -0.1381 -0.1734 -0.1643
+S-200	Nur klare , farblose Lösungen verwenden .
+T-200	Only a clear and colourless solution should be used .
+H-200	-0.1754423975944519	Use only clear , colourless solutions .
+D-200	-0.1754423975944519	Use only clear , colourless solutions .
+P-200	-0.1240 -0.4716 -0.1230 -0.2203 -0.1592 -0.1017 -0.0788 -0.1381 -0.1734 -0.1643
+S-226	Nur klare , farblose Lösungen verwenden .
+T-226	Only a clear and colourless solution should be used .
+H-226	-0.1754423975944519	Use only clear , colourless solutions .
+D-226	-0.1754423975944519	Use only clear , colourless solutions .
+P-226	-0.1240 -0.4716 -0.1230 -0.2203 -0.1592 -0.1017 -0.0788 -0.1381 -0.1734 -0.1643
+S-281	Es darf nicht an Dritte weitergegeben werden .
+T-281	Es darf nicht an Dritte weitergegeben werden . It may harm them , even
+H-281	-0.40879377722740173	It must not be passed on to third parties .
+D-281	-0.40879377722740173	It must not be passed on to third parties .
+P-281	-0.1683 -0.9569 -0.1194 -0.1153 -1.7086 -0.1604 -0.1300 -0.5742 -0.2376 -0.1602 -0.1659
+S-87	Gelegentlich Gelegentlich Gelegentlich
+T-87	Uncommon Uncommon Uncommon Uncommon Uncommon Uncommon Uncommon Uncommon Common Uncommon
+H-87	-0.44226065278053284	Uncommon Uncommon Uncommon Uncommon
+D-87	-0.44226065278053284	Uncommon Uncommon Uncommon Uncommon
+P-87	-1.3218 -0.0805 -0.0863 -0.1428 -0.0605 -0.1338 -1.0458 -0.0615 -1.0472
+S-83	Erkrankungen des Gastrointestinaltrakts
+T-83	5 Table 2 Frequency of adverse drug reactions ( ADRs ) in clinical trials
+H-83	-0.2217809110879898	Gastrointestinal disorders
+D-83	-0.2217809110879898	Gastrointestinal disorders
+P-83	-0.9701 -0.0973 -0.1063 -0.0985 -0.0692 -0.1106 -0.1148 -0.2074
+S-288	Arzneimittel für Kinder unzugänglich aufbewahren .
+T-288	Keep out of the reach and sight of children .
+H-288	-0.12147891521453857	Keep out of the reach and sight of children .
+D-288	-0.12147891521453857	Keep out of the reach and sight of children .
+P-288	-0.1219 -0.1484 -0.1341 -0.1328 -0.0787 -0.1194 -0.0482 -0.1430 -0.0832 -0.1617 -0.1649
+S-198	Das Transfersystem nicht aus der Verpackung
+T-198	Do not remove the device from the package .
+H-198	-0.5239594578742981	Do not take the transfer system out of the package
+D-198	-0.5239594578742981	Do not take the transfer system out of the package
+P-198	-2.5911 -0.1516 -0.9045 -0.1593 -0.0914 -0.2438 -0.1405 -0.1248 -0.1347 -0.9663 -0.2556
+S-224	Das Transfersystem nicht aus der Verpackung
+T-224	Do not remove the device from the package .
+H-224	-0.5239594578742981	Do not take the transfer system out of the package
+D-224	-0.5239594578742981	Do not take the transfer system out of the package
+P-224	-2.5911 -0.1516 -0.9045 -0.1593 -0.0914 -0.2438 -0.1405 -0.1248 -0.1347 -0.9663 -0.2556
+S-250	Vor der Anwendung Gebrauchsinformation lesen .
+T-250	Vor der Anwendung Gebrauchsinformation lesen . Single use only .
+H-250	-0.24892111122608185	Read the leaflet before use .
+D-250	-0.24892111122608185	Read the leaflet before use .
+P-250	-0.0329 -0.3587 -0.6489 -0.0504 -0.0773 -0.1532 -0.5864 -0.1703 -0.1621
+S-173	Das Transfersystem nicht aus der Verpackung
+T-173	Do not remove the device from the package .
+H-173	-0.5239594578742981	Do not take the transfer system out of the package
+D-173	-0.5239594578742981	Do not take the transfer system out of the package
+P-173	-2.5911 -0.1516 -0.9045 -0.1593 -0.0914 -0.2438 -0.1405 -0.1248 -0.1347 -0.9663 -0.2556
+S-148	Das Transfersystem nicht aus der Verpackung
+T-148	Do not remove the device from the package .
+H-148	-0.5239594578742981	Do not take the transfer system out of the package
+D-148	-0.5239594578742981	Do not take the transfer system out of the package
+P-148	-2.5911 -0.1516 -0.9045 -0.1593 -0.0914 -0.2438 -0.1405 -0.1248 -0.1347 -0.9663 -0.2556
+S-123	Das Transfersystem nicht aus der Verpackung
+T-123	Do not remove the device from the package .
+H-123	-0.5239594578742981	Do not take the transfer system out of the package
+D-123	-0.5239594578742981	Do not take the transfer system out of the package
+P-123	-2.5911 -0.1516 -0.9045 -0.1593 -0.0914 -0.2438 -0.1405 -0.1248 -0.1347 -0.9663 -0.2556
+S-290	Diese Maßnahme hilft die Umwelt zu schützen .
+T-290	These measures will help to protect the environment .
+H-290	-0.12107964605093002	These measures will help to protect the environment .
+D-290	-0.12107964605093002	These measures will help to protect the environment .
+P-290	-0.1054 -0.0689 -0.1438 -0.0951 -0.1438 -0.1192 -0.1335 -0.0871 -0.1526 -0.1615
+S-98	Das Transfersystem nicht aus der Verpackung
+T-98	Do not remove the device from the package .
+H-98	-0.5239594578742981	Do not take the transfer system out of the package
+D-98	-0.5239594578742981	Do not take the transfer system out of the package
+P-98	-2.5911 -0.1516 -0.9045 -0.1593 -0.0914 -0.2438 -0.1405 -0.1248 -0.1347 -0.9663 -0.2556
+S-275	vor der Anwendung Gebrauchsinformation lesen .
+T-275	vor der Anwendung Gebrauchsinformation lesen . Single use only .
+H-275	-0.5029170513153076	Read the leaflet before use .
+D-275	-0.5029170513153076	Read the leaflet before use .
+P-275	-1.3493 -0.9658 -0.9821 -0.0438 -0.0799 -0.1633 -0.5914 -0.1855 -0.1651
+S-285	Sie sollten über frühe Anzeichen einer solchen
+T-285	Sie sollten über frühe Anzeichen einer solchen These symptoms can constitute an early
+H-285	-0.6738560199737549	You should be vigilant about early signs of such
+D-285	-0.6738560199737549	You should be vigilant about early signs of such
+P-285	-0.5312 -0.1697 -0.5359 -2.6619 -0.0137 -0.1705 -0.2241 -0.2553 -0.0969 -0.1420 -0.9631 -2.3221
+S-111	0,85 0,43 0,43 0,43
+T-111	0.85 0.43 0.43 0.43 0.85 0.85 0.43 0.43 1.28 0.43
+H-111	-0.27573099732398987	0.85 0.43 0.43 0.43
+D-111	-0.27573099732398987	0.85 0.43 0.43 0.43
+P-111	-0.2496 -0.3245 -0.5588 -0.1404 -0.2606 -0.1220 -0.2650 -0.1090 -0.4518
+S-136	0,85 0,43 0,43 0,43
+T-136	0.85 0.43 0.43 0.43 0.85 0.85 0.43 0.43 1.28 0.43
+H-136	-0.27573099732398987	0.85 0.43 0.43 0.43
+D-136	-0.27573099732398987	0.85 0.43 0.43 0.43
+P-136	-0.2496 -0.3245 -0.5588 -0.1404 -0.2606 -0.1220 -0.2650 -0.1090 -0.4518
+S-161	0,85 0,43 0,43 0,43
+T-161	0.85 0.43 0.43 0.43 0.85 0.85 0.43 0.43 1.28 0.43
+H-161	-0.27573099732398987	0.85 0.43 0.43 0.43
+D-161	-0.27573099732398987	0.85 0.43 0.43 0.43
+P-161	-0.2496 -0.3245 -0.5588 -0.1404 -0.2606 -0.1220 -0.2650 -0.1090 -0.4518
+S-186	0,85 0,43 0,43 0,43
+T-186	0.85 0.43 0.43 0.43 0.85 0.85 0.43 0.43 1.28 0.43
+H-186	-0.27573099732398987	0.85 0.43 0.43 0.43
+D-186	-0.27573099732398987	0.85 0.43 0.43 0.43
+P-186	-0.2496 -0.3245 -0.5588 -0.1404 -0.2606 -0.1220 -0.2650 -0.1090 -0.4518
+S-212	0,85 0,43 0,43 0,43
+T-212	0.85 0.43 0.43 0.43 0.85 0.85 0.43 0.43 1.28 0.43
+H-212	-0.27573099732398987	0.85 0.43 0.43 0.43
+D-212	-0.27573099732398987	0.85 0.43 0.43 0.43
+P-212	-0.2496 -0.3245 -0.5588 -0.1404 -0.2606 -0.1220 -0.2650 -0.1090 -0.4518
+S-209	Infektionen und parasitäre Erkrankungen
+T-209	( % patients<<unk>> a Infections and infestations Blood and lymphatic system disorders
+H-209	-0.3139652609825134	Infections and parasitic disorders
+D-209	-0.3139652609825134	Infections and parasitic disorders
+P-209	-0.1235 -0.1440 -0.1390 -0.1906 -0.0857 -0.1639 -1.6730 -0.1095 -0.1966
+S-272	Für Kinder unzugänglich aufbewahren .
+T-272	Keep out of the reach and sight of children .
+H-272	-0.12326452881097794	Keep out of the reach and sight of children .
+D-272	-0.12326452881097794	Keep out of the reach and sight of children .
+P-272	-0.1393 -0.1698 -0.1340 -0.1368 -0.0622 -0.1193 -0.0329 -0.1375 -0.0967 -0.1630 -0.1643
+S-256	Für Kinder unzugänglich aufbewahren .
+T-256	Keep out of the reach and sight of children .
+H-256	-0.12326452881097794	Keep out of the reach and sight of children .
+D-256	-0.12326452881097794	Keep out of the reach and sight of children .
+P-256	-0.1393 -0.1698 -0.1340 -0.1368 -0.0622 -0.1193 -0.0329 -0.1375 -0.0967 -0.1630 -0.1643
+S-314	Erwachsene und Jugendliche ab 12 Jahren :
+T-314	Adults and adolescents 12 years of age and over :
+H-314	-0.4055279791355133	Adults and adolescents aged 12 years and over :
+D-314	-0.4055279791355133	Adults and adolescents aged 12 years and over :
+P-314	-0.2260 -0.9703 -0.1487 -0.1864 -0.0259 -0.0409 -1.4797 -0.1957 -0.7409 -0.7098 -0.2222 -0.1541 -0.1713
+S-264	Für Kinder unzugänglich aufbewahren .
+T-264	Keep out of the reach and sight of children .
+H-264	-0.12326452881097794	Keep out of the reach and sight of children .
+D-264	-0.12326452881097794	Keep out of the reach and sight of children .
+P-264	-0.1393 -0.1698 -0.1340 -0.1368 -0.0622 -0.1193 -0.0329 -0.1375 -0.0967 -0.1630 -0.1643
+S-239	Für Kinder unzugänglich aufbewahren .
+T-239	Keep out of the reach and sight of children .
+H-239	-0.12326452881097794	Keep out of the reach and sight of children .
+D-239	-0.12326452881097794	Keep out of the reach and sight of children .
+P-239	-0.1393 -0.1698 -0.1340 -0.1368 -0.0622 -0.1193 -0.0329 -0.1375 -0.0967 -0.1630 -0.1643
+S-247	Für Kinder unzugänglich aufbewahren .
+T-247	Keep out of the reach and sight of children .
+H-247	-0.12326452881097794	Keep out of the reach and sight of children .
+D-247	-0.12326452881097794	Keep out of the reach and sight of children .
+P-247	-0.1393 -0.1698 -0.1340 -0.1368 -0.0622 -0.1193 -0.0329 -0.1375 -0.0967 -0.1630 -0.1643
+S-231	Für Kinder unzugänglich aufbewahren .
+T-231	Keep out of the reach and sight of children .
+H-231	-0.12326452881097794	Keep out of the reach and sight of children .
+D-231	-0.12326452881097794	Keep out of the reach and sight of children .
+P-231	-0.1393 -0.1698 -0.1340 -0.1368 -0.0622 -0.1193 -0.0329 -0.1375 -0.0967 -0.1630 -0.1643
+S-90	Pharmakotherapeutische Gruppe :
+T-90	Pharmacotherapeutic group : antihaemorrhagics , blood coagulation factor VIII .
+H-90	-0.19211654365062714	Pharmacotherapeutic group :
+D-90	-0.19211654365062714	Pharmacotherapeutic group :
+P-90	-0.7449 -0.0305 -0.0916 -0.0611 -0.1508 -0.1295 -0.1797 -0.1354 -0.2056
+S-216	Pharmakotherapeutische Gruppe :
+T-216	Pharmacotherapeutic group : antihaemorrhagics , blood coagulation factor VIII .
+H-216	-0.19211654365062714	Pharmacotherapeutic group :
+D-216	-0.19211654365062714	Pharmacotherapeutic group :
+P-216	-0.7449 -0.0305 -0.0916 -0.0611 -0.1508 -0.1295 -0.1797 -0.1354 -0.2056
+S-190	Pharmakotherapeutische Gruppe :
+T-190	Pharmacotherapeutic group : antihaemorrhagics , blood coagulation factor VIII .
+H-190	-0.19211654365062714	Pharmacotherapeutic group :
+D-190	-0.19211654365062714	Pharmacotherapeutic group :
+P-190	-0.7449 -0.0305 -0.0916 -0.0611 -0.1508 -0.1295 -0.1797 -0.1354 -0.2056
+S-165	Pharmakotherapeutische Gruppe :
+T-165	Pharmacotherapeutic group : antihaemorrhagics , blood coagulation factor VIII .
+H-165	-0.19211654365062714	Pharmacotherapeutic group :
+D-165	-0.19211654365062714	Pharmacotherapeutic group :
+P-165	-0.7449 -0.0305 -0.0916 -0.0611 -0.1508 -0.1295 -0.1797 -0.1354 -0.2056
+S-140	Pharmakotherapeutische Gruppe :
+T-140	Pharmacotherapeutic group : antihaemorrhagics , blood coagulation factor VIII .
+H-140	-0.19211654365062714	Pharmacotherapeutic group :
+D-140	-0.19211654365062714	Pharmacotherapeutic group :
+P-140	-0.7449 -0.0305 -0.0916 -0.0611 -0.1508 -0.1295 -0.1797 -0.1354 -0.2056
+S-115	Pharmakotherapeutische Gruppe :
+T-115	Pharmacotherapeutic group : antihaemorrhagics , blood coagulation factor VIII .
+H-115	-0.19211654365062714	Pharmacotherapeutic group :
+D-115	-0.19211654365062714	Pharmacotherapeutic group :
+P-115	-0.7449 -0.0305 -0.0916 -0.0611 -0.1508 -0.1295 -0.1797 -0.1354 -0.2056
+S-86	0,43 0,43 0,43
+T-86	0.85 0.43 0.43 0.43 0.85 0.85 0.43 0.43 1.28 0.43
+H-86	-0.23222045600414276	0.43 0.43 0.43 0.43
+D-86	-0.23222045600414276	0.43 0.43 0.43 0.43
+P-86	-0.4361 -0.1827 -0.3239 -0.1362 -0.2201 -0.1275 -0.2957 -0.1251 -0.2427
+S-58	ADROVANCE
+T-58	You should not take ADROVANCE if you are or think you may be pregnant , or if you are breast-feeding .
+H-58	-0.5848886966705322	ADROVANCE
+D-58	-0.5848886966705322	ADROVANCE
+P-58	-0.9263 -0.0783 -0.1304 -0.1392 -0.0911 -2.1440
+S-57	Alendronat
+T-57	Alendronate belongs to a group of non-hormonal medicines called bisphosphonates .
+H-57	-0.2036808282136917	Alendronate
+D-57	-0.2036808282136917	Alendronate
+P-57	-0.2834 -0.1387 -0.1212 -0.1221 -0.3530
+S-141	PK-Parameter
+T-141	PK Parameter AUC0- ( IU h/ dl ) t1/ 2 ( h ) Adjusted Recovery
+H-141	-0.6571401953697205	PK parameters
+D-141	-0.6571401953697205	PK parameters
+P-141	-2.1068 -0.1611 -0.3587 -0.9915 -0.1216 -0.2031
+S-40	ADROVANCE
+T-40	You should not take ADROVANCE if you are or think you may be pregnant , or if you are breast-feeding .
+H-40	-0.5848886966705322	ADROVANCE
+D-40	-0.5848886966705322	ADROVANCE
+P-40	-0.9263 -0.0783 -0.1304 -0.1392 -0.0911 -2.1440
+S-56	ADROVANCE
+T-56	WHAT ADROVANCE IS AND WHAT IT IS USED FOR
+H-56	-0.5848886966705322	ADROVANCE
+D-56	-0.5848886966705322	ADROVANCE
+P-56	-0.9263 -0.0783 -0.1304 -0.1392 -0.0911 -2.1440
+S-38	Alendronat
+T-38	Alendronate belongs to a group of non-hormonal medicines called bisphosphonates .
+H-38	-0.2036808282136917	Alendronate
+D-38	-0.2036808282136917	Alendronate
+P-38	-0.2834 -0.1387 -0.1212 -0.1221 -0.3530
+S-91	PK-Parameter
+T-91	PK Parameter AUC0- ( IU h/ dl ) t1/ 2 ( h ) Adjusted Recovery
+H-91	-0.6571401953697205	PK parameters
+D-91	-0.6571401953697205	PK parameters
+P-91	-2.1068 -0.1611 -0.3587 -0.9915 -0.1216 -0.2031
+S-37	ADROVANCE
+T-37	WHAT ADROVANCE IS AND WHAT IT IS USED FOR
+H-37	-0.5848886966705322	ADROVANCE
+D-37	-0.5848886966705322	ADROVANCE
+P-37	-0.9263 -0.0783 -0.1304 -0.1392 -0.0911 -2.1440
+S-166	PK-Parameter
+T-166	PK Parameter AUC0- ( IU h/ dl ) t1/ 2 ( h ) Adjusted Recovery
+H-166	-0.6571401953697205	PK parameters
+D-166	-0.6571401953697205	PK parameters
+P-166	-2.1068 -0.1611 -0.3587 -0.9915 -0.1216 -0.2031
+S-191	PK-Parameter
+T-191	PK Parameter AUC0- ( IU h/ dl ) t1/ 2 ( h ) Adjusted Recovery
+H-191	-0.6571401953697205	PK parameters
+D-191	-0.6571401953697205	PK parameters
+P-191	-2.1068 -0.1611 -0.3587 -0.9915 -0.1216 -0.2031
+S-116	PK-Parameter
+T-116	PK Parameter AUC0- ( IU h/ dl ) t1/ 2 ( h ) Adjusted Recovery
+H-116	-0.6571401953697205	PK parameters
+D-116	-0.6571401953697205	PK parameters
+P-116	-2.1068 -0.1611 -0.3587 -0.9915 -0.1216 -0.2031
+S-39	ADROVANCE
+T-39	Your doctor has prescribed ADROVANCE to treat your osteoporosis and because you are at risk of vitamin D insufficiency .
+H-39	-0.5848886966705322	ADROVANCE
+D-39	-0.5848886966705322	ADROVANCE
+P-39	-0.9263 -0.0783 -0.1304 -0.1392 -0.0911 -2.1440
+S-217	PK-Parameter
+T-217	PK Parameter AUC0- ( IU h/ dl ) t1/ 2 ( h ) Adjusted Recovery
+H-217	-0.6571401953697205	PK parameters
+D-217	-0.6571401953697205	PK parameters
+P-217	-2.1068 -0.1611 -0.3587 -0.9915 -0.1216 -0.2031
+S-309	2,5 mg / 120 mg
+T-309	2.5 mg/ 120 mg 2.5 mg/ 120 mg 2.5 mg/ 120 mg 2.5 mg/ 120 mg 2.5 mg/ 120 mg 2.5 mg/ 120 mg
+H-309	-0.16860239207744598	2.5 mg / 120 mg
+D-309	-0.16860239207744598	2.5 mg / 120 mg
+P-309	-0.4310 -0.0700 -0.1461 -0.1005 -0.0569 -0.2072
+S-60	ADROVANCE
+T-60	47 5 ) If you develop difficulty or pain upon swallowing , chest pain , or new or worsening heartburn , stop taking ADROVANCE and contact your doctor .
+H-60	-0.5848886966705322	ADROVANCE
+D-60	-0.5848886966705322	ADROVANCE
+P-60	-0.9263 -0.0783 -0.1304 -0.1392 -0.0911 -2.1440
+S-45	ADROVANCE
+T-45	5 ) If you develop difficulty or pain upon swallowing , chest pain , or new or worsening heartburn , stop taking ADROVANCE and contact your doctor .
+H-45	-0.5848886966705322	ADROVANCE
+D-45	-0.5848886966705322	ADROVANCE
+P-45	-0.9263 -0.0783 -0.1304 -0.1392 -0.0911 -2.1440
+S-211	2 1 1 1
+T-211	2 1 1 1 2 2 1 1 3 1
+H-211	-1.2068077325820923	2 1 1 1
+D-211	-1.2068077325820923	2 1 1 1
+P-211	-4.3124 -0.3195 -0.2742 -0.4464 -0.6816
+S-135	2 1 1 1
+T-135	2 1 1 1 2 2 1 1 3 1
+H-135	-1.2068077325820923	2 1 1 1
+D-135	-1.2068077325820923	2 1 1 1
+P-135	-4.3124 -0.3195 -0.2742 -0.4464 -0.6816
+S-110	2 1 1 1
+T-110	2 1 1 1 2 2 1 1 3 1
+H-110	-1.2068077325820923	2 1 1 1
+D-110	-1.2068077325820923	2 1 1 1
+P-110	-4.3124 -0.3195 -0.2742 -0.4464 -0.6816
+S-185	2 1 1 1
+T-185	2 1 1 1 2 2 1 1 3 1
+H-185	-1.2068077325820923	2 1 1 1
+D-185	-1.2068077325820923	2 1 1 1
+P-185	-4.3124 -0.3195 -0.2742 -0.4464 -0.6816
+S-16	32 % ) .
+T-16	32 % , respectively ) , through week 15.
+H-16	-0.4263923168182373	32 % ) .
+D-16	-0.4263923168182373	32 % ) .
+P-16	-1.3051 -0.1617 -0.1151 -0.3699 -0.1801
+S-48	Informieren Sie
+T-48	Tell your doctor or pharmacist promptly about these or any other unusual symptoms .
+H-48	-1.2603881359100342	Inform your doctor or pharmacist before you start
+D-48	-1.2603881359100342	Inform your doctor or pharmacist before you start
+P-48	-4.7570 -0.1053 -2.1783 -0.1022 -0.9597 -0.3567 -0.0808 -1.8895 -0.8140 -0.1466 -2.4743
+S-160	2 1 1 1
+T-160	2 1 1 1 2 2 1 1 3 1
+H-160	-1.2068077325820923	2 1 1 1
+D-160	-1.2068077325820923	2 1 1 1
+P-160	-4.3124 -0.3195 -0.2742 -0.4464 -0.6816
+S-313	14 Tabletten
+T-313	2 tablets 4 tablets 7 tablets 10 tablets 14 tablets 20 tablets
+H-313	-0.5627574920654297	Fourteen tablets
+D-313	-0.5627574920654297	Fourteen tablets
+P-313	-2.5960 -0.0542 -0.0554 -0.2708 -0.1618 -0.2383
+S-63	Informieren Sie
+T-63	Tell your doctor or pharmacist promptly about these or any other unusual symptoms .
+H-63	-1.2603881359100342	Inform your doctor or pharmacist before you start
+D-63	-1.2603881359100342	Inform your doctor or pharmacist before you start
+P-63	-4.7570 -0.1053 -2.1783 -0.1022 -0.9597 -0.3567 -0.0808 -1.8895 -0.8140 -0.1466 -2.4743
+S-84	Verabreichungsort
+T-84	Gastrointestinal Diarrhoea disorders Abdominal pain upper Nausea Vomiting Skin and subcutaneous Pruritus tissue disorders Rash Hyperhidrosis Dermatitis diaper General disorders and Pyrexia administration site Oedema peripheral conditions
+H-84	-0.7426257133483887	Administration site
+D-84	-0.7426257133483887	Administration site
+P-84	-1.7350 -0.2966 -0.1963
+S-29	32 % ) .
+T-29	32 % , respectively ) , through week 15.
+H-29	-0.4263923168182373	32 % ) .
+D-29	-0.4263923168182373	32 % ) .
+P-29	-1.3051 -0.1617 -0.1151 -0.3699 -0.1801
+S-62	Gelegentlich
+T-62	Gelegentlich Very rare ( occurring in less than 1 of 10,000 patients treated ) .
+H-62	-1.2944726943969727	Uncommon
+D-62	-1.2944726943969727	Uncommon
+P-62	-3.3031 -0.0245 -0.5559
+S-61	Häufig :
+T-61	The following terms are used to describe how often side effects have been reported :
+H-61	-1.404526948928833	Common :
+D-61	-1.404526948928833	Common :
+P-61	-4.6892 -0.1398 -0.5150 -0.2741
+S-47	Gelegentlich
+T-47	Gelegentlich Very rare ( occurring in less than 1 of 10,000 patients treated ) .
+H-47	-1.2944726943969727	Uncommon
+D-47	-1.2944726943969727	Uncommon
+P-47	-3.3031 -0.0245 -0.5559
+S-85	1 1 1
+T-85	2 1 1 1 2 2 1 1 3 1
+H-85	-2.3169357776641846	1 1 1 1 1
+D-85	-2.3169357776641846	1 1 1 1 1
+P-85	-7.5607 -2.0419 -1.0507 -0.4431 -0.9798 -1.8254
+S-51	Tel . :
+T-51	Tel . : <<unk>> 36 1 888 53 00 hungary<<unk>> msd<<unk>> merck . com
+H-51	-0.679953396320343	Tel : <unk> 353 ( 0 ) 2 403 ( 0 ) 2 000 ( 0 ) 2 000 ( 0 ) 2 000 ( 0 ) 2 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ( 0
+D-51	-0.679953396320343	Tel : <unk> 353 ( 0 ) 2 403 ( 0 ) 2 000 ( 0 ) 2 000 ( 0 ) 2 000 ( 0 ) 2 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ( 0
+P-51	-0.0217 -0.3078 -0.0411 -1.8853 -1.1395 -0.2225 -0.0216 -0.1132 -2.0541 -3.6250 -4.4035 -1.3736 -0.0265 -0.1146 -2.1511 -3.1298 -2.6493 -0.2184 -0.2214 -2.3904 -2.3918 -0.9407 -0.2951 -0.3878 -2.0079 -2.1762 -0.5895 -0.3955 -0.4364 -2.0465 -1.6249 -0.6391 -0.3966 -0.7956 -1.3378 -1.4760 -1.2127 -0.3691 -0.7873 -0.9837 -1.0708 -0.9624 -0.3540 -1.6612 -0.2209 -0.1736 -1.0196 -0.8505 -0.8691 -0.2944 -0.3263 -0.6850 -0.7887 -0.5454 -0.2995 -0.6478 -0.5050 -0.6859 -0.4753 -0.3131 -1.6148 -0.2552 -0.1739 -0.6176 -0.4943 -0.5451 -0.3033 -0.3084 -0.4173 -0.4327 -0.3378 -0.3163 -0.2486 -0.3911 -0.4149 -0.2323 -0.3146 -0.2237 -0.4198 -0.3902 -0.3032 -0.3152 -0.3136 -0.4055 -0.4009 -0.2622 -0.3031 -0.6856 -0.4405 -0.4008 -0.2698 -0.3069 -0.8026 -0.4095 -0.3344 -0.1518 -0.3053 -1.3574 -0.2607 -0.5692 -0.4083 -0.4257 -0.1289 -0.2941 -1.4410 -0.2511 -0.3474 -0.4618 -0.8961 -0.1274 -0.2887 -0.5710 -0.3955 -0.6996 -0.1254 -0.2861 -0.7509 -0.2619 -0.5524 -0.3806 -0.7595 -0.1323 -0.2656 -0.8586 -0.2545 -0.8750 -0.4009 -0.8055 -0.1414 -0.2704 -0.5330 -0.2521 -1.0822 -0.2428 -0.7557 -0.4335 -1.1176 -0.1697 -0.2574 -1.3688 -0.4648 -1.0337 -0.1844 -0.2763 -0.4711 -0.2674 -1.4172 -0.4613 -1.2641 -0.2064 -0.2777 -0.5870 -0.2747 -1.0212 -0.4555 -1.4661 -0.4614 -1.3197 -0.1681 -0.2920 -0.3329 -0.2871 -0.4503 -0.2760 -0.9303 -0.2683 -0.7049 -0.4744 -0.3854 -0.4688 -0.9187 -0.4535 -1.5151 -0.1524 -0.3057 -0.2709 -0.2930 -0.3134 -0.2886 -0.4984 -0.2924 -0.8361 -0.2803 -0.9190 -0.5176 -0.3809 -0.4872 -0.9589 -0.4581 -1.8320 -0.1515 -0.2998 -0.2331 -0.2954 -0.2493 -0.2941 -0.3834 -0.2882 -0.6932 -0.2743 -7.3179
+S-66	Tel . :
+T-66	Tel . : <<unk>> 36 1 888 53 00 hungary<<unk>> msd<<unk>> merck . com
+H-66	-0.679953396320343	Tel : <unk> 353 ( 0 ) 2 403 ( 0 ) 2 000 ( 0 ) 2 000 ( 0 ) 2 000 ( 0 ) 2 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ( 0
+D-66	-0.679953396320343	Tel : <unk> 353 ( 0 ) 2 403 ( 0 ) 2 000 ( 0 ) 2 000 ( 0 ) 2 000 ( 0 ) 2 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ( 0
+P-66	-0.0217 -0.3078 -0.0411 -1.8853 -1.1395 -0.2225 -0.0216 -0.1132 -2.0541 -3.6250 -4.4035 -1.3736 -0.0265 -0.1146 -2.1511 -3.1298 -2.6493 -0.2184 -0.2214 -2.3904 -2.3918 -0.9407 -0.2951 -0.3878 -2.0079 -2.1762 -0.5895 -0.3955 -0.4364 -2.0465 -1.6249 -0.6391 -0.3966 -0.7956 -1.3378 -1.4760 -1.2127 -0.3691 -0.7873 -0.9837 -1.0708 -0.9624 -0.3540 -1.6612 -0.2209 -0.1736 -1.0196 -0.8505 -0.8691 -0.2944 -0.3263 -0.6850 -0.7887 -0.5454 -0.2995 -0.6478 -0.5050 -0.6859 -0.4753 -0.3131 -1.6148 -0.2552 -0.1739 -0.6176 -0.4943 -0.5451 -0.3033 -0.3084 -0.4173 -0.4327 -0.3378 -0.3163 -0.2486 -0.3911 -0.4149 -0.2323 -0.3146 -0.2237 -0.4198 -0.3902 -0.3032 -0.3152 -0.3136 -0.4055 -0.4009 -0.2622 -0.3031 -0.6856 -0.4405 -0.4008 -0.2698 -0.3069 -0.8026 -0.4095 -0.3344 -0.1518 -0.3053 -1.3574 -0.2607 -0.5692 -0.4083 -0.4257 -0.1289 -0.2941 -1.4410 -0.2511 -0.3474 -0.4618 -0.8961 -0.1274 -0.2887 -0.5710 -0.3955 -0.6996 -0.1254 -0.2861 -0.7509 -0.2619 -0.5524 -0.3806 -0.7595 -0.1323 -0.2656 -0.8586 -0.2545 -0.8750 -0.4009 -0.8055 -0.1414 -0.2704 -0.5330 -0.2521 -1.0822 -0.2428 -0.7557 -0.4335 -1.1176 -0.1697 -0.2574 -1.3688 -0.4648 -1.0337 -0.1844 -0.2763 -0.4711 -0.2674 -1.4172 -0.4613 -1.2641 -0.2064 -0.2777 -0.5870 -0.2747 -1.0212 -0.4555 -1.4661 -0.4614 -1.3197 -0.1681 -0.2920 -0.3329 -0.2871 -0.4503 -0.2760 -0.9303 -0.2683 -0.7049 -0.4744 -0.3854 -0.4688 -0.9187 -0.4535 -1.5151 -0.1524 -0.3057 -0.2709 -0.2930 -0.3134 -0.2886 -0.4984 -0.2924 -0.8361 -0.2803 -0.9190 -0.5176 -0.3809 -0.4872 -0.9589 -0.4581 -1.8320 -0.1515 -0.2998 -0.2331 -0.2954 -0.2493 -0.2941 -0.3834 -0.2882 -0.6932 -0.2743 -7.3179
+S-55	Tel : +
+T-55	Ireland Merck Sharp and Dohme Ireland ( Human Health ) Limited Tel : <<unk>> 353 ( 0<<unk>> 1 2998771 medinfo<<unk>> ireland<<unk>> merck . com
+H-55	-1.0641506910324097	Tel : + 1 ( 0 ) 2 0 0 0 0 0 0 0
+D-55	-1.0641506910324097	Tel : + 1 ( 0 ) 2 0 0 0 0 0 0 0
+P-55	-0.0205 -0.1325 -0.1706 -1.5714 -1.5457 -0.0346 -0.1227 -2.2748 -3.1140 -0.8954 -0.6903 -0.5174 -0.4605 -0.4195 -0.4474 -4.6091
+S-70	Tel : +
+T-70	Ireland Merck Sharp and Dohme Ireland ( Human Health ) Limited Tel : <<unk>> 353 ( 0<<unk>> 1 2998771 medinfo<<unk>> ireland<<unk>> merck . com
+H-70	-1.0641506910324097	Tel : + 1 ( 0 ) 2 0 0 0 0 0 0 0
+D-70	-1.0641506910324097	Tel : + 1 ( 0 ) 2 0 0 0 0 0 0 0
+P-70	-0.0205 -0.1325 -0.1706 -1.5714 -1.5457 -0.0346 -0.1227 -2.2748 -3.1140 -0.8954 -0.6903 -0.5174 -0.4605 -0.4195 -0.4474 -4.6091
+S-46	Häufig :
+T-46	The following terms are used to describe how often side effects have been reported :
+H-46	-1.404526948928833	Common :
+D-46	-1.404526948928833	Common :
+P-46	-4.6892 -0.1398 -0.5150 -0.2741
+S-68	Tel :
+T-68	Tel . : <<unk>> 48 22 549 51 00 msdpolska<<unk>> merck . com
+H-68	-0.6876125335693359	Tel : <unk> 353 ( 0 ) 2 403 ( 0 ) 2 000 ( 0 ) 2 000 ( 0 ) 2 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 ) 1 ) 1 000 ( 0 ( 0 ( 0
+D-68	-0.6876125335693359	Tel : <unk> 353 ( 0 ) 2 403 ( 0 ) 2 000 ( 0 ) 2 000 ( 0 ) 2 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 ) 1 ) 1 000 ( 0 ( 0 ( 0
+P-68	-0.0556 -0.1237 -0.0188 -1.8085 -0.9397 -0.1490 -0.0153 -0.1217 -1.9728 -3.3359 -4.2189 -1.2186 -0.0276 -0.1252 -2.1009 -2.9295 -2.4803 -0.2224 -0.2035 -2.4467 -2.2470 -0.8460 -0.2744 -0.4602 -2.0208 -2.0464 -0.4972 -0.4007 -0.6685 -1.5015 -1.8608 -0.9452 -0.4061 -1.9665 -0.2264 -0.1270 -1.4547 -1.6844 -1.1546 -0.3593 -0.2569 -1.0269 -1.4935 -0.7321 -0.3733 -0.6353 -0.8010 -1.1671 -0.5694 -0.3813 -0.8295 -0.6632 -0.9853 -0.3452 -0.3636 -1.2271 -0.5022 -0.7744 -0.3090 -0.3664 -1.1005 -0.3114 -0.2523 -0.6290 -0.6015 -0.3262 -0.3443 -0.4850 -0.4135 -0.5058 -0.2274 -0.3549 -0.4136 -0.3931 -0.5073 -0.1648 -0.3532 -0.3456 -0.4175 -0.4928 -0.1878 -0.3546 -0.4283 -0.4264 -0.5057 -0.1762 -0.3371 -0.8520 -0.4595 -0.5319 -0.1871 -0.3379 -0.9415 -0.4182 -0.5166 -0.1363 -0.3282 -1.0350 -0.2674 -0.6445 -0.4166 -0.6376 -0.1207 -0.3020 -1.4497 -0.4231 -0.8239 -0.1222 -0.3044 -1.0821 -0.2686 -0.4605 -0.4014 -1.1560 -0.1193 -0.2804 -0.7052 -0.2642 -0.5364 -0.3891 -1.4948 -0.1258 -0.2679 -0.8173 -0.2609 -0.9877 -0.4075 -1.2610 -0.1345 -0.2730 -0.4573 -0.2600 -0.9332 -0.2477 -1.7235 -0.2440 -0.2024 -0.4643 -0.6842 -0.4939 -1.9650 -0.1563 -0.2788 -0.3360 -0.2715 -0.5327 -0.2600 -1.5288 -0.2511 -0.3897 -0.4991 -0.5115 -0.4775 -1.3973 -0.4768 -1.3962 -0.1448 -0.2800 -0.2140 -0.2742 -0.2405 -0.2712 -0.3673 -0.2593 -0.6838 -0.2508 -0.8199 -0.5379 -0.2886 -0.5268 -0.7500 -0.5083 -2.1809 -0.1412 -0.2939 -0.1835 -0.2801 -0.2173 -0.2770 -0.3350 -0.2780 -0.5244 -0.2685 -1.0502 -0.2584 -0.5054 -0.6066 -0.2269 -0.5714 -0.5666 -0.5692 -1.1900 -0.5485 -2.1546 -0.1265 -0.3000 -0.1747 -0.2891 -0.2002 -0.2774 -7.2877
+S-69	Tel :
+T-69	Tel : <<unk>> 34 93 600 37 00 medicaldep<<unk>> ferrergrupo . com
+H-69	-0.6876125335693359	Tel : <unk> 353 ( 0 ) 2 403 ( 0 ) 2 000 ( 0 ) 2 000 ( 0 ) 2 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 ) 1 ) 1 000 ( 0 ( 0 ( 0
+D-69	-0.6876125335693359	Tel : <unk> 353 ( 0 ) 2 403 ( 0 ) 2 000 ( 0 ) 2 000 ( 0 ) 2 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 ) 1 ) 1 000 ( 0 ( 0 ( 0
+P-69	-0.0556 -0.1237 -0.0188 -1.8085 -0.9397 -0.1490 -0.0153 -0.1217 -1.9728 -3.3359 -4.2189 -1.2186 -0.0276 -0.1252 -2.1009 -2.9295 -2.4803 -0.2224 -0.2035 -2.4467 -2.2470 -0.8460 -0.2744 -0.4602 -2.0208 -2.0464 -0.4972 -0.4007 -0.6685 -1.5015 -1.8608 -0.9452 -0.4061 -1.9665 -0.2264 -0.1270 -1.4547 -1.6844 -1.1546 -0.3593 -0.2569 -1.0269 -1.4935 -0.7321 -0.3733 -0.6353 -0.8010 -1.1671 -0.5694 -0.3813 -0.8295 -0.6632 -0.9853 -0.3452 -0.3636 -1.2271 -0.5022 -0.7744 -0.3090 -0.3664 -1.1005 -0.3114 -0.2523 -0.6290 -0.6015 -0.3262 -0.3443 -0.4850 -0.4135 -0.5058 -0.2274 -0.3549 -0.4136 -0.3931 -0.5073 -0.1648 -0.3532 -0.3456 -0.4175 -0.4928 -0.1878 -0.3546 -0.4283 -0.4264 -0.5057 -0.1762 -0.3371 -0.8520 -0.4595 -0.5319 -0.1871 -0.3379 -0.9415 -0.4182 -0.5166 -0.1363 -0.3282 -1.0350 -0.2674 -0.6445 -0.4166 -0.6376 -0.1207 -0.3020 -1.4497 -0.4231 -0.8239 -0.1222 -0.3044 -1.0821 -0.2686 -0.4605 -0.4014 -1.1560 -0.1193 -0.2804 -0.7052 -0.2642 -0.5364 -0.3891 -1.4948 -0.1258 -0.2679 -0.8173 -0.2609 -0.9877 -0.4075 -1.2610 -0.1345 -0.2730 -0.4573 -0.2600 -0.9332 -0.2477 -1.7235 -0.2440 -0.2024 -0.4643 -0.6842 -0.4939 -1.9650 -0.1563 -0.2788 -0.3360 -0.2715 -0.5327 -0.2600 -1.5288 -0.2511 -0.3897 -0.4991 -0.5115 -0.4775 -1.3973 -0.4768 -1.3962 -0.1448 -0.2800 -0.2140 -0.2742 -0.2405 -0.2712 -0.3673 -0.2593 -0.6838 -0.2508 -0.8199 -0.5379 -0.2886 -0.5268 -0.7500 -0.5083 -2.1809 -0.1412 -0.2939 -0.1835 -0.2801 -0.2173 -0.2770 -0.3350 -0.2780 -0.5244 -0.2685 -1.0502 -0.2584 -0.5054 -0.6066 -0.2269 -0.5714 -0.5666 -0.5692 -1.1900 -0.5485 -2.1546 -0.1265 -0.3000 -0.1747 -0.2891 -0.2002 -0.2774 -7.2877
+S-53	Tel :
+T-53	Tel . : <<unk>> 48 22 549 51 00 msdpolska<<unk>> merck . com
+H-53	-0.6876125335693359	Tel : <unk> 353 ( 0 ) 2 403 ( 0 ) 2 000 ( 0 ) 2 000 ( 0 ) 2 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 ) 1 ) 1 000 ( 0 ( 0 ( 0
+D-53	-0.6876125335693359	Tel : <unk> 353 ( 0 ) 2 403 ( 0 ) 2 000 ( 0 ) 2 000 ( 0 ) 2 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 ) 1 ) 1 000 ( 0 ( 0 ( 0
+P-53	-0.0556 -0.1237 -0.0188 -1.8085 -0.9397 -0.1490 -0.0153 -0.1217 -1.9728 -3.3359 -4.2189 -1.2186 -0.0276 -0.1252 -2.1009 -2.9295 -2.4803 -0.2224 -0.2035 -2.4467 -2.2470 -0.8460 -0.2744 -0.4602 -2.0208 -2.0464 -0.4972 -0.4007 -0.6685 -1.5015 -1.8608 -0.9452 -0.4061 -1.9665 -0.2264 -0.1270 -1.4547 -1.6844 -1.1546 -0.3593 -0.2569 -1.0269 -1.4935 -0.7321 -0.3733 -0.6353 -0.8010 -1.1671 -0.5694 -0.3813 -0.8295 -0.6632 -0.9853 -0.3452 -0.3636 -1.2271 -0.5022 -0.7744 -0.3090 -0.3664 -1.1005 -0.3114 -0.2523 -0.6290 -0.6015 -0.3262 -0.3443 -0.4850 -0.4135 -0.5058 -0.2274 -0.3549 -0.4136 -0.3931 -0.5073 -0.1648 -0.3532 -0.3456 -0.4175 -0.4928 -0.1878 -0.3546 -0.4283 -0.4264 -0.5057 -0.1762 -0.3371 -0.8520 -0.4595 -0.5319 -0.1871 -0.3379 -0.9415 -0.4182 -0.5166 -0.1363 -0.3282 -1.0350 -0.2674 -0.6445 -0.4166 -0.6376 -0.1207 -0.3020 -1.4497 -0.4231 -0.8239 -0.1222 -0.3044 -1.0821 -0.2686 -0.4605 -0.4014 -1.1560 -0.1193 -0.2804 -0.7052 -0.2642 -0.5364 -0.3891 -1.4948 -0.1258 -0.2679 -0.8173 -0.2609 -0.9877 -0.4075 -1.2610 -0.1345 -0.2730 -0.4573 -0.2600 -0.9332 -0.2477 -1.7235 -0.2440 -0.2024 -0.4643 -0.6842 -0.4939 -1.9650 -0.1563 -0.2788 -0.3360 -0.2715 -0.5327 -0.2600 -1.5288 -0.2511 -0.3897 -0.4991 -0.5115 -0.4775 -1.3973 -0.4768 -1.3962 -0.1448 -0.2800 -0.2140 -0.2742 -0.2405 -0.2712 -0.3673 -0.2593 -0.6838 -0.2508 -0.8199 -0.5379 -0.2886 -0.5268 -0.7500 -0.5083 -2.1809 -0.1412 -0.2939 -0.1835 -0.2801 -0.2173 -0.2770 -0.3350 -0.2780 -0.5244 -0.2685 -1.0502 -0.2584 -0.5054 -0.6066 -0.2269 -0.5714 -0.5666 -0.5692 -1.1900 -0.5485 -2.1546 -0.1265 -0.3000 -0.1747 -0.2891 -0.2002 -0.2774 -7.2877
+S-54	Tel :
+T-54	Tel : <<unk>> 34 93 600 37 00 medicaldep<<unk>> ferrergrupo . com
+H-54	-0.6876125335693359	Tel : <unk> 353 ( 0 ) 2 403 ( 0 ) 2 000 ( 0 ) 2 000 ( 0 ) 2 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 ) 1 ) 1 000 ( 0 ( 0 ( 0
+D-54	-0.6876125335693359	Tel : <unk> 353 ( 0 ) 2 403 ( 0 ) 2 000 ( 0 ) 2 000 ( 0 ) 2 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 ) 1 ) 1 000 ( 0 ( 0 ( 0
+P-54	-0.0556 -0.1237 -0.0188 -1.8085 -0.9397 -0.1490 -0.0153 -0.1217 -1.9728 -3.3359 -4.2189 -1.2186 -0.0276 -0.1252 -2.1009 -2.9295 -2.4803 -0.2224 -0.2035 -2.4467 -2.2470 -0.8460 -0.2744 -0.4602 -2.0208 -2.0464 -0.4972 -0.4007 -0.6685 -1.5015 -1.8608 -0.9452 -0.4061 -1.9665 -0.2264 -0.1270 -1.4547 -1.6844 -1.1546 -0.3593 -0.2569 -1.0269 -1.4935 -0.7321 -0.3733 -0.6353 -0.8010 -1.1671 -0.5694 -0.3813 -0.8295 -0.6632 -0.9853 -0.3452 -0.3636 -1.2271 -0.5022 -0.7744 -0.3090 -0.3664 -1.1005 -0.3114 -0.2523 -0.6290 -0.6015 -0.3262 -0.3443 -0.4850 -0.4135 -0.5058 -0.2274 -0.3549 -0.4136 -0.3931 -0.5073 -0.1648 -0.3532 -0.3456 -0.4175 -0.4928 -0.1878 -0.3546 -0.4283 -0.4264 -0.5057 -0.1762 -0.3371 -0.8520 -0.4595 -0.5319 -0.1871 -0.3379 -0.9415 -0.4182 -0.5166 -0.1363 -0.3282 -1.0350 -0.2674 -0.6445 -0.4166 -0.6376 -0.1207 -0.3020 -1.4497 -0.4231 -0.8239 -0.1222 -0.3044 -1.0821 -0.2686 -0.4605 -0.4014 -1.1560 -0.1193 -0.2804 -0.7052 -0.2642 -0.5364 -0.3891 -1.4948 -0.1258 -0.2679 -0.8173 -0.2609 -0.9877 -0.4075 -1.2610 -0.1345 -0.2730 -0.4573 -0.2600 -0.9332 -0.2477 -1.7235 -0.2440 -0.2024 -0.4643 -0.6842 -0.4939 -1.9650 -0.1563 -0.2788 -0.3360 -0.2715 -0.5327 -0.2600 -1.5288 -0.2511 -0.3897 -0.4991 -0.5115 -0.4775 -1.3973 -0.4768 -1.3962 -0.1448 -0.2800 -0.2140 -0.2742 -0.2405 -0.2712 -0.3673 -0.2593 -0.6838 -0.2508 -0.8199 -0.5379 -0.2886 -0.5268 -0.7500 -0.5083 -2.1809 -0.1412 -0.2939 -0.1835 -0.2801 -0.2173 -0.2770 -0.3350 -0.2780 -0.5244 -0.2685 -1.0502 -0.2584 -0.5054 -0.6066 -0.2269 -0.5714 -0.5666 -0.5692 -1.1900 -0.5485 -2.1546 -0.1265 -0.3000 -0.1747 -0.2891 -0.2002 -0.2774 -7.2877
+S-52	Tel :
+T-52	Eesti Österreich Merck Sharp <<unk>> Dohme OÜ Tel . : <<unk>> 372 613 9750 msdeesti<<unk>> merck . com
+H-52	-0.6876125335693359	Tel : <unk> 353 ( 0 ) 2 403 ( 0 ) 2 000 ( 0 ) 2 000 ( 0 ) 2 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 ) 1 ) 1 000 ( 0 ( 0 ( 0
+D-52	-0.6876125335693359	Tel : <unk> 353 ( 0 ) 2 403 ( 0 ) 2 000 ( 0 ) 2 000 ( 0 ) 2 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 ) 1 ) 1 000 ( 0 ( 0 ( 0
+P-52	-0.0556 -0.1237 -0.0188 -1.8085 -0.9397 -0.1490 -0.0153 -0.1217 -1.9728 -3.3359 -4.2189 -1.2186 -0.0276 -0.1252 -2.1009 -2.9295 -2.4803 -0.2224 -0.2035 -2.4467 -2.2470 -0.8460 -0.2744 -0.4602 -2.0208 -2.0464 -0.4972 -0.4007 -0.6685 -1.5015 -1.8608 -0.9452 -0.4061 -1.9665 -0.2264 -0.1270 -1.4547 -1.6844 -1.1546 -0.3593 -0.2569 -1.0269 -1.4935 -0.7321 -0.3733 -0.6353 -0.8010 -1.1671 -0.5694 -0.3813 -0.8295 -0.6632 -0.9853 -0.3452 -0.3636 -1.2271 -0.5022 -0.7744 -0.3090 -0.3664 -1.1005 -0.3114 -0.2523 -0.6290 -0.6015 -0.3262 -0.3443 -0.4850 -0.4135 -0.5058 -0.2274 -0.3549 -0.4136 -0.3931 -0.5073 -0.1648 -0.3532 -0.3456 -0.4175 -0.4928 -0.1878 -0.3546 -0.4283 -0.4264 -0.5057 -0.1762 -0.3371 -0.8520 -0.4595 -0.5319 -0.1871 -0.3379 -0.9415 -0.4182 -0.5166 -0.1363 -0.3282 -1.0350 -0.2674 -0.6445 -0.4166 -0.6376 -0.1207 -0.3020 -1.4497 -0.4231 -0.8239 -0.1222 -0.3044 -1.0821 -0.2686 -0.4605 -0.4014 -1.1560 -0.1193 -0.2804 -0.7052 -0.2642 -0.5364 -0.3891 -1.4948 -0.1258 -0.2679 -0.8173 -0.2609 -0.9877 -0.4075 -1.2610 -0.1345 -0.2730 -0.4573 -0.2600 -0.9332 -0.2477 -1.7235 -0.2440 -0.2024 -0.4643 -0.6842 -0.4939 -1.9650 -0.1563 -0.2788 -0.3360 -0.2715 -0.5327 -0.2600 -1.5288 -0.2511 -0.3897 -0.4991 -0.5115 -0.4775 -1.3973 -0.4768 -1.3962 -0.1448 -0.2800 -0.2140 -0.2742 -0.2405 -0.2712 -0.3673 -0.2593 -0.6838 -0.2508 -0.8199 -0.5379 -0.2886 -0.5268 -0.7500 -0.5083 -2.1809 -0.1412 -0.2939 -0.1835 -0.2801 -0.2173 -0.2770 -0.3350 -0.2780 -0.5244 -0.2685 -1.0502 -0.2584 -0.5054 -0.6066 -0.2269 -0.5714 -0.5666 -0.5692 -1.1900 -0.5485 -2.1546 -0.1265 -0.3000 -0.1747 -0.2891 -0.2002 -0.2774 -7.2877
+S-67	Tel :
+T-67	50 Eesti Österreich Merck Sharp <<unk>> Dohme OÜ Tel . : <<unk>> 372 613 9750 msdeesti<<unk>> merck . com
+H-67	-0.6876125335693359	Tel : <unk> 353 ( 0 ) 2 403 ( 0 ) 2 000 ( 0 ) 2 000 ( 0 ) 2 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 ) 1 ) 1 000 ( 0 ( 0 ( 0
+D-67	-0.6876125335693359	Tel : <unk> 353 ( 0 ) 2 403 ( 0 ) 2 000 ( 0 ) 2 000 ( 0 ) 2 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ) 1 000 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 ) 1 000 ( 0 ( 0 ( 0 ( 0 ( 0 ( 0 ) 1 ) 1 ) 1 ) 1 000 ( 0 ( 0 ( 0
+P-67	-0.0556 -0.1237 -0.0188 -1.8085 -0.9397 -0.1490 -0.0153 -0.1217 -1.9728 -3.3359 -4.2189 -1.2186 -0.0276 -0.1252 -2.1009 -2.9295 -2.4803 -0.2224 -0.2035 -2.4467 -2.2470 -0.8460 -0.2744 -0.4602 -2.0208 -2.0464 -0.4972 -0.4007 -0.6685 -1.5015 -1.8608 -0.9452 -0.4061 -1.9665 -0.2264 -0.1270 -1.4547 -1.6844 -1.1546 -0.3593 -0.2569 -1.0269 -1.4935 -0.7321 -0.3733 -0.6353 -0.8010 -1.1671 -0.5694 -0.3813 -0.8295 -0.6632 -0.9853 -0.3452 -0.3636 -1.2271 -0.5022 -0.7744 -0.3090 -0.3664 -1.1005 -0.3114 -0.2523 -0.6290 -0.6015 -0.3262 -0.3443 -0.4850 -0.4135 -0.5058 -0.2274 -0.3549 -0.4136 -0.3931 -0.5073 -0.1648 -0.3532 -0.3456 -0.4175 -0.4928 -0.1878 -0.3546 -0.4283 -0.4264 -0.5057 -0.1762 -0.3371 -0.8520 -0.4595 -0.5319 -0.1871 -0.3379 -0.9415 -0.4182 -0.5166 -0.1363 -0.3282 -1.0350 -0.2674 -0.6445 -0.4166 -0.6376 -0.1207 -0.3020 -1.4497 -0.4231 -0.8239 -0.1222 -0.3044 -1.0821 -0.2686 -0.4605 -0.4014 -1.1560 -0.1193 -0.2804 -0.7052 -0.2642 -0.5364 -0.3891 -1.4948 -0.1258 -0.2679 -0.8173 -0.2609 -0.9877 -0.4075 -1.2610 -0.1345 -0.2730 -0.4573 -0.2600 -0.9332 -0.2477 -1.7235 -0.2440 -0.2024 -0.4643 -0.6842 -0.4939 -1.9650 -0.1563 -0.2788 -0.3360 -0.2715 -0.5327 -0.2600 -1.5288 -0.2511 -0.3897 -0.4991 -0.5115 -0.4775 -1.3973 -0.4768 -1.3962 -0.1448 -0.2800 -0.2140 -0.2742 -0.2405 -0.2712 -0.3673 -0.2593 -0.6838 -0.2508 -0.8199 -0.5379 -0.2886 -0.5268 -0.7500 -0.5083 -2.1809 -0.1412 -0.2939 -0.1835 -0.2801 -0.2173 -0.2770 -0.3350 -0.2780 -0.5244 -0.2685 -1.0502 -0.2584 -0.5054 -0.6066 -0.2269 -0.5714 -0.5666 -0.5692 -1.1900 -0.5485 -2.1546 -0.1265 -0.3000 -0.1747 -0.2891 -0.2002 -0.2774 -7.2877
+S-82	0,43
+T-82	Neonates ( age 0 1 month ) , infants ( age 1 month 2 years ) , children ( age 2 - 12 years ) , adolescents ( age 12 - 16 years ) and adults ( age over 16 years )
+H-82	-0.9985845685005188	0.43 kg
+D-82	-0.9985845685005188	0.43 kg
+P-82	-0.5615 -0.1655 -2.9552 -0.3121
+S-50	Die
+T-50	The active substances are alendronate sodium trihydrate and colecalciferol ( vitamin D3 ) .
+H-50	-0.9113240838050842	The study also looked at the effect of ACOMPLIA on mood disorders in patients with pre-existing major macrovascular disease , the study found .
+D-50	-0.9113240838050842	The study also looked at the effect of ACOMPLIA on mood disorders in patients with pre-existing major macrovascular disease , the study found .
+P-50	-1.3571 -4.7396 -2.5465 -0.5080 -0.0982 -2.1678 -0.6083 -0.2207 -1.2842 -0.0200 -0.0080 -0.0207 -0.0010 -0.2241 -1.9139 -1.3937 -0.1093 -2.4282 -2.3627 -2.6956 -0.7140 -0.0453 -0.0377 -0.2153 -0.7709 -0.0763 -0.0437 -0.0104 -0.0510 -0.1241 -1.2162 -1.9072 -1.1246 -1.3881 -0.2125 -0.1628
+S-43	(
+T-43	40 3 ) Do not lie down stay fully upright ( sitting , standing or walking ) for at least 30 minutes after swallowing the tablet .
+H-43	-1.4637229442596436	( CNN ) -- A Florida man has been charged with attempted murder in the death of a woman who was stabbed in the back of a car during a traffic stop , authorities said Thursday .
+D-43	-1.4637229442596436	( CNN ) -- A Florida man has been charged with attempted murder in the death of a woman who was stabbed in the back of a car during a traffic stop , authorities said Thursday .
+P-43	-3.7416 -3.0245 -0.1706 -0.2258 -2.0832 -3.7004 -1.3866 -2.1563 -0.4018 -1.1087 -0.2227 -3.3765 -0.7034 -1.6036 -0.3098 -2.2727 -0.1614 -0.4719 -2.2542 -0.8207 -0.9625 -4.0224 -1.2103 -0.6996 -1.7979 -0.8961 -0.5750 -1.0631 -2.9988 -0.3231 -3.6051 -0.1641 -2.1097 -0.9536 -0.6623 -3.0372 -0.1838 -0.1604
+S-317	2
+T-317	2 a history of haemorrhagic stroke or with risk factors which could increase the risk of haemorrhagic stroke .
+H-317	-0.4959897994995117	If you take more ACOMPLIA than you should if you are taking more ACOMPLIA than you should if you are taking more ACOMPLIA than you should if you are taking more ACOMPLIA than you should if you are taking more ACOMPLIA than you should be .
+D-317	-0.4959897994995117	If you take more ACOMPLIA than you should if you are taking more ACOMPLIA than you should if you are taking more ACOMPLIA than you should if you are taking more ACOMPLIA than you should if you are taking more ACOMPLIA than you should be .
+P-317	-6.5302 -0.3960 -2.7242 -2.4811 -0.7607 -0.0445 -0.0266 -0.0257 -0.0023 -0.1715 -0.2067 -0.0394 -2.2473 -0.1207 -2.4244 -0.9462 -0.7079 -0.0322 -0.0934 -0.0208 -0.1257 -0.0052 -0.3226 -0.0844 -0.0362 -0.8675 -0.1102 -0.5089 -0.1383 -0.4772 -0.0314 -0.1034 -0.0329 -0.1240 -0.0057 -0.3947 -0.0782 -0.0362 -0.5834 -0.1068 -0.3389 -0.1215 -0.5430 -0.0371 -0.1028 -0.0329 -0.1325 -0.0079 -0.6674 -0.0782 -0.0303 -0.4452 -0.0916 -0.3408 -0.1343 -0.5689 -0.0408 -0.1073 -0.0311 -0.1499 -0.0074 -1.0199 -0.0873 -0.0278 -2.3118 -1.4142 -0.1858
+S-44	(
+T-44	4 ) Do not take ADROVANCE at bedtime or before getting up for the day .
+H-44	-1.4637229442596436	( CNN ) -- A Florida man has been charged with attempted murder in the death of a woman who was stabbed in the back of a car during a traffic stop , authorities said Thursday .
+D-44	-1.4637229442596436	( CNN ) -- A Florida man has been charged with attempted murder in the death of a woman who was stabbed in the back of a car during a traffic stop , authorities said Thursday .
+P-44	-3.7416 -3.0245 -0.1706 -0.2258 -2.0832 -3.7004 -1.3866 -2.1563 -0.4018 -1.1087 -0.2227 -3.3765 -0.7034 -1.6036 -0.3098 -2.2727 -0.1614 -0.4719 -2.2542 -0.8207 -0.9625 -4.0224 -1.2103 -0.6996 -1.7979 -0.8961 -0.5750 -1.0631 -2.9988 -0.3231 -3.6051 -0.1641 -2.1097 -0.9536 -0.6623 -3.0372 -0.1838 -0.1604
+S-65	Die
+T-65	The active substances are alendronate sodium trihydrate and colecalciferol ( vitamin D3 ) .
+H-65	-0.9113240838050842	The study also looked at the effect of ACOMPLIA on mood disorders in patients with pre-existing major macrovascular disease , the study found .
+D-65	-0.9113240838050842	The study also looked at the effect of ACOMPLIA on mood disorders in patients with pre-existing major macrovascular disease , the study found .
+P-65	-1.3571 -4.7396 -2.5465 -0.5080 -0.0982 -2.1678 -0.6083 -0.2207 -1.2842 -0.0200 -0.0080 -0.0207 -0.0010 -0.2241 -1.9139 -1.3937 -0.1093 -2.4282 -2.3627 -2.6956 -0.7140 -0.0453 -0.0377 -0.2153 -0.7709 -0.0763 -0.0437 -0.0104 -0.0510 -0.1241 -1.2162 -1.9072 -1.1246 -1.3881 -0.2125 -0.1628
+S-64	Das
+T-64	The expiry date refers to the last day of that month .
+H-64	-1.1216754913330078	This is Money has a regularly updated guide to the best offers carefully chosen by its expert writers our guide
+D-64	-1.1216754913330078	This is Money has a regularly updated guide to the best offers carefully chosen by its expert writers our guide
+P-64	-5.9012 -0.9142 -1.2326 -1.3705 -1.9094 -1.0950 -0.1146 -2.3099 -0.1646 -0.0664 -0.4641 -0.1648 -0.0729 -0.2402 -0.9045 -0.5696 -1.1995 -0.0641 -0.0502 -0.8975 -3.8493
+S-35	2.
+T-35	ADROVANCE 70 mg/ 2800 IU tablets Alendronic acid as alendronate sodium trihydrate/ colecalciferol
+H-35	-0.8610567450523376	2 ) If you take ACOMPLIA with you , you should be advised to take precautions to avoid hypoglycaemia whilst you are taking it .
+D-35	-0.8610567450523376	2 ) If you take ACOMPLIA with you , you should be advised to take precautions to avoid hypoglycaemia whilst you are taking it .
+P-35	-4.6200 -2.1282 -2.2045 -0.3788 -2.5650 -1.8901 -0.0287 -0.0283 -0.0274 -0.0019 -2.6804 -0.2658 -0.9462 -1.4204 -0.4471 -1.2034 -0.9189 -0.2862 -0.0770 -1.6847 -0.0297 -0.1100 -0.2839 -0.0577 -0.0677 -0.0592 -0.0086 -0.0199 -0.0587 -0.1257 -3.5026 -1.3148 -0.1020 -0.4525 -1.0443 -0.6386 -0.1803
+S-36	2.
+T-36	ADROVANCE 70 mg/ 2800 IU tablets Alendronic acid as alendronate sodium trihydrate/ colecalciferol
+H-36	-0.8610567450523376	2 ) If you take ACOMPLIA with you , you should be advised to take precautions to avoid hypoglycaemia whilst you are taking it .
+D-36	-0.8610567450523376	2 ) If you take ACOMPLIA with you , you should be advised to take precautions to avoid hypoglycaemia whilst you are taking it .
+P-36	-4.6200 -2.1282 -2.2045 -0.3788 -2.5650 -1.8901 -0.0287 -0.0283 -0.0274 -0.0019 -2.6804 -0.2658 -0.9462 -1.4204 -0.4471 -1.2034 -0.9189 -0.2862 -0.0770 -1.6847 -0.0297 -0.1100 -0.2839 -0.0577 -0.0677 -0.0592 -0.0086 -0.0199 -0.0587 -0.1257 -3.5026 -1.3148 -0.1020 -0.4525 -1.0443 -0.6386 -0.1803
+S-41	Sie
+T-41	It is very important to follow instructions 2 ) , 3 ) , 4 ) and 5 ) to help the ADROVANCE tablet reach your stomach quickly and help reduce the chance of irritating your gullet ( oesophagus - the tube that connects your mouth with your stomach ) .
+H-41	-0.7700360417366028	You should be advised to take precautions to avoid hypoglycaemia whilst you are being treated .
+D-41	-0.7700360417366028	You should be advised to take precautions to avoid hypoglycaemia whilst you are being treated .
+P-41	-2.1530 -3.5771 -1.5377 -3.6217 -0.3211 -0.0898 -0.1315 -0.0289 -0.1062 -0.1120 -0.0500 -0.1173 -0.0478 -0.0119 -0.0170 -0.0749 -0.1269 -1.6260 -1.1578 -0.0891 -2.4735 -0.1396 -0.6965 -0.1736
+S-59	Sie
+T-59	It is very important to follow instructions 2 ) , 3 ) , 4 ) and 5 ) to help the ADROVANCE tablet reach your stomach quickly and help reduce the chance of irritating your gullet ( oesophagus - the tube that connects your mouth with your stomach ) .
+H-59	-0.7700360417366028	You should be advised to take precautions to avoid hypoglycaemia whilst you are being treated .
+D-59	-0.7700360417366028	You should be advised to take precautions to avoid hypoglycaemia whilst you are being treated .
+P-59	-2.1530 -3.5771 -1.5377 -3.6217 -0.3211 -0.0898 -0.1315 -0.0289 -0.1062 -0.1120 -0.0500 -0.1173 -0.0478 -0.0119 -0.0170 -0.0749 -0.1269 -1.6260 -1.1578 -0.0891 -2.4735 -0.1396 -0.6965 -0.1736
+S-42	(
+T-42	2 ) After getting up for the day and before taking any food , drink , or other medicine , swallow your ADROVANCE tablet with a full glass of water only ( not mineral water ) ( not less than 200 ml or 7 fl . oz . ) . Do not take with mineral water ( still or sparkling ) . Do not take with coffee or tea . Do not take with juice or milk .
+H-42	-1.4637229442596436	( CNN ) -- A Florida man has been charged with attempted murder in the death of a woman who was stabbed in the back of a car during a traffic stop , authorities said Thursday .
+D-42	-1.4637229442596436	( CNN ) -- A Florida man has been charged with attempted murder in the death of a woman who was stabbed in the back of a car during a traffic stop , authorities said Thursday .
+P-42	-3.7416 -3.0245 -0.1706 -0.2258 -2.0832 -3.7004 -1.3866 -2.1563 -0.4018 -1.1087 -0.2227 -3.3765 -0.7034 -1.6036 -0.3098 -2.2727 -0.1614 -0.4719 -2.2542 -0.8207 -0.9625 -4.0224 -1.2103 -0.6996 -1.7979 -0.8961 -0.5750 -1.0631 -2.9988 -0.3231 -3.6051 -0.1641 -2.1097 -0.9536 -0.6623 -3.0372 -0.1838 -0.1604
+S-49	Das
+T-49	The expiry date refers to the last day of that month .
+H-49	-1.1216754913330078	This is Money has a regularly updated guide to the best offers carefully chosen by its expert writers our guide
+D-49	-1.1216754913330078	This is Money has a regularly updated guide to the best offers carefully chosen by its expert writers our guide
+P-49	-5.9012 -0.9142 -1.2326 -1.3705 -1.9094 -1.0950 -0.1146 -2.3099 -0.1646 -0.0664 -0.4641 -0.1648 -0.0729 -0.2402 -0.9045 -0.5696 -1.1995 -0.0641 -0.0502 -0.8975 -3.8493
+S-108	Tierexperimentelle Reproduktionsstudien wurden mit Faktor VIII nicht durchgeführt .
+T-108	Animal reproduction studies have not been conducted with factor VIII .
+H-108	-0.2595415413379669	Animal reproductive studies have not been performed with factor VIII .
+D-108	-0.2595415413379669	Animal reproductive studies have not been performed with factor VIII .
+P-108	-0.6420 -0.0746 -0.1565 -0.3999 -0.0490 -0.6831 -0.0997 -0.0936 -0.2897 -0.4982 -0.3399 -0.1648 -0.0745 -0.1636 -0.1640
+S-77	Ausgeprägtere Gelenkblutung , Muskelblutung oder Hämatom .
+T-77	More extensive haemarthrosis , muscle bleeding or haematoma .
+H-77	-0.2432514876127243	More pronounced joint haemorrhage , muscle haemorrhage or haematoma .
+D-77	-0.2432514876127243	More pronounced joint haemorrhage , muscle haemorrhage or haematoma .
+P-77	-1.2261 -0.2879 -0.0625 -0.1083 -0.4967 -0.1072 -0.0279 -0.3233 -0.1620 -0.5160 -0.5364 -0.0659 -0.0204 -0.1894 -0.2951 -0.1693 -0.0412 -0.1030 -0.0410 -0.1650 -0.1638
+S-204	Ausgeprägtere Gelenkblutung , Muskelblutung oder Hämatom .
+T-204	More extensive haemarthrosis , muscle bleeding or haematoma .
+H-204	-0.2432514876127243	More pronounced joint haemorrhage , muscle haemorrhage or haematoma .
+D-204	-0.2432514876127243	More pronounced joint haemorrhage , muscle haemorrhage or haematoma .
+P-204	-1.2261 -0.2879 -0.0625 -0.1083 -0.4967 -0.1072 -0.0279 -0.3233 -0.1620 -0.5160 -0.5364 -0.0659 -0.0204 -0.1894 -0.2951 -0.1693 -0.0412 -0.1030 -0.0410 -0.1650 -0.1638
+S-133	Tierexperimentelle Reproduktionsstudien wurden mit Faktor VIII nicht durchgeführt .
+T-133	Animal reproduction studies have not been conducted with factor VIII .
+H-133	-0.2595415413379669	Animal reproductive studies have not been performed with factor VIII .
+D-133	-0.2595415413379669	Animal reproductive studies have not been performed with factor VIII .
+P-133	-0.6420 -0.0746 -0.1565 -0.3999 -0.0490 -0.6831 -0.0997 -0.0936 -0.2897 -0.4982 -0.3399 -0.1648 -0.0745 -0.1636 -0.1640
+S-158	Tierexperimentelle Reproduktionsstudien wurden mit Faktor VIII nicht durchgeführt .
+T-158	Animal reproduction studies have not been conducted with factor VIII .
+H-158	-0.2595415413379669	Animal reproductive studies have not been performed with factor VIII .
+D-158	-0.2595415413379669	Animal reproductive studies have not been performed with factor VIII .
+P-158	-0.6420 -0.0746 -0.1565 -0.3999 -0.0490 -0.6831 -0.0997 -0.0936 -0.2897 -0.4982 -0.3399 -0.1648 -0.0745 -0.1636 -0.1640
+S-183	Tierexperimentelle Reproduktionsstudien wurden mit Faktor VIII nicht durchgeführt .
+T-183	Animal reproduction studies have not been conducted with factor VIII .
+H-183	-0.2595415413379669	Animal reproductive studies have not been performed with factor VIII .
+D-183	-0.2595415413379669	Animal reproductive studies have not been performed with factor VIII .
+P-183	-0.6420 -0.0746 -0.1565 -0.3999 -0.0490 -0.6831 -0.0997 -0.0936 -0.2897 -0.4982 -0.3399 -0.1648 -0.0745 -0.1636 -0.1640
+S-74	1 Durchstechflasche + 1 Durchstechflasche + Gerät zur Rekonstitution
+T-74	1 vial + 1 vial + reconstitution device
+H-74	-0.4111503064632416	1 vial + 1 vial + reconstitution unit
+D-74	-0.4111503064632416	1 vial + 1 vial + reconstitution unit
+P-74	-0.1729 -0.0910 -0.0909 -0.1157 -0.1295 -0.0666 -0.1001 -0.1047 -1.9009 -0.1101 -1.8513 -0.2001
+S-293	eská republika Baxter Czech spol.s.r.o .
+T-293	eská republika Baxter Czech spol . s. r. o.
+H-293	-0.22912321984767914	eská republika Baxter Czech spol. s. r. o .
+D-293	-0.22912321984767914	eská republika Baxter Czech spol. s. r. o .
+P-293	-0.0718 -0.1750 -0.0689 -0.0611 -0.0785 -0.1727 -0.1693 -0.1547 -0.0786 -0.0909 -0.0933 -1.4294 -0.2375 -0.1058 -0.5404 -0.1894 -0.1779
+S-208	Tierexperimentelle Reproduktionsstudien wurden mit Faktor VIII nicht durchgeführt .
+T-208	Animal reproduction studies have not been conducted with factor VIII .
+H-208	-0.2595415413379669	Animal reproductive studies have not been performed with factor VIII .
+D-208	-0.2595415413379669	Animal reproductive studies have not been performed with factor VIII .
+P-208	-0.6420 -0.0746 -0.1565 -0.3999 -0.0490 -0.6831 -0.0997 -0.0936 -0.2897 -0.4982 -0.3399 -0.1648 -0.0745 -0.1636 -0.1640
+S-104	Ausgeprägtere Gelenkblutung , Muskelblutung oder Hämatom .
+T-104	More extensive haemarthrosis , muscle bleeding or haematoma .
+H-104	-0.2432514876127243	More pronounced joint haemorrhage , muscle haemorrhage or haematoma .
+D-104	-0.2432514876127243	More pronounced joint haemorrhage , muscle haemorrhage or haematoma .
+P-104	-1.2261 -0.2879 -0.0625 -0.1083 -0.4967 -0.1072 -0.0279 -0.3233 -0.1620 -0.5160 -0.5364 -0.0659 -0.0204 -0.1894 -0.2951 -0.1693 -0.0412 -0.1030 -0.0410 -0.1650 -0.1638
+S-129	Ausgeprägtere Gelenkblutung , Muskelblutung oder Hämatom .
+T-129	More extensive haemarthrosis , muscle bleeding or haematoma .
+H-129	-0.2432514876127243	More pronounced joint haemorrhage , muscle haemorrhage or haematoma .
+D-129	-0.2432514876127243	More pronounced joint haemorrhage , muscle haemorrhage or haematoma .
+P-129	-1.2261 -0.2879 -0.0625 -0.1083 -0.4967 -0.1072 -0.0279 -0.3233 -0.1620 -0.5160 -0.5364 -0.0659 -0.0204 -0.1894 -0.2951 -0.1693 -0.0412 -0.1030 -0.0410 -0.1650 -0.1638
+S-154	Ausgeprägtere Gelenkblutung , Muskelblutung oder Hämatom .
+T-154	More extensive haemarthrosis , muscle bleeding or haematoma .
+H-154	-0.2432514876127243	More pronounced joint haemorrhage , muscle haemorrhage or haematoma .
+D-154	-0.2432514876127243	More pronounced joint haemorrhage , muscle haemorrhage or haematoma .
+P-154	-1.2261 -0.2879 -0.0625 -0.1083 -0.4967 -0.1072 -0.0279 -0.3233 -0.1620 -0.5160 -0.5364 -0.0659 -0.0204 -0.1894 -0.2951 -0.1693 -0.0412 -0.1030 -0.0410 -0.1650 -0.1638
+S-179	Ausgeprägtere Gelenkblutung , Muskelblutung oder Hämatom .
+T-179	More extensive haemarthrosis , muscle bleeding or haematoma .
+H-179	-0.2432514876127243	More pronounced joint haemorrhage , muscle haemorrhage or haematoma .
+D-179	-0.2432514876127243	More pronounced joint haemorrhage , muscle haemorrhage or haematoma .
+P-179	-1.2261 -0.2879 -0.0625 -0.1083 -0.4967 -0.1072 -0.0279 -0.3233 -0.1620 -0.5160 -0.5364 -0.0659 -0.0204 -0.1894 -0.2951 -0.1693 -0.0412 -0.1030 -0.0410 -0.1650 -0.1638
+S-81	Tierexperimentelle Reproduktionsstudien wurden mit Faktor VIII nicht durchgeführt .
+T-81	Animal reproduction studies have not been conducted with factor VIII .
+H-81	-0.2595415413379669	Animal reproductive studies have not been performed with factor VIII .
+D-81	-0.2595415413379669	Animal reproductive studies have not been performed with factor VIII .
+P-81	-0.6420 -0.0746 -0.1565 -0.3999 -0.0490 -0.6831 -0.0997 -0.0936 -0.2897 -0.4982 -0.3399 -0.1648 -0.0745 -0.1636 -0.1640
+S-144	Zur Verabreichung ist eine Luer-Lock-Spritze erforderlich .
+T-144	For administration the use of a luer-lock syringe is required .
+H-144	-0.30838242173194885	A Luer-Lock syringe is required for administration .
+D-144	-0.30838242173194885	A Luer-Lock syringe is required for administration .
+P-144	-1.1589 -0.1603 -0.3531 -0.3678 -0.7142 -0.0717 -0.1734 -0.0344 -0.0308 -0.1416 -0.2973 -0.3977 -0.4001 -0.1682 -0.1562
+S-220	Zur Verabreichung ist eine Luer-Lock-Spritze erforderlich .
+T-220	For administration the use of a luer-lock syringe is required .
+H-220	-0.30838242173194885	A Luer-Lock syringe is required for administration .
+D-220	-0.30838242173194885	A Luer-Lock syringe is required for administration .
+P-220	-1.1589 -0.1603 -0.3531 -0.3678 -0.7142 -0.0717 -0.1734 -0.0344 -0.0308 -0.1416 -0.2973 -0.3977 -0.4001 -0.1682 -0.1562
+S-93	Lagerungsbedingungen des rekonstiutierten Produktes siehe Abschnitt 6.3 .
+T-93	For storage conditions of the reconstituted medicinal product , see section 6.3 .
+H-93	-0.24187450110912323	For storage conditions of the reconstituted product , see section 6.3 .
+D-93	-0.24187450110912323	For storage conditions of the reconstituted product , see section 6.3 .
+P-93	-0.2953 -0.2632 -0.2778 -0.1541 -0.1366 -1.2408 -0.1492 -0.0879 -0.1220 -0.2634 -0.1369 -0.1565 -0.0967 -0.1528 -0.1774 -0.1595
+S-169	Zur Verabreichung ist eine Luer-Lock-Spritze erforderlich .
+T-169	For administration the use of a luer-lock syringe is required .
+H-169	-0.30838242173194885	A Luer-Lock syringe is required for administration .
+D-169	-0.30838242173194885	A Luer-Lock syringe is required for administration .
+P-169	-1.1589 -0.1603 -0.3531 -0.3678 -0.7142 -0.0717 -0.1734 -0.0344 -0.0308 -0.1416 -0.2973 -0.3977 -0.4001 -0.1682 -0.1562
+S-143	Lagerungsbedingungen des rekonstiutierten Produktes siehe Abschnitt 6.3 .
+T-143	For storage conditions of the reconstituted medicinal product , see section 6.3 .
+H-143	-0.24187450110912323	For storage conditions of the reconstituted product , see section 6.3 .
+D-143	-0.24187450110912323	For storage conditions of the reconstituted product , see section 6.3 .
+P-143	-0.2953 -0.2632 -0.2778 -0.1541 -0.1366 -1.2408 -0.1492 -0.0879 -0.1220 -0.2634 -0.1369 -0.1565 -0.0967 -0.1528 -0.1774 -0.1595
+S-119	Zur Verabreichung ist eine Luer-Lock-Spritze erforderlich .
+T-119	For administration the use of a luer-lock syringe is required .
+H-119	-0.30838242173194885	A Luer-Lock syringe is required for administration .
+D-119	-0.30838242173194885	A Luer-Lock syringe is required for administration .
+P-119	-1.1589 -0.1603 -0.3531 -0.3678 -0.7142 -0.0717 -0.1734 -0.0344 -0.0308 -0.1416 -0.2973 -0.3977 -0.4001 -0.1682 -0.1562
+S-94	Zur Verabreichung ist eine Luer-Lock-Spritze erforderlich .
+T-94	For administration the use of a luer-lock syringe is required .
+H-94	-0.30838242173194885	A Luer-Lock syringe is required for administration .
+D-94	-0.30838242173194885	A Luer-Lock syringe is required for administration .
+P-94	-1.1589 -0.1603 -0.3531 -0.3678 -0.7142 -0.0717 -0.1734 -0.0344 -0.0308 -0.1416 -0.2973 -0.3977 -0.4001 -0.1682 -0.1562
+S-301	Li-Fraumeni-Krebs kann in vielen Teilen des Körpers auftreten .
+T-301	People who have this mutation are more likely to develop cancer .
+H-301	-0.3944489061832428	Cancer of the liver and liver can occur in many parts of the body .
+D-301	-0.3944489061832428	Cancer of the liver and liver can occur in many parts of the body .
+P-301	-1.1451 -0.1484 -0.2303 -0.1187 -1.4492 -0.5680 -0.5963 -0.2362 -0.1371 -0.5850 -0.3366 -0.1277 -0.1509 -0.1391 -0.1793 -0.1633
+S-228	Name und Anschrift des Herstellers des Wirkstoffs biologischen Ursprungs
+T-228	Name and address of the manufacturer of the biological active substance
+H-228	-0.23899397253990173	Name and address of the manufacturer of the biological active substance
+D-228	-0.23899397253990173	Name and address of the manufacturer of the biological active substance
+P-228	-0.2170 -0.1267 -0.1247 -0.1356 -0.1669 -0.1837 -0.1333 -0.1259 -1.1658 -0.2111 -0.2073 -0.1087 -0.2002
+S-130	Art der Anwendung ADVATE soll intravenös verabreicht werden .
+T-130	Method of administration ADVATE should be administered via the intravenous route .
+H-130	-0.21460777521133423	Method of administration ADVATE should be administered intravenously .
+D-130	-0.21460777521133423	Method of administration ADVATE should be administered intravenously .
+P-130	-1.2366 -0.0155 -0.0272 -0.1402 -0.0441 -0.2032 -0.1607 -0.0962 -0.0728 -0.4283 -0.1207 -0.7322 -0.1002 -0.0865 -0.0697 -0.0766 -0.1311 -0.1756 -0.1602
+S-194	Zur Verabreichung ist eine Luer-Lock-Spritze erforderlich .
+T-194	For administration the use of a luer-lock syringe is required .
+H-194	-0.30838242173194885	A Luer-Lock syringe is required for administration .
+D-194	-0.30838242173194885	A Luer-Lock syringe is required for administration .
+P-194	-1.1589 -0.1603 -0.3531 -0.3678 -0.7142 -0.0717 -0.1734 -0.0344 -0.0308 -0.1416 -0.2973 -0.3977 -0.4001 -0.1682 -0.1562
+S-17	Die BMD des Gesamtskeletts stieg ebenfalls signifikant an .
+T-17	Total body BMD also increased significantly .
+H-17	-0.48286694288253784	The BMD of the total keleton was also significantly increased .
+D-17	-0.48286694288253784	The BMD of the total keleton was also significantly increased .
+P-17	-1.5054 -0.5226 -0.1041 -0.1630 -0.1416 -0.1625 -1.8128 -0.3529 -1.3260 -0.1284 -0.1293 -0.1053 -0.1498 -0.1565
+S-118	Lagerungsbedingungen des rekonstiutierten Produktes siehe Abschnitt 6.3 .
+T-118	For storage conditions of the reconstituted medicinal product , see section 6.3 .
+H-118	-0.24187450110912323	For storage conditions of the reconstituted product , see section 6.3 .
+D-118	-0.24187450110912323	For storage conditions of the reconstituted product , see section 6.3 .
+P-118	-0.2953 -0.2632 -0.2778 -0.1541 -0.1366 -1.2408 -0.1492 -0.0879 -0.1220 -0.2634 -0.1369 -0.1565 -0.0967 -0.1528 -0.1774 -0.1595
+S-155	Art der Anwendung ADVATE soll intravenös verabreicht werden .
+T-155	Method of administration ADVATE should be administered via the intravenous route .
+H-155	-0.21460777521133423	Method of administration ADVATE should be administered intravenously .
+D-155	-0.21460777521133423	Method of administration ADVATE should be administered intravenously .
+P-155	-1.2366 -0.0155 -0.0272 -0.1402 -0.0441 -0.2032 -0.1607 -0.0962 -0.0728 -0.4283 -0.1207 -0.7322 -0.1002 -0.0865 -0.0697 -0.0766 -0.1311 -0.1756 -0.1602
+S-25	Sonstige Bestandteile Dieses Arzneimittel enthält Lactose und Sucrose .
+T-25	14 Excipients This medicinal product contains lactose and sucrose .
+H-25	-0.10632205009460449	Excipients This medicinal product contains lactose and sucrose .
+D-25	-0.10632205009460449	Excipients This medicinal product contains lactose and sucrose .
+P-25	-0.3701 -0.0218 -0.1251 -0.0969 -0.1198 -0.0736 -0.0717 -0.0608 -0.0258 -0.1154 -0.0357 -0.1377 -0.1302 -0.0544 -0.0671 -0.0937 -0.1529 -0.1611
+S-5	Blisterpackung ( Aclar<unk> PVC<unk> Aluminium )
+T-5	EU/ 1/ 08/ 447/ 001 EU/ 1/ 08/ 447/ 002 EU/ 1/ 08/ 447/ 003 EU/ 1/ 08/ 447/ 004
+H-5	-0.20721864700317383	Blister ( Aclar/ PVC/ aluminium ) Blister ( Aclar/ PVC/ aluminium )
+D-5	-0.20721864700317383	Blister ( Aclar/ PVC/ aluminium ) Blister ( Aclar/ PVC/ aluminium )
+P-5	-0.0224 -0.2096 -0.1273 -0.1370 -0.3265 -0.1388 -0.1993 -0.1539 -0.1463 -0.1641 -0.1472 -0.1103 -0.0725 -0.1348 -0.7033 -0.1618 -0.1133 -0.1625 -0.3265 -0.1330 -0.1401 -0.1440 -0.1210 -0.1565 -0.1357 -0.1480 -0.0459 -0.1268 -1.3011
+S-205	Art der Anwendung ADVATE soll intravenös verabreicht werden .
+T-205	Method of administration ADVATE should be administered via the intravenous route .
+H-205	-0.21460777521133423	Method of administration ADVATE should be administered intravenously .
+D-205	-0.21460777521133423	Method of administration ADVATE should be administered intravenously .
+P-205	-1.2366 -0.0155 -0.0272 -0.1402 -0.0441 -0.2032 -0.1607 -0.0962 -0.0728 -0.4283 -0.1207 -0.7322 -0.1002 -0.0865 -0.0697 -0.0766 -0.1311 -0.1756 -0.1602
+S-180	Art der Anwendung ADVATE soll intravenös verabreicht werden .
+T-180	Method of administration ADVATE should be administered via the intravenous route .
+H-180	-0.21460777521133423	Method of administration ADVATE should be administered intravenously .
+D-180	-0.21460777521133423	Method of administration ADVATE should be administered intravenously .
+P-180	-1.2366 -0.0155 -0.0272 -0.1402 -0.0441 -0.2032 -0.1607 -0.0962 -0.0728 -0.4283 -0.1207 -0.7322 -0.1002 -0.0865 -0.0697 -0.0766 -0.1311 -0.1756 -0.1602
+S-193	Lagerungsbedingungen des rekonstiutierten Produktes siehe Abschnitt 6.3 .
+T-193	For storage conditions of the reconstituted medicinal product , see section 6.3 .
+H-193	-0.24187450110912323	For storage conditions of the reconstituted product , see section 6.3 .
+D-193	-0.24187450110912323	For storage conditions of the reconstituted product , see section 6.3 .
+P-193	-0.2953 -0.2632 -0.2778 -0.1541 -0.1366 -1.2408 -0.1492 -0.0879 -0.1220 -0.2634 -0.1369 -0.1565 -0.0967 -0.1528 -0.1774 -0.1595
+S-105	Art der Anwendung ADVATE soll intravenös verabreicht werden .
+T-105	Method of administration ADVATE should be administered via the intravenous route .
+H-105	-0.21460777521133423	Method of administration ADVATE should be administered intravenously .
+D-105	-0.21460777521133423	Method of administration ADVATE should be administered intravenously .
+P-105	-1.2366 -0.0155 -0.0272 -0.1402 -0.0441 -0.2032 -0.1607 -0.0962 -0.0728 -0.4283 -0.1207 -0.7322 -0.1002 -0.0865 -0.0697 -0.0766 -0.1311 -0.1756 -0.1602
+S-219	Lagerungsbedingungen des rekonstiutierten Produktes siehe Abschnitt 6.3 .
+T-219	For storage conditions of the reconstituted medicinal product , see section 6.3 .
+H-219	-0.24187450110912323	For storage conditions of the reconstituted product , see section 6.3 .
+D-219	-0.24187450110912323	For storage conditions of the reconstituted product , see section 6.3 .
+P-219	-0.2953 -0.2632 -0.2778 -0.1541 -0.1366 -1.2408 -0.1492 -0.0879 -0.1220 -0.2634 -0.1369 -0.1565 -0.0967 -0.1528 -0.1774 -0.1595
+S-78	Art der Anwendung ADVATE soll intravenös verabreicht werden .
+T-78	Method of administration ADVATE should be administered via the intravenous route .
+H-78	-0.21460777521133423	Method of administration ADVATE should be administered intravenously .
+D-78	-0.21460777521133423	Method of administration ADVATE should be administered intravenously .
+P-78	-1.2366 -0.0155 -0.0272 -0.1402 -0.0441 -0.2032 -0.1607 -0.0962 -0.0728 -0.4283 -0.1207 -0.7322 -0.1002 -0.0865 -0.0697 -0.0766 -0.1311 -0.1756 -0.1602
+S-168	Lagerungsbedingungen des rekonstiutierten Produktes siehe Abschnitt 6.3 .
+T-168	For storage conditions of the reconstituted medicinal product , see section 6.3 .
+H-168	-0.24187450110912323	For storage conditions of the reconstituted product , see section 6.3 .
+D-168	-0.24187450110912323	For storage conditions of the reconstituted product , see section 6.3 .
+P-168	-0.2953 -0.2632 -0.2778 -0.1541 -0.1366 -1.2408 -0.1492 -0.0879 -0.1220 -0.2634 -0.1369 -0.1565 -0.0967 -0.1528 -0.1774 -0.1595
+S-12	Sonstige Bestandteile Dieses Arzneimittel enthält Lactose und Sucrose .
+T-12	4 Excipients This medicinal product contains lactose and sucrose .
+H-12	-0.10632205009460449	Excipients This medicinal product contains lactose and sucrose .
+D-12	-0.10632205009460449	Excipients This medicinal product contains lactose and sucrose .
+P-12	-0.3701 -0.0218 -0.1251 -0.0969 -0.1198 -0.0736 -0.0717 -0.0608 -0.0258 -0.1154 -0.0357 -0.1377 -0.1302 -0.0544 -0.0671 -0.0937 -0.1529 -0.1611
+S-30	Die BMD des Gesamtskeletts stieg ebenfalls signifikant an .
+T-30	Total body BMD also increased significantly .
+H-30	-0.48286694288253784	The BMD of the total keleton was also significantly increased .
+D-30	-0.48286694288253784	The BMD of the total keleton was also significantly increased .
+P-30	-1.5054 -0.5226 -0.1041 -0.1630 -0.1416 -0.1625 -1.8128 -0.3529 -1.3260 -0.1284 -0.1293 -0.1053 -0.1498 -0.1565
+S-292	H-1123 Budapest Tel . : <unk> 361 202 19 80
+T-292	H-1123 Budapest Tel . : <<unk>> 361 202 19 80
+H-292	-0.11981283128261566	H-1123 Budapest Tel . : <unk> 361 202 19 80
+D-292	-0.11981283128261566	H-1123 Budapest Tel . : <unk> 361 202 19 80
+P-292	-0.2231 -0.1062 -0.0696 -0.0457 -0.2044 -0.0691 -0.1862 -0.1289 -0.0258 -0.1159 -0.0624 -0.1027 -0.1214 -0.1624 -0.1075 -0.1856
+S-99	Die blaue Schutzkappe nicht vom BAXJECT II entfernen .
+T-99	Do not remove the blue cap from the BAXJECT II device .
+H-99	-0.21501660346984863	Do not remove the blue protective cap from the BAXJECT II .
+D-99	-0.21501660346984863	Do not remove the blue protective cap from the BAXJECT II .
+P-99	-0.2148 -0.1319 -0.0753 -0.1536 -0.1589 -0.8193 -0.0731 -0.1258 -0.3633 -0.4360 -0.1308 -0.3459 -0.0771 -0.1120 -0.1163 -0.1578 -0.1634
+S-149	Die blaue Schutzkappe nicht vom BAXJECT II entfernen .
+T-149	Do not remove the blue cap from the BAXJECT II device .
+H-149	-0.21501660346984863	Do not remove the blue protective cap from the BAXJECT II .
+D-149	-0.21501660346984863	Do not remove the blue protective cap from the BAXJECT II .
+P-149	-0.2148 -0.1319 -0.0753 -0.1536 -0.1589 -0.8193 -0.0731 -0.1258 -0.3633 -0.4360 -0.1308 -0.3459 -0.0771 -0.1120 -0.1163 -0.1578 -0.1634
+S-33	Vor der Ausscheidung kommt es zu weiterer Hydroxylierung .
+T-33	Further hydroxylation occurs prior to elimination .
+H-33	-0.2333979606628418	Further hydroxylation occurs prior to excretion .
+D-33	-0.2333979606628418	Further hydroxylation occurs prior to excretion .
+P-33	-0.5083 -0.0818 -0.1193 -0.1865 -0.1312 -0.2318 -0.0745 -1.1002 -0.1463 -0.1517 -0.1056 -0.1006 -0.1697 -0.1602
+S-20	Vor der Ausscheidung kommt es zu weiterer Hydroxylierung .
+T-20	Further hydroxylation occurs prior to elimination .
+H-20	-0.2333979606628418	Further hydroxylation occurs prior to excretion .
+D-20	-0.2333979606628418	Further hydroxylation occurs prior to excretion .
+P-20	-0.5083 -0.0818 -0.1193 -0.1865 -0.1312 -0.2318 -0.0745 -1.1002 -0.1463 -0.1517 -0.1056 -0.1006 -0.1697 -0.1602
+S-124	Die blaue Schutzkappe nicht vom BAXJECT II entfernen .
+T-124	Do not remove the blue cap from the BAXJECT II device .
+H-124	-0.21501660346984863	Do not remove the blue protective cap from the BAXJECT II .
+D-124	-0.21501660346984863	Do not remove the blue protective cap from the BAXJECT II .
+P-124	-0.2148 -0.1319 -0.0753 -0.1536 -0.1589 -0.8193 -0.0731 -0.1258 -0.3633 -0.4360 -0.1308 -0.3459 -0.0771 -0.1120 -0.1163 -0.1578 -0.1634
+S-8	Die empfohlene Dosis beträgt eine Tablette einmal wöchentlich .
+T-8	The recommended dose is one tablet once a week .
+H-8	-0.21139580011367798	The recommended dose is one tablet once a week .
+D-8	-0.21139580011367798	The recommended dose is one tablet once a week .
+P-8	-0.2920 -0.0915 -0.1515 -0.1259 -0.1685 -0.1336 -0.0791 -0.3570 -0.7166 -0.1103 -0.1539 -0.1568
+S-174	Die blaue Schutzkappe nicht vom BAXJECT II entfernen .
+T-174	Do not remove the blue cap from the BAXJECT II device .
+H-174	-0.21501660346984863	Do not remove the blue protective cap from the BAXJECT II .
+D-174	-0.21501660346984863	Do not remove the blue protective cap from the BAXJECT II .
+P-174	-0.2148 -0.1319 -0.0753 -0.1536 -0.1589 -0.8193 -0.0731 -0.1258 -0.3633 -0.4360 -0.1308 -0.3459 -0.0771 -0.1120 -0.1163 -0.1578 -0.1634
+S-199	Die blaue Schutzkappe nicht vom BAXJECT II entfernen .
+T-199	Do not remove the blue cap from the BAXJECT II device .
+H-199	-0.21501660346984863	Do not remove the blue protective cap from the BAXJECT II .
+D-199	-0.21501660346984863	Do not remove the blue protective cap from the BAXJECT II .
+P-199	-0.2148 -0.1319 -0.0753 -0.1536 -0.1589 -0.8193 -0.0731 -0.1258 -0.3633 -0.4360 -0.1308 -0.3459 -0.0771 -0.1120 -0.1163 -0.1578 -0.1634
+S-225	Die blaue Schutzkappe nicht vom BAXJECT II entfernen .
+T-225	Do not remove the blue cap from the BAXJECT II device .
+H-225	-0.21501660346984863	Do not remove the blue protective cap from the BAXJECT II .
+D-225	-0.21501660346984863	Do not remove the blue protective cap from the BAXJECT II .
+P-225	-0.2148 -0.1319 -0.0753 -0.1536 -0.1589 -0.8193 -0.0731 -0.1258 -0.3633 -0.4360 -0.1308 -0.3459 -0.0771 -0.1120 -0.1163 -0.1578 -0.1634
+S-286	Normalerweise wird die Ersatztherapie mit ADVATE lebenslang durchgeführt .
+T-286	Usually , the replacement therapy with ADVATE is a life-long treatment .
+H-286	-0.4251728355884552	Normally , replacement therapy with ADVATE is given for life .
+D-286	-0.4251728355884552	Normally , replacement therapy with ADVATE is given for life .
+P-286	-1.2796 -0.1477 -0.3103 -1.2629 -0.0805 -0.1937 -0.1315 -0.1487 -0.0999 -0.0731 -0.1863 -1.4892 -0.7605 -0.3193 -0.1606 -0.1589
+S-305	Aerinaze enthält zwei arzneilich wirksame Bestandteile :
+T-305	Aerinaze contains two active substances : desloratadine , an antihistamine , and pseudoephedrine , which is a nasal decongestant .
+H-305	-0.26298561692237854	Aerinaze contains two active ingredients :
+D-305	-0.26298561692237854	Aerinaze contains two active ingredients :
+P-305	-0.1253 -0.1179 -0.1203 -0.1540 -0.1221 -0.0893 -0.1245 -1.0412 -0.6615 -0.1611 -0.1757
+S-316	Aerinaze ist ebenfalls kontraindiziert bei Patienten mit :
+T-316	Aerinaze is also contraindicated in patients with : narrow-angle glaucoma , urinary retention , cardiovascular diseases such as ischaemic heart disease , tachyarrhythmia and severe hypertension , hyperthyroidism ,
+H-316	-0.2181987315416336	Aerinaze is also contraindicated in patients with :
+D-316	-0.2181987315416336	Aerinaze is also contraindicated in patients with :
+P-316	-0.1666 -0.1133 -0.1191 -0.1681 -0.0954 -0.1066 -0.1018 -0.6625 -0.0296 -0.6061 -0.1454 -0.3801 -0.1837 -0.1763
+S-312	Blister ( PCTFE<unk> PVC<unk> Alu )
+T-312	Blister ( PCTFE/ PVC/ Alu ) Blister ( PCTFE/ PVC/ Alu ) Blister ( PCTFE/ PVC/ Alu ) Blister ( PCTFE/ PVC/ Alu ) Blister ( PCTFE/ PVC/ Alu ) Blister ( PCTFE/ PVC/ Alu )
+H-312	-0.24405810236930847	Blister ( PCTFE/ PVC/ alu ) Blister ( PCTFE/ PVC/ alu )
+D-312	-0.24405810236930847	Blister ( PCTFE/ PVC/ alu ) Blister ( PCTFE/ PVC/ alu )
+P-312	-0.0596 -0.3800 -0.1026 -0.3832 -0.1384 -0.1554 -0.1250 -0.1495 -0.1479 -0.1362 -0.1547 -0.1530 -0.2582 -0.4196 -0.1293 -0.6461 -0.2169 -0.1030 -0.5378 -0.1371 -0.1437 -0.1063 -0.1276 -0.1428 -0.1228 -0.1532 -0.1495 -0.1255 -0.3311 -0.1225 -1.5072
+S-107	4.5 . Wechselwirkungen mit anderen Arzneimitteln und sonstige Wechselwirkungen
+T-107	4.5 Interaction with other medicinal products and other forms of interaction
+H-107	-0.16124215722084045	4.5 Interaction with other medicinal products and other forms of interaction
+D-107	-0.16124215722084045	4.5 Interaction with other medicinal products and other forms of interaction
+P-107	-0.4112 -0.1232 -0.6511 -0.0863 -0.1440 -0.1035 -0.0374 -0.0459 -0.0927 -0.1469 -0.1734 -0.0134 -0.1342 -0.1968 -0.0645 -0.1553
+S-157	4.5 . Wechselwirkungen mit anderen Arzneimitteln und sonstige Wechselwirkungen
+T-157	4.5 Interaction with other medicinal products and other forms of interaction
+H-157	-0.16124215722084045	4.5 Interaction with other medicinal products and other forms of interaction
+D-157	-0.16124215722084045	4.5 Interaction with other medicinal products and other forms of interaction
+P-157	-0.4112 -0.1232 -0.6511 -0.0863 -0.1440 -0.1035 -0.0374 -0.0459 -0.0927 -0.1469 -0.1734 -0.0134 -0.1342 -0.1968 -0.0645 -0.1553
+S-80	4.5 . Wechselwirkungen mit anderen Arzneimitteln und sonstige Wechselwirkungen
+T-80	4.5 Interaction with other medicinal products and other forms of interaction
+H-80	-0.16124215722084045	4.5 Interaction with other medicinal products and other forms of interaction
+D-80	-0.16124215722084045	4.5 Interaction with other medicinal products and other forms of interaction
+P-80	-0.4112 -0.1232 -0.6511 -0.0863 -0.1440 -0.1035 -0.0374 -0.0459 -0.0927 -0.1469 -0.1734 -0.0134 -0.1342 -0.1968 -0.0645 -0.1553
+S-132	4.5 . Wechselwirkungen mit anderen Arzneimitteln und sonstige Wechselwirkungen
+T-132	4.5 Interaction with other medicinal products and other forms of interaction
+H-132	-0.16124215722084045	4.5 Interaction with other medicinal products and other forms of interaction
+D-132	-0.16124215722084045	4.5 Interaction with other medicinal products and other forms of interaction
+P-132	-0.4112 -0.1232 -0.6511 -0.0863 -0.1440 -0.1035 -0.0374 -0.0459 -0.0927 -0.1469 -0.1734 -0.0134 -0.1342 -0.1968 -0.0645 -0.1553
+S-206	Das Produkt enthält Spuren von Maus- und Hamsterproteinen .
+T-206	The product contains traces of mouse and hamster proteins .
+H-206	-0.21636097133159637	The product contains traces of mouse and hamster proteins .
+D-206	-0.21636097133159637	The product contains traces of mouse and hamster proteins .
+P-206	-1.3890 -0.1385 -0.1010 -0.2571 -0.1015 -0.1335 -0.3176 -0.0738 -0.2012 -0.0532 -0.0454 -0.0741 -0.0384 -0.1561 -0.1650
+S-182	4.5 . Wechselwirkungen mit anderen Arzneimitteln und sonstige Wechselwirkungen
+T-182	4.5 Interaction with other medicinal products and other forms of interaction
+H-182	-0.16124215722084045	4.5 Interaction with other medicinal products and other forms of interaction
+D-182	-0.16124215722084045	4.5 Interaction with other medicinal products and other forms of interaction
+P-182	-0.4112 -0.1232 -0.6511 -0.0863 -0.1440 -0.1035 -0.0374 -0.0459 -0.0927 -0.1469 -0.1734 -0.0134 -0.1342 -0.1968 -0.0645 -0.1553
+S-207	4.5 . Wechselwirkungen mit anderen Arzneimitteln und sonstige Wechselwirkungen
+T-207	4.5 Interaction with other medicinal products and other forms of interaction
+H-207	-0.16124215722084045	4.5 Interaction with other medicinal products and other forms of interaction
+D-207	-0.16124215722084045	4.5 Interaction with other medicinal products and other forms of interaction
+P-207	-0.4112 -0.1232 -0.6511 -0.0863 -0.1440 -0.1035 -0.0374 -0.0459 -0.0927 -0.1469 -0.1734 -0.0134 -0.1342 -0.1968 -0.0645 -0.1553
+S-289	Im Kühlschrank lagern ( 2<unk> C-8<unk> C ) .
+T-289	Store in a refrigerator ( 2<<unk>> C 8<<unk>> C ) .
+H-289	-0.13021494448184967	Store in a refrigerator ( 2<unk> C-8<unk> C ) .
+D-289	-0.13021494448184967	Store in a refrigerator ( 2<unk> C-8<unk> C ) .
+P-289	-0.1928 -0.1396 -0.1720 -0.1553 -0.0505 -0.0630 -0.1497 -0.1182 -0.1112 -0.0852 -0.1515 -0.2010 -0.1493 -0.0333 -0.1221 -0.1319 -0.1539 -0.1632
+S-23	Die Äquivalenz der Einnahme von 5.600 I.E.
+T-23	ADROVANCE should not be taken at bedtime or before arising for the day .
+H-23	-0.3643125295639038	The equivalent of taking 5,600 IU .
+D-23	-0.3643125295639038	The equivalent of taking 5,600 IU .
+P-23	-0.4405 -0.1800 -0.1516 -1.6918 -0.2261 -0.0698 -0.1585 -0.0452 -0.5169 -0.1626
+S-296	Polska Baxter Poland Sp. z o.o. ul .
+T-296	Polska Baxter Poland Sp . z o. o. ul .
+H-296	-0.2060265988111496	Polska Baxter Poland Sp. z o.o. ul .
+D-296	-0.2060265988111496	Polska Baxter Poland Sp. z o.o. ul .
+P-296	-0.2459 -0.0948 -0.2289 -0.1631 -0.1520 -0.2050 -0.1222 -0.1506 -0.1083 -0.1584 -0.3378 -0.0366 -0.7479 -0.1643 -0.1747
+S-156	Das Produkt enthält Spuren von Maus- und Hamsterproteinen .
+T-156	The product contains traces of mouse and hamster proteins .
+H-156	-0.21636097133159637	The product contains traces of mouse and hamster proteins .
+D-156	-0.21636097133159637	The product contains traces of mouse and hamster proteins .
+P-156	-1.3890 -0.1385 -0.1010 -0.2571 -0.1015 -0.1335 -0.3176 -0.0738 -0.2012 -0.0532 -0.0454 -0.0741 -0.0384 -0.1561 -0.1650
+S-181	Das Produkt enthält Spuren von Maus- und Hamsterproteinen .
+T-181	The product contains traces of mouse and hamster proteins .
+H-181	-0.21636097133159637	The product contains traces of mouse and hamster proteins .
+D-181	-0.21636097133159637	The product contains traces of mouse and hamster proteins .
+P-181	-1.3890 -0.1385 -0.1010 -0.2571 -0.1015 -0.1335 -0.3176 -0.0738 -0.2012 -0.0532 -0.0454 -0.0741 -0.0384 -0.1561 -0.1650
+S-131	Das Produkt enthält Spuren von Maus- und Hamsterproteinen .
+T-131	The product contains traces of mouse and hamster proteins .
+H-131	-0.21636097133159637	The product contains traces of mouse and hamster proteins .
+D-131	-0.21636097133159637	The product contains traces of mouse and hamster proteins .
+P-131	-1.3890 -0.1385 -0.1010 -0.2571 -0.1015 -0.1335 -0.3176 -0.0738 -0.2012 -0.0532 -0.0454 -0.0741 -0.0384 -0.1561 -0.1650
+S-306	Welchen Nutzen hat Aerinaze in diesen Studien gezeigt ?
+T-306	What benefit has Aerinaze shown during the studies ?
+H-306	-0.1308148354291916	What benefit has Aerinaze shown during the studies ?
+D-306	-0.1308148354291916	What benefit has Aerinaze shown during the studies ?
+P-306	-0.1390 -0.0878 -0.1276 -0.1261 -0.1173 -0.1193 -0.1408 -0.1341 -0.0807 -0.0946 -0.2892 -0.0741 -0.1321 -0.1687
+S-106	Das Produkt enthält Spuren von Maus- und Hamsterproteinen .
+T-106	The product contains traces of mouse and hamster proteins .
+H-106	-0.21636097133159637	The product contains traces of mouse and hamster proteins .
+D-106	-0.21636097133159637	The product contains traces of mouse and hamster proteins .
+P-106	-1.3890 -0.1385 -0.1010 -0.2571 -0.1015 -0.1335 -0.3176 -0.0738 -0.2012 -0.0532 -0.0454 -0.0741 -0.0384 -0.1561 -0.1650
+S-79	Das Produkt enthält Spuren von Maus- und Hamsterproteinen .
+T-79	The product contains traces of mouse and hamster proteins .
+H-79	-0.21636097133159637	The product contains traces of mouse and hamster proteins .
+D-79	-0.21636097133159637	The product contains traces of mouse and hamster proteins .
+P-79	-1.3890 -0.1385 -0.1010 -0.2571 -0.1015 -0.1335 -0.3176 -0.0738 -0.2012 -0.0532 -0.0454 -0.0741 -0.0384 -0.1561 -0.1650
+S-31	Die Proteinbindung im menschlichen Plasma beträgt ca. 78 <unk> .
+T-31	Protein binding in human plasma is approximately 78 % .
+H-31	-0.20812974870204926	The protein binding in human plasma is approximately 78 % .
+D-31	-0.20812974870204926	The protein binding in human plasma is approximately 78 % .
+P-31	-0.7518 -0.0568 -0.3000 -0.1249 -0.1611 -0.1346 -0.1282 -0.1027 -0.0960 -0.1219 -0.3588 -0.1152 -0.3508 -0.1616 -0.1575
+S-18	Die Proteinbindung im menschlichen Plasma beträgt ca. 78 <unk> .
+T-18	Protein binding in human plasma is approximately 78 % .
+H-18	-0.20812974870204926	The protein binding in human plasma is approximately 78 % .
+D-18	-0.20812974870204926	The protein binding in human plasma is approximately 78 % .
+P-18	-0.7518 -0.0568 -0.3000 -0.1249 -0.1611 -0.1346 -0.1282 -0.1027 -0.0960 -0.1219 -0.3588 -0.1152 -0.3508 -0.1616 -0.1575
+S-10	Welchen Nutzen hat ADROVANCE in diesen Studien gezeigt ?
+T-10	What benefit has ADROVANCE shown during the studies ?
+H-10	-0.13012276589870453	What benefit has ADROVANCE shown during the studies ?
+D-10	-0.13012276589870453	What benefit has ADROVANCE shown during the studies ?
+P-10	-0.1862 -0.1292 -0.1496 -0.0343 -0.0666 -0.1324 -0.1483 -0.0901 -0.1139 -0.0912 -0.3266 -0.0577 -0.1264 -0.1691
+S-3	Der Harnsäurespiegel im Blut wurde jeden Monat bestimmt .
+T-3	Blood uric acid levels were measured every month .
+H-3	-0.37613391876220703	The uric acid level in the blood was measured each month .
+D-3	-0.37613391876220703	The uric acid level in the blood was measured each month .
+P-3	-0.5125 -1.4974 -0.1045 -0.0498 -0.2685 -0.1727 -0.1417 -0.0620 -0.1274 -1.0745 -0.8655 -0.0860 -0.1465 -0.1569
+S-151	02 . März 2004 Datum der letzten Zulassungsverlängerung :
+T-151	02 March 2004 Date of last renewal :
+H-151	-0.4022586941719055	02 March 2004 Date of last renewal :
+D-151	-0.4022586941719055	02 March 2004 Date of last renewal :
+P-151	-0.3613 -0.5452 -0.4603 -0.6058 -0.1941 -0.1243 -0.2151 -1.0811 -0.1452 -0.5109 -0.1816
+S-101	02 . März 2004 Datum der letzten Zulassungsverlängerung :
+T-101	02 March 2004 Date of last renewal :
+H-101	-0.4022586941719055	02 March 2004 Date of last renewal :
+D-101	-0.4022586941719055	02 March 2004 Date of last renewal :
+P-101	-0.3613 -0.5452 -0.4603 -0.6058 -0.1941 -0.1243 -0.2151 -1.0811 -0.1452 -0.5109 -0.1816
+S-176	02 . März 2004 Datum der letzten Zulassungsverlängerung :
+T-176	02 March 2004 Date of last renewal :
+H-176	-0.4022586941719055	02 March 2004 Date of last renewal :
+D-176	-0.4022586941719055	02 March 2004 Date of last renewal :
+P-176	-0.3613 -0.5452 -0.4603 -0.6058 -0.1941 -0.1243 -0.2151 -1.0811 -0.1452 -0.5109 -0.1816
+S-102	Die erforderliche Dosis wird mit folgender Formel berechnet :
+T-102	The dose is determined using the following formula :
+H-102	-0.28505733609199524	The required dose is calculated using the following formula :
+D-102	-0.28505733609199524	The required dose is calculated using the following formula :
+P-102	-0.5783 -0.6553 -0.0751 -0.8447 -0.1267 -0.1254 -0.3706 -0.1407 -0.1533 -0.0730 -0.1046 -0.1729
+S-126	02 . März 2004 Datum der letzten Zulassungsverlängerung :
+T-126	02 March 2004 Date of last renewal :
+H-126	-0.4022586941719055	02 March 2004 Date of last renewal :
+D-126	-0.4022586941719055	02 March 2004 Date of last renewal :
+P-126	-0.3613 -0.5452 -0.4603 -0.6058 -0.1941 -0.1243 -0.2151 -1.0811 -0.1452 -0.5109 -0.1816
+S-227	02 . März 2004 Datum der letzten Zulassungsverlängerung :
+T-227	02 March 2004 Date of last renewal :
+H-227	-0.4022586941719055	02 March 2004 Date of last renewal :
+D-227	-0.4022586941719055	02 March 2004 Date of last renewal :
+P-227	-0.3613 -0.5452 -0.4603 -0.6058 -0.1941 -0.1243 -0.2151 -1.0811 -0.1452 -0.5109 -0.1816
+S-202	Die erforderliche Dosis wird mit folgender Formel berechnet :
+T-202	The dose is determined using the following formula :
+H-202	-0.28505733609199524	The required dose is calculated using the following formula :
+D-202	-0.28505733609199524	The required dose is calculated using the following formula :
+P-202	-0.5783 -0.6553 -0.0751 -0.8447 -0.1267 -0.1254 -0.3706 -0.1407 -0.1533 -0.0730 -0.1046 -0.1729
+S-177	Die erforderliche Dosis wird mit folgender Formel berechnet :
+T-177	The dose is determined using the following formula :
+H-177	-0.28505733609199524	The required dose is calculated using the following formula :
+D-177	-0.28505733609199524	The required dose is calculated using the following formula :
+P-177	-0.5783 -0.6553 -0.0751 -0.8447 -0.1267 -0.1254 -0.3706 -0.1407 -0.1533 -0.0730 -0.1046 -0.1729
+S-152	Die erforderliche Dosis wird mit folgender Formel berechnet :
+T-152	The dose is determined using the following formula :
+H-152	-0.28505733609199524	The required dose is calculated using the following formula :
+D-152	-0.28505733609199524	The required dose is calculated using the following formula :
+P-152	-0.5783 -0.6553 -0.0751 -0.8447 -0.1267 -0.1254 -0.3706 -0.1407 -0.1533 -0.0730 -0.1046 -0.1729
+S-75	Die erforderliche Dosis wird mit folgender Formel berechnet :
+T-75	The dose is determined using the following formula :
+H-75	-0.28505733609199524	The required dose is calculated using the following formula :
+D-75	-0.28505733609199524	The required dose is calculated using the following formula :
+P-75	-0.5783 -0.6553 -0.0751 -0.8447 -0.1267 -0.1254 -0.3706 -0.1407 -0.1533 -0.0730 -0.1046 -0.1729
+S-127	Die erforderliche Dosis wird mit folgender Formel berechnet :
+T-127	The dose is determined using the following formula :
+H-127	-0.28505733609199524	The required dose is calculated using the following formula :
+D-127	-0.28505733609199524	The required dose is calculated using the following formula :
+P-127	-0.5783 -0.6553 -0.0751 -0.8447 -0.1267 -0.1254 -0.3706 -0.1407 -0.1533 -0.0730 -0.1046 -0.1729
+S-13	4.5 Wechselwirkungen mit anderen Arzneimitteln und sonstige Wechselwirkungen
+T-13	4.5 Interaction with other medicinal products and other forms of interaction
+H-13	-0.12478089332580566	4.5 Interaction with other medicinal products and other forms of interaction
+D-13	-0.12478089332580566	4.5 Interaction with other medicinal products and other forms of interaction
+P-13	-0.2838 -0.1247 -0.1891 -0.0949 -0.1453 -0.0965 -0.0422 -0.0508 -0.0926 -0.1453 -0.1787 -0.0129 -0.1338 -0.1907 -0.0632 -0.1520
+S-291	Jede Pulver-Durchstechflasche enthält 250 I.E.
+T-291	Each powder vial contains 250 IU octocog alfa .
+H-291	-0.20625734329223633	Each vial contains 250 IU .
+D-291	-0.20625734329223633	Each vial contains 250 IU .
+P-291	-0.0365 -0.6500 -0.0468 -0.3220 -0.1540 -0.1497 -0.0787 -0.2573 -0.1614
+S-26	4.5 Wechselwirkungen mit anderen Arzneimitteln und sonstige Wechselwirkungen
+T-26	4.5 Interaction with other medicinal products and other forms of interaction
+H-26	-0.12478089332580566	4.5 Interaction with other medicinal products and other forms of interaction
+D-26	-0.12478089332580566	4.5 Interaction with other medicinal products and other forms of interaction
+P-26	-0.2838 -0.1247 -0.1891 -0.0949 -0.1453 -0.0965 -0.0422 -0.0508 -0.0926 -0.1453 -0.1787 -0.0129 -0.1338 -0.1907 -0.0632 -0.1520
+S-27	Für ADROVANCE wurden keine weiteren Nebenwirkungen festgestellt .
+T-27	No additional adverse reactions have been identified for ADROVANCE .
+H-27	-0.2285679429769516	No other undesirable effects were observed for ADROVANCE .
+D-27	-0.2285679429769516	No other undesirable effects were observed for ADROVANCE .
+P-27	-0.3812 -0.2531 -1.0911 -0.1743 -0.0637 -0.0913 -0.2663 -0.2085 -0.2806 -0.1327 -0.0632 -0.1344 -0.1272 -0.0701 -0.1579 -0.1615
+S-14	Für ADROVANCE wurden keine weiteren Nebenwirkungen festgestellt .
+T-14	No additional adverse reactions have been identified for ADROVANCE .
+H-14	-0.2285679429769516	No other undesirable effects were observed for ADROVANCE .
+D-14	-0.2285679429769516	No other undesirable effects were observed for ADROVANCE .
+P-14	-0.3812 -0.2531 -1.0911 -0.1743 -0.0637 -0.0913 -0.2663 -0.2085 -0.2806 -0.1327 -0.0632 -0.1344 -0.1272 -0.0701 -0.1579 -0.1615
+S-318	4.5 Wechselwirkungen mit anderen Arzneimitteln und sonstige Wechselwirkungen
+T-318	4.5 Interaction with other medicinal products and other forms of interaction
+H-318	-0.12478089332580566	4.5 Interaction with other medicinal products and other forms of interaction
+D-318	-0.12478089332580566	4.5 Interaction with other medicinal products and other forms of interaction
+P-318	-0.2838 -0.1247 -0.1891 -0.0949 -0.1453 -0.0965 -0.0422 -0.0508 -0.0926 -0.1453 -0.1787 -0.0129 -0.1338 -0.1907 -0.0632 -0.1520
+S-15	Vitamin D3 wird für eine normale Knochenbildung benötigt .
+T-15	Vitamin D3 is required for normal bone formation .
+H-15	-0.2603810429573059	Vitamin D3 is required for normal bone formation .
+D-15	-0.2603810429573059	Vitamin D3 is required for normal bone formation .
+P-15	-0.1063 -0.0842 -0.1415 -0.1578 -0.0986 -1.1759 -0.1470 -0.0835 -0.0617 -0.7194 -0.1882 -0.1605
+S-287	Häufige Nebenwirkungen Schwindel , Kopfschmerzen und Fieber
+T-287	Common side effects dizziness , headache and fever .
+H-287	-0.14706774055957794	Common side effects Dizziness , headaches and fever
+D-287	-0.14706774055957794	Common side effects Dizziness , headaches and fever
+P-287	-0.0421 -0.1307 -0.0788 -0.0924 -0.2248 -0.2153 -0.0551 -0.1754 -0.0643 -0.0662 -0.4692 -0.2565 -0.0258 -0.1088 -0.2007
+S-28	Vitamin D3 wird für eine normale Knochenbildung benötigt .
+T-28	Vitamin D3 is required for normal bone formation .
+H-28	-0.2603810429573059	Vitamin D3 is required for normal bone formation .
+D-28	-0.2603810429573059	Vitamin D3 is required for normal bone formation .
+P-28	-0.1063 -0.0842 -0.1415 -0.1578 -0.0986 -1.1759 -0.1470 -0.0835 -0.0617 -0.7194 -0.1882 -0.1605
+S-4	Welchen Nutzen hat Adenuric in diesen Studien gezeigt ?
+T-4	What benefit has Adenuric shown during the studies ?
+H-4	-0.1312025487422943	What benefit has Adenuric shown during the studies ?
+D-4	-0.1312025487422943	What benefit has Adenuric shown during the studies ?
+P-4	-0.1194 -0.1010 -0.1204 -0.1078 -0.2021 -0.0795 -0.1203 -0.0864 -0.0857 -0.3259 -0.0587 -0.1317 -0.1667
+S-282	Was ist ADVATE und wofür wird es angewendet ?
+T-282	What ADVATE is and what it is used for 2.
+H-282	-0.1090807393193245	What ADVATE is and what it is used for 2.
+D-282	-0.1090807393193245	What ADVATE is and what it is used for 2.
+P-282	-0.0914 -0.1609 -0.1509 -0.1011 -0.0879 -0.1165 -0.1143 -0.0811 -0.0971 -0.1360 -0.1279 -0.1270 -0.0033 -0.1316
+S-201	02 . März 2004 Datum der letzten Zulassungsverlängerung :
+T-201	02 March 2004 Date of last renewal :
+H-201	-0.4022586941719055	02 March 2004 Date of last renewal :
+D-201	-0.4022586941719055	02 March 2004 Date of last renewal :
+P-201	-0.3613 -0.5452 -0.4603 -0.6058 -0.1941 -0.1243 -0.2151 -1.0811 -0.1452 -0.5109 -0.1816
+S-167	Das Produkt darf nicht wieder gekühlt gelagert werden .
+T-167	The product may not be returned to refrigerated storage again .
+H-167	-0.4364681839942932	Do not store the product in a refrigerated place .
+D-167	-0.4364681839942932	Do not store the product in a refrigerated place .
+P-167	-1.0374 -0.1271 -0.2994 -0.2415 -0.1396 -0.7800 -0.4363 -0.0835 -0.0396 -0.0708 -0.1281 -2.2973 -0.2710 -0.1590
+S-117	Das Produkt darf nicht wieder gekühlt gelagert werden .
+T-117	The product may not be returned to refrigerated storage again .
+H-117	-0.4364681839942932	Do not store the product in a refrigerated place .
+D-117	-0.4364681839942932	Do not store the product in a refrigerated place .
+P-117	-1.0374 -0.1271 -0.2994 -0.2415 -0.1396 -0.7800 -0.4363 -0.0835 -0.0396 -0.0708 -0.1281 -2.2973 -0.2710 -0.1590
+S-192	Das Produkt darf nicht wieder gekühlt gelagert werden .
+T-192	The product may not be returned to refrigerated storage again .
+H-192	-0.4364681839942932	Do not store the product in a refrigerated place .
+D-192	-0.4364681839942932	Do not store the product in a refrigerated place .
+P-192	-1.0374 -0.1271 -0.2994 -0.2415 -0.1396 -0.7800 -0.4363 -0.0835 -0.0396 -0.0708 -0.1281 -2.2973 -0.2710 -0.1590
+S-218	Das Produkt darf nicht wieder gekühlt gelagert werden .
+T-218	The product may not be returned to refrigerated storage again .
+H-218	-0.4364681839942932	Do not store the product in a refrigerated place .
+D-218	-0.4364681839942932	Do not store the product in a refrigerated place .
+P-218	-1.0374 -0.1271 -0.2994 -0.2415 -0.1396 -0.7800 -0.4363 -0.0835 -0.0396 -0.0708 -0.1281 -2.2973 -0.2710 -0.1590
+S-142	Das Produkt darf nicht wieder gekühlt gelagert werden .
+T-142	The product may not be returned to refrigerated storage again .
+H-142	-0.4364681839942932	Do not store the product in a refrigerated place .
+D-142	-0.4364681839942932	Do not store the product in a refrigerated place .
+P-142	-1.0374 -0.1271 -0.2994 -0.2415 -0.1396 -0.7800 -0.4363 -0.0835 -0.0396 -0.0708 -0.1281 -2.2973 -0.2710 -0.1590
+S-113	Erkrankungen der Haut und des Unterhautzellgewebes
+T-113	Chest pain Chills Feeling abnormal Investigations Anti-factor VIII antibody positive
+H-113	-0.11415062099695206	Skin and subcutaneous tissue disorders
+D-113	-0.11415062099695206	Skin and subcutaneous tissue disorders
+P-113	-0.0794 -0.1137 -0.1491 -0.1332 -0.1224 -0.1759 -0.0950 -0.1219 -0.0473 -0.0368 -0.1144 -0.1807
+S-92	Das Produkt darf nicht wieder gekühlt gelagert werden .
+T-92	The product may not be returned to refrigerated storage again .
+H-92	-0.4364681839942932	Do not store the product in a refrigerated place .
+D-92	-0.4364681839942932	Do not store the product in a refrigerated place .
+P-92	-1.0374 -0.1271 -0.2994 -0.2415 -0.1396 -0.7800 -0.4363 -0.0835 -0.0396 -0.0708 -0.1281 -2.2973 -0.2710 -0.1590
+S-9	Weitere Informationen sind der Packungsbeilage zu entnehmen .
+T-9	For more information , see the Package Leaflet .
+H-9	-0.1451045721769333	For more information , see the Package Leaflet .
+D-9	-0.1451045721769333	For more information , see the Package Leaflet .
+P-9	-0.1523 -0.3758 -0.0843 -0.1783 -0.1617 -0.1411 -0.0160 -0.1125 -0.1082 -0.0627 -0.0985 -0.2345 -0.1606
+S-315	Die Einnahme kann unabhängig von den Mahlzeiten erfolgen .
+T-315	The tablet may be taken with or without food .
+H-315	-0.42129459977149963	Taking this medicine can be done regardless of meals .
+D-315	-0.42129459977149963	Taking this medicine can be done regardless of meals .
+P-315	-0.2946 -1.9727 -0.4065 -0.6639 -0.1486 -0.2570 -0.3874 -0.1365 -0.0537 -0.1533 -0.1599
+S-304	Das Arzneimittel ist nur auf ärztliche Verschreibung erhältlich .
+T-304	The medicine can only be obtained with a prescription .
+H-304	-0.1461484730243683	The medicine can only be obtained with a prescription .
+D-304	-0.1461484730243683	The medicine can only be obtained with a prescription .
+P-304	-0.3384 -0.1036 -0.2140 -0.1455 -0.1397 -0.0781 -0.0814 -0.1521 -0.0373 -0.1544 -0.1630
+S-71	Das Arzneimittel ist nur auf ärztliche Verschreibung erhältlich .
+T-71	The medicine can only be obtained with a prescription .
+H-71	-0.1461484730243683	The medicine can only be obtained with a prescription .
+D-71	-0.1461484730243683	The medicine can only be obtained with a prescription .
+P-71	-0.3384 -0.1036 -0.2140 -0.1455 -0.1397 -0.0781 -0.0814 -0.1521 -0.0373 -0.1544 -0.1630
+S-7	Das Arzneimittel ist nur auf ärztliche Verschreibung erhältlich .
+T-7	The medicine can only be obtained with a prescription .
+H-7	-0.1461484730243683	The medicine can only be obtained with a prescription .
+D-7	-0.1461484730243683	The medicine can only be obtained with a prescription .
+P-7	-0.3384 -0.1036 -0.2140 -0.1455 -0.1397 -0.0781 -0.0814 -0.1521 -0.0373 -0.1544 -0.1630
+S-88	Positiver Test auf Antikörper gegen Faktor VIII
+T-88	Chest pain Chills Feeling abnormal Investigations Anti-factor VIII antibody positive
+H-88	-0.16327646374702454	Positive test for antibodies to factor VIII
+D-88	-0.16327646374702454	Positive test for antibodies to factor VIII
+P-88	-0.1183 -0.0948 -0.1163 -0.1628 -0.0693 -0.1052 -0.3209 -0.4232 -0.1776 -0.0598 -0.1479
+S-0	Das Arzneimittel ist nur auf ärztliche Verschreibung erhältlich .
+T-0	The medicine can only be obtained with a prescription .
+H-0	-0.1461484730243683	The medicine can only be obtained with a prescription .
+D-0	-0.1461484730243683	The medicine can only be obtained with a prescription .
+P-0	-0.3384 -0.1036 -0.2140 -0.1455 -0.1397 -0.0781 -0.0814 -0.1521 -0.0373 -0.1544 -0.1630
+S-138	Erkrankungen der Haut und des Unterhautzellgewebes
+T-138	Chest pain Chills Feeling abnormal Investigations Anti-factor VIII antibody positive
+H-138	-0.11415062099695206	Skin and subcutaneous tissue disorders
+D-138	-0.11415062099695206	Skin and subcutaneous tissue disorders
+P-138	-0.0794 -0.1137 -0.1491 -0.1332 -0.1224 -0.1759 -0.0950 -0.1219 -0.0473 -0.0368 -0.1144 -0.1807
+S-114	Hämatokritabfall Auffällige Laborwerte
+T-114	Haematocrit decreased Laboratory test abnormal Injury , poisoning and Post procedural procedural complications complication
+H-114	-0.3334559500217438	Haematocrit waste Abnormal laboratory values
+D-114	-0.3334559500217438	Haematocrit waste Abnormal laboratory values
+P-114	-0.6385 -0.0974 -0.1439 -0.0857 -0.0187 -0.3185 -0.4038 -1.3719 -0.8018 -0.0966 -0.0621 -0.1128 -0.1832
+S-187	Gelegentlich Gelegentlich Gelegentlich Gelegentlich
+T-187	Uncommon Uncommon Uncommon Uncommon Uncommon Uncommon Uncommon Uncommon Common Uncommon
+H-187	-0.30811238288879395	Uncommon Uncommon Uncommon Uncommon Uncommon
+D-187	-0.30811238288879395	Uncommon Uncommon Uncommon Uncommon Uncommon
+P-187	-1.0806 -0.1262 -0.1116 -0.1470 -0.0729 -0.2064 -0.0613 -0.1193 -0.3407 -0.0674 -1.0558
+S-215	Hämatokritabfall Auffällige Laborwerte
+T-215	Haematocrit decreased Laboratory test abnormal Injury , poisoning and Post procedural procedural complications complication
+H-215	-0.3334559500217438	Haematocrit waste Abnormal laboratory values
+D-215	-0.3334559500217438	Haematocrit waste Abnormal laboratory values
+P-215	-0.6385 -0.0974 -0.1439 -0.0857 -0.0187 -0.3185 -0.4038 -1.3719 -0.8018 -0.0966 -0.0621 -0.1128 -0.1832
+S-189	Hämatokritabfall Auffällige Laborwerte
+T-189	Haematocrit decreased Laboratory test abnormal Injury , poisoning and Post procedural procedural complications complication
+H-189	-0.3334559500217438	Haematocrit waste Abnormal laboratory values
+D-189	-0.3334559500217438	Haematocrit waste Abnormal laboratory values
+P-189	-0.6385 -0.0974 -0.1439 -0.0857 -0.0187 -0.3185 -0.4038 -1.3719 -0.8018 -0.0966 -0.0621 -0.1128 -0.1832
+S-164	Hämatokritabfall Auffällige Laborwerte
+T-164	Haematocrit decreased Laboratory test abnormal Injury , poisoning and Post procedural procedural complications complication
+H-164	-0.3334559500217438	Haematocrit waste Abnormal laboratory values
+D-164	-0.3334559500217438	Haematocrit waste Abnormal laboratory values
+P-164	-0.6385 -0.0974 -0.1439 -0.0857 -0.0187 -0.3185 -0.4038 -1.3719 -0.8018 -0.0966 -0.0621 -0.1128 -0.1832
+S-139	Hämatokritabfall Auffällige Laborwerte
+T-139	Haematocrit decreased Laboratory test abnormal Injury , poisoning and Post procedural procedural complications complication
+H-139	-0.3334559500217438	Haematocrit waste Abnormal laboratory values
+D-139	-0.3334559500217438	Haematocrit waste Abnormal laboratory values
+P-139	-0.6385 -0.0974 -0.1439 -0.0857 -0.0187 -0.3185 -0.4038 -1.3719 -0.8018 -0.0966 -0.0621 -0.1128 -0.1832
+S-163	Erkrankungen der Haut und des Unterhautzellgewebes
+T-163	Chest pain Chills Feeling abnormal Investigations Anti-factor VIII antibody positive
+H-163	-0.11415062099695206	Skin and subcutaneous tissue disorders
+D-163	-0.11415062099695206	Skin and subcutaneous tissue disorders
+P-163	-0.0794 -0.1137 -0.1491 -0.1332 -0.1224 -0.1759 -0.0950 -0.1219 -0.0473 -0.0368 -0.1144 -0.1807
+S-213	Gelegentlich Gelegentlich Gelegentlich Gelegentlich
+T-213	Uncommon Uncommon Uncommon Uncommon Uncommon Uncommon Uncommon Uncommon Common Uncommon
+H-213	-0.30811238288879395	Uncommon Uncommon Uncommon Uncommon Uncommon
+D-213	-0.30811238288879395	Uncommon Uncommon Uncommon Uncommon Uncommon
+P-213	-1.0806 -0.1262 -0.1116 -0.1470 -0.0729 -0.2064 -0.0613 -0.1193 -0.3407 -0.0674 -1.0558
+S-188	Erkrankungen der Haut und des Unterhautzellgewebes
+T-188	Chest pain Chills Feeling abnormal Investigations Anti-factor VIII antibody positive
+H-188	-0.11415062099695206	Skin and subcutaneous tissue disorders
+D-188	-0.11415062099695206	Skin and subcutaneous tissue disorders
+P-188	-0.0794 -0.1137 -0.1491 -0.1332 -0.1224 -0.1759 -0.0950 -0.1219 -0.0473 -0.0368 -0.1144 -0.1807
+S-162	Gelegentlich Gelegentlich Gelegentlich Gelegentlich
+T-162	Uncommon Uncommon Uncommon Uncommon Uncommon Uncommon Uncommon Uncommon Common Uncommon
+H-162	-0.30811238288879395	Uncommon Uncommon Uncommon Uncommon Uncommon
+D-162	-0.30811238288879395	Uncommon Uncommon Uncommon Uncommon Uncommon
+P-162	-1.0806 -0.1262 -0.1116 -0.1470 -0.0729 -0.2064 -0.0613 -0.1193 -0.3407 -0.0674 -1.0558
+S-137	Gelegentlich Gelegentlich Gelegentlich Gelegentlich
+T-137	Uncommon Uncommon Uncommon Uncommon Uncommon Uncommon Uncommon Uncommon Common Uncommon
+H-137	-0.30811238288879395	Uncommon Uncommon Uncommon Uncommon Uncommon
+D-137	-0.30811238288879395	Uncommon Uncommon Uncommon Uncommon Uncommon
+P-137	-1.0806 -0.1262 -0.1116 -0.1470 -0.0729 -0.2064 -0.0613 -0.1193 -0.3407 -0.0674 -1.0558
+S-112	Gelegentlich Gelegentlich Gelegentlich Gelegentlich
+T-112	Uncommon Uncommon Uncommon Uncommon Uncommon Uncommon Uncommon Uncommon Common Uncommon
+H-112	-0.30811238288879395	Uncommon Uncommon Uncommon Uncommon Uncommon
+D-112	-0.30811238288879395	Uncommon Uncommon Uncommon Uncommon Uncommon
+P-112	-1.0806 -0.1262 -0.1116 -0.1470 -0.0729 -0.2064 -0.0613 -0.1193 -0.3407 -0.0674 -1.0558
+S-214	Erkrankungen der Haut und des Unterhautzellgewebes
+T-214	Chest pain Chills Feeling abnormal Investigations Anti-factor VIII antibody positive
+H-214	-0.11415062099695206	Skin and subcutaneous tissue disorders
+D-214	-0.11415062099695206	Skin and subcutaneous tissue disorders
+P-214	-0.0794 -0.1137 -0.1491 -0.1332 -0.1224 -0.1759 -0.0950 -0.1219 -0.0473 -0.0368 -0.1144 -0.1807
+S-210	Durchfall Oberbauchschmerzen Übelkeit Erbrechen
+T-210	Gastrointestinal Diarrhoea disorders Abdominal pain upper Nausea Vomiting Skin and subcutaneous Pruritus tissue disorders Rash Hyperhidrosis Dermatitis diaper General disorders and Pyrexia administration site Oedema peripheral conditions
+H-210	-0.2938079833984375	Diarrhoea Abdominal pain Nausea Vomiting
+D-210	-0.2938079833984375	Diarrhoea Abdominal pain Nausea Vomiting
+P-210	-1.0085 -0.0513 -0.0503 -0.0316 -1.5938 -0.0225 -0.0453 -0.1336 -0.5596 -0.0542 -0.1661 -0.0297 -0.1096 -0.2572
+S-184	Durchfall Oberbauchschmerzen Übelkeit Erbrechen
+T-184	Gastrointestinal Diarrhoea disorders Abdominal pain upper Nausea Vomiting Skin and subcutaneous Pruritus tissue disorders Rash Hyperhidrosis Dermatitis diaper General disorders and Pyrexia administration site Oedema peripheral conditions
+H-184	-0.2938079833984375	Diarrhoea Abdominal pain Nausea Vomiting
+D-184	-0.2938079833984375	Diarrhoea Abdominal pain Nausea Vomiting
+P-184	-1.0085 -0.0513 -0.0503 -0.0316 -1.5938 -0.0225 -0.0453 -0.1336 -0.5596 -0.0542 -0.1661 -0.0297 -0.1096 -0.2572
+S-308	Tablette mit veränderter Wirkstofffreisetzung
+T-308	EU/ 1/ 07/ 399/ 001 EU/ 1/ 07/ 399/ 002 EU/ 1/ 07/ 399/ 003 EU/ 1/ 07/ 399/ 004 EU/ 1/ 07/ 399/ 005 EU/ 1/ 07/ 399/ 006
+H-308	-0.7720319032669067	Tablet with altered active substance release
+D-308	-0.7720319032669067	Tablet with altered active substance release
+P-308	-3.0205 -0.2174 -0.2335 -0.4764 -0.0989 -1.5852 -0.4946 -0.5735 -0.2483
+S-159	Durchfall Oberbauchschmerzen Übelkeit Erbrechen
+T-159	Gastrointestinal Diarrhoea disorders Abdominal pain upper Nausea Vomiting Skin and subcutaneous Pruritus tissue disorders Rash Hyperhidrosis Dermatitis diaper General disorders and Pyrexia administration site Oedema peripheral conditions
+H-159	-0.2938079833984375	Diarrhoea Abdominal pain Nausea Vomiting
+D-159	-0.2938079833984375	Diarrhoea Abdominal pain Nausea Vomiting
+P-159	-1.0085 -0.0513 -0.0503 -0.0316 -1.5938 -0.0225 -0.0453 -0.1336 -0.5596 -0.0542 -0.1661 -0.0297 -0.1096 -0.2572
+S-253	BEZEICHNUNG DES ARZNEIMITTELS SOWIE ART<unk> EN ) DER ANWENDUNG
+T-253	NAME OF THE MEDICINAL PRODUCT AND ROUTE<<unk>> S ) OF ADMINISTRATION
+H-253	-0.06353018432855606	NAME OF THE MEDICINAL PRODUCT AND ROUTE<unk> S ) OF ADMINISTRATION
+D-253	-0.06353018432855606	NAME OF THE MEDICINAL PRODUCT AND ROUTE<unk> S ) OF ADMINISTRATION
+P-253	-0.1245 -0.0419 -0.0943 -0.0577 -0.0654 -0.1446 -0.0206 -0.0451 -0.0709 -0.0419 -0.0616 -0.1421 -0.1125 -0.1020 -0.0521 -0.1220 -0.0204 -0.0362 -0.0114 -0.0391 -0.0167 -0.0349 -0.0935 -0.0272 -0.0724 -0.0367 -0.0324 -0.0726 -0.0066 -0.0124 -0.0573 -0.0577 -0.1698
+S-258	BEZEICHNUNG DES ARZNEIMITTELS SOWIE ART<unk> EN ) DER ANWENDUNG
+T-258	NAME OF THE MEDICINAL PRODUCT AND ROUTE<<unk>> S ) OF ADMINISTRATION
+H-258	-0.06353018432855606	NAME OF THE MEDICINAL PRODUCT AND ROUTE<unk> S ) OF ADMINISTRATION
+D-258	-0.06353018432855606	NAME OF THE MEDICINAL PRODUCT AND ROUTE<unk> S ) OF ADMINISTRATION
+P-258	-0.1245 -0.0419 -0.0943 -0.0577 -0.0654 -0.1446 -0.0206 -0.0451 -0.0709 -0.0419 -0.0616 -0.1421 -0.1125 -0.1020 -0.0521 -0.1220 -0.0204 -0.0362 -0.0114 -0.0391 -0.0167 -0.0349 -0.0935 -0.0272 -0.0724 -0.0367 -0.0324 -0.0726 -0.0066 -0.0124 -0.0573 -0.0577 -0.1698
+S-233	BEZEICHNUNG DES ARZNEIMITTELS SOWIE ART<unk> EN ) DER ANWENDUNG
+T-233	NAME OF THE MEDICINAL PRODUCT AND ROUTE<<unk>> S ) OF ADMINISTRATION
+H-233	-0.06353018432855606	NAME OF THE MEDICINAL PRODUCT AND ROUTE<unk> S ) OF ADMINISTRATION
+D-233	-0.06353018432855606	NAME OF THE MEDICINAL PRODUCT AND ROUTE<unk> S ) OF ADMINISTRATION
+P-233	-0.1245 -0.0419 -0.0943 -0.0577 -0.0654 -0.1446 -0.0206 -0.0451 -0.0709 -0.0419 -0.0616 -0.1421 -0.1125 -0.1020 -0.0521 -0.1220 -0.0204 -0.0362 -0.0114 -0.0391 -0.0167 -0.0349 -0.0935 -0.0272 -0.0724 -0.0367 -0.0324 -0.0726 -0.0066 -0.0124 -0.0573 -0.0577 -0.1698
+S-236	BEZEICHNUNG DES ARZNEIMITTELS SOWIE ART<unk> EN ) DER ANWENDUNG
+T-236	NAME OF THE MEDICINAL PRODUCT AND ROUTE<<unk>> S ) OF ADMINISTRATION
+H-236	-0.06353018432855606	NAME OF THE MEDICINAL PRODUCT AND ROUTE<unk> S ) OF ADMINISTRATION
+D-236	-0.06353018432855606	NAME OF THE MEDICINAL PRODUCT AND ROUTE<unk> S ) OF ADMINISTRATION
+P-236	-0.1245 -0.0419 -0.0943 -0.0577 -0.0654 -0.1446 -0.0206 -0.0451 -0.0709 -0.0419 -0.0616 -0.1421 -0.1125 -0.1020 -0.0521 -0.1220 -0.0204 -0.0362 -0.0114 -0.0391 -0.0167 -0.0349 -0.0935 -0.0272 -0.0724 -0.0367 -0.0324 -0.0726 -0.0066 -0.0124 -0.0573 -0.0577 -0.1698
+S-241	BEZEICHNUNG DES ARZNEIMITTELS SOWIE ART<unk> EN ) DER ANWENDUNG
+T-241	NAME OF THE MEDICINAL PRODUCT AND ROUTE<<unk>> S ) OF ADMINISTRATION
+H-241	-0.06353018432855606	NAME OF THE MEDICINAL PRODUCT AND ROUTE<unk> S ) OF ADMINISTRATION
+D-241	-0.06353018432855606	NAME OF THE MEDICINAL PRODUCT AND ROUTE<unk> S ) OF ADMINISTRATION
+P-241	-0.1245 -0.0419 -0.0943 -0.0577 -0.0654 -0.1446 -0.0206 -0.0451 -0.0709 -0.0419 -0.0616 -0.1421 -0.1125 -0.1020 -0.0521 -0.1220 -0.0204 -0.0362 -0.0114 -0.0391 -0.0167 -0.0349 -0.0935 -0.0272 -0.0724 -0.0367 -0.0324 -0.0726 -0.0066 -0.0124 -0.0573 -0.0577 -0.1698
+S-249	BEZEICHNUNG DES ARZNEIMITTELS SOWIE ART<unk> EN ) DER ANWENDUNG
+T-249	NAME OF THE MEDICINAL PRODUCT AND ROUTE<<unk>> S ) OF ADMINISTRATION
+H-249	-0.06353018432855606	NAME OF THE MEDICINAL PRODUCT AND ROUTE<unk> S ) OF ADMINISTRATION
+D-249	-0.06353018432855606	NAME OF THE MEDICINAL PRODUCT AND ROUTE<unk> S ) OF ADMINISTRATION
+P-249	-0.1245 -0.0419 -0.0943 -0.0577 -0.0654 -0.1446 -0.0206 -0.0451 -0.0709 -0.0419 -0.0616 -0.1421 -0.1125 -0.1020 -0.0521 -0.1220 -0.0204 -0.0362 -0.0114 -0.0391 -0.0167 -0.0349 -0.0935 -0.0272 -0.0724 -0.0367 -0.0324 -0.0726 -0.0066 -0.0124 -0.0573 -0.0577 -0.1698
+S-278	BEZEICHNUNG DES ARZNEIMITTELS SOWIE ART<unk> EN ) DER ANWENDUNG
+T-278	NAME OF THE MEDICINAL PRODUCT AND ROUTE<<unk>> S ) OF ADMINISTRATION
+H-278	-0.06353018432855606	NAME OF THE MEDICINAL PRODUCT AND ROUTE<unk> S ) OF ADMINISTRATION
+D-278	-0.06353018432855606	NAME OF THE MEDICINAL PRODUCT AND ROUTE<unk> S ) OF ADMINISTRATION
+P-278	-0.1245 -0.0419 -0.0943 -0.0577 -0.0654 -0.1446 -0.0206 -0.0451 -0.0709 -0.0419 -0.0616 -0.1421 -0.1125 -0.1020 -0.0521 -0.1220 -0.0204 -0.0362 -0.0114 -0.0391 -0.0167 -0.0349 -0.0935 -0.0272 -0.0724 -0.0367 -0.0324 -0.0726 -0.0066 -0.0124 -0.0573 -0.0577 -0.1698
+S-244	BEZEICHNUNG DES ARZNEIMITTELS SOWIE ART<unk> EN ) DER ANWENDUNG
+T-244	NAME OF THE MEDICINAL PRODUCT AND ROUTE<<unk>> S ) OF ADMINISTRATION
+H-244	-0.06353018432855606	NAME OF THE MEDICINAL PRODUCT AND ROUTE<unk> S ) OF ADMINISTRATION
+D-244	-0.06353018432855606	NAME OF THE MEDICINAL PRODUCT AND ROUTE<unk> S ) OF ADMINISTRATION
+P-244	-0.1245 -0.0419 -0.0943 -0.0577 -0.0654 -0.1446 -0.0206 -0.0451 -0.0709 -0.0419 -0.0616 -0.1421 -0.1125 -0.1020 -0.0521 -0.1220 -0.0204 -0.0362 -0.0114 -0.0391 -0.0167 -0.0349 -0.0935 -0.0272 -0.0724 -0.0367 -0.0324 -0.0726 -0.0066 -0.0124 -0.0573 -0.0577 -0.1698
+S-261	BEZEICHNUNG DES ARZNEIMITTELS SOWIE ART<unk> EN ) DER ANWENDUNG
+T-261	NAME OF THE MEDICINAL PRODUCT AND ROUTE<<unk>> S ) OF ADMINISTRATION
+H-261	-0.06353018432855606	NAME OF THE MEDICINAL PRODUCT AND ROUTE<unk> S ) OF ADMINISTRATION
+D-261	-0.06353018432855606	NAME OF THE MEDICINAL PRODUCT AND ROUTE<unk> S ) OF ADMINISTRATION
+P-261	-0.1245 -0.0419 -0.0943 -0.0577 -0.0654 -0.1446 -0.0206 -0.0451 -0.0709 -0.0419 -0.0616 -0.1421 -0.1125 -0.1020 -0.0521 -0.1220 -0.0204 -0.0362 -0.0114 -0.0391 -0.0167 -0.0349 -0.0935 -0.0272 -0.0724 -0.0367 -0.0324 -0.0726 -0.0066 -0.0124 -0.0573 -0.0577 -0.1698
+S-266	BEZEICHNUNG DES ARZNEIMITTELS SOWIE ART<unk> EN ) DER ANWENDUNG
+T-266	NAME OF THE MEDICINAL PRODUCT AND ROUTE<<unk>> S ) OF ADMINISTRATION
+H-266	-0.06353018432855606	NAME OF THE MEDICINAL PRODUCT AND ROUTE<unk> S ) OF ADMINISTRATION
+D-266	-0.06353018432855606	NAME OF THE MEDICINAL PRODUCT AND ROUTE<unk> S ) OF ADMINISTRATION
+P-266	-0.1245 -0.0419 -0.0943 -0.0577 -0.0654 -0.1446 -0.0206 -0.0451 -0.0709 -0.0419 -0.0616 -0.1421 -0.1125 -0.1020 -0.0521 -0.1220 -0.0204 -0.0362 -0.0114 -0.0391 -0.0167 -0.0349 -0.0935 -0.0272 -0.0724 -0.0367 -0.0324 -0.0726 -0.0066 -0.0124 -0.0573 -0.0577 -0.1698
+S-269	BEZEICHNUNG DES ARZNEIMITTELS SOWIE ART<unk> EN ) DER ANWENDUNG
+T-269	NAME OF THE MEDICINAL PRODUCT AND ROUTE<<unk>> S ) OF ADMINISTRATION
+H-269	-0.06353018432855606	NAME OF THE MEDICINAL PRODUCT AND ROUTE<unk> S ) OF ADMINISTRATION
+D-269	-0.06353018432855606	NAME OF THE MEDICINAL PRODUCT AND ROUTE<unk> S ) OF ADMINISTRATION
+P-269	-0.1245 -0.0419 -0.0943 -0.0577 -0.0654 -0.1446 -0.0206 -0.0451 -0.0709 -0.0419 -0.0616 -0.1421 -0.1125 -0.1020 -0.0521 -0.1220 -0.0204 -0.0362 -0.0114 -0.0391 -0.0167 -0.0349 -0.0935 -0.0272 -0.0724 -0.0367 -0.0324 -0.0726 -0.0066 -0.0124 -0.0573 -0.0577 -0.1698
+S-274	BEZEICHNUNG DES ARZNEIMITTELS SOWIE ART<unk> EN ) DER ANWENDUNG
+T-274	NAME OF THE MEDICINAL PRODUCT AND ROUTE<<unk>> S ) OF ADMINISTRATION
+H-274	-0.06353018432855606	NAME OF THE MEDICINAL PRODUCT AND ROUTE<unk> S ) OF ADMINISTRATION
+D-274	-0.06353018432855606	NAME OF THE MEDICINAL PRODUCT AND ROUTE<unk> S ) OF ADMINISTRATION
+P-274	-0.1245 -0.0419 -0.0943 -0.0577 -0.0654 -0.1446 -0.0206 -0.0451 -0.0709 -0.0419 -0.0616 -0.1421 -0.1125 -0.1020 -0.0521 -0.1220 -0.0204 -0.0362 -0.0114 -0.0391 -0.0167 -0.0349 -0.0935 -0.0272 -0.0724 -0.0367 -0.0324 -0.0726 -0.0066 -0.0124 -0.0573 -0.0577 -0.1698
+S-243	79 ANGABEN AUF DER DURCHSTECHFLASCHE MIT DEM LÖSUNGSMITTEL
+T-243	73 MINIMUM PARTICULARS TO APPEAR ON SMALL IMMEDIATE PACKAGING UNITS
+H-243	-0.31957605481147766	69 PARTICULARS TO APPEAR ON THE DISPOSAL BOTTLE WITH THE SOLUTION
+D-243	-0.31957605481147766	69 PARTICULARS TO APPEAR ON THE DISPOSAL BOTTLE WITH THE SOLUTION
+P-243	-2.4400 -0.1203 -0.0757 -0.0363 -0.0525 -0.0677 -0.1006 -0.0660 -0.0333 -0.0068 -0.0012 -0.0251 -0.1145 -0.0719 -2.8631 -0.0002 -0.0296 -0.0193 -0.1961 -0.0674 -0.1288 -0.0909 -0.3388 -0.1693 -0.0613 -0.1148 -1.5431 -0.0970 -0.0780 -0.0300 -0.3150 -0.8716
+S-252	83 ANGABEN AUF DER DURCHSTECHFLASCHE MIT DEM LÖSUNGSMITTEL
+T-252	77 MINIMUM PARTICULARS TO APPEAR ON SMALL IMMEDIATE PACKAGING UNITS
+H-252	-0.30693235993385315	83 PARTICULARS TO APPEAR ON THE DISPOSAL BOTTLE WITH THE SOLUTION
+D-252	-0.30693235993385315	83 PARTICULARS TO APPEAR ON THE DISPOSAL BOTTLE WITH THE SOLUTION
+P-252	-2.2307 -0.1046 -0.0788 -0.0384 -0.0442 -0.0640 -0.1062 -0.0498 -0.0298 -0.0073 -0.0012 -0.0263 -0.1129 -0.0702 -2.9702 -0.0002 -0.0312 -0.0206 -0.1877 -0.0664 -0.1378 -0.0880 -0.4573 -0.1673 -0.0604 -0.1206 -1.1797 -0.0880 -0.0793 -0.0315 -0.3101 -0.8615
+S-235	75 ANGABEN AUF DER DURCHSTECHFLASCHE MIT DEM LÖSUNGSMITTEL
+T-235	69 MINIMUM PARTICULARS TO APPEAR ON SMALL IMMEDIATE PACKAGING UNITS
+H-235	-0.3330881595611572	75 PARTICULARS TO APPEAR ON THE DISPOSAL BOTTLE WITH THE SOLUTION
+D-235	-0.3330881595611572	75 PARTICULARS TO APPEAR ON THE DISPOSAL BOTTLE WITH THE SOLUTION
+P-235	-2.7048 -0.1022 -0.0890 -0.0396 -0.0500 -0.0581 -0.0995 -0.0657 -0.0290 -0.0069 -0.0012 -0.0261 -0.1220 -0.0787 -2.9650 -0.0002 -0.0314 -0.0202 -0.1982 -0.0686 -0.1288 -0.0882 -0.3223 -0.1669 -0.0608 -0.1264 -1.5772 -0.0953 -0.0808 -0.0315 -0.3138 -0.9104
+S-268	91 ANGABEN AUF DER DURCHSTECHFLASCHE MIT DEM LÖSUNGSMITTEL
+T-268	85 MINIMUM PARTICULARS TO APPEAR ON SMALL IMMEDIATE PACKAGING UNITS
+H-268	-0.281668096780777	91 PARTICULARS TO APPEAR ON THE DISPOSAL BOTTLE WITH THE SOLUTION
+D-268	-0.281668096780777	91 PARTICULARS TO APPEAR ON THE DISPOSAL BOTTLE WITH THE SOLUTION
+P-268	-1.2707 -0.0834 -0.0843 -0.0333 -0.0554 -0.0603 -0.1168 -0.0381 -0.0234 -0.0072 -0.0012 -0.0259 -0.1010 -0.0724 -2.9013 -0.0002 -0.0294 -0.0196 -0.1907 -0.0663 -0.1357 -0.0906 -0.3435 -0.1677 -0.0618 -0.1189 -1.3913 -0.0914 -0.0793 -0.0327 -0.3182 -1.0016
+S-277	95 ANGABEN AUF DER DURCHSTECHFLASCHE MIT DEM LÖSUNGSMITTEL
+T-277	89 MINIMUM PARTICULARS TO APPEAR ON SMALL IMMEDIATE PACKAGING UNITS
+H-277	-0.28394415974617004	95 PARTICULARS TO APPEAR ON THE DISPOSAL BOTTLE WITH THE SOLUTION
+D-277	-0.28394415974617004	95 PARTICULARS TO APPEAR ON THE DISPOSAL BOTTLE WITH THE SOLUTION
+P-277	-1.1507 -0.1340 -0.0866 -0.0401 -0.0446 -0.0546 -0.1032 -0.0645 -0.0302 -0.0068 -0.0012 -0.0254 -0.1155 -0.0753 -3.0566 -0.0002 -0.0304 -0.0201 -0.1957 -0.0652 -0.1368 -0.0861 -0.4023 -0.1671 -0.0605 -0.1259 -1.4153 -0.0919 -0.0795 -0.0331 -0.3030 -0.8838
+S-260	87 ANGABEN AUF DER DURCHSTECHFLASCHE MIT DEM LÖSUNGSMITTEL
+T-260	81 MINIMUM PARTICULARS TO APPEAR ON SMALL IMMEDIATE PACKAGING UNITS
+H-260	-0.2753240764141083	87 PARTICULARS TO APPEAR ON THE BOTTLE WITH THE SOLUTION
+D-260	-0.2753240764141083	87 PARTICULARS TO APPEAR ON THE BOTTLE WITH THE SOLUTION
+P-260	-1.2089 -0.0826 -0.0826 -0.0382 -0.0476 -0.0663 -0.1091 -0.0389 -0.0203 -0.0072 -0.0013 -0.0250 -0.0970 -0.0651 -2.7733 -0.0392 -0.0916 -0.0497 -0.2760 -0.1963 -0.0590 -0.1422 -1.0142 -0.1079 -0.0711 -0.0289 -0.3339 -0.6357
+S-297	Suðurlandsbraut 22 IS-108 Reykjavík Sími : <unk> 354 533 6100
+T-297	Suðurlandsbraut 22 IS-108 Reykjavík Sími : <<unk>> 354 533 6100
+H-297	-0.2887119650840759	Suðurlandsbride 22 IS-108 Reykjavík Sími : <unk> 354 533 6100
+D-297	-0.2887119650840759	Suðurlandsbride 22 IS-108 Reykjavík Sími : <unk> 354 533 6100
+P-297	-0.3289 -0.4022 -0.1001 -0.5613 -3.9024 -0.1090 -0.1906 -0.1213 -0.0752 -0.0862 -0.1562 -0.1294 -0.3159 -0.0888 -0.0782 -0.1034 -0.1460 -0.0815 -0.0462 -0.1378 -0.0632 -0.1250 -0.0813 -0.1507 -0.1315 -0.1302 -0.0930 -0.1485
+S-283	WAS IST ADVATE UND WOFÜR WIRD ES ANGEWENDET ?
+T-283	WHAT ADVATE IS AND WHAT IT IS USED FOR
+H-283	-0.07673898339271545	WHAT ADVATE IS AND WHAT IT IS USED FOR
+D-283	-0.07673898339271545	WHAT ADVATE IS AND WHAT IT IS USED FOR
+P-283	-0.1011 -0.0393 -0.0890 -0.1764 -0.0979 -0.0847 -0.0612 -0.0347 -0.0554 -0.0329 -0.0538 -0.0701 -0.0205 -0.0618 -0.0891 -0.1100 -0.1265
+S-279	INHALT NACH GEWICHT , VOLUMEN ODER EINHEITEN
+T-279	CONTENTS BY WEIGHT , BY VOLUME OR BY UNIT
+H-279	-0.11506728827953339	CONTENTS BY WEIGHT , BY VOLUME OR BY UNIT
+D-279	-0.11506728827953339	CONTENTS BY WEIGHT , BY VOLUME OR BY UNIT
+P-279	-0.0719 -0.1784 -0.6037 -0.0553 -0.0373 -0.0441 -0.0832 -0.0398 -0.0666 -0.1011 -0.1508 -0.0648 -0.0401 -0.2148 -0.0882 -0.0758 -0.0249 -0.0538 -0.1429 -0.0411 -0.0526 -0.0500 -0.3088 -0.1717
+S-240	78 MINDESTANGABEN AUF KLEINEN BEHÄLTNISSEN
+T-240	72 MINIMUM PARTICULARS TO APPEAR ON SMALL IMMEDIATE PACKAGING UNITS
+H-240	-0.13372497260570526	78 MINIMUM PARTICULARS TO APPEAR ON SMALL IMMEDIATE PACKAGING UNITS
+D-240	-0.13372497260570526	78 MINIMUM PARTICULARS TO APPEAR ON SMALL IMMEDIATE PACKAGING UNITS
+P-240	-1.6971 -0.0900 -0.0923 -0.0383 -0.0834 -0.0263 -0.0436 -0.0987 -0.0555 -0.0354 -0.0850 -0.0995 -0.1328 -0.0299 -0.0136 -0.0015 -0.0231 -0.1776 -0.0747 -0.0948 -0.0363 -0.0009 -0.0282 -0.0750 -0.0480 -0.2436 -0.5414 -0.1052 -0.0807 -0.0412 -0.1007 -0.0831 -0.0293 -0.1401
+S-276	INHALT NACH GEWICHT , VOLUMEN ODER EINHEITEN
+T-276	CONTENTS BY WEIGHT , BY VOLUME OR BY UNIT
+H-276	-0.11506728827953339	CONTENTS BY WEIGHT , BY VOLUME OR BY UNIT
+D-276	-0.11506728827953339	CONTENTS BY WEIGHT , BY VOLUME OR BY UNIT
+P-276	-0.0719 -0.1784 -0.6037 -0.0553 -0.0373 -0.0441 -0.0832 -0.0398 -0.0666 -0.1011 -0.1508 -0.0648 -0.0401 -0.2148 -0.0882 -0.0758 -0.0249 -0.0538 -0.1429 -0.0411 -0.0526 -0.0500 -0.3088 -0.1717
+S-232	74 MINDESTANGABEN AUF KLEINEN BEHÄLTNISSEN
+T-232	68 MINIMUM PARTICULARS TO APPEAR ON SMALL IMMEDIATE PACKAGING UNITS
+H-232	-0.1265605390071869	74 MINIMUM PARTICULARS TO APPEAR ON SMALL IMMEDIATE PACKAGING UNITS
+D-232	-0.1265605390071869	74 MINIMUM PARTICULARS TO APPEAR ON SMALL IMMEDIATE PACKAGING UNITS
+P-232	-1.5255 -0.0941 -0.1075 -0.0374 -0.0808 -0.0245 -0.0394 -0.1048 -0.0538 -0.0342 -0.0842 -0.0908 -0.1115 -0.0356 -0.0133 -0.0014 -0.0230 -0.1589 -0.0695 -0.0949 -0.0336 -0.0009 -0.0281 -0.0757 -0.0475 -0.2383 -0.5444 -0.1033 -0.0748 -0.0403 -0.0800 -0.0810 -0.0296 -0.1401
+S-267	INHALT NACH GEWICHT , VOLUMEN ODER EINHEITEN
+T-267	CONTENTS BY WEIGHT , BY VOLUME OR BY UNIT
+H-267	-0.11506728827953339	CONTENTS BY WEIGHT , BY VOLUME OR BY UNIT
+D-267	-0.11506728827953339	CONTENTS BY WEIGHT , BY VOLUME OR BY UNIT
+P-267	-0.0719 -0.1784 -0.6037 -0.0553 -0.0373 -0.0441 -0.0832 -0.0398 -0.0666 -0.1011 -0.1508 -0.0648 -0.0401 -0.2148 -0.0882 -0.0758 -0.0249 -0.0538 -0.1429 -0.0411 -0.0526 -0.0500 -0.3088 -0.1717
+S-248	82 MINDESTANGABEN AUF KLEINEN BEHÄLTNISSEN
+T-248	76 MINIMUM PARTICULARS TO APPEAR ON SMALL IMMEDIATE PACKAGING UNITS
+H-248	-0.12446274608373642	82 MINIMUM PARTICULARS TO APPEAR ON SMALL IMMEDIATE PACKAGING UNITS
+D-248	-0.12446274608373642	82 MINIMUM PARTICULARS TO APPEAR ON SMALL IMMEDIATE PACKAGING UNITS
+P-248	-1.4614 -0.1063 -0.1031 -0.0336 -0.0824 -0.0250 -0.0423 -0.1083 -0.0543 -0.0368 -0.0796 -0.0930 -0.1224 -0.0259 -0.0137 -0.0014 -0.0226 -0.1644 -0.0715 -0.0912 -0.0293 -0.0009 -0.0274 -0.0764 -0.0467 -0.2333 -0.5287 -0.1053 -0.0712 -0.0404 -0.0780 -0.0838 -0.0285 -0.1423
+S-257	86 MINDESTANGABEN AUF KLEINEN BEHÄLTNISSEN
+T-257	80 MINIMUM PARTICULARS TO APPEAR ON SMALL IMMEDIATE PACKAGING UNITS
+H-257	-0.14283718168735504	86 MINIMUM PARTICULARS TO APPEAR ON SMALL IMMEDIATE PACKAGING UNITS
+D-257	-0.14283718168735504	86 MINIMUM PARTICULARS TO APPEAR ON SMALL IMMEDIATE PACKAGING UNITS
+P-257	-2.0862 -0.1063 -0.1010 -0.0330 -0.0828 -0.0258 -0.0330 -0.1006 -0.0537 -0.0351 -0.0865 -0.0909 -0.1059 -0.0276 -0.0132 -0.0015 -0.0218 -0.1621 -0.0682 -0.0952 -0.0353 -0.0008 -0.0270 -0.0764 -0.0474 -0.2349 -0.5393 -0.1061 -0.0776 -0.0414 -0.0799 -0.0865 -0.0299 -0.1436
+S-265	90 MINDESTANGABEN AUF KLEINEN BEHÄLTNISSEN
+T-265	84 MINIMUM PARTICULARS TO APPEAR ON SMALL IMMEDIATE PACKAGING UNITS
+H-265	-0.11344525963068008	90 MINIMUM PARTICULARS TO APPEAR ON SMALL IMMEDIATE PACKAGING UNITS
+D-265	-0.11344525963068008	90 MINIMUM PARTICULARS TO APPEAR ON SMALL IMMEDIATE PACKAGING UNITS
+P-265	-1.0957 -0.0984 -0.0841 -0.0353 -0.0791 -0.0268 -0.0326 -0.0935 -0.0487 -0.0308 -0.0845 -0.0860 -0.1147 -0.0262 -0.0129 -0.0014 -0.0222 -0.1628 -0.0693 -0.0966 -0.0376 -0.0009 -0.0274 -0.0793 -0.0479 -0.2412 -0.5679 -0.1086 -0.0737 -0.0408 -0.0782 -0.0822 -0.0301 -0.1400
+S-273	94 MINDESTANGABEN AUF KLEINEN BEHÄLTNISSEN
+T-273	88 MINIMUM PARTICULARS TO APPEAR ON SMALL IMMEDIATE PACKAGING UNITS
+H-273	-0.12581296265125275	94 MINIMUM PARTICULARS TO APPEAR ON SMALL IMMEDIATE PACKAGING UNITS
+D-273	-0.12581296265125275	94 MINIMUM PARTICULARS TO APPEAR ON SMALL IMMEDIATE PACKAGING UNITS
+P-273	-1.4464 -0.1053 -0.1016 -0.0355 -0.0777 -0.0270 -0.0382 -0.0983 -0.0544 -0.0338 -0.0867 -0.0980 -0.1187 -0.0329 -0.0129 -0.0015 -0.0223 -0.1721 -0.0696 -0.0956 -0.0352 -0.0008 -0.0286 -0.0749 -0.0480 -0.2404 -0.5545 -0.1075 -0.0791 -0.0406 -0.0924 -0.0812 -0.0284 -0.1376
+S-19	Zirkulierendes Vitamin D3 ist an Vitamin-D-bindendes Protein gebunden .
+T-19	Zirkulierendes Vitamin D3 ist an Vitamin-D-bindendes Protein gebunden . Circulating vitamin D3 is bound to vitamin D-binding protein .
+H-19	-0.24902863800525665	Circulating vitamin D3 is bound to vitamin D-binding protein .
+D-19	-0.24902863800525665	Circulating vitamin D3 is bound to vitamin D-binding protein .
+P-19	-1.6322 -0.0605 -0.1646 -0.0811 -0.1220 -0.1312 -0.1575 -0.1064 -0.3161 -0.2595 -0.3245 -0.2158 -0.4127 -0.0637 -0.1500 -0.1324 -0.0796 -0.1606 -0.1613
+S-270	INHALT NACH GEWICHT , VOLUMEN ODER EINHEITEN
+T-270	CONTENTS BY WEIGHT , BY VOLUME OR BY UNIT
+H-270	-0.11506728827953339	CONTENTS BY WEIGHT , BY VOLUME OR BY UNIT
+D-270	-0.11506728827953339	CONTENTS BY WEIGHT , BY VOLUME OR BY UNIT
+P-270	-0.0719 -0.1784 -0.6037 -0.0553 -0.0373 -0.0441 -0.0832 -0.0398 -0.0666 -0.1011 -0.1508 -0.0648 -0.0401 -0.2148 -0.0882 -0.0758 -0.0249 -0.0538 -0.1429 -0.0411 -0.0526 -0.0500 -0.3088 -0.1717
+S-259	INHALT NACH GEWICHT , VOLUMEN ODER EINHEITEN
+T-259	CONTENTS BY WEIGHT , BY VOLUME OR BY UNIT
+H-259	-0.11506728827953339	CONTENTS BY WEIGHT , BY VOLUME OR BY UNIT
+D-259	-0.11506728827953339	CONTENTS BY WEIGHT , BY VOLUME OR BY UNIT
+P-259	-0.0719 -0.1784 -0.6037 -0.0553 -0.0373 -0.0441 -0.0832 -0.0398 -0.0666 -0.1011 -0.1508 -0.0648 -0.0401 -0.2148 -0.0882 -0.0758 -0.0249 -0.0538 -0.1429 -0.0411 -0.0526 -0.0500 -0.3088 -0.1717
+S-262	INHALT NACH GEWICHT , VOLUMEN ODER EINHEITEN
+T-262	CONTENTS BY WEIGHT , BY VOLUME OR BY UNIT
+H-262	-0.11506728827953339	CONTENTS BY WEIGHT , BY VOLUME OR BY UNIT
+D-262	-0.11506728827953339	CONTENTS BY WEIGHT , BY VOLUME OR BY UNIT
+P-262	-0.0719 -0.1784 -0.6037 -0.0553 -0.0373 -0.0441 -0.0832 -0.0398 -0.0666 -0.1011 -0.1508 -0.0648 -0.0401 -0.2148 -0.0882 -0.0758 -0.0249 -0.0538 -0.1429 -0.0411 -0.0526 -0.0500 -0.3088 -0.1717
+S-203	Erforderlicher Faktor-VIII- Plasmaspiegel ( % oder I.E.<unk> dl )
+T-203	Factor VIII level required ( % or IU/ dl )
+H-203	-0.3521496057510376	Necessary factor VIII plasma level ( % or IU/ dl )
+D-203	-0.3521496057510376	Necessary factor VIII plasma level ( % or IU/ dl )
+P-203	-0.7936 -0.0852 -0.0602 -0.1712 -1.0132 -1.8870 -0.2624 -0.3211 -0.0522 -0.0657 -1.2494 -0.1362 -0.1378 -0.1140 -0.1358 -0.0681 -0.1262 -0.0444 -0.1292 -0.1903
+S-32	Zirkulierendes Vitamin D3 ist an Vitamin-D-bindendes Protein gebunden .
+T-32	Circulating vitamin D3 is bound to vitamin D-binding protein .
+H-32	-0.24902863800525665	Circulating vitamin D3 is bound to vitamin D-binding protein .
+D-32	-0.24902863800525665	Circulating vitamin D3 is bound to vitamin D-binding protein .
+P-32	-1.6322 -0.0605 -0.1646 -0.0811 -0.1220 -0.1312 -0.1575 -0.1064 -0.3161 -0.2595 -0.3245 -0.2158 -0.4127 -0.0637 -0.1500 -0.1324 -0.0796 -0.1606 -0.1613
+S-76	Erforderlicher Faktor-VIII- Plasmaspiegel ( % oder I.E.<unk> dl )
+T-76	Factor VIII level required ( % or IU/ dl )
+H-76	-0.3521496057510376	Necessary factor VIII plasma level ( % or IU/ dl )
+D-76	-0.3521496057510376	Necessary factor VIII plasma level ( % or IU/ dl )
+P-76	-0.7936 -0.0852 -0.0602 -0.1712 -1.0132 -1.8870 -0.2624 -0.3211 -0.0522 -0.0657 -1.2494 -0.1362 -0.1378 -0.1140 -0.1358 -0.0681 -0.1262 -0.0444 -0.1292 -0.1903
+S-103	Erforderlicher Faktor-VIII- Plasmaspiegel ( % oder I.E.<unk> dl )
+T-103	Factor VIII level required ( % or IU/ dl )
+H-103	-0.3521496057510376	Necessary factor VIII plasma level ( % or IU/ dl )
+D-103	-0.3521496057510376	Necessary factor VIII plasma level ( % or IU/ dl )
+P-103	-0.7936 -0.0852 -0.0602 -0.1712 -1.0132 -1.8870 -0.2624 -0.3211 -0.0522 -0.0657 -1.2494 -0.1362 -0.1378 -0.1140 -0.1358 -0.0681 -0.1262 -0.0444 -0.1292 -0.1903
+S-128	Erforderlicher Faktor-VIII- Plasmaspiegel ( % oder I.E.<unk> dl )
+T-128	Factor VIII level required ( % or IU/ dl )
+H-128	-0.3521496057510376	Necessary factor VIII plasma level ( % or IU/ dl )
+D-128	-0.3521496057510376	Necessary factor VIII plasma level ( % or IU/ dl )
+P-128	-0.7936 -0.0852 -0.0602 -0.1712 -1.0132 -1.8870 -0.2624 -0.3211 -0.0522 -0.0657 -1.2494 -0.1362 -0.1378 -0.1140 -0.1358 -0.0681 -0.1262 -0.0444 -0.1292 -0.1903
+S-153	Erforderlicher Faktor-VIII- Plasmaspiegel ( % oder I.E.<unk> dl )
+T-153	Factor VIII level required ( % or IU/ dl )
+H-153	-0.3521496057510376	Necessary factor VIII plasma level ( % or IU/ dl )
+D-153	-0.3521496057510376	Necessary factor VIII plasma level ( % or IU/ dl )
+P-153	-0.7936 -0.0852 -0.0602 -0.1712 -1.0132 -1.8870 -0.2624 -0.3211 -0.0522 -0.0657 -1.2494 -0.1362 -0.1378 -0.1140 -0.1358 -0.0681 -0.1262 -0.0444 -0.1292 -0.1903
+S-254	INHALT NACH GEWICHT , VOLUMEN ODER EINHEITEN
+T-254	CONTENTS BY WEIGHT , BY VOLUME OR BY UNIT
+H-254	-0.11506728827953339	CONTENTS BY WEIGHT , BY VOLUME OR BY UNIT
+D-254	-0.11506728827953339	CONTENTS BY WEIGHT , BY VOLUME OR BY UNIT
+P-254	-0.0719 -0.1784 -0.6037 -0.0553 -0.0373 -0.0441 -0.0832 -0.0398 -0.0666 -0.1011 -0.1508 -0.0648 -0.0401 -0.2148 -0.0882 -0.0758 -0.0249 -0.0538 -0.1429 -0.0411 -0.0526 -0.0500 -0.3088 -0.1717
+S-178	Erforderlicher Faktor-VIII- Plasmaspiegel ( % oder I.E.<unk> dl )
+T-178	Factor VIII level required ( % or IU/ dl )
+H-178	-0.3521496057510376	Necessary factor VIII plasma level ( % or IU/ dl )
+D-178	-0.3521496057510376	Necessary factor VIII plasma level ( % or IU/ dl )
+P-178	-0.7936 -0.0852 -0.0602 -0.1712 -1.0132 -1.8870 -0.2624 -0.3211 -0.0522 -0.0657 -1.2494 -0.1362 -0.1378 -0.1140 -0.1358 -0.0681 -0.1262 -0.0444 -0.1292 -0.1903
+S-234	INHALT NACH GEWICHT , VOLUMEN ODER EINHEITEN
+T-234	CONTENTS BY WEIGHT , BY VOLUME OR BY UNIT
+H-234	-0.11506728827953339	CONTENTS BY WEIGHT , BY VOLUME OR BY UNIT
+D-234	-0.11506728827953339	CONTENTS BY WEIGHT , BY VOLUME OR BY UNIT
+P-234	-0.0719 -0.1784 -0.6037 -0.0553 -0.0373 -0.0441 -0.0832 -0.0398 -0.0666 -0.1011 -0.1508 -0.0648 -0.0401 -0.2148 -0.0882 -0.0758 -0.0249 -0.0538 -0.1429 -0.0411 -0.0526 -0.0500 -0.3088 -0.1717
+S-237	INHALT NACH GEWICHT , VOLUMEN ODER EINHEITEN
+T-237	CONTENTS BY WEIGHT , BY VOLUME OR BY UNIT
+H-237	-0.11506728827953339	CONTENTS BY WEIGHT , BY VOLUME OR BY UNIT
+D-237	-0.11506728827953339	CONTENTS BY WEIGHT , BY VOLUME OR BY UNIT
+P-237	-0.0719 -0.1784 -0.6037 -0.0553 -0.0373 -0.0441 -0.0832 -0.0398 -0.0666 -0.1011 -0.1508 -0.0648 -0.0401 -0.2148 -0.0882 -0.0758 -0.0249 -0.0538 -0.1429 -0.0411 -0.0526 -0.0500 -0.3088 -0.1717
+S-242	INHALT NACH GEWICHT , VOLUMEN ODER EINHEITEN
+T-242	CONTENTS BY WEIGHT , BY VOLUME OR BY UNIT
+H-242	-0.11506728827953339	CONTENTS BY WEIGHT , BY VOLUME OR BY UNIT
+D-242	-0.11506728827953339	CONTENTS BY WEIGHT , BY VOLUME OR BY UNIT
+P-242	-0.0719 -0.1784 -0.6037 -0.0553 -0.0373 -0.0441 -0.0832 -0.0398 -0.0666 -0.1011 -0.1508 -0.0648 -0.0401 -0.2148 -0.0882 -0.0758 -0.0249 -0.0538 -0.1429 -0.0411 -0.0526 -0.0500 -0.3088 -0.1717
+S-245	INHALT NACH GEWICHT , VOLUMEN ODER EINHEITEN
+T-245	CONTENTS BY WEIGHT , BY VOLUME OR BY UNIT
+H-245	-0.11506728827953339	CONTENTS BY WEIGHT , BY VOLUME OR BY UNIT
+D-245	-0.11506728827953339	CONTENTS BY WEIGHT , BY VOLUME OR BY UNIT
+P-245	-0.0719 -0.1784 -0.6037 -0.0553 -0.0373 -0.0441 -0.0832 -0.0398 -0.0666 -0.1011 -0.1508 -0.0648 -0.0401 -0.2148 -0.0882 -0.0758 -0.0249 -0.0538 -0.1429 -0.0411 -0.0526 -0.0500 -0.3088 -0.1717
+S-251	INHALT NACH GEWICHT , VOLUMEN ODER EINHEITEN
+T-251	CONTENTS BY WEIGHT , BY VOLUME OR BY UNIT
+H-251	-0.11506728827953339	CONTENTS BY WEIGHT , BY VOLUME OR BY UNIT
+D-251	-0.11506728827953339	CONTENTS BY WEIGHT , BY VOLUME OR BY UNIT
+P-251	-0.0719 -0.1784 -0.6037 -0.0553 -0.0373 -0.0441 -0.0832 -0.0398 -0.0666 -0.1011 -0.1508 -0.0648 -0.0401 -0.2148 -0.0882 -0.0758 -0.0249 -0.0538 -0.1429 -0.0411 -0.0526 -0.0500 -0.3088 -0.1717
+S-6	Filmtablette Zum Einnehmen Blisterpackung ( Aclar<unk> PVC<unk> Aluminium )
+T-6	Blister ( PVC/ Aclar/ Alu ) Blister ( PVC/ Aclar/ Alu ) Blister ( PVC/ Aclar/ Alu ) Blister ( PVC/ Aclar/ Alu )
+H-6	-0.41679900884628296	Film-coated tablet Blister ( Aclar/ PVC/ aluminium )
+D-6	-0.41679900884628296	Film-coated tablet Blister ( Aclar/ PVC/ aluminium )
+P-6	-0.2056 -0.2562 -3.3956 -0.1082 -0.1800 -0.1710 -2.1397 -0.1807 -0.1353 -0.1374 -0.3243 -0.1547 -0.1449 -0.1474 -0.1512 -0.1501 -0.1568 -0.1121 -0.0692 -0.1365 -0.2958
+S-34	Hertford Road , Hoddesdon Hertfordshire EN11 9BU Vereinigtes Königreich
+T-34	Hertford Road , Hoddesdon Hertfordshire EN11 9BU United Kingdom
+H-34	-0.15432670712471008	Hertford Road , Hoddesdon Hertfordshire EN11 9BU United Kingdom
+D-34	-0.15432670712471008	Hertford Road , Hoddesdon Hertfordshire EN11 9BU United Kingdom
+P-34	-0.2661 -0.1340 -0.2030 -0.0697 -0.1621 -0.1820 -0.1499 -0.1235 -0.1535 -0.1748 -0.1294 -0.3232 -0.0633 -0.1675 -0.1747 -0.1218 -0.0755 -0.1158 -0.1346 -0.1621
+S-21	Hertford Road , Hoddesdon Hertfordshire EN11 9BU Vereinigtes Königreich
+T-21	Hertford Road , Hoddesdon Hertfordshire EN11 9BU United Kingdom
+H-21	-0.15432670712471008	Hertford Road , Hoddesdon Hertfordshire EN11 9BU United Kingdom
+D-21	-0.15432670712471008	Hertford Road , Hoddesdon Hertfordshire EN11 9BU United Kingdom
+P-21	-0.2661 -0.1340 -0.2030 -0.0697 -0.1621 -0.1820 -0.1499 -0.1235 -0.1535 -0.1748 -0.1294 -0.3232 -0.0633 -0.1675 -0.1747 -0.1218 -0.0755 -0.1158 -0.1346 -0.1621
+S-11	ADROVANCE vermindert das Risiko für Wirbel- und Hüftfrakturen .
+T-11	ADROVANCE reduces the risk of vertebral and hip fractures .
+H-11	-0.23154671490192413	ADROVANCE reduces the risk of vertebral and hip fractures .
+D-11	-0.23154671490192413	ADROVANCE reduces the risk of vertebral and hip fractures .
+P-11	-0.1228 -0.0619 -0.1313 -0.1346 -0.0851 -1.4086 -0.0924 -0.1476 -0.1107 -0.1923 -1.2171 -0.0462 -0.0495 -0.0949 -0.1939 -0.0639 -0.0725 -0.0815 -0.1608 -0.1635
+S-319	Desloratadin und Pseudoephedrin gehen in die Muttermilch über .
+T-319	Desloratadine and pseudoephedrine are both excreted in breast milk .
+H-319	-0.34698399901390076	Desloratadine and pseudoephedrine are released into human milk .
+D-319	-0.34698399901390076	Desloratadine and pseudoephedrine are released into human milk .
+P-319	-0.5752 -0.0432 -0.1201 -0.3245 -0.4899 -0.1386 -0.1577 -0.5232 -0.1783 -0.0592 -0.0987 -0.1132 -0.1297 -0.2055 -2.7737 -0.2862 -0.1910 -0.2127 -0.1624 -0.1567
+S-22	ADROVANCE vermindert das Risiko für Wirbel- und Hüftfrakturen .
+T-22	ADROVANCE reduces the risk of vertebral and hip fractures .
+H-22	-0.23154671490192413	ADROVANCE reduces the risk of vertebral and hip fractures .
+D-22	-0.23154671490192413	ADROVANCE reduces the risk of vertebral and hip fractures .
+P-22	-0.1228 -0.0619 -0.1313 -0.1346 -0.0851 -1.4086 -0.0924 -0.1476 -0.1107 -0.1923 -1.2171 -0.0462 -0.0495 -0.0949 -0.1939 -0.0639 -0.0725 -0.0815 -0.1608 -0.1635
+S-229	Baxter SA Boulevard René Branquart 80 B-7860 Lessines Belgien
+T-229	Baxter SA Boulevard René Branquart 80 B-7860 Lessines Belgium
+H-229	-0.2237466722726822	Baxter SA Boulevard René Branquart 80 B-7860 Lessines Belgien
+D-229	-0.2237466722726822	Baxter SA Boulevard René Branquart 80 B-7860 Lessines Belgien
+P-229	-0.3445 -0.1608 -0.1694 -0.1045 -0.3340 -0.0904 -0.5647 -0.1966 -0.1222 -0.1148 -0.0791 -0.1242 -0.0889 -0.0955 -0.1058 -0.1232 -0.0522 -0.1376 -1.1349 -0.3317
+S-299	Internationaler Freiname ( INN ) : Contusugene Ladenovec
+T-299	International non-proprietary name ( INN ) : contusugene ladenovec
+H-299	-0.32726800441741943	International Freiname ( INN ) : Contusugene Ladenovec
+D-299	-0.32726800441741943	International Freiname ( INN ) : Contusugene Ladenovec
+P-299	-0.8109 -1.5804 -0.1158 -0.1433 -0.1518 -0.0971 -0.1249 -0.1349 -0.1409 -0.3357 -0.2504 -0.1012 -0.2561 -0.8358 -0.1363 -0.1161 -0.1258 -0.4335
+S-294	4 D-85716 Unterschleißheim Tel : <unk> 49 89 31 701
+T-294	4 D-85716 Unterschleißheim Tel : <<unk>> 49 89 31 701
+H-294	-0.24713349342346191	4 D-85716 Unterschleisheim Tel : <unk> 49 89 31 701
+D-294	-0.24713349342346191	4 D-85716 Unterschleisheim Tel : <unk> 49 89 31 701
+P-294	-1.8289 -0.1247 -0.1144 -0.1353 -0.1545 -0.1391 -0.0088 -0.2550 -0.4068 -0.6154 -0.0366 -0.1352 -0.0284 -0.0729 -0.1012 -0.1396 -0.1160 -0.0862 -0.1967
+S-298	34 <unk> GR-163 41 . : <unk> 30-210-99 87 000
+T-298	34 <<unk>> GR-163 41 . : <<unk>> 30-210-99 87 000
+H-298	-0.21595828235149384	34 <unk> GR-163 41 . : <unk> 30-210-99 87 000
+D-298	-0.21595828235149384	34 <unk> GR-163 41 . : <unk> 30-210-99 87 000
+P-298	-0.8644 -0.2726 -0.3350 -0.1052 -0.0972 -0.1574 -0.2309 -0.1960 -0.1415 -0.0067 -0.3005 -0.0800 -0.1614 -0.1666 -0.0806 -0.0459 -0.6201 -0.0573 -0.1837
+S-295	34 <unk> GR-163 41 . : <unk> 30-210-99 87 000
+T-295	34 <<unk>> GR-163 41 . : <<unk>> 30-210-99 87 000
+H-295	-0.21595828235149384	34 <unk> GR-163 41 . : <unk> 30-210-99 87 000
+D-295	-0.21595828235149384	34 <unk> GR-163 41 . : <unk> 30-210-99 87 000
+P-295	-0.8644 -0.2726 -0.3350 -0.1052 -0.0972 -0.1574 -0.2309 -0.1960 -0.1415 -0.0067 -0.3005 -0.0800 -0.1614 -0.1666 -0.0806 -0.0459 -0.6201 -0.0573 -0.1837
+S-255	300 I.E.<unk> ml nach Rekonstitution Spezifische Aktivität : ca.
+T-255	300 I.E.<<unk>> ml nach Rekonstitution Spezifische Aktivität : ca. Specific activity : approx .
+H-255	-0.3845541477203369	300 IU/ ml after reconstitution Specific activity : ca .
+D-255	-0.3845541477203369	300 IU/ ml after reconstitution Specific activity : ca .
+P-255	-0.0481 -0.1619 -0.0844 -0.1569 -0.0434 -1.4014 -0.2260 -0.0554 -0.5102 -0.0399 -0.0987 -0.1420 -2.2845 -0.2907 -0.2249
+S-246	200 I.E.<unk> ml nach Rekonstitution Spezifische Aktivität : ca.
+T-246	200 I.E.<<unk>> ml nach Rekonstitution Spezifische Aktivität : ca. Specific activity : approx .
+H-246	-0.399382621049881	200 IU/ ml after reconstitution Specific activity : ca .
+D-246	-0.399382621049881	200 IU/ ml after reconstitution Specific activity : ca .
+P-246	-0.3830 -0.1596 -0.0809 -0.1570 -0.0434 -1.4010 -0.2294 -0.0549 -0.4765 -0.0405 -0.0945 -0.1414 -2.1977 -0.2905 -0.2406
+S-238	100 I.E.<unk> ml nach Rekonstitution Spezifische Aktivität : ca.
+T-238	100 I.E.<<unk>> ml nach Rekonstitution Spezifische Aktivität : ca. Specific activity : approx .
+H-238	-0.3832884430885315	100 IU/ ml after reconstitution Specific activity : ca .
+D-238	-0.3832884430885315	100 IU/ ml after reconstitution Specific activity : ca .
+P-238	-0.3197 -0.1579 -0.0819 -0.1547 -0.0408 -1.3068 -0.2144 -0.0533 -0.4307 -0.0404 -0.0986 -0.1421 -2.1830 -0.2488 -0.2763
+S-263	400 I.E.<unk> ml nach Rekonstitution Spezifische Aktivität : ca.
+T-263	400 I.E.<<unk>> ml nach Rekonstitution Spezifische Aktivität : ca. Specific activity : approx .
+H-263	-0.389272540807724	400 IU/ ml after reconstitution Specific activity : ca .
+D-263	-0.389272540807724	400 IU/ ml after reconstitution Specific activity : ca .
+P-263	-0.1101 -0.1653 -0.0841 -0.1558 -0.0439 -1.3415 -0.2179 -0.0528 -0.5242 -0.0396 -0.0975 -0.1435 -2.3390 -0.3088 -0.2150
+S-271	600 I.E.<unk> ml nach Rekonstitution Spezifische Aktivität : ca.
+T-271	600 I.E.<<unk>> ml nach Rekonstitution Spezifische Aktivität : ca. Specific activity : approx .
+H-271	-0.40754011273384094	600 IU/ ml after reconstitution Specific activity : ca .
+D-271	-0.40754011273384094	600 IU/ ml after reconstitution Specific activity : ca .
+P-271	-0.2187 -0.1686 -0.0789 -0.1549 -0.0452 -1.4610 -0.2166 -0.0524 -0.5125 -0.0401 -0.0973 -0.1426 -2.3705 -0.2904 -0.2634
+S-1	Durch die Verminderung der Harnsäureproduktion kann Adenuric die
+T-1	By reducing the production of uric acid , Adenuric can reduce levels of uric acid in the blood and keep them low , stopping crystals from building up .
+H-1	-0.48833051323890686	By reducing uric acid production , Adenuric can reduce the
+D-1	-0.48833051323890686	By reducing uric acid production , Adenuric can reduce the
+P-1	-0.8654 -0.4495 -0.1296 -0.1063 -0.0314 -0.1992 -0.2365 -0.2767 -0.1896 -0.0656 -0.1239 -1.2558 -0.9208 -0.1753 -2.2995
+S-230	50 I.E.<unk> ml nach Rekonstitution Spezifische Aktivität : ca.
+T-230	50 I.E.<<unk>> ml nach Rekonstitution Spezifische Aktivität : ca. Specific activity : approx .
+H-230	-0.3772905170917511	50 IU/ ml after reconstitution Specific activity : ca .
+D-230	-0.3772905170917511	50 IU/ ml after reconstitution Specific activity : ca .
+P-230	-0.1209 -0.1643 -0.0831 -0.1545 -0.0436 -1.2259 -0.2080 -0.0528 -0.4706 -0.0408 -0.0959 -0.1428 -2.3478 -0.2857 -0.2225
+2021-02-01 15:30:00 | INFO | fairseq_cli.generate | NOTE: hypothesis and token scores are output in base 2
+2021-02-01 15:30:00 | INFO | fairseq_cli.generate | Translated 320 sentences (6484 tokens) in 5.1s (62.91 sentences/s, 1274.78 tokens/s)
+2021-02-01 15:30:00 | WARNING | root | That's 100 lines that end in a tokenized period ('.')
+2021-02-01 15:30:00 | WARNING | root | It looks like you forgot to detokenize your test data, which may hurt your score.
+2021-02-01 15:30:00 | WARNING | root | If you insist your data is detokenized, or don't care, you can suppress this message with '--force'.
+Generate test with beam=5: BLEU = 33.78 47.2/37.4/30.5/24.3 (BP = 1.000 ratio = 1.035 hyp_len = 4480 ref_len = 4328)
