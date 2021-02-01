@@ -1,0 +1,1045 @@
+
+The following have been reloaded with a version change:
+  1) GCCcore/8.3.0 => GCCcore/9.3.0
+  2) binutils/2.32-GCCcore-8.3.0 => binutils/2.34-GCCcore-9.3.0
+  3) zlib/1.2.11-GCCcore-8.3.0 => zlib/1.2.11-GCCcore-9.3.0
+
+2021-02-01 00:23:28 | INFO | fairseq_cli.train | Namespace(activation_dropout=0.0, activation_fn='relu', adam_betas='(0.9, 0.98)', adam_eps=1e-08, adaptive_input=False, adaptive_softmax_cutoff=None, adaptive_softmax_dropout=0, all_gather_list_size=16384, arch='transformer_vaswani_wmt_en_de_big', attention_dropout=0.0, best_checkpoint_metric='loss', bf16=False, bpe=None, broadcast_buffers=False, bucket_cap_mb=25, checkpoint_suffix='', clip_norm=0.0, cpu=False, criterion='label_smoothed_cross_entropy', cross_self_attention=False, curriculum=0, data='../../../data-bin/custom_EMEA/orig_EMEA', data_buffer_size=10, dataset_impl=None, ddp_backend='c10d', decoder_attention_heads=16, decoder_embed_dim=1024, decoder_embed_path=None, decoder_ffn_embed_dim=4096, decoder_input_dim=1024, decoder_layerdrop=0, decoder_layers=6, decoder_layers_to_keep=None, decoder_learned_pos=False, decoder_normalize_before=False, decoder_output_dim=1024, device_id=0, disable_validation=False, distributed_backend='nccl', distributed_init_method=None, distributed_no_spawn=False, distributed_port=-1, distributed_rank=0, distributed_world_size=1, distributed_wrapper='DDP', dropout=0.2, empty_cache_freq=0, encoder_attention_heads=16, encoder_embed_dim=1024, encoder_embed_path=None, encoder_ffn_embed_dim=8192, encoder_layerdrop=0, encoder_layers=6, encoder_layers_to_keep=None, encoder_learned_pos=False, encoder_normalize_before=False, eval_bleu=True, eval_bleu_args='{"beam": 5, "max_len_a": 1.2, "max_len_b": 10}', eval_bleu_detok='moses', eval_bleu_detok_args=None, eval_bleu_print_samples=True, eval_bleu_remove_bpe='@@ ', eval_tokenized_bleu=False, fast_stat_sync=False, find_unused_parameters=False, fix_batches_to_gpus=False, fixed_validation_seed=None, fp16=True, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, keep_best_checkpoints=-1, keep_interval_updates=-1, keep_last_epochs=-1, label_smoothing=0.1, layernorm_embedding=False, left_pad_source='True', left_pad_target='False', load_alignments=False, localsgd_frequency=3, log_format=None, log_interval=100, lr=[0.0005], lr_scheduler='inverse_sqrt', max_epoch=20, max_sentences=None, max_sentences_valid=None, max_source_positions=1024, max_target_positions=1024, max_tokens=1024, max_tokens_valid=1024, max_update=0, maximize_best_checkpoint_metric=False, memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, min_lr=-1, model_parallel_size=1, no_cross_attention=False, no_epoch_checkpoints=True, no_last_checkpoints=False, no_progress_bar=False, no_save=False, no_save_optimizer_state=False, no_scale_embedding=False, no_seed_provided=True, no_token_positional_embeddings=False, nprocs_per_node=1, num_batch_buckets=0, num_workers=1, optimizer='adam', optimizer_overrides='{}', patience=-1, profile=False, quant_noise_pq=0, quant_noise_pq_block_size=8, quant_noise_scalar=0, quantization_config_path=None, required_batch_size_multiple=8, reset_dataloader=True, reset_lr_scheduler=False, reset_meters=False, reset_optimizer=True, restore_file='../../../models/wmt19.de-en.joined-dict.ensemble//model1.pt', save_dir='../checkpoints/EMEA_11_1', save_interval=1, save_interval_updates=0, scoring='bleu', seed=1, sentence_avg=False, share_all_embeddings=False, share_decoder_input_output_embed=True, skip_invalid_size_inputs_valid_test=False, slowmo_algorithm='LocalSGD', slowmo_momentum=None, source_lang=None, stop_time_hours=0, target_lang=None, task='translation', tensorboard_logdir='', threshold_loss_scale=None, tie_adaptive_weights=False, tokenizer=None, tpu=False, train_subset='train', truncate_source=False, update_freq=[1], upsample_primary=1, use_bmuf=False, use_old_adam=False, user_dir=None, valid_subset='valid', validate_after_updates=0, validate_interval=1, validate_interval_updates=0, warmup_init_lr=-1, warmup_updates=4000, weight_decay=0.0)
+2021-02-01 00:23:28 | INFO | fairseq.tasks.translation | [de] dictionary: 42024 types
+2021-02-01 00:23:28 | INFO | fairseq.tasks.translation | [en] dictionary: 42024 types
+2021-02-01 00:23:29 | INFO | fairseq.data.data_utils | loaded 151 examples from: ../../../data-bin/custom_EMEA/orig_EMEA/valid.de-en.de
+2021-02-01 00:23:29 | INFO | fairseq.data.data_utils | loaded 151 examples from: ../../../data-bin/custom_EMEA/orig_EMEA/valid.de-en.en
+2021-02-01 00:23:29 | INFO | fairseq.tasks.translation | ../../../data-bin/custom_EMEA/orig_EMEA valid de-en 151 examples
+2021-02-01 00:23:34 | INFO | fairseq_cli.train | TransformerModel(
+  (encoder): TransformerEncoder(
+    (dropout_module): FairseqDropout()
+    (embed_tokens): Embedding(42024, 1024, padding_idx=1)
+    (embed_positions): SinusoidalPositionalEmbedding()
+    (layers): ModuleList(
+      (0): TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=1024, out_features=8192, bias=True)
+        (fc2): Linear(in_features=8192, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (1): TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=1024, out_features=8192, bias=True)
+        (fc2): Linear(in_features=8192, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (2): TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=1024, out_features=8192, bias=True)
+        (fc2): Linear(in_features=8192, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (3): TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=1024, out_features=8192, bias=True)
+        (fc2): Linear(in_features=8192, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (4): TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=1024, out_features=8192, bias=True)
+        (fc2): Linear(in_features=8192, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (5): TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=1024, out_features=8192, bias=True)
+        (fc2): Linear(in_features=8192, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+    )
+  )
+  (decoder): TransformerDecoder(
+    (dropout_module): FairseqDropout()
+    (embed_tokens): Embedding(42024, 1024, padding_idx=1)
+    (embed_positions): SinusoidalPositionalEmbedding()
+    (layers): ModuleList(
+      (0): TransformerDecoderLayer(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (1): TransformerDecoderLayer(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (2): TransformerDecoderLayer(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (3): TransformerDecoderLayer(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (4): TransformerDecoderLayer(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (5): TransformerDecoderLayer(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+    )
+    (output_projection): Linear(in_features=1024, out_features=42024, bias=False)
+  )
+)
+2021-02-01 00:23:34 | INFO | fairseq_cli.train | model transformer_vaswani_wmt_en_de_big, criterion LabelSmoothedCrossEntropyCriterion
+2021-02-01 00:23:34 | INFO | fairseq_cli.train | num. model params: 312778752 (num. trained: 312778752)
+2021-02-01 00:23:41 | INFO | fairseq.trainer | detected shared parameter: decoder.embed_tokens.weight <- decoder.output_projection.weight
+2021-02-01 00:23:41 | INFO | fairseq.utils | ***********************CUDA enviroments for all 1 workers***********************
+2021-02-01 00:23:41 | INFO | fairseq.utils | rank   0: capabilities =  7.0  ; total memory = 32.000 GB ; name = GRID V100D-32Q                          
+2021-02-01 00:23:41 | INFO | fairseq.utils | ***********************CUDA enviroments for all 1 workers***********************
+2021-02-01 00:23:41 | INFO | fairseq_cli.train | training on 1 devices (GPUs/TPUs)
+2021-02-01 00:23:41 | INFO | fairseq_cli.train | max tokens per GPU = 1024 and max sentences per GPU = None
+2021-02-01 00:23:49 | INFO | fairseq.trainer | loaded checkpoint ../../../models/wmt19.de-en.joined-dict.ensemble//model1.pt (epoch 16 @ 0 updates)
+2021-02-01 00:23:49 | INFO | fairseq.trainer | loading train data for epoch 1
+2021-02-01 00:23:49 | INFO | fairseq.data.data_utils | loaded 10001 examples from: ../../../data-bin/custom_EMEA/orig_EMEA/train.de-en.de
+2021-02-01 00:23:49 | INFO | fairseq.data.data_utils | loaded 10001 examples from: ../../../data-bin/custom_EMEA/orig_EMEA/train.de-en.en
+2021-02-01 00:23:49 | INFO | fairseq.tasks.translation | ../../../data-bin/custom_EMEA/orig_EMEA train de-en 10001 examples
+2021-02-01 00:23:49 | INFO | fairseq_cli.train | begin training epoch 1
+2021-02-01 00:23:50 | INFO | fairseq.trainer | NOTE: overflow detected, setting loss scale to: 64.0
+2021-02-01 00:23:51 | INFO | fairseq.trainer | NOTE: overflow detected, setting loss scale to: 32.0
+2021-02-01 00:23:59 | INFO | train_inner | epoch 001:    102 / 521 loss=3.525, nll_loss=1.807, ppl=3.5, wps=7415, ups=10.92, wpb=681.5, bsz=20.2, num_updates=100, lr=1.25e-05, gnorm=5.526, loss_scale=36, train_wall=10, wall=18
+2021-02-01 00:24:08 | INFO | train_inner | epoch 001:    202 / 521 loss=3.453, nll_loss=1.726, ppl=3.31, wps=7315.5, ups=11.12, wpb=657.9, bsz=18.8, num_updates=200, lr=2.5e-05, gnorm=5.394, loss_scale=32, train_wall=9, wall=27
+2021-02-01 00:24:10 | INFO | fairseq.trainer | NOTE: overflow detected, setting loss scale to: 16.0
+2021-02-01 00:24:17 | INFO | train_inner | epoch 001:    303 / 521 loss=3.283, nll_loss=1.535, ppl=2.9, wps=6899.2, ups=11.13, wpb=619.8, bsz=18, num_updates=300, lr=3.75e-05, gnorm=5.209, loss_scale=20, train_wall=9, wall=36
+2021-02-01 00:24:26 | INFO | train_inner | epoch 001:    403 / 521 loss=3.1, nll_loss=1.326, ppl=2.51, wps=7363.8, ups=11.18, wpb=658.5, bsz=18.7, num_updates=400, lr=5e-05, gnorm=4.765, loss_scale=16, train_wall=9, wall=45
+2021-02-01 00:24:35 | INFO | train_inner | epoch 001:    503 / 521 loss=3.004, nll_loss=1.217, ppl=2.33, wps=7332, ups=11.02, wpb=665.3, bsz=20.8, num_updates=500, lr=6.25e-05, gnorm=4.794, loss_scale=16, train_wall=9, wall=54
+2021-02-01 00:24:37 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 00:24:38 | INFO | fairseq.tasks.translation | example hypothesis: Vials 5 x (1 x 10 ml) 1
+2021-02-01 00:24:38 | INFO | fairseq.tasks.translation | example reference: 5 x (1 x 10 ml) vials
+2021-02-01 00:24:39 | INFO | fairseq.tasks.translation | example hypothesis: The advisability of driving should be considered in these circumstances.
+2021-02-01 00:24:39 | INFO | fairseq.tasks.translation | example reference: The advisability of driving should be considered in these circumstances.
+2021-02-01 00:24:39 | INFO | fairseq.tasks.translation | example hypothesis: Actrapid 40 IU/ ml solution for injection in a vial.
+2021-02-01 00:24:39 | INFO | fairseq.tasks.translation | example reference: Actrapid 40 IU/ ml solution for injection in a vial.
+2021-02-01 00:24:40 | INFO | fairseq.tasks.translation | example hypothesis: The physician must therefore take possible interactions into account and should always ask his patients about any medicinal products they take.
+2021-02-01 00:24:40 | INFO | fairseq.tasks.translation | example reference: The physician must therefore take possible interactions into account and should always ask his patients about any medicinal products they take.
+2021-02-01 00:24:40 | INFO | fairseq.tasks.translation | example hypothesis: Subcutaneous injection into the abdominal wall results in faster absorption than other injection sites.
+2021-02-01 00:24:40 | INFO | fairseq.tasks.translation | example reference: Subcutaneous injection into the abdominal wall ensures a faster absorption than from other injection sites.
+2021-02-01 00:24:41 | INFO | fairseq.tasks.translation | example hypothesis: Glucosal solution must be administered intravenously if the patient does not respond to glucagon within 10 to 15 minutes.
+2021-02-01 00:24:41 | INFO | fairseq.tasks.translation | example reference: Glucose must also be given intravenously, if the patient does not respond to glucagon within 10 to 15 minutes.
+2021-02-01 00:24:41 | INFO | fairseq.tasks.translation | example hypothesis: Usage For subcutaneous or intravenous use. Actrapide may also be administered intravenously, this should only be done by medical professionals.
+2021-02-01 00:24:41 | INFO | fairseq.tasks.translation | example reference: Actrapid may also be administered intravenously, which should only be carried out by health care professionals.
+2021-02-01 00:24:42 | INFO | fairseq.tasks.translation | example hypothesis: As with any insulin therapy, injection site reactions such as pain, itching, hives, swelling and inflammation may occur.
+2021-02-01 00:24:42 | INFO | fairseq.tasks.translation | example reference: As with any insulin therapy, injection site reactions may occur and include pain, itching, hives, swelling and inflammation.
+2021-02-01 00:24:43 | INFO | fairseq.tasks.translation | example hypothesis: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with symptoms termed acute painful neuropathy, which are usually reversible.
+2021-02-01 00:24:43 | INFO | fairseq.tasks.translation | example reference: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with a condition termed acute painful neuropathy, which is usually reversible.
+2021-02-01 00:24:44 | INFO | fairseq.tasks.translation | example hypothesis: The first symptoms of hyperglycaemia, such as thirstgefühl, verstärkter Harndrang, Übelkeit, Erbrechen, Benommenheit, gerötete trockene Haut, Mundtrockenheit, Appetitverlust und nach Acetone riechender Atem, werden in der Regel allmählich über Stunden resp. Tage auf.
+2021-02-01 00:24:44 | INFO | fairseq.tasks.translation | example reference: Die ersten Symptome einer Hyperglykämie, wie Durstgefühl, verstärkter Harndrang, Übelkeit, Erbrechen, Benommenheit, gerötete trockene Haut, Mundtrockenheit, Appetitverlust sowie nach Aceton riechender Atem, treten in der Regel allmählich über Stunden bzw. Tage auf. They include thirst, increased frequency of urination, nausea, vomiting, drowsiness, flushed dry skin, dry mouth, loss of appetite as well as acetone odour of breath.
+2021-02-01 00:24:45 | INFO | fairseq.tasks.translation | example hypothesis: Mildly hypoglycaemic events may be treated by oral administration of glucose or sugary foods. Therefore, diabetics should always carry sugar lumps, sweets, biscuits or sugary fruit juice. Severe hypoglycaemic events with loss of consciousness are treated with an intramuscular or subcutaneous injection of glucagon (0.5 to 1.0 mg) by a person who has been instructed or with glucose administered intravenously by the doctor.
+2021-02-01 00:24:45 | INFO | fairseq.tasks.translation | example reference: 5 Severe hypoglycaemic episodes, where the patient has become unconscious, can be treated by glucagon (0.5 to 1 mg) given intramuscularly or subcutaneously by a person who has received appropriate instruction, or by glucose given intravenously by a medical professional.
+2021-02-01 00:24:46 | INFO | fairseq.tasks.translation | example hypothesis: Actrapid has been studied in patients with type 1 diabetes, for whom the pancreas cannot produce insulin (two trials involving 1,954 patients), and in patients with type 2 diabetes, for whom the body cannot process insulin effectively (one trial involving 182 patients).
+2021-02-01 00:24:46 | INFO | fairseq.tasks.translation | example reference: HbA1c levels remained fairly steady over the six months of treatment with Actrapid.
+2021-02-01 00:24:46 | INFO | valid | epoch 001 | valid on 'valid' subset | loss 2.995 | nll_loss 1.148 | ppl 2.22 | bleu 52.9 | wps 517.6 | wpb 361 | bsz 12.6 | num_updates 518
+2021-02-01 00:24:46 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 00:25:02 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/EMEA_11_1/checkpoint_best.pt (epoch 1 @ 518 updates, score 2.995) (writing took 15.601632882840931 seconds)
+2021-02-01 00:25:02 | INFO | fairseq_cli.train | end of epoch 1 (average epoch stats below)
+2021-02-01 00:25:02 | INFO | train | epoch 001 | loss 3.267 | nll_loss 1.515 | ppl 2.86 | wps 4723.6 | ups 7.23 | wpb 654.3 | bsz 19.2 | num_updates 518 | lr 6.475e-05 | gnorm 5.111 | loss_scale 24 | train_wall 47 | wall 80
+2021-02-01 00:25:02 | INFO | fairseq_cli.train | begin training epoch 1
+2021-02-01 00:25:09 | INFO | train_inner | epoch 002:     82 / 521 loss=2.751, nll_loss=0.925, ppl=1.9, wps=1930, ups=2.95, wpb=654.2, bsz=19.7, num_updates=600, lr=7.5e-05, gnorm=3.651, loss_scale=16, train_wall=9, wall=88
+2021-02-01 00:25:18 | INFO | train_inner | epoch 002:    182 / 521 loss=2.774, nll_loss=0.953, ppl=1.94, wps=7352.1, ups=11.19, wpb=656.9, bsz=18, num_updates=700, lr=8.75e-05, gnorm=3.961, loss_scale=16, train_wall=9, wall=97
+2021-02-01 00:25:27 | INFO | train_inner | epoch 002:    282 / 521 loss=2.737, nll_loss=0.911, ppl=1.88, wps=7317.5, ups=10.91, wpb=670.5, bsz=21.4, num_updates=800, lr=0.0001, gnorm=3.767, loss_scale=16, train_wall=9, wall=106
+2021-02-01 00:25:36 | INFO | train_inner | epoch 002:    382 / 521 loss=2.741, nll_loss=0.915, ppl=1.89, wps=7374.9, ups=11.12, wpb=663, bsz=18.5, num_updates=900, lr=0.0001125, gnorm=3.643, loss_scale=16, train_wall=9, wall=115
+2021-02-01 00:25:45 | INFO | train_inner | epoch 002:    482 / 521 loss=2.862, nll_loss=1.051, ppl=2.07, wps=7152.2, ups=11.24, wpb=636.1, bsz=18, num_updates=1000, lr=0.000125, gnorm=4.005, loss_scale=16, train_wall=9, wall=124
+2021-02-01 00:25:49 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 00:25:49 | INFO | fairseq.tasks.translation | example hypothesis: Vials 5 x (1 x 10 ml) 1
+2021-02-01 00:25:49 | INFO | fairseq.tasks.translation | example reference: 5 x (1 x 10 ml) vials
+2021-02-01 00:25:50 | INFO | fairseq.tasks.translation | example hypothesis: The advisability of driving should be considered in these circumstances.
+2021-02-01 00:25:50 | INFO | fairseq.tasks.translation | example reference: The advisability of driving should be considered in these circumstances.
+2021-02-01 00:25:50 | INFO | fairseq.tasks.translation | example hypothesis: Actrapid 40 IU/ ml solution for injection in a vial.
+2021-02-01 00:25:50 | INFO | fairseq.tasks.translation | example reference: Actrapid 40 IU/ ml solution for injection in a vial.
+2021-02-01 00:25:50 | INFO | fairseq.tasks.translation | example hypothesis: The physician must therefore take possible interactions into account and should always ask his patients about any medicinal products they take.
+2021-02-01 00:25:50 | INFO | fairseq.tasks.translation | example reference: The physician must therefore take possible interactions into account and should always ask his patients about any medicinal products they take.
+2021-02-01 00:25:51 | INFO | fairseq.tasks.translation | example hypothesis: Subcutaneous injection in the abdominal wall ensures a faster absorption than from other injection sites.
+2021-02-01 00:25:51 | INFO | fairseq.tasks.translation | example reference: Subcutaneous injection into the abdominal wall ensures a faster absorption than from other injection sites.
+2021-02-01 00:25:52 | INFO | fairseq.tasks.translation | example hypothesis: Glucose must also be given intravenously, if the patient does not respond to glucagon within 10 to 15 minutes.
+2021-02-01 00:25:52 | INFO | fairseq.tasks.translation | example reference: Glucose must also be given intravenously, if the patient does not respond to glucagon within 10 to 15 minutes.
+2021-02-01 00:25:52 | INFO | fairseq.tasks.translation | example hypothesis: Use For subcutaneous or intravenous use. Actrapide can also be administered intravenously, this must only be done by healthcare professionals.
+2021-02-01 00:25:52 | INFO | fairseq.tasks.translation | example reference: Actrapid may also be administered intravenously, which should only be carried out by health care professionals.
+2021-02-01 00:25:53 | INFO | fairseq.tasks.translation | example hypothesis: As with any insulin therapy, reactions at the injection site may occur, such as pain, itching, hives, swelling and inflammation.
+2021-02-01 00:25:53 | INFO | fairseq.tasks.translation | example reference: As with any insulin therapy, injection site reactions may occur and include pain, itching, hives, swelling and inflammation.
+2021-02-01 00:25:54 | INFO | fairseq.tasks.translation | example hypothesis: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with a condition termed acute painful neuropathy, which is usually reversible.
+2021-02-01 00:25:54 | INFO | fairseq.tasks.translation | example reference: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with a condition termed acute painful neuropathy, which is usually reversible.
+2021-02-01 00:25:55 | INFO | fairseq.tasks.translation | example hypothesis: The first symptoms of hyperglycaemia, such as thirst, increased urination, nausea, vomiting, drowsiness, flushed dry skin, dry mouth, loss of appetite and acetone odour of breath, appear gradually over hours or days.
+2021-02-01 00:25:55 | INFO | fairseq.tasks.translation | example reference: Die ersten Symptome einer Hyperglykämie, wie Durstgefühl, verstärkter Harndrang, Übelkeit, Erbrechen, Benommenheit, gerötete trockene Haut, Mundtrockenheit, Appetitverlust sowie nach Aceton riechender Atem, treten in der Regel allmählich über Stunden bzw. Tage auf. They include thirst, increased frequency of urination, nausea, vomiting, drowsiness, flushed dry skin, dry mouth, loss of appetite as well as acetone odour of breath.
+2021-02-01 00:25:56 | INFO | fairseq.tasks.translation | example hypothesis: Mild hypoglycaemic episodes can be treated by oral administration of glucose or sugary products, and diabetics should therefore always carry lumps of glucagon, sweets, biscuits or sugary fruit juice. Severe hypoglycaemic episodes, where the patient has become unconscious, can be treated by intramuscular or subcutaneous injection of glucagon (0.5 to 1 mg) given intravenously by a person who has received appropriate instruction, or by glucose given intravenously by a medical professional.
+2021-02-01 00:25:56 | INFO | fairseq.tasks.translation | example reference: 5 Severe hypoglycaemic episodes, where the patient has become unconscious, can be treated by glucagon (0.5 to 1 mg) given intramuscularly or subcutaneously by a person who has received appropriate instruction, or by glucose given intravenously by a medical professional.
+2021-02-01 00:25:58 | INFO | fairseq.tasks.translation | example hypothesis: Actrapide has been studied in type 1 diabetes patients, in whom the pancreas cannot produce insulin (two trials involving 1,954 patients), and in type 2 diabetes patients, in whom the body cannot process insulin effectively (a study of 182 patients), whose studies compared Actrapide with an analogue of human insulin (insulin Aspart) by measuring the level of a substance in the blood termed glycosylated haemoglobin (HbA1c) for six months, indicating how well the blood glucose is controlled.
+2021-02-01 00:25:58 | INFO | fairseq.tasks.translation | example reference: HbA1c levels remained fairly steady over the six months of treatment with Actrapid.
+2021-02-01 00:25:58 | INFO | valid | epoch 002 | valid on 'valid' subset | loss 2.808 | nll_loss 0.903 | ppl 1.87 | bleu 67.42 | wps 449.3 | wpb 361 | bsz 12.6 | num_updates 1039 | best_loss 2.808
+2021-02-01 00:25:58 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 00:26:15 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/EMEA_11_1/checkpoint_best.pt (epoch 2 @ 1039 updates, score 2.808) (writing took 17.216662576422095 seconds)
+2021-02-01 00:26:15 | INFO | fairseq_cli.train | end of epoch 2 (average epoch stats below)
+2021-02-01 00:26:15 | INFO | train | epoch 002 | loss 2.763 | nll_loss 0.94 | ppl 1.92 | wps 4658.3 | ups 7.1 | wpb 655.9 | bsz 19.2 | num_updates 1039 | lr 0.000129875 | gnorm 3.777 | loss_scale 16 | train_wall 46 | wall 154
+2021-02-01 00:26:15 | INFO | fairseq_cli.train | begin training epoch 2
+2021-02-01 00:26:21 | INFO | train_inner | epoch 003:     61 / 521 loss=2.622, nll_loss=0.772, ppl=1.71, wps=1768.4, ups=2.82, wpb=627.1, bsz=17.4, num_updates=1100, lr=0.0001375, gnorm=3.588, loss_scale=16, train_wall=9, wall=159
+2021-02-01 00:26:30 | INFO | train_inner | epoch 003:    161 / 521 loss=2.503, nll_loss=0.639, ppl=1.56, wps=7512.1, ups=11.12, wpb=675.5, bsz=20.2, num_updates=1200, lr=0.00015, gnorm=3.115, loss_scale=16, train_wall=9, wall=168
+2021-02-01 00:26:39 | INFO | train_inner | epoch 003:    261 / 521 loss=2.522, nll_loss=0.663, ppl=1.58, wps=7258.2, ups=11.15, wpb=651, bsz=18.9, num_updates=1300, lr=0.0001625, gnorm=3.32, loss_scale=16, train_wall=9, wall=177
+2021-02-01 00:26:47 | INFO | train_inner | epoch 003:    361 / 521 loss=2.604, nll_loss=0.755, ppl=1.69, wps=7319.4, ups=11.22, wpb=652.5, bsz=18.8, num_updates=1400, lr=0.000175, gnorm=3.776, loss_scale=16, train_wall=9, wall=186
+2021-02-01 00:26:56 | INFO | train_inner | epoch 003:    461 / 521 loss=2.562, nll_loss=0.705, ppl=1.63, wps=7528.2, ups=11.27, wpb=668.1, bsz=20.4, num_updates=1500, lr=0.0001875, gnorm=3.82, loss_scale=16, train_wall=9, wall=195
+2021-02-01 00:27:02 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 00:27:02 | INFO | fairseq.tasks.translation | example hypothesis: Vials 5 x (1 x 10 ml)
+2021-02-01 00:27:02 | INFO | fairseq.tasks.translation | example reference: 5 x (1 x 10 ml) vials
+2021-02-01 00:27:02 | INFO | fairseq.tasks.translation | example hypothesis: The advisability of driving should be considered in these circumstances.
+2021-02-01 00:27:02 | INFO | fairseq.tasks.translation | example reference: The advisability of driving should be considered in these circumstances.
+2021-02-01 00:27:03 | INFO | fairseq.tasks.translation | example hypothesis: Actrapide 40 IU/ ml solution in a vial.
+2021-02-01 00:27:03 | INFO | fairseq.tasks.translation | example reference: Actrapid 40 IU/ ml solution for injection in a vial.
+2021-02-01 00:27:03 | INFO | fairseq.tasks.translation | example hypothesis: The physician must therefore take possible interactions into account and should always ask his patients about any medicinal products they take.
+2021-02-01 00:27:03 | INFO | fairseq.tasks.translation | example reference: The physician must therefore take possible interactions into account and should always ask his patients about any medicinal products they take.
+2021-02-01 00:27:04 | INFO | fairseq.tasks.translation | example hypothesis: Subcutaneous injection into the abdominal wall ensures faster absorption than from other injection sites.
+2021-02-01 00:27:04 | INFO | fairseq.tasks.translation | example reference: Subcutaneous injection into the abdominal wall ensures a faster absorption than from other injection sites.
+2021-02-01 00:27:04 | INFO | fairseq.tasks.translation | example hypothesis: Glucose must also be administered intravenously, if the patient does not respond to glucagon within 10 to 15 minutes.
+2021-02-01 00:27:04 | INFO | fairseq.tasks.translation | example reference: Glucose must also be given intravenously, if the patient does not respond to glucagon within 10 to 15 minutes.
+2021-02-01 00:27:05 | INFO | fairseq.tasks.translation | example hypothesis: Use For subcutaneous or intravenous use. Actrapide can also be administered intravenously, to be done only by medical staff.
+2021-02-01 00:27:05 | INFO | fairseq.tasks.translation | example reference: Actrapid may also be administered intravenously, which should only be carried out by health care professionals.
+2021-02-01 00:27:06 | INFO | fairseq.tasks.translation | example hypothesis: As with any insulin therapy, injection site reactions can occur and include pain, itching, hives, swelling and inflammation.
+2021-02-01 00:27:06 | INFO | fairseq.tasks.translation | example reference: As with any insulin therapy, injection site reactions may occur and include pain, itching, hives, swelling and inflammation.
+2021-02-01 00:27:06 | INFO | fairseq.tasks.translation | example hypothesis: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in glycaemic control may be associated with a condition termed acute painful neuropathy, which is usually reversible.
+2021-02-01 00:27:06 | INFO | fairseq.tasks.translation | example reference: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with a condition termed acute painful neuropathy, which is usually reversible.
+2021-02-01 00:27:08 | INFO | fairseq.tasks.translation | example hypothesis: Die Symptome einer Hyperglykämie, wie Durstgefühl, verstärkter Harndrang, Übelkeit, Erbrechen, Benommenheit, gerötete trockene Haut, Mundtrockenheit, Appetitverlust sowie nach Aceton riechender Atem, treten in der Regel allmählich über Stunden bzw. day auf. Aceton riechender Atem, treten in der Regel allmählich über Stunden bzw. day auf. Acetone riechenheit
+2021-02-01 00:27:08 | INFO | fairseq.tasks.translation | example reference: Die ersten Symptome einer Hyperglykämie, wie Durstgefühl, verstärkter Harndrang, Übelkeit, Erbrechen, Benommenheit, gerötete trockene Haut, Mundtrockenheit, Appetitverlust sowie nach Aceton riechender Atem, treten in der Regel allmählich über Stunden bzw. Tage auf. They include thirst, increased frequency of urination, nausea, vomiting, drowsiness, flushed dry skin, dry mouth, loss of appetite as well as acetone odour of breath.
+2021-02-01 00:27:09 | INFO | fairseq.tasks.translation | example hypothesis: Mild hypoglycaemia can be treated by oral administration of glucose or sugary products.
+2021-02-01 00:27:09 | INFO | fairseq.tasks.translation | example reference: 5 Severe hypoglycaemic episodes, where the patient has become unconscious, can be treated by glucagon (0.5 to 1 mg) given intramuscularly or subcutaneously by a person who has received appropriate instruction, or by glucose given intravenously by a medical professional.
+2021-02-01 00:27:10 | INFO | fairseq.tasks.translation | example hypothesis: Actrapide has been studied in patients with type 1 diabetes in which the pancreas cannot produce insulin (two studies involving 1 954 patients) and in patients with type 2 diabetes in which the body cannot effectively process insulin (a study involving 182 patients).
+2021-02-01 00:27:10 | INFO | fairseq.tasks.translation | example reference: HbA1c levels remained fairly steady over the six months of treatment with Actrapid.
+2021-02-01 00:27:10 | INFO | valid | epoch 003 | valid on 'valid' subset | loss 2.844 | nll_loss 0.939 | ppl 1.92 | bleu 67.7 | wps 497.2 | wpb 361 | bsz 12.6 | num_updates 1560 | best_loss 2.808
+2021-02-01 00:27:10 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 00:27:17 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/EMEA_11_1/checkpoint_last.pt (epoch 3 @ 1560 updates, score 2.844) (writing took 6.547654595226049 seconds)
+2021-02-01 00:27:17 | INFO | fairseq_cli.train | end of epoch 3 (average epoch stats below)
+2021-02-01 00:27:17 | INFO | train | epoch 003 | loss 2.559 | nll_loss 0.703 | ppl 1.63 | wps 5547.6 | ups 8.46 | wpb 655.9 | bsz 19.2 | num_updates 1560 | lr 0.000195 | gnorm 3.585 | loss_scale 16 | train_wall 46 | wall 215
+2021-02-01 00:27:17 | INFO | fairseq_cli.train | begin training epoch 3
+2021-02-01 00:27:20 | INFO | train_inner | epoch 004:     40 / 521 loss=2.554, nll_loss=0.698, ppl=1.62, wps=2733.5, ups=4.17, wpb=655.8, bsz=19, num_updates=1600, lr=0.0002, gnorm=3.803, loss_scale=16, train_wall=9, wall=219
+2021-02-01 00:27:29 | INFO | train_inner | epoch 004:    140 / 521 loss=2.467, nll_loss=0.592, ppl=1.51, wps=7277.8, ups=11.36, wpb=640.9, bsz=18.4, num_updates=1700, lr=0.0002125, gnorm=3.445, loss_scale=16, train_wall=9, wall=228
+2021-02-01 00:27:33 | INFO | fairseq.trainer | NOTE: overflow detected, setting loss scale to: 8.0
+2021-02-01 00:27:38 | INFO | train_inner | epoch 004:    241 / 521 loss=2.518, nll_loss=0.653, ppl=1.57, wps=7431.3, ups=10.98, wpb=676.7, bsz=20.9, num_updates=1800, lr=0.000225, gnorm=3.588, loss_scale=11, train_wall=9, wall=237
+2021-02-01 00:27:47 | INFO | train_inner | epoch 004:    341 / 521 loss=2.573, nll_loss=0.712, ppl=1.64, wps=7394.8, ups=11.13, wpb=664.3, bsz=20.5, num_updates=1900, lr=0.0002375, gnorm=4.233, loss_scale=8, train_wall=9, wall=246
+2021-02-01 00:27:56 | INFO | train_inner | epoch 004:    441 / 521 loss=2.61, nll_loss=0.749, ppl=1.68, wps=7271.9, ups=11.3, wpb=643.8, bsz=16.9, num_updates=2000, lr=0.00025, gnorm=4.737, loss_scale=8, train_wall=9, wall=255
+2021-02-01 00:28:03 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 00:28:04 | INFO | fairseq.tasks.translation | example hypothesis: Vials 5 x (1 x 10 ml)
+2021-02-01 00:28:04 | INFO | fairseq.tasks.translation | example reference: 5 x (1 x 10 ml) vials
+2021-02-01 00:28:04 | INFO | fairseq.tasks.translation | example hypothesis: The advisability of driving should be considered in these circumstances.
+2021-02-01 00:28:04 | INFO | fairseq.tasks.translation | example reference: The advisability of driving should be considered in these circumstances.
+2021-02-01 00:28:05 | INFO | fairseq.tasks.translation | example hypothesis: Actrapide 40 IU/ ml solution for injection in a vial.
+2021-02-01 00:28:05 | INFO | fairseq.tasks.translation | example reference: Actrapid 40 IU/ ml solution for injection in a vial.
+2021-02-01 00:28:05 | INFO | fairseq.tasks.translation | example hypothesis: Therefore, the physician should take possible interactions into account and should always ask his patients about any medicinal products they take.
+2021-02-01 00:28:05 | INFO | fairseq.tasks.translation | example reference: The physician must therefore take possible interactions into account and should always ask his patients about any medicinal products they take.
+2021-02-01 00:28:06 | INFO | fairseq.tasks.translation | example hypothesis: Subcutaneous injection into the abdominal wall ensures a faster absorption than from other injection sites.
+2021-02-01 00:28:06 | INFO | fairseq.tasks.translation | example reference: Subcutaneous injection into the abdominal wall ensures a faster absorption than from other injection sites.
+2021-02-01 00:28:06 | INFO | fairseq.tasks.translation | example hypothesis: Glucose must then be administered intravenously, if the patient does not respond within 10 to 15 minutes to glucagon.
+2021-02-01 00:28:06 | INFO | fairseq.tasks.translation | example reference: Glucose must also be given intravenously, if the patient does not respond to glucagon within 10 to 15 minutes.
+2021-02-01 00:28:07 | INFO | fairseq.tasks.translation | example hypothesis: Alternatively, Actrapide can be administered intravenously, to be administered only by medical staff.
+2021-02-01 00:28:07 | INFO | fairseq.tasks.translation | example reference: Actrapid may also be administered intravenously, which should only be carried out by health care professionals.
+2021-02-01 00:28:07 | INFO | fairseq.tasks.translation | example hypothesis: As with any insulin therapy, injection site reactions may occur at the injection site and include pain, itching, hives, swelling and inflammation.
+2021-02-01 00:28:07 | INFO | fairseq.tasks.translation | example reference: As with any insulin therapy, injection site reactions may occur and include pain, itching, hives, swelling and inflammation.
+2021-02-01 00:28:08 | INFO | fairseq.tasks.translation | example hypothesis: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in glycaemic control may be associated with a condition termed acute painful neuropathy, which is usually reversible.
+2021-02-01 00:28:08 | INFO | fairseq.tasks.translation | example reference: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with a condition termed acute painful neuropathy, which is usually reversible.
+2021-02-01 00:28:09 | INFO | fairseq.tasks.translation | example hypothesis: Die ersten Symptome einer Hyperglykämie, wie Duration, Verstärkter Harndrang, Übelmenheit, Erbrechen, tooled dry skin, Mundtrockenheit, Appetitverlust sowie Aceton odour of Atem, treten in der Regel allmählich über Stunden bzw. Tage auf.
+2021-02-01 00:28:09 | INFO | fairseq.tasks.translation | example reference: Die ersten Symptome einer Hyperglykämie, wie Durstgefühl, verstärkter Harndrang, Übelkeit, Erbrechen, Benommenheit, gerötete trockene Haut, Mundtrockenheit, Appetitverlust sowie nach Aceton riechender Atem, treten in der Regel allmählich über Stunden bzw. Tage auf. They include thirst, increased frequency of urination, nausea, vomiting, drowsiness, flushed dry skin, dry mouth, loss of appetite as well as acetone odour of breath.
+2021-02-01 00:28:10 | INFO | fairseq.tasks.translation | example hypothesis: Mildly anatomic hypoglycaemic episodes can be treated by oral administration of glucose or sugary products.
+2021-02-01 00:28:10 | INFO | fairseq.tasks.translation | example reference: 5 Severe hypoglycaemic episodes, where the patient has become unconscious, can be treated by glucagon (0.5 to 1 mg) given intramuscularly or subcutaneously by a person who has received appropriate instruction, or by glucose given intravenously by a medical professional.
+2021-02-01 00:28:11 | INFO | fairseq.tasks.translation | example hypothesis: Actrapide was studied in type 1 diabetes, when the pancreas cannot produce insulin (two studies involving 1 954 patients) and in type 2 diabetes, when the body cannot effectively process insulin (one trial involving 182 patients).
+2021-02-01 00:28:11 | INFO | fairseq.tasks.translation | example reference: HbA1c levels remained fairly steady over the six months of treatment with Actrapid.
+2021-02-01 00:28:11 | INFO | valid | epoch 004 | valid on 'valid' subset | loss 2.962 | nll_loss 1.063 | ppl 2.09 | bleu 63.44 | wps 542.1 | wpb 361 | bsz 12.6 | num_updates 2080 | best_loss 2.808
+2021-02-01 00:28:11 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 00:28:17 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/EMEA_11_1/checkpoint_last.pt (epoch 4 @ 2080 updates, score 2.962) (writing took 5.805333868600428 seconds)
+2021-02-01 00:28:17 | INFO | fairseq_cli.train | end of epoch 4 (average epoch stats below)
+2021-02-01 00:28:17 | INFO | train | epoch 004 | loss 2.545 | nll_loss 0.681 | ppl 1.6 | wps 5673.2 | ups 8.65 | wpb 655.6 | bsz 19.2 | num_updates 2080 | lr 0.00026 | gnorm 4.036 | loss_scale 11 | train_wall 46 | wall 275
+2021-02-01 00:28:17 | INFO | fairseq_cli.train | begin training epoch 4
+2021-02-01 00:28:19 | INFO | train_inner | epoch 005:     20 / 521 loss=2.593, nll_loss=0.733, ppl=1.66, wps=2889.7, ups=4.43, wpb=652.9, bsz=20.2, num_updates=2100, lr=0.0002625, gnorm=4.666, loss_scale=8, train_wall=9, wall=277
+2021-02-01 00:28:28 | INFO | train_inner | epoch 005:    120 / 521 loss=2.471, nll_loss=0.591, ppl=1.51, wps=7470.3, ups=11.19, wpb=667.9, bsz=19.7, num_updates=2200, lr=0.000275, gnorm=3.917, loss_scale=8, train_wall=9, wall=286
+2021-02-01 00:28:37 | INFO | train_inner | epoch 005:    220 / 521 loss=2.606, nll_loss=0.744, ppl=1.67, wps=7147.9, ups=11.16, wpb=640.7, bsz=18.5, num_updates=2300, lr=0.0002875, gnorm=5.241, loss_scale=8, train_wall=9, wall=295
+2021-02-01 00:28:43 | INFO | fairseq.trainer | NOTE: overflow detected, setting loss scale to: 4.0
+2021-02-01 00:28:46 | INFO | train_inner | epoch 005:    321 / 521 loss=2.648, nll_loss=0.792, ppl=1.73, wps=6941.5, ups=11.19, wpb=620.4, bsz=16.4, num_updates=2400, lr=0.0003, gnorm=6.631, loss_scale=7, train_wall=9, wall=304
+2021-02-01 00:28:54 | INFO | train_inner | epoch 005:    421 / 521 loss=2.662, nll_loss=0.804, ppl=1.75, wps=7339.3, ups=11.16, wpb=657.7, bsz=20, num_updates=2500, lr=0.0003125, gnorm=5.293, loss_scale=4, train_wall=9, wall=313
+2021-02-01 00:29:04 | INFO | train_inner | epoch 005:    521 / 521 loss=2.635, nll_loss=0.775, ppl=1.71, wps=7560, ups=11.09, wpb=681.5, bsz=20.9, num_updates=2600, lr=0.000325, gnorm=4.972, loss_scale=4, train_wall=9, wall=322
+2021-02-01 00:29:04 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 00:29:04 | INFO | fairseq.tasks.translation | example hypothesis: Vials 5 x (1 x 10 ml)
+2021-02-01 00:29:04 | INFO | fairseq.tasks.translation | example reference: 5 x (1 x 10 ml) vials
+2021-02-01 00:29:04 | INFO | fairseq.tasks.translation | example hypothesis: The advisability of driving should be considered in these circumstances.
+2021-02-01 00:29:04 | INFO | fairseq.tasks.translation | example reference: The advisability of driving should be considered in these circumstances.
+2021-02-01 00:29:05 | INFO | fairseq.tasks.translation | example hypothesis: Actrapide 40 IU/ ml solution for injection in a vial.
+2021-02-01 00:29:05 | INFO | fairseq.tasks.translation | example reference: Actrapid 40 IU/ ml solution for injection in a vial.
+2021-02-01 00:29:05 | INFO | fairseq.tasks.translation | example hypothesis: The physicianmust therefore take possible interactions into account and should always ask his patients about any medicines they take.
+2021-02-01 00:29:05 | INFO | fairseq.tasks.translation | example reference: The physician must therefore take possible interactions into account and should always ask his patients about any medicinal products they take.
+2021-02-01 00:29:06 | INFO | fairseq.tasks.translation | example hypothesis: Subcutaneous injection into the abdominal wall ensures faster absorption than from other injection sites.
+2021-02-01 00:29:06 | INFO | fairseq.tasks.translation | example reference: Subcutaneous injection into the abdominal wall ensures a faster absorption than from other injection sites.
+2021-02-01 00:29:06 | INFO | fairseq.tasks.translation | example hypothesis: Glycaemic control should be given intravenously within 10 to 15 minutes.
+2021-02-01 00:29:06 | INFO | fairseq.tasks.translation | example reference: Glucose must also be given intravenously, if the patient does not respond to glucagon within 10 to 15 minutes.
+2021-02-01 00:29:07 | INFO | fairseq.tasks.translation | example hypothesis: Usual or intravenous administration Actrapide may also be given intravenously, this should only be given to medical staff.
+2021-02-01 00:29:07 | INFO | fairseq.tasks.translation | example reference: Actrapid may also be administered intravenously, which should only be carried out by health care professionals.
+2021-02-01 00:29:08 | INFO | fairseq.tasks.translation | example hypothesis: As with any insulin therapy, injection site reactions may occur and may include pain, itching, hives, hives, swelling and inflammation.
+2021-02-01 00:29:08 | INFO | fairseq.tasks.translation | example reference: As with any insulin therapy, injection site reactions may occur and include pain, itching, hives, swelling and inflammation.
+2021-02-01 00:29:08 | INFO | fairseq.tasks.translation | example hypothesis: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with a condition called acute painful neuropathy, which is usually reversible.
+2021-02-01 00:29:08 | INFO | fairseq.tasks.translation | example reference: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with a condition termed acute painful neuropathy, which is usually reversible.
+2021-02-01 00:29:10 | INFO | fairseq.tasks.translation | example hypothesis: The first symptoms of hyperglycaemia, such as thirst feeling, increased frequency, vomiting, drowsiness, dry skin, dry mouth, loss of appetite as well as acetone odour of breath, occur in general slowly over hours and days, respectively.
+2021-02-01 00:29:10 | INFO | fairseq.tasks.translation | example reference: Die ersten Symptome einer Hyperglykämie, wie Durstgefühl, verstärkter Harndrang, Übelkeit, Erbrechen, Benommenheit, gerötete trockene Haut, Mundtrockenheit, Appetitverlust sowie nach Aceton riechender Atem, treten in der Regel allmählich über Stunden bzw. Tage auf. They include thirst, increased frequency of urination, nausea, vomiting, drowsiness, flushed dry skin, dry mouth, loss of appetite as well as acetone odour of breath.
+2021-02-01 00:29:11 | INFO | fairseq.tasks.translation | example hypothesis: Mildly sugary hypoglycaemic episodes can therefore be treated by oral administration of glucose or sugary products.
+2021-02-01 00:29:11 | INFO | fairseq.tasks.translation | example reference: 5 Severe hypoglycaemic episodes, where the patient has become unconscious, can be treated by glucagon (0.5 to 1 mg) given intramuscularly or subcutaneously by a person who has received appropriate instruction, or by glucose given intravenously by a medical professional.
+2021-02-01 00:29:12 | INFO | fairseq.tasks.translation | example hypothesis: Actrapide has been studied in patients with type 1 diabetes, when the pancreas cannot produce insulin (two studies of 1,954 patients) and in patients with type 2 diabetes, when the body does not use insulin effectively (a study of 182 patients).
+2021-02-01 00:29:12 | INFO | fairseq.tasks.translation | example reference: HbA1c levels remained fairly steady over the six months of treatment with Actrapid.
+2021-02-01 00:29:12 | INFO | valid | epoch 005 | valid on 'valid' subset | loss 3.02 | nll_loss 1.129 | ppl 2.19 | bleu 66.13 | wps 486 | wpb 361 | bsz 12.6 | num_updates 2600 | best_loss 2.808
+2021-02-01 00:29:12 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 00:29:19 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/EMEA_11_1/checkpoint_last.pt (epoch 5 @ 2600 updates, score 3.02) (writing took 6.424753579311073 seconds)
+2021-02-01 00:29:19 | INFO | fairseq_cli.train | end of epoch 5 (average epoch stats below)
+2021-02-01 00:29:19 | INFO | train | epoch 005 | loss 2.596 | nll_loss 0.732 | ppl 1.66 | wps 5514.1 | ups 8.41 | wpb 655.3 | bsz 19.2 | num_updates 2600 | lr 0.000325 | gnorm 5.201 | loss_scale 6 | train_wall 46 | wall 337
+2021-02-01 00:29:19 | INFO | fairseq_cli.train | begin training epoch 5
+2021-02-01 00:29:28 | INFO | train_inner | epoch 006:    100 / 521 loss=2.558, nll_loss=0.681, ppl=1.6, wps=2841.7, ups=4.15, wpb=685.1, bsz=19.2, num_updates=2700, lr=0.0003375, gnorm=5.236, loss_scale=4, train_wall=9, wall=346
+2021-02-01 00:29:30 | INFO | fairseq.trainer | NOTE: overflow detected, setting loss scale to: 2.0
+2021-02-01 00:29:37 | INFO | train_inner | epoch 006:    201 / 521 loss=2.726, nll_loss=0.872, ppl=1.83, wps=7445, ups=11.17, wpb=666.5, bsz=18.6, num_updates=2800, lr=0.00035, gnorm=13.99, loss_scale=3, train_wall=9, wall=355
+2021-02-01 00:29:46 | INFO | train_inner | epoch 006:    301 / 521 loss=3.232, nll_loss=1.451, ppl=2.73, wps=7472.4, ups=11.11, wpb=672.7, bsz=22, num_updates=2900, lr=0.0003625, gnorm=36.204, loss_scale=2, train_wall=9, wall=364
+2021-02-01 00:29:48 | INFO | fairseq.trainer | NOTE: overflow detected, setting loss scale to: 1.0
+2021-02-01 00:29:55 | INFO | train_inner | epoch 006:    402 / 521 loss=3.299, nll_loss=1.52, ppl=2.87, wps=7124.8, ups=11.19, wpb=636.8, bsz=18.2, num_updates=3000, lr=0.000375, gnorm=33.995, loss_scale=1, train_wall=9, wall=373
+2021-02-01 00:30:03 | INFO | train_inner | epoch 006:    502 / 521 loss=3.12, nll_loss=1.32, ppl=2.5, wps=6959.7, ups=11.17, wpb=623.2, bsz=18.5, num_updates=3100, lr=0.0003875, gnorm=36.46, loss_scale=1, train_wall=9, wall=382
+2021-02-01 00:30:05 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 00:30:06 | INFO | fairseq.tasks.translation | example hypothesis: Vial 5 x 1 (1 x 10 ml)
+2021-02-01 00:30:06 | INFO | fairseq.tasks.translation | example reference: 5 x (1 x 10 ml) vials
+2021-02-01 00:30:06 | INFO | fairseq.tasks.translation | example hypothesis: For any information on this leaflet, please contact the local representative of the Marketing Authorisation Holder: ina dic Me
+2021-02-01 00:30:06 | INFO | fairseq.tasks.translation | example reference: The advisability of driving should be considered in these circumstances.
+2021-02-01 00:30:07 | INFO | fairseq.tasks.translation | example hypothesis: Actrapide 40 IU/ ml solution for injection in a vial.
+2021-02-01 00:30:07 | INFO | fairseq.tasks.translation | example reference: Actrapid 40 IU/ ml solution for injection in a vial.
+2021-02-01 00:30:07 | INFO | fairseq.tasks.translation | example hypothesis: Therefore, the potential haemoglobin has to be closely monitored for other medicinal products.
+2021-02-01 00:30:07 | INFO | fairseq.tasks.translation | example reference: The physician must therefore take possible interactions into account and should always ask his patients about any medicinal products they take.
+2021-02-01 00:30:08 | INFO | fairseq.tasks.translation | example hypothesis: Subcutaneous injection ensures a faster absorption in the abdominal wall compared to other injection sites.
+2021-02-01 00:30:08 | INFO | fairseq.tasks.translation | example reference: Subcutaneous injection into the abdominal wall ensures a faster absorption than from other injection sites.
+2021-02-01 00:30:09 | INFO | fairseq.tasks.translation | example hypothesis: Glucose must also be given intravenously, if the patient does not respond to glucagon within 10 to 15 minutes.
+2021-02-01 00:30:09 | INFO | fairseq.tasks.translation | example reference: Glucose must also be given intravenously, if the patient does not respond to glucagon within 10 to 15 minutes.
+2021-02-01 00:30:09 | INFO | fairseq.tasks.translation | example hypothesis: Actrapide can also be administered intravenously.
+2021-02-01 00:30:09 | INFO | fairseq.tasks.translation | example reference: Actrapid may also be administered intravenously, which should only be carried out by health care professionals.
+2021-02-01 00:30:10 | INFO | fairseq.tasks.translation | example hypothesis: As with any insulin therapy, injection site reactions may occur and include pain, itching, swelling and inflammation.
+2021-02-01 00:30:10 | INFO | fairseq.tasks.translation | example reference: As with any insulin therapy, injection site reactions may occur and include pain, itching, hives, swelling and inflammation.
+2021-02-01 00:30:10 | INFO | fairseq.tasks.translation | example hypothesis: Nervous system disorders Uncommon - Fast improvement in glucose control may be associated with a condition termed acute painful neuropathy, which is usually repathy.
+2021-02-01 00:30:10 | INFO | fairseq.tasks.translation | example reference: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with a condition termed acute painful neuropathy, which is usually reversible.
+2021-02-01 00:30:12 | INFO | fairseq.tasks.translation | example hypothesis: Die ersten Symptome hyperglycaemia, wie Durstgefühl, verstärkter Harndrang, Übelkeit, Übelkeit, Übelkeit, Übelkeit, Übelkeit, Mundtrockenheit, Appetichender Atem, treten in der breath.
+2021-02-01 00:30:12 | INFO | fairseq.tasks.translation | example reference: Die ersten Symptome einer Hyperglykämie, wie Durstgefühl, verstärkter Harndrang, Übelkeit, Erbrechen, Benommenheit, gerötete trockene Haut, Mundtrockenheit, Appetitverlust sowie nach Aceton riechender Atem, treten in der Regel allmählich über Stunden bzw. Tage auf. They include thirst, increased frequency of urination, nausea, vomiting, drowsiness, flushed dry skin, dry mouth, loss of appetite as well as acetone odour of breath.
+2021-02-01 00:30:13 | INFO | fairseq.tasks.translation | example hypothesis: Mild episodes can therefore be treated by oral administration of glucose or sugary products.
+2021-02-01 00:30:13 | INFO | fairseq.tasks.translation | example reference: 5 Severe hypoglycaemic episodes, where the patient has become unconscious, can be treated by glucagon (0.5 to 1 mg) given intramuscularly or subcutaneously by a person who has received appropriate instruction, or by glucose given intravenously by a medical professional.
+2021-02-01 00:30:14 | INFO | fairseq.tasks.translation | example hypothesis: Actrapide has been shown to be effective in type 1 diabetes with type 1 diabetes (two trials involving 1 954 patients) and in type 2 diabetes with which the body has not shown adequate glycaemic control in the 182 patient in the studies.
+2021-02-01 00:30:14 | INFO | fairseq.tasks.translation | example reference: HbA1c levels remained fairly steady over the six months of treatment with Actrapid.
+2021-02-01 00:30:14 | INFO | valid | epoch 006 | valid on 'valid' subset | loss 3.745 | nll_loss 1.981 | ppl 3.95 | bleu 38.79 | wps 477.4 | wpb 361 | bsz 12.6 | num_updates 3119 | best_loss 2.808
+2021-02-01 00:30:14 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 00:30:22 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/EMEA_11_1/checkpoint_last.pt (epoch 6 @ 3119 updates, score 3.745) (writing took 7.614654033444822 seconds)
+2021-02-01 00:30:22 | INFO | fairseq_cli.train | end of epoch 6 (average epoch stats below)
+2021-02-01 00:30:22 | INFO | train | epoch 006 | loss 2.99 | nll_loss 1.172 | ppl 2.25 | wps 5382.4 | ups 8.22 | wpb 654.9 | bsz 19.1 | num_updates 3119 | lr 0.000389875 | gnorm 25.844 | loss_scale 2 | train_wall 46 | wall 400
+2021-02-01 00:30:22 | INFO | fairseq_cli.train | begin training epoch 6
+2021-02-01 00:30:23 | INFO | fairseq.trainer | NOTE: overflow detected, setting loss scale to: 0.5
+2021-02-01 00:30:29 | INFO | train_inner | epoch 007:     82 / 521 loss=3.014, nll_loss=1.191, ppl=2.28, wps=2641.7, ups=3.89, wpb=678.3, bsz=18.6, num_updates=3200, lr=0.0004, gnorm=30.418, loss_scale=1, train_wall=9, wall=408
+2021-02-01 00:30:31 | INFO | fairseq.trainer | NOTE: overflow detected, setting loss scale to: 0.25
+2021-02-01 00:30:38 | INFO | train_inner | epoch 007:    183 / 521 loss=3.087, nll_loss=1.276, ppl=2.42, wps=7296.2, ups=11.25, wpb=648.7, bsz=20, num_updates=3300, lr=0.0004125, gnorm=26.442, loss_scale=0, train_wall=9, wall=417
+2021-02-01 00:30:47 | INFO | train_inner | epoch 007:    283 / 521 loss=3.133, nll_loss=1.33, ppl=2.51, wps=7411.2, ups=11.21, wpb=661.4, bsz=19, num_updates=3400, lr=0.000425, gnorm=32.995, loss_scale=0, train_wall=9, wall=426
+2021-02-01 00:30:56 | INFO | train_inner | epoch 007:    383 / 521 loss=3.085, nll_loss=1.271, ppl=2.41, wps=7161.2, ups=11.27, wpb=635.5, bsz=17.4, num_updates=3500, lr=0.0004375, gnorm=17.648, loss_scale=0, train_wall=9, wall=435
+2021-02-01 00:31:05 | INFO | train_inner | epoch 007:    483 / 521 loss=3.068, nll_loss=1.255, ppl=2.39, wps=7248.9, ups=11.27, wpb=643.1, bsz=20.3, num_updates=3600, lr=0.00045, gnorm=18.777, loss_scale=0, train_wall=9, wall=443
+2021-02-01 00:31:08 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 00:31:09 | INFO | fairseq.tasks.translation | example hypothesis: 1 vial 5 x (1 x 10 ml)
+2021-02-01 00:31:09 | INFO | fairseq.tasks.translation | example reference: 5 x (1 x 10 ml) vials
+2021-02-01 00:31:09 | INFO | fairseq.tasks.translation | example hypothesis: The advisability of driving should be considered in these circumstances.
+2021-02-01 00:31:09 | INFO | fairseq.tasks.translation | example reference: The advisability of driving should be considered in these circumstances.
+2021-02-01 00:31:09 | INFO | fairseq.tasks.translation | example hypothesis: Actrapide 40 IU/ ml solution for injection in a vial.
+2021-02-01 00:31:09 | INFO | fairseq.tasks.translation | example reference: Actrapid 40 IU/ ml solution for injection in a vial.
+2021-02-01 00:31:10 | INFO | fairseq.tasks.translation | example hypothesis: The physician must therefore take possible interactions into account and should always ask his patients about any medicinal products they take.
+2021-02-01 00:31:10 | INFO | fairseq.tasks.translation | example reference: The physician must therefore take possible interactions into account and should always ask his patients about any medicinal products they take.
+2021-02-01 00:31:10 | INFO | fairseq.tasks.translation | example hypothesis: Subcutaneous injection into the abdominal wall ensures a faster absorption than from other injection sites.
+2021-02-01 00:31:10 | INFO | fairseq.tasks.translation | example reference: Subcutaneous injection into the abdominal wall ensures a faster absorption than from other injection sites.
+2021-02-01 00:31:11 | INFO | fairseq.tasks.translation | example hypothesis: Glucose must be given intravenously, if the patient does not respond to glucagon within 10 to 15 minutes.
+2021-02-01 00:31:11 | INFO | fairseq.tasks.translation | example reference: Glucose must also be given intravenously, if the patient does not respond to glucagon within 10 to 15 minutes.
+2021-02-01 00:31:12 | INFO | fairseq.tasks.translation | example hypothesis: For subcutaneous or intravenous use Actrapide can also be administered intravenously, which should be given by health care professionals only.
+2021-02-01 00:31:12 | INFO | fairseq.tasks.translation | example reference: Actrapid may also be administered intravenously, which should only be carried out by health care professionals.
+2021-02-01 00:31:13 | INFO | fairseq.tasks.translation | example hypothesis: As with any insulin therapy, injection site reactions may occur and include pain, itching, hives, swelling and inflammatory agents.
+2021-02-01 00:31:13 | INFO | fairseq.tasks.translation | example reference: As with any insulin therapy, injection site reactions may occur and include pain, itching, hives, swelling and inflammation.
+2021-02-01 00:31:14 | INFO | fairseq.tasks.translation | example hypothesis: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with a condition termed acute painful neuropathy, which is usually reversible.
+2021-02-01 00:31:14 | INFO | fairseq.tasks.translation | example reference: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with a condition termed acute painful neuropathy, which is usually reversible.
+2021-02-01 00:31:15 | INFO | fairseq.tasks.translation | example hypothesis: Die ersten Symptome einer Hyperglykämie, wie Durstgefühl, verstärkter Harndrang, Übelkeit, gerötete trockene Haut, Appetitverlust sowie nach Aceton riechentverlust sowie nach Aceton riechentverlust sowie nach Aceton riechentverlust sowie sowie nach Aceton riechentverlust sowie der Regel allmählich over Stunden auf. They include thirst, increased thirst, increased frequency, increased frequency, increased
+2021-02-01 00:31:15 | INFO | fairseq.tasks.translation | example reference: Die ersten Symptome einer Hyperglykämie, wie Durstgefühl, verstärkter Harndrang, Übelkeit, Erbrechen, Benommenheit, gerötete trockene Haut, Mundtrockenheit, Appetitverlust sowie nach Aceton riechender Atem, treten in der Regel allmählich über Stunden bzw. Tage auf. They include thirst, increased frequency of urination, nausea, vomiting, drowsiness, flushed dry skin, dry mouth, loss of appetite as well as acetone odour of breath.
+2021-02-01 00:31:17 | INFO | fairseq.tasks.translation | example hypothesis: Mildly hypoglycaemia can be treated by glucose or sugary food.
+2021-02-01 00:31:17 | INFO | fairseq.tasks.translation | example reference: 5 Severe hypoglycaemic episodes, where the patient has become unconscious, can be treated by glucagon (0.5 to 1 mg) given intramuscularly or subcutaneously by a person who has received appropriate instruction, or by glucose given intravenously by a medical professional.
+2021-02-01 00:31:18 | INFO | fairseq.tasks.translation | example hypothesis: Actrapide has been shown in patients with type 2 diabetes who for any reason cannot receive insulin (a study involving 1,954 patients) and in patients with type 2 diabetes who for any reason cannot work effectively with insulin (a study involving 182 patients).
+2021-02-01 00:31:18 | INFO | fairseq.tasks.translation | example reference: HbA1c levels remained fairly steady over the six months of treatment with Actrapid.
+2021-02-01 00:31:18 | INFO | valid | epoch 007 | valid on 'valid' subset | loss 3.191 | nll_loss 1.32 | ppl 2.5 | bleu 60.44 | wps 435.9 | wpb 361 | bsz 12.6 | num_updates 3638 | best_loss 2.808
+2021-02-01 00:31:18 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 00:31:24 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/EMEA_11_1/checkpoint_last.pt (epoch 7 @ 3638 updates, score 3.191) (writing took 5.822689624503255 seconds)
+2021-02-01 00:31:24 | INFO | fairseq_cli.train | end of epoch 7 (average epoch stats below)
+2021-02-01 00:31:24 | INFO | train | epoch 007 | loss 3.066 | nll_loss 1.252 | ppl 2.38 | wps 5493.9 | ups 8.39 | wpb 655.2 | bsz 19.1 | num_updates 3638 | lr 0.00045475 | gnorm 25.573 | loss_scale 0 | train_wall 46 | wall 462
+2021-02-01 00:31:24 | INFO | fairseq_cli.train | begin training epoch 7
+2021-02-01 00:31:29 | INFO | train_inner | epoch 008:     62 / 521 loss=2.923, nll_loss=1.081, ppl=2.12, wps=2659.3, ups=4.06, wpb=655.8, bsz=18.8, num_updates=3700, lr=0.0004625, gnorm=29.724, loss_scale=0, train_wall=9, wall=468
+2021-02-01 00:31:38 | INFO | train_inner | epoch 008:    162 / 521 loss=2.941, nll_loss=1.101, ppl=2.15, wps=7561.1, ups=11.12, wpb=679.7, bsz=21, num_updates=3800, lr=0.000475, gnorm=16, loss_scale=0, train_wall=9, wall=477
+2021-02-01 00:31:47 | INFO | train_inner | epoch 008:    262 / 521 loss=3.088, nll_loss=1.276, ppl=2.42, wps=7221.2, ups=11.38, wpb=634.7, bsz=19.6, num_updates=3900, lr=0.0004875, gnorm=23.502, loss_scale=0, train_wall=9, wall=486
+2021-02-01 00:31:56 | INFO | train_inner | epoch 008:    362 / 521 loss=3.133, nll_loss=1.319, ppl=2.49, wps=7474.7, ups=11.29, wpb=662.2, bsz=20, num_updates=4000, lr=0.0005, gnorm=10.434, loss_scale=0, train_wall=9, wall=495
+2021-02-01 00:32:05 | INFO | train_inner | epoch 008:    462 / 521 loss=3.173, nll_loss=1.367, ppl=2.58, wps=7274.7, ups=11.3, wpb=643.8, bsz=16.7, num_updates=4100, lr=0.000493865, gnorm=14.137, loss_scale=0, train_wall=9, wall=504
+2021-02-01 00:32:10 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 00:32:11 | INFO | fairseq.tasks.translation | example hypothesis: 1 x 10 ml)
+2021-02-01 00:32:11 | INFO | fairseq.tasks.translation | example reference: 5 x (1 x 10 ml) vials
+2021-02-01 00:32:11 | INFO | fairseq.tasks.translation | example hypothesis: The advisability of driving should be considered in these circumstances.
+2021-02-01 00:32:11 | INFO | fairseq.tasks.translation | example reference: The advisability of driving should be considered in these circumstances.
+2021-02-01 00:32:11 | INFO | fairseq.tasks.translation | example hypothesis: Actrapide 40 IU/ ml solution for injection in a vial.
+2021-02-01 00:32:11 | INFO | fairseq.tasks.translation | example reference: Actrapid 40 IU/ ml solution for injection in a vial.
+2021-02-01 00:32:12 | INFO | fairseq.tasks.translation | example hypothesis: The physician must therefore take possible interactions into account and should always ask his patients about any medicinal products they take.
+2021-02-01 00:32:12 | INFO | fairseq.tasks.translation | example reference: The physician must therefore take possible interactions into account and should always ask his patients about any medicinal products they take.
+2021-02-01 00:32:12 | INFO | fairseq.tasks.translation | example hypothesis: Subcutaneous injection into the abdominal wall ensures a faster uptake than to other injection sites.
+2021-02-01 00:32:12 | INFO | fairseq.tasks.translation | example reference: Subcutaneous injection into the abdominal wall ensures a faster absorption than from other injection sites.
+2021-02-01 00:32:13 | INFO | fairseq.tasks.translation | example hypothesis: Glucose must be given intravenously, if the patient does not respond to glucagon within 10 to 15 minutes.
+2021-02-01 00:32:13 | INFO | fairseq.tasks.translation | example reference: Glucose must also be given intravenously, if the patient does not respond to glucagon within 10 to 15 minutes.
+2021-02-01 00:32:13 | INFO | fairseq.tasks.translation | example hypothesis: benefit to be derived from subcutaneous use. Actrapide may be administered intravenously, which is only for short-term use.
+2021-02-01 00:32:13 | INFO | fairseq.tasks.translation | example reference: Actrapid may also be administered intravenously, which should only be carried out by health care professionals.
+2021-02-01 00:32:14 | INFO | fairseq.tasks.translation | example hypothesis: As with any insulin therapy, injection site reactions may occur and include pain, itching, hives, swelling and inflammation.
+2021-02-01 00:32:14 | INFO | fairseq.tasks.translation | example reference: As with any insulin therapy, injection site reactions may occur and include pain, itching, hives, swelling and inflammation.
+2021-02-01 00:32:15 | INFO | fairseq.tasks.translation | example hypothesis: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with a condition termed acute painful neuropathy, which is usually reversible.
+2021-02-01 00:32:15 | INFO | fairseq.tasks.translation | example reference: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with a condition termed acute painful neuropathy, which is usually reversible.
+2021-02-01 00:32:16 | INFO | fairseq.tasks.translation | example hypothesis: Die ersten Symptome einer Hyperglykämie, wie Durstgefühl, verstärkter Harndrang, Übelkeit, Erbrechen, Benommenheit, gerötete trockene Haut, Appetitverlust sowie nach Aceton riechender Atem riechender Atem allmählich allmählich allmählich allmählich über Stunden bzw. Tage auf. They include thirst, increased frequency of urination, nausea, vomiting, drowsiness,
+2021-02-01 00:32:16 | INFO | fairseq.tasks.translation | example reference: Die ersten Symptome einer Hyperglykämie, wie Durstgefühl, verstärkter Harndrang, Übelkeit, Erbrechen, Benommenheit, gerötete trockene Haut, Mundtrockenheit, Appetitverlust sowie nach Aceton riechender Atem, treten in der Regel allmählich über Stunden bzw. Tage auf. They include thirst, increased frequency of urination, nausea, vomiting, drowsiness, flushed dry skin, dry mouth, loss of appetite as well as acetone odour of breath.
+2021-02-01 00:32:17 | INFO | fairseq.tasks.translation | example hypothesis: Mildly hypoglycaemic episodes can be treated by glucose or sugary products.
+2021-02-01 00:32:17 | INFO | fairseq.tasks.translation | example reference: 5 Severe hypoglycaemic episodes, where the patient has become unconscious, can be treated by glucagon (0.5 to 1 mg) given intramuscularly or subcutaneously by a person who has received appropriate instruction, or by glucose given intravenously by a medical professional.
+2021-02-01 00:32:18 | INFO | fairseq.tasks.translation | example hypothesis: Actrapide has not been shown in patients with type 1 diabetes in which the abdominal wall cannot produce insulin (two studies involving 954 patients), and in patients with type 2 diabetes Insulin is not efficacy in the studies.
+2021-02-01 00:32:18 | INFO | fairseq.tasks.translation | example reference: HbA1c levels remained fairly steady over the six months of treatment with Actrapid.
+2021-02-01 00:32:18 | INFO | valid | epoch 008 | valid on 'valid' subset | loss 3.247 | nll_loss 1.343 | ppl 2.54 | bleu 58.67 | wps 537.5 | wpb 361 | bsz 12.6 | num_updates 4159 | best_loss 2.808
+2021-02-01 00:32:18 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 00:32:25 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/EMEA_11_1/checkpoint_last.pt (epoch 8 @ 4159 updates, score 3.247) (writing took 6.684690142981708 seconds)
+2021-02-01 00:32:25 | INFO | fairseq_cli.train | end of epoch 8 (average epoch stats below)
+2021-02-01 00:32:25 | INFO | train | epoch 008 | loss 3.057 | nll_loss 1.235 | ppl 2.35 | wps 5592.1 | ups 8.53 | wpb 655.9 | bsz 19.2 | num_updates 4159 | lr 0.000490349 | gnorm 16.666 | loss_scale 0 | train_wall 46 | wall 523
+2021-02-01 00:32:25 | INFO | fairseq_cli.train | begin training epoch 8
+2021-02-01 00:32:28 | INFO | train_inner | epoch 009:     41 / 521 loss=2.963, nll_loss=1.126, ppl=2.18, wps=2747.3, ups=4.24, wpb=648.4, bsz=17.9, num_updates=4200, lr=0.00048795, gnorm=11.34, loss_scale=0, train_wall=9, wall=527
+2021-02-01 00:32:37 | INFO | train_inner | epoch 009:    141 / 521 loss=2.85, nll_loss=0.993, ppl=1.99, wps=7286.1, ups=11.24, wpb=648.4, bsz=18.6, num_updates=4300, lr=0.000482243, gnorm=8.47, loss_scale=0, train_wall=9, wall=536
+2021-02-01 00:32:46 | INFO | train_inner | epoch 009:    241 / 521 loss=2.833, nll_loss=0.981, ppl=1.97, wps=7507.2, ups=11.28, wpb=665.6, bsz=20.7, num_updates=4400, lr=0.000476731, gnorm=7.849, loss_scale=0, train_wall=9, wall=545
+2021-02-01 00:32:55 | INFO | train_inner | epoch 009:    341 / 521 loss=2.995, nll_loss=1.161, ppl=2.24, wps=7308.1, ups=11.33, wpb=645.2, bsz=19.1, num_updates=4500, lr=0.000471405, gnorm=10.238, loss_scale=0, train_wall=9, wall=554
+2021-02-01 00:33:04 | INFO | train_inner | epoch 009:    441 / 521 loss=2.998, nll_loss=1.167, ppl=2.25, wps=7280, ups=10.99, wpb=662.4, bsz=18, num_updates=4600, lr=0.000466252, gnorm=8.408, loss_scale=0, train_wall=9, wall=563
+2021-02-01 00:33:11 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 00:33:12 | INFO | fairseq.tasks.translation | example hypothesis: x 1 vials
+2021-02-01 00:33:12 | INFO | fairseq.tasks.translation | example reference: 5 x (1 x 10 ml) vials
+2021-02-01 00:33:13 | INFO | fairseq.tasks.translation | example hypothesis: The advisability of driving should be considered in these circumstances.
+2021-02-01 00:33:13 | INFO | fairseq.tasks.translation | example reference: The advisability of driving should be considered in these circumstances.
+2021-02-01 00:33:13 | INFO | fairseq.tasks.translation | example hypothesis: Actrapide 40 IU/ ml solution for injection in a vial.
+2021-02-01 00:33:13 | INFO | fairseq.tasks.translation | example reference: Actrapid 40 IU/ ml solution for injection in a vial.
+2021-02-01 00:33:14 | INFO | fairseq.tasks.translation | example hypothesis: The physician must therefore take possible interactions into account and should always ask his patients about any medicinal products they take.
+2021-02-01 00:33:14 | INFO | fairseq.tasks.translation | example reference: The physician must therefore take possible interactions into account and should always ask his patients about any medicinal products they take.
+2021-02-01 00:33:14 | INFO | fairseq.tasks.translation | example hypothesis: Subcutaneous injection into abdominal wall has a higher absorption than from other injection sites.
+2021-02-01 00:33:14 | INFO | fairseq.tasks.translation | example reference: Subcutaneous injection into the abdominal wall ensures a faster absorption than from other injection sites.
+2021-02-01 00:33:15 | INFO | fairseq.tasks.translation | example hypothesis: Glucagon therapy should be given intravenously, if the patient cannot be given within 10 to 15 minutes.
+2021-02-01 00:33:15 | INFO | fairseq.tasks.translation | example reference: Glucose must also be given intravenously, if the patient does not respond to glucagon within 10 to 15 minutes.
+2021-02-01 00:33:16 | INFO | fairseq.tasks.translation | example hypothesis: Only to be administered subcutaneously or intravenously. Actrapide can only be administered intravenously by medical professionals.
+2021-02-01 00:33:16 | INFO | fairseq.tasks.translation | example reference: Actrapid may also be administered intravenously, which should only be carried out by health care professionals.
+2021-02-01 00:33:17 | INFO | fairseq.tasks.translation | example hypothesis: As with any insulin therapy, injection site reactions may occur and include pain, itching, hives, swelling, swelling and inflammation.
+2021-02-01 00:33:17 | INFO | fairseq.tasks.translation | example reference: As with any insulin therapy, injection site reactions may occur and include pain, itching, hives, swelling and inflammation.
+2021-02-01 00:33:17 | INFO | fairseq.tasks.translation | example hypothesis: Nervous system disorders Uncommon - Peripheral neuropathy Fast increase in blood glucose may be associated with a condition termed acute painful neuropathy, which is usually reversible.
+2021-02-01 00:33:17 | INFO | fairseq.tasks.translation | example reference: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with a condition termed acute painful neuropathy, which is usually reversible.
+2021-02-01 00:33:19 | INFO | fairseq.tasks.translation | example hypothesis: Die ersten Symptome einer Hyperglykämie, wie Durstgefühl, verstärkter Harndrang, Benommenheit, Benommenheit, Benommenheit, Benommenheit, gerötete Haut, Mundtrockenheit, Appetitverlust sowie nach Aceton riechender Atem, treten in der Atem, Benommenheit, Benommenheit, Benommenheit, Benommenheit, Benommenheit,
+2021-02-01 00:33:19 | INFO | fairseq.tasks.translation | example reference: Die ersten Symptome einer Hyperglykämie, wie Durstgefühl, verstärkter Harndrang, Übelkeit, Erbrechen, Benommenheit, gerötete trockene Haut, Mundtrockenheit, Appetitverlust sowie nach Aceton riechender Atem, treten in der Regel allmählich über Stunden bzw. Tage auf. They include thirst, increased frequency of urination, nausea, vomiting, drowsiness, flushed dry skin, dry mouth, loss of appetite as well as acetone odour of breath.
+2021-02-01 00:33:21 | INFO | fairseq.tasks.translation | example hypothesis: Mildly treated hypoglycaemic episodes can be treated by oral administration of oral administration of oral oral oral oral oral oral oral oral oral oral sugar should therefore be treated by glucose to minimise hypoglycaemia with an intravenous medicinal product or by glucose (0.5 to 1 mg) or by glucose (0.5 to 1 mg) or by glucose given intramuscularly or by glucose treated by a person intravenously or by glucose given intramuscularly arly arly arly arly arly arly arly arly arly arly arly arly arly arly arly arly arly arly arly arly arly arly arly arly arly arly arly arly arly arly arly arly arly arly arly arly arly arly arly arly arly arly arly arly arly arly arly arly arly arly arly arly
+2021-02-01 00:33:21 | INFO | fairseq.tasks.translation | example reference: 5 Severe hypoglycaemic episodes, where the patient has become unconscious, can be treated by glucagon (0.5 to 1 mg) given intramuscularly or subcutaneously by a person who has received appropriate instruction, or by glucose given intravenously by a medical professional.
+2021-02-01 00:33:22 | INFO | fairseq.tasks.translation | example hypothesis: Actraphane has not been studied in patients with type 2 diabetes, who have anaphylactic disease (two studies of type 2 diabetes, who do not work effectively with an insulin (a study of type 2 diabetes, Actraphane is highly compared to Actrapylated to Actrapylated insulin (a study of 18 patients) and to patients with Actrapydrate (a study of Hb).
+2021-02-01 00:33:22 | INFO | fairseq.tasks.translation | example reference: HbA1c levels remained fairly steady over the six months of treatment with Actrapid.
+2021-02-01 00:33:22 | INFO | valid | epoch 009 | valid on 'valid' subset | loss 3.297 | nll_loss 1.379 | ppl 2.6 | bleu 60.22 | wps 382.2 | wpb 361 | bsz 12.6 | num_updates 4680 | best_loss 2.808
+2021-02-01 00:33:22 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 00:33:29 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/EMEA_11_1/checkpoint_last.pt (epoch 9 @ 4680 updates, score 3.297) (writing took 6.344388050958514 seconds)
+2021-02-01 00:33:29 | INFO | fairseq_cli.train | end of epoch 9 (average epoch stats below)
+2021-02-01 00:33:29 | INFO | train | epoch 009 | loss 2.912 | nll_loss 1.069 | ppl 2.1 | wps 5337.4 | ups 8.14 | wpb 655.9 | bsz 19.2 | num_updates 4680 | lr 0.00046225 | gnorm 8.747 | loss_scale 0 | train_wall 46 | wall 587
+2021-02-01 00:33:29 | INFO | fairseq_cli.train | begin training epoch 9
+2021-02-01 00:33:31 | INFO | train_inner | epoch 010:     20 / 521 loss=2.906, nll_loss=1.065, ppl=2.09, wps=2504.8, ups=3.78, wpb=662.5, bsz=19.6, num_updates=4700, lr=0.000461266, gnorm=8.66, loss_scale=0, train_wall=9, wall=589
+2021-02-01 00:33:40 | INFO | train_inner | epoch 010:    120 / 521 loss=2.701, nll_loss=0.831, ppl=1.78, wps=7402.9, ups=11.07, wpb=668.8, bsz=18.9, num_updates=4800, lr=0.000456435, gnorm=6.886, loss_scale=0, train_wall=9, wall=598
+2021-02-01 00:33:49 | INFO | train_inner | epoch 010:    220 / 521 loss=2.841, nll_loss=0.99, ppl=1.99, wps=7537.8, ups=11.07, wpb=680.9, bsz=21.2, num_updates=4900, lr=0.000451754, gnorm=13.719, loss_scale=0, train_wall=9, wall=607
+2021-02-01 00:33:58 | INFO | train_inner | epoch 010:    320 / 521 loss=2.872, nll_loss=1.024, ppl=2.03, wps=7270.7, ups=11.16, wpb=651.5, bsz=19.5, num_updates=5000, lr=0.000447214, gnorm=8.831, loss_scale=0, train_wall=9, wall=616
+2021-02-01 00:34:07 | INFO | train_inner | epoch 010:    420 / 521 loss=2.822, nll_loss=0.975, ppl=1.97, wps=7085.9, ups=11.05, wpb=641, bsz=17.8, num_updates=5100, lr=0.000442807, gnorm=10.023, loss_scale=0, train_wall=9, wall=625
+2021-02-01 00:34:16 | INFO | train_inner | epoch 010:    520 / 521 loss=2.789, nll_loss=0.933, ppl=1.91, wps=7146.6, ups=11.2, wpb=638.4, bsz=18.9, num_updates=5200, lr=0.000438529, gnorm=8.415, loss_scale=0, train_wall=9, wall=634
+2021-02-01 00:34:16 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 00:34:16 | INFO | fairseq.tasks.translation | example hypothesis: x 1 (x 1 x 10 ml)
+2021-02-01 00:34:16 | INFO | fairseq.tasks.translation | example reference: 5 x (1 x 10 ml) vials
+2021-02-01 00:34:17 | INFO | fairseq.tasks.translation | example hypothesis: The advisability of driving should be considered in these circumstances.
+2021-02-01 00:34:17 | INFO | fairseq.tasks.translation | example reference: The advisability of driving should be considered in these circumstances.
+2021-02-01 00:34:17 | INFO | fairseq.tasks.translation | example hypothesis: Actrapide 40 IU/ ml solution for injection in a vial.
+2021-02-01 00:34:17 | INFO | fairseq.tasks.translation | example reference: Actrapid 40 IU/ ml solution for injection in a vial.
+2021-02-01 00:34:18 | INFO | fairseq.tasks.translation | example hypothesis: The doctor must therefore take possible interactions and should always ask his about any medicines they take.
+2021-02-01 00:34:18 | INFO | fairseq.tasks.translation | example reference: The physician must therefore take possible interactions into account and should always ask his patients about any medicinal products they take.
+2021-02-01 00:34:18 | INFO | fairseq.tasks.translation | example hypothesis: Subcutaneous injection into the abdominal wall ensures a faster absorption than from other injection sites.
+2021-02-01 00:34:18 | INFO | fairseq.tasks.translation | example reference: Subcutaneous injection into the abdominal wall ensures a faster absorption than from other injection sites.
+2021-02-01 00:34:19 | INFO | fairseq.tasks.translation | example hypothesis: Glucose must also given intravenously, if the patient does not respond to glucagon within 10 to 15 minutes.
+2021-02-01 00:34:19 | INFO | fairseq.tasks.translation | example reference: Glucose must also be given intravenously, if the patient does not respond to glucagon within 10 to 15 minutes.
+2021-02-01 00:34:19 | INFO | fairseq.tasks.translation | example hypothesis: The subcutaneous route or intravenous route Actrapide can also be given by intravenous route, indicating that a medical professional may be necessary.
+2021-02-01 00:34:19 | INFO | fairseq.tasks.translation | example reference: Actrapid may also be administered intravenously, which should only be carried out by health care professionals.
+2021-02-01 00:34:20 | INFO | fairseq.tasks.translation | example hypothesis: As for any insulin therapy, injection site reactions may occur and include pain, itching, hives, swelling and inflammation.
+2021-02-01 00:34:20 | INFO | fairseq.tasks.translation | example reference: As with any insulin therapy, injection site reactions may occur and include pain, itching, hives, swelling and inflammation.
+2021-02-01 00:34:21 | INFO | fairseq.tasks.translation | example hypothesis: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be due to a condition termed acute painful acute painful acute painful neuropathy, which is usually reversible.
+2021-02-01 00:34:21 | INFO | fairseq.tasks.translation | example reference: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with a condition termed acute painful neuropathy, which is usually reversible.
+2021-02-01 00:34:22 | INFO | fairseq.tasks.translation | example hypothesis: Die ersten Symptome einer Hyperglykämie, wie Durstgefühl, wie Durstgefühl, verstärkter Harndrang, Übelkeit, Benommenheit, gerötete trockene Haut, Mundtrockenheit, Mundtrockenheit, Mundtrockenheit, Appetitverlust Aceton riechender Atem riechender Atem, treten in der Regel allmählich über Stunden bzw. Tage bzw. Tage bzw. Tage bzw. Tage respectively. They include thirst
+2021-02-01 00:34:22 | INFO | fairseq.tasks.translation | example reference: Die ersten Symptome einer Hyperglykämie, wie Durstgefühl, verstärkter Harndrang, Übelkeit, Erbrechen, Benommenheit, gerötete trockene Haut, Mundtrockenheit, Appetitverlust sowie nach Aceton riechender Atem, treten in der Regel allmählich über Stunden bzw. Tage auf. They include thirst, increased frequency of urination, nausea, vomiting, drowsiness, flushed dry skin, dry mouth, loss of appetite as well as acetone odour of breath.
+2021-02-01 00:34:23 | INFO | fairseq.tasks.translation | example hypothesis: However, hypoglycaemia can be treated by oral administration of glucose or sugary products.
+2021-02-01 00:34:23 | INFO | fairseq.tasks.translation | example reference: 5 Severe hypoglycaemic episodes, where the patient has become unconscious, can be treated by glucagon (0.5 to 1 mg) given intramuscularly or subcutaneously by a person who has received appropriate instruction, or by glucose given intravenously by a medical professional.
+2021-02-01 00:34:24 | INFO | fairseq.tasks.translation | example hypothesis: Actrapide was effective in type 1 diabetes, with the pancreas (two studies in which the body failed to produce insulin (two studies with these characteristics) and increased insulin concentrations of the active ingredient in the blood and urine).
+2021-02-01 00:34:24 | INFO | fairseq.tasks.translation | example reference: HbA1c levels remained fairly steady over the six months of treatment with Actrapid.
+2021-02-01 00:34:24 | INFO | valid | epoch 010 | valid on 'valid' subset | loss 3.328 | nll_loss 1.435 | ppl 2.7 | bleu 60.92 | wps 509.8 | wpb 361 | bsz 12.6 | num_updates 5201 | best_loss 2.808
+2021-02-01 00:34:24 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 00:34:30 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/EMEA_11_1/checkpoint_last.pt (epoch 10 @ 5201 updates, score 3.328) (writing took 5.450868297368288 seconds)
+2021-02-01 00:34:30 | INFO | fairseq_cli.train | end of epoch 10 (average epoch stats below)
+2021-02-01 00:34:30 | INFO | train | epoch 010 | loss 2.802 | nll_loss 0.946 | ppl 1.93 | wps 5618.7 | ups 8.57 | wpb 655.9 | bsz 19.2 | num_updates 5201 | lr 0.000438487 | gnorm 9.523 | loss_scale 0 | train_wall 46 | wall 648
+2021-02-01 00:34:30 | INFO | fairseq_cli.train | begin training epoch 10
+2021-02-01 00:34:39 | INFO | train_inner | epoch 011:     99 / 521 loss=2.691, nll_loss=0.821, ppl=1.77, wps=2831.1, ups=4.37, wpb=648.4, bsz=18.1, num_updates=5300, lr=0.000434372, gnorm=7.64, loss_scale=0, train_wall=9, wall=657
+2021-02-01 00:34:48 | INFO | train_inner | epoch 011:    199 / 521 loss=2.747, nll_loss=0.882, ppl=1.84, wps=7281.4, ups=11.05, wpb=659, bsz=17.9, num_updates=5400, lr=0.000430331, gnorm=11.062, loss_scale=0, train_wall=9, wall=666
+2021-02-01 00:34:56 | INFO | train_inner | epoch 011:    299 / 521 loss=2.701, nll_loss=0.833, ppl=1.78, wps=7234.8, ups=11.2, wpb=645.9, bsz=20.3, num_updates=5500, lr=0.000426401, gnorm=7.122, loss_scale=0, train_wall=9, wall=675
+2021-02-01 00:35:06 | INFO | train_inner | epoch 011:    399 / 521 loss=2.726, nll_loss=0.866, ppl=1.82, wps=7502, ups=11.08, wpb=677.3, bsz=20.4, num_updates=5600, lr=0.000422577, gnorm=7.763, loss_scale=0, train_wall=9, wall=684
+2021-02-01 00:35:15 | INFO | train_inner | epoch 011:    499 / 521 loss=2.74, nll_loss=0.882, ppl=1.84, wps=7424.3, ups=11.11, wpb=668.1, bsz=19.9, num_updates=5700, lr=0.000418854, gnorm=10.201, loss_scale=0, train_wall=9, wall=693
+2021-02-01 00:35:16 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 00:35:17 | INFO | fairseq.tasks.translation | example hypothesis: 1 x 1 vial (5 x 1 vials)
+2021-02-01 00:35:17 | INFO | fairseq.tasks.translation | example reference: 5 x (1 x 10 ml) vials
+2021-02-01 00:35:17 | INFO | fairseq.tasks.translation | example hypothesis: The advisability of driving should be considered in these circumstances.
+2021-02-01 00:35:17 | INFO | fairseq.tasks.translation | example reference: The advisability of driving should be considered in these circumstances.
+2021-02-01 00:35:18 | INFO | fairseq.tasks.translation | example hypothesis: Actrapide 40 IU/ ml solution for injection in a vial.
+2021-02-01 00:35:18 | INFO | fairseq.tasks.translation | example reference: Actrapid 40 IU/ ml solution for injection in a vial.
+2021-02-01 00:35:18 | INFO | fairseq.tasks.translation | example hypothesis: The physician must therefore take possible interactions into account and should always ask his patients about any medicinal products they take.
+2021-02-01 00:35:18 | INFO | fairseq.tasks.translation | example reference: The physician must therefore take possible interactions into account and should always ask his patients about any medicinal products they take.
+2021-02-01 00:35:19 | INFO | fairseq.tasks.translation | example hypothesis: Subcutaneous injection into the abdominal wall ensures a faster absorption than from other injection sites.
+2021-02-01 00:35:19 | INFO | fairseq.tasks.translation | example reference: Subcutaneous injection into the abdominal wall ensures a faster absorption than from other injection sites.
+2021-02-01 00:35:20 | INFO | fairseq.tasks.translation | example hypothesis: Glucose must also be given intravenously, if the patient does not respond to glucagon within 10 to 15 minutes.
+2021-02-01 00:35:20 | INFO | fairseq.tasks.translation | example reference: Glucose must also be given intravenously, if the patient does not respond to glucagon within 10 to 15 minutes.
+2021-02-01 00:35:20 | INFO | fairseq.tasks.translation | example hypothesis: The use of subcutaneous or intravenous route has to be administered intravenously.
+2021-02-01 00:35:20 | INFO | fairseq.tasks.translation | example reference: Actrapid may also be administered intravenously, which should only be carried out by health care professionals.
+2021-02-01 00:35:21 | INFO | fairseq.tasks.translation | example hypothesis: As with any insulin therapy, injection site reactions may occur and include pain, itching, hives, swelling and inflammation.
+2021-02-01 00:35:21 | INFO | fairseq.tasks.translation | example reference: As with any insulin therapy, injection site reactions may occur and include pain, itching, hives, swelling and inflammation.
+2021-02-01 00:35:22 | INFO | fairseq.tasks.translation | example hypothesis: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with acute painful neuropathy, which is usually reversible.
+2021-02-01 00:35:22 | INFO | fairseq.tasks.translation | example reference: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with a condition termed acute painful neuropathy, which is usually reversible.
+2021-02-01 00:35:23 | INFO | fairseq.tasks.translation | example hypothesis: Die ersten Symptome einer Hyperglykämie, wie Durstgefühl, verstärkter Harndrang, Übelkeit, Übelkeit, Erbrechen, gerötete trockene Haut, Appetitverlust sowie sowie nach Aceton riechender Atem, treten in der Atem, treten in der Regel in der If you notice these symptoms for
+2021-02-01 00:35:23 | INFO | fairseq.tasks.translation | example reference: Die ersten Symptome einer Hyperglykämie, wie Durstgefühl, verstärkter Harndrang, Übelkeit, Erbrechen, Benommenheit, gerötete trockene Haut, Mundtrockenheit, Appetitverlust sowie nach Aceton riechender Atem, treten in der Regel allmählich über Stunden bzw. Tage auf. They include thirst, increased frequency of urination, nausea, vomiting, drowsiness, flushed dry skin, dry mouth, loss of appetite as well as acetone odour of breath.
+2021-02-01 00:35:25 | INFO | fairseq.tasks.translation | example hypothesis: It is therefore possible that the patient has or are being treated with oral administration of glucose or sugary products, and therefore blood glucagon should always be treated with subcutaneous hypoglycaemia, severe hypoglycaemia (0.5 to 1 mg) given intravenously by a person who has received appropriate or subcutaneously by a medical professional.
+2021-02-01 00:35:25 | INFO | fairseq.tasks.translation | example reference: 5 Severe hypoglycaemic episodes, where the patient has become unconscious, can be treated by glucagon (0.5 to 1 mg) given intramuscularly or subcutaneously by a person who has received appropriate instruction, or by glucose given intravenously by a medical professional.
+2021-02-01 00:35:25 | INFO | fairseq.tasks.translation | example hypothesis: Actratapide is effective in the treatment of type 1 diabetes, where the patient had not been treated with insulin (two studies, which were treated with insulin and was not effective in the treatment of type 1 diabetes, which was comparator treated with insulin compared to the concentrations of insulin (a study).
+2021-02-01 00:35:25 | INFO | fairseq.tasks.translation | example reference: HbA1c levels remained fairly steady over the six months of treatment with Actrapid.
+2021-02-01 00:35:25 | INFO | valid | epoch 011 | valid on 'valid' subset | loss 3.179 | nll_loss 1.326 | ppl 2.51 | bleu 63.31 | wps 467.1 | wpb 361 | bsz 12.6 | num_updates 5722 | best_loss 2.808
+2021-02-01 00:35:25 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 00:35:31 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/EMEA_11_1/checkpoint_last.pt (epoch 11 @ 5722 updates, score 3.179) (writing took 5.294134750030935 seconds)
+2021-02-01 00:35:31 | INFO | fairseq_cli.train | end of epoch 11 (average epoch stats below)
+2021-02-01 00:35:31 | INFO | train | epoch 011 | loss 2.718 | nll_loss 0.854 | ppl 1.81 | wps 5582 | ups 8.51 | wpb 655.9 | bsz 19.2 | num_updates 5722 | lr 0.000418048 | gnorm 8.667 | loss_scale 0 | train_wall 46 | wall 709
+2021-02-01 00:35:31 | INFO | fairseq_cli.train | begin training epoch 11
+2021-02-01 00:35:38 | INFO | train_inner | epoch 012:     78 / 521 loss=2.592, nll_loss=0.708, ppl=1.63, wps=2703.7, ups=4.29, wpb=630.2, bsz=17, num_updates=5800, lr=0.000415227, gnorm=6.759, loss_scale=0, train_wall=9, wall=717
+2021-02-01 00:35:47 | INFO | train_inner | epoch 012:    178 / 521 loss=2.691, nll_loss=0.827, ppl=1.77, wps=7208.8, ups=11.18, wpb=644.5, bsz=18.7, num_updates=5900, lr=0.000411693, gnorm=6.577, loss_scale=0, train_wall=9, wall=725
+2021-02-01 00:35:56 | INFO | train_inner | epoch 012:    278 / 521 loss=2.598, nll_loss=0.722, ppl=1.65, wps=7291.9, ups=11.12, wpb=655.5, bsz=18.9, num_updates=6000, lr=0.000408248, gnorm=6.621, loss_scale=0, train_wall=9, wall=734
+2021-02-01 00:36:05 | INFO | train_inner | epoch 012:    378 / 521 loss=2.583, nll_loss=0.702, ppl=1.63, wps=7470.8, ups=11.04, wpb=677, bsz=21.9, num_updates=6100, lr=0.000404888, gnorm=7.298, loss_scale=0, train_wall=9, wall=744
+2021-02-01 00:36:14 | INFO | train_inner | epoch 012:    478 / 521 loss=2.722, nll_loss=0.865, ppl=1.82, wps=7319.9, ups=11.07, wpb=661.4, bsz=19.4, num_updates=6200, lr=0.00040161, gnorm=17.465, loss_scale=0, train_wall=9, wall=753
+2021-02-01 00:36:18 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 00:36:18 | INFO | fairseq.tasks.translation | example hypothesis: 1 vial 5 x 1 ml (1 x 1 ml)
+2021-02-01 00:36:18 | INFO | fairseq.tasks.translation | example reference: 5 x (1 x 10 ml) vials
+2021-02-01 00:36:19 | INFO | fairseq.tasks.translation | example hypothesis: The advisability of driving should be considered in these circumstances.
+2021-02-01 00:36:19 | INFO | fairseq.tasks.translation | example reference: The advisability of driving should be considered in these circumstances.
+2021-02-01 00:36:19 | INFO | fairseq.tasks.translation | example hypothesis: Actrapide 40 IU/ ml solution for injection in a vial.
+2021-02-01 00:36:19 | INFO | fairseq.tasks.translation | example reference: Actrapid 40 IU/ ml solution for injection in a vial.
+2021-02-01 00:36:20 | INFO | fairseq.tasks.translation | example hypothesis: The physician must therefore take possible interactions into account and should always ask his patients about any medicinal products they take.
+2021-02-01 00:36:20 | INFO | fairseq.tasks.translation | example reference: The physician must therefore take possible interactions into account and should always ask his patients about any medicinal products they take.
+2021-02-01 00:36:20 | INFO | fairseq.tasks.translation | example hypothesis: Subcutaneous injection into the abdominal wall ensures a faster absorption than from other injection sites.
+2021-02-01 00:36:20 | INFO | fairseq.tasks.translation | example reference: Subcutaneous injection into the abdominal wall ensures a faster absorption than from other injection sites.
+2021-02-01 00:36:21 | INFO | fairseq.tasks.translation | example hypothesis: Glucose must also be given intravenously, if the patient does not respond to glucagon within 10 to 15 minutes.
+2021-02-01 00:36:21 | INFO | fairseq.tasks.translation | example reference: Glucose must also be given intravenously, if the patient does not respond to glucagon within 10 to 15 minutes.
+2021-02-01 00:36:21 | INFO | fairseq.tasks.translation | example hypothesis: The intravenous route has to be used for subcutaneous use or intravenous use.
+2021-02-01 00:36:21 | INFO | fairseq.tasks.translation | example reference: Actrapid may also be administered intravenously, which should only be carried out by health care professionals.
+2021-02-01 00:36:22 | INFO | fairseq.tasks.translation | example hypothesis: As with any insulin therapy, injection site reactions may occur and include pain, itching, hives, hives, hives and inflammation.
+2021-02-01 00:36:22 | INFO | fairseq.tasks.translation | example reference: As with any insulin therapy, injection site reactions may occur and include pain, itching, hives, swelling and inflammation.
+2021-02-01 00:36:23 | INFO | fairseq.tasks.translation | example hypothesis: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with a condition termed acute painful neuropathy, which is usually reversible.
+2021-02-01 00:36:23 | INFO | fairseq.tasks.translation | example reference: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with a condition termed acute painful neuropathy, which is usually reversible.
+2021-02-01 00:36:24 | INFO | fairseq.tasks.translation | example hypothesis: Die ersten Symptome einer Hyperglykämie, wie Durstgefühl, verstärkter Harndrang, Übelkeit, Erbrechen, gerötete trockene Haut, Mundtrockenheit, Appetitverlust sowie nach Aceton riechender Atem, treten in der Regel allmählich über Stunden bzw. Tage auf. They include thirst, increased frequency of urination, nausea, vomiting, abdominal hyperglycaemia, dry
+2021-02-01 00:36:24 | INFO | fairseq.tasks.translation | example reference: Die ersten Symptome einer Hyperglykämie, wie Durstgefühl, verstärkter Harndrang, Übelkeit, Erbrechen, Benommenheit, gerötete trockene Haut, Mundtrockenheit, Appetitverlust sowie nach Aceton riechender Atem, treten in der Regel allmählich über Stunden bzw. Tage auf. They include thirst, increased frequency of urination, nausea, vomiting, drowsiness, flushed dry skin, dry mouth, loss of appetite as well as acetone odour of breath.
+2021-02-01 00:36:26 | INFO | fairseq.tasks.translation | example hypothesis: Milds of hypoglycaemia may therefore be administered by oral administration of glucose or sugary products.
+2021-02-01 00:36:26 | INFO | fairseq.tasks.translation | example reference: 5 Severe hypoglycaemic episodes, where the patient has become unconscious, can be treated by glucagon (0.5 to 1 mg) given intramuscularly or subcutaneously by a person who has received appropriate instruction, or by glucose given intravenously by a medical professional.
+2021-02-01 00:36:27 | INFO | fairseq.tasks.translation | example hypothesis: Actrapide has not been shown to induce patients with type 1 diabetes when added to Actraphane (two Type 2 diabetes) or in patients with subcutaneous use in patients receiving insulin), including patients with type 2 diabetes (a type 2 diabetes).
+2021-02-01 00:36:27 | INFO | fairseq.tasks.translation | example reference: HbA1c levels remained fairly steady over the six months of treatment with Actrapid.
+2021-02-01 00:36:27 | INFO | valid | epoch 012 | valid on 'valid' subset | loss 3.233 | nll_loss 1.333 | ppl 2.52 | bleu 68.13 | wps 437.5 | wpb 361 | bsz 12.6 | num_updates 6243 | best_loss 2.808
+2021-02-01 00:36:27 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 00:36:34 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/EMEA_11_1/checkpoint_last.pt (epoch 12 @ 6243 updates, score 3.233) (writing took 6.699101398698986 seconds)
+2021-02-01 00:36:34 | INFO | fairseq_cli.train | end of epoch 12 (average epoch stats below)
+2021-02-01 00:36:34 | INFO | train | epoch 012 | loss 2.631 | nll_loss 0.758 | ppl 1.69 | wps 5396.3 | ups 8.23 | wpb 655.9 | bsz 19.2 | num_updates 6243 | lr 0.000400224 | gnorm 8.708 | loss_scale 0 | train_wall 46 | wall 773
+2021-02-01 00:36:34 | INFO | fairseq_cli.train | begin training epoch 12
+2021-02-01 00:36:39 | INFO | train_inner | epoch 013:     57 / 521 loss=2.512, nll_loss=0.625, ppl=1.54, wps=2661.4, ups=3.92, wpb=678.6, bsz=21.4, num_updates=6300, lr=0.00039841, gnorm=5.641, loss_scale=0, train_wall=9, wall=778
+2021-02-01 00:36:48 | INFO | train_inner | epoch 013:    157 / 521 loss=2.566, nll_loss=0.68, ppl=1.6, wps=7365.7, ups=11.07, wpb=665.2, bsz=18.1, num_updates=6400, lr=0.000395285, gnorm=6.232, loss_scale=0, train_wall=9, wall=787
+2021-02-01 00:36:57 | INFO | train_inner | epoch 013:    257 / 521 loss=2.541, nll_loss=0.664, ppl=1.58, wps=7353.3, ups=11.27, wpb=652.4, bsz=20.5, num_updates=6500, lr=0.000392232, gnorm=7.404, loss_scale=0, train_wall=9, wall=796
+2021-02-01 00:37:06 | INFO | train_inner | epoch 013:    357 / 521 loss=2.619, nll_loss=0.747, ppl=1.68, wps=7204.2, ups=11.18, wpb=644.6, bsz=17.7, num_updates=6600, lr=0.000389249, gnorm=5.846, loss_scale=0, train_wall=9, wall=805
+2021-02-01 00:37:15 | INFO | train_inner | epoch 013:    457 / 521 loss=2.593, nll_loss=0.725, ppl=1.65, wps=7122.4, ups=11.25, wpb=633.4, bsz=17.6, num_updates=6700, lr=0.000386334, gnorm=6.894, loss_scale=0, train_wall=9, wall=814
+2021-02-01 00:37:21 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 00:37:21 | INFO | fairseq.tasks.translation | example hypothesis: vial (5 x 10 ml)
+2021-02-01 00:37:21 | INFO | fairseq.tasks.translation | example reference: 5 x (1 x 10 ml) vials
+2021-02-01 00:37:22 | INFO | fairseq.tasks.translation | example hypothesis: The advisability of driving should be considered in these circumstances.
+2021-02-01 00:37:22 | INFO | fairseq.tasks.translation | example reference: The advisability of driving should be considered in these circumstances.
+2021-02-01 00:37:22 | INFO | fairseq.tasks.translation | example hypothesis: Actrapide 40 IU/ ml solution for injection in a vial.
+2021-02-01 00:37:22 | INFO | fairseq.tasks.translation | example reference: Actrapid 40 IU/ ml solution for injection in a vial.
+2021-02-01 00:37:23 | INFO | fairseq.tasks.translation | example hypothesis: The physician is therefore necessary when treating possible interactions and should always ask his patients about any medicines they take.
+2021-02-01 00:37:23 | INFO | fairseq.tasks.translation | example reference: The physician must therefore take possible interactions into account and should always ask his patients about any medicinal products they take.
+2021-02-01 00:37:24 | INFO | fairseq.tasks.translation | example hypothesis: Subcutaneous injection into the abdominal wall ensures a faster absorption than from other injection sites.
+2021-02-01 00:37:24 | INFO | fairseq.tasks.translation | example reference: Subcutaneous injection into the abdominal wall ensures a faster absorption than from other injection sites.
+2021-02-01 00:37:24 | INFO | fairseq.tasks.translation | example hypothesis: Glucose must also be given intravenously, if the patient does not respond to glucagon within 10 to 15 minutes.
+2021-02-01 00:37:24 | INFO | fairseq.tasks.translation | example reference: Glucose must also be given intravenously, if the patient does not respond to glucagon within 10 to 15 minutes.
+2021-02-01 00:37:25 | INFO | fairseq.tasks.translation | example hypothesis: Actrapide can be administered intravenously by health care professionals.
+2021-02-01 00:37:25 | INFO | fairseq.tasks.translation | example reference: Actrapid may also be administered intravenously, which should only be carried out by health care professionals.
+2021-02-01 00:37:26 | INFO | fairseq.tasks.translation | example hypothesis: As with any insulin therapy, injection site reactions may occur and include pain, hives, swelling and inflammation.
+2021-02-01 00:37:26 | INFO | fairseq.tasks.translation | example reference: As with any insulin therapy, injection site reactions may occur and include pain, itching, hives, swelling and inflammation.
+2021-02-01 00:37:26 | INFO | fairseq.tasks.translation | example hypothesis: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with a condition termed acute painful neuropathy and is reversible.
+2021-02-01 00:37:26 | INFO | fairseq.tasks.translation | example reference: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with a condition termed acute painful neuropathy, which is usually reversible.
+2021-02-01 00:37:28 | INFO | fairseq.tasks.translation | example hypothesis: Die ersten steriles, wie Aceton riechender Atem, verstärkter Harndrang, Übelkeit, Erbrechen, Benommenheit, gerötete trockene Haut, Mundtrockenheit, Appetitverlust sowie nach Aceton riechender Atem, treten in der Regel allmählich über Stunden auf. They include thirst, increased frequency of urination, nausea, drowsiness, flushed dry mouth, dry mouth,
+2021-02-01 00:37:28 | INFO | fairseq.tasks.translation | example reference: Die ersten Symptome einer Hyperglykämie, wie Durstgefühl, verstärkter Harndrang, Übelkeit, Erbrechen, Benommenheit, gerötete trockene Haut, Mundtrockenheit, Appetitverlust sowie nach Aceton riechender Atem, treten in der Regel allmählich über Stunden bzw. Tage auf. They include thirst, increased frequency of urination, nausea, vomiting, drowsiness, flushed dry skin, dry mouth, loss of appetite as well as acetone odour of breath.
+2021-02-01 00:37:29 | INFO | fairseq.tasks.translation | example hypothesis: Mildly hypoglycaemic agents can be treated by glucose supplementation of glucose or sugary products.
+2021-02-01 00:37:29 | INFO | fairseq.tasks.translation | example reference: 5 Severe hypoglycaemic episodes, where the patient has become unconscious, can be treated by glucagon (0.5 to 1 mg) given intramuscularly or subcutaneously by a person who has received appropriate instruction, or by glucose given intravenously by a medical professional.
+2021-02-01 00:37:29 | INFO | fairseq.tasks.translation | example hypothesis: Actraphane has been studied in patients with type 1 diabetes not using Actraphane (two studies) and in those treated with insulin alone.
+2021-02-01 00:37:29 | INFO | fairseq.tasks.translation | example reference: HbA1c levels remained fairly steady over the six months of treatment with Actrapid.
+2021-02-01 00:37:29 | INFO | valid | epoch 013 | valid on 'valid' subset | loss 3.296 | nll_loss 1.407 | ppl 2.65 | bleu 60.87 | wps 496.8 | wpb 361 | bsz 12.6 | num_updates 6764 | best_loss 2.808
+2021-02-01 00:37:29 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 00:37:37 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/EMEA_11_1/checkpoint_last.pt (epoch 13 @ 6764 updates, score 3.296) (writing took 7.776764697395265 seconds)
+2021-02-01 00:37:37 | INFO | fairseq_cli.train | end of epoch 13 (average epoch stats below)
+2021-02-01 00:37:37 | INFO | train | epoch 013 | loss 2.564 | nll_loss 0.686 | ppl 1.61 | wps 5410.9 | ups 8.25 | wpb 655.9 | bsz 19.2 | num_updates 6764 | lr 0.000384502 | gnorm 6.633 | loss_scale 0 | train_wall 46 | wall 836
+2021-02-01 00:37:37 | INFO | fairseq_cli.train | begin training epoch 13
+2021-02-01 00:37:41 | INFO | train_inner | epoch 014:     36 / 521 loss=2.555, nll_loss=0.676, ppl=1.6, wps=2569.9, ups=3.92, wpb=655.2, bsz=18.6, num_updates=6800, lr=0.000383482, gnorm=7.396, loss_scale=0, train_wall=9, wall=839
+2021-02-01 00:37:49 | INFO | train_inner | epoch 014:    136 / 521 loss=2.433, nll_loss=0.537, ppl=1.45, wps=7170.7, ups=11.3, wpb=634.5, bsz=18.8, num_updates=6900, lr=0.000380693, gnorm=7.98, loss_scale=0, train_wall=9, wall=848
+2021-02-01 00:37:59 | INFO | train_inner | epoch 014:    236 / 521 loss=2.447, nll_loss=0.552, ppl=1.47, wps=7684.1, ups=11.02, wpb=697.2, bsz=21.7, num_updates=7000, lr=0.000377964, gnorm=5.363, loss_scale=0, train_wall=9, wall=857
+2021-02-01 00:38:08 | INFO | train_inner | epoch 014:    336 / 521 loss=2.503, nll_loss=0.618, ppl=1.53, wps=7438.2, ups=11.09, wpb=670.9, bsz=20.1, num_updates=7100, lr=0.000375293, gnorm=4.72, loss_scale=0, train_wall=9, wall=866
+2021-02-01 00:38:16 | INFO | train_inner | epoch 014:    436 / 521 loss=2.546, nll_loss=0.668, ppl=1.59, wps=7100.5, ups=11.19, wpb=634.3, bsz=17.2, num_updates=7200, lr=0.000372678, gnorm=7.1, loss_scale=0, train_wall=9, wall=875
+2021-02-01 00:38:24 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 00:38:25 | INFO | fairseq.tasks.translation | example hypothesis: 1 x 1 ml)
+2021-02-01 00:38:25 | INFO | fairseq.tasks.translation | example reference: 5 x (1 x 10 ml) vials
+2021-02-01 00:38:25 | INFO | fairseq.tasks.translation | example hypothesis: The advisability of driving should be considered in these circumstances.
+2021-02-01 00:38:25 | INFO | fairseq.tasks.translation | example reference: The advisability of driving should be considered in these circumstances.
+2021-02-01 00:38:25 | INFO | fairseq.tasks.translation | example hypothesis: Actrapide 40 IU/ ml solution for injection in a vial.
+2021-02-01 00:38:25 | INFO | fairseq.tasks.translation | example reference: Actrapid 40 IU/ ml solution for injection in a vial.
+2021-02-01 00:38:26 | INFO | fairseq.tasks.translation | example hypothesis: The physician must therefore take possible interactions into account and should always ask his patients about any medicinal products they take.
+2021-02-01 00:38:26 | INFO | fairseq.tasks.translation | example reference: The physician must therefore take possible interactions into account and should always ask his patients about any medicinal products they take.
+2021-02-01 00:38:27 | INFO | fairseq.tasks.translation | example hypothesis: Subcutaneous injection in the abdominal wall ensures a faster absorption than from other injection sites.
+2021-02-01 00:38:27 | INFO | fairseq.tasks.translation | example reference: Subcutaneous injection into the abdominal wall ensures a faster absorption than from other injection sites.
+2021-02-01 00:38:28 | INFO | fairseq.tasks.translation | example hypothesis: Glucose must also be given intravenously, if the patient does not respond to glucagon within 10 to 15 minutes.
+2021-02-01 00:38:28 | INFO | fairseq.tasks.translation | example reference: Glucose must also be given intravenously, if the patient does not respond to glucagon within 10 to 15 minutes.
+2021-02-01 00:38:28 | INFO | fairseq.tasks.translation | example hypothesis: Subcutaneous or intravenous route may also be administered intravenously by health professionals.
+2021-02-01 00:38:28 | INFO | fairseq.tasks.translation | example reference: Actrapid may also be administered intravenously, which should only be carried out by health care professionals.
+2021-02-01 00:38:29 | INFO | fairseq.tasks.translation | example hypothesis: As with any insulin therapy, injection site reactions may occur and include pain, itching, swelling and inflammation.
+2021-02-01 00:38:29 | INFO | fairseq.tasks.translation | example reference: As with any insulin therapy, injection site reactions may occur and include pain, itching, hives, swelling and inflammation.
+2021-02-01 00:38:30 | INFO | fairseq.tasks.translation | example hypothesis: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with a condition termed acute painful neuropathy, which is usually reversible.
+2021-02-01 00:38:30 | INFO | fairseq.tasks.translation | example reference: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with a condition termed acute painful neuropathy, which is usually reversible.
+2021-02-01 00:38:31 | INFO | fairseq.tasks.translation | example hypothesis: Die ersten Symptome einer Hyperglykämie, wie Durstgefühl, verstärkter Harndrang, nausea, vomiting, drowsiness, flushed dry skin, dry skin, dry mouth, dry mouth, dry mouth, loss of appetite as well as acetone odour of breath.
+2021-02-01 00:38:31 | INFO | fairseq.tasks.translation | example reference: Die ersten Symptome einer Hyperglykämie, wie Durstgefühl, verstärkter Harndrang, Übelkeit, Erbrechen, Benommenheit, gerötete trockene Haut, Mundtrockenheit, Appetitverlust sowie nach Aceton riechender Atem, treten in der Regel allmählich über Stunden bzw. Tage auf. They include thirst, increased frequency of urination, nausea, vomiting, drowsiness, flushed dry skin, dry mouth, loss of appetite as well as acetone odour of breath.
+2021-02-01 00:38:32 | INFO | fairseq.tasks.translation | example hypothesis: However, hypoglycaemia may be treated by administration of glucose or sugary products should be treated by glucagon (0.5 to 1 mg) given intramuscularly or subcutaneously by a doctor.
+2021-02-01 00:38:32 | INFO | fairseq.tasks.translation | example reference: 5 Severe hypoglycaemic episodes, where the patient has become unconscious, can be treated by glucagon (0.5 to 1 mg) given intramuscularly or subcutaneously by a person who has received appropriate instruction, or by glucose given intravenously by a medical professional.
+2021-02-01 00:38:33 | INFO | fairseq.tasks.translation | example hypothesis: Actraphane has been studied in type 2 diabetes, when the patient has stopped eating for up to two studies in type 2 diabetes, and in patients with type 2 diabetes, when the patient has stopped eating (a study), when the patient has stopped eating for up to six months when the patient has stopped eating.
+2021-02-01 00:38:33 | INFO | fairseq.tasks.translation | example reference: HbA1c levels remained fairly steady over the six months of treatment with Actrapid.
+2021-02-01 00:38:33 | INFO | valid | epoch 014 | valid on 'valid' subset | loss 3.157 | nll_loss 1.308 | ppl 2.48 | bleu 66.48 | wps 490.1 | wpb 361 | bsz 12.6 | num_updates 7285 | best_loss 2.808
+2021-02-01 00:38:33 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 00:38:38 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/EMEA_11_1/checkpoint_last.pt (epoch 14 @ 7285 updates, score 3.157) (writing took 5.607176250778139 seconds)
+2021-02-01 00:38:38 | INFO | fairseq_cli.train | end of epoch 14 (average epoch stats below)
+2021-02-01 00:38:38 | INFO | train | epoch 014 | loss 2.495 | nll_loss 0.608 | ppl 1.52 | wps 5585.6 | ups 8.52 | wpb 655.9 | bsz 19.2 | num_updates 7285 | lr 0.000370497 | gnorm 6.335 | loss_scale 0 | train_wall 46 | wall 897
+2021-02-01 00:38:38 | INFO | fairseq_cli.train | begin training epoch 14
+2021-02-01 00:38:40 | INFO | train_inner | epoch 015:     15 / 521 loss=2.507, nll_loss=0.626, ppl=1.54, wps=2699.4, ups=4.28, wpb=630.1, bsz=18.5, num_updates=7300, lr=0.000370117, gnorm=5.753, loss_scale=0, train_wall=9, wall=898
+2021-02-01 00:38:49 | INFO | train_inner | epoch 015:    115 / 521 loss=2.466, nll_loss=0.579, ppl=1.49, wps=7126.3, ups=10.91, wpb=653, bsz=18.2, num_updates=7400, lr=0.000367607, gnorm=5.835, loss_scale=0, train_wall=9, wall=908
+2021-02-01 00:38:58 | INFO | train_inner | epoch 015:    215 / 521 loss=2.425, nll_loss=0.535, ppl=1.45, wps=7072.6, ups=11.18, wpb=632.4, bsz=20.2, num_updates=7500, lr=0.000365148, gnorm=4.582, loss_scale=0, train_wall=9, wall=917
+2021-02-01 00:39:07 | INFO | train_inner | epoch 015:    315 / 521 loss=2.415, nll_loss=0.522, ppl=1.44, wps=7764.3, ups=11.15, wpb=696.4, bsz=20.2, num_updates=7600, lr=0.000362738, gnorm=4.116, loss_scale=0, train_wall=9, wall=926
+2021-02-01 00:39:16 | INFO | train_inner | epoch 015:    415 / 521 loss=2.453, nll_loss=0.565, ppl=1.48, wps=7308, ups=11.17, wpb=654.2, bsz=19.5, num_updates=7700, lr=0.000360375, gnorm=8.059, loss_scale=0, train_wall=9, wall=935
+2021-02-01 00:39:25 | INFO | train_inner | epoch 015:    515 / 521 loss=2.458, nll_loss=0.573, ppl=1.49, wps=7243.9, ups=11.04, wpb=655.9, bsz=18.5, num_updates=7800, lr=0.000358057, gnorm=4.649, loss_scale=0, train_wall=9, wall=944
+2021-02-01 00:39:25 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 00:39:26 | INFO | fairseq.tasks.translation | example hypothesis: 10 ml (1 ml)
+2021-02-01 00:39:26 | INFO | fairseq.tasks.translation | example reference: 5 x (1 x 10 ml) vials
+2021-02-01 00:39:27 | INFO | fairseq.tasks.translation | example hypothesis: The advisability of driving should be considered in these circumstances.
+2021-02-01 00:39:27 | INFO | fairseq.tasks.translation | example reference: The advisability of driving should be considered in these circumstances.
+2021-02-01 00:39:27 | INFO | fairseq.tasks.translation | example hypothesis: Actraphane 40 IU/ ml solution for injection in a vial.
+2021-02-01 00:39:27 | INFO | fairseq.tasks.translation | example reference: Actrapid 40 IU/ ml solution for injection in a vial.
+2021-02-01 00:39:28 | INFO | fairseq.tasks.translation | example hypothesis: The physician must therefore take possible interactions into account and should always ask his patients about any medicinal products they take.
+2021-02-01 00:39:28 | INFO | fairseq.tasks.translation | example reference: The physician must therefore take possible interactions into account and should always ask his patients about any medicinal products they take.
+2021-02-01 00:39:28 | INFO | fairseq.tasks.translation | example hypothesis: Subcutaneous injection into the abdominal wall ensures a faster absorption than from other absorption sites.
+2021-02-01 00:39:28 | INFO | fairseq.tasks.translation | example reference: Subcutaneous injection into the abdominal wall ensures a faster absorption than from other injection sites.
+2021-02-01 00:39:29 | INFO | fairseq.tasks.translation | example hypothesis: Glucose must also be given intravenously, if the patient does not respond to glucagon within 10 to 15 minutes.
+2021-02-01 00:39:29 | INFO | fairseq.tasks.translation | example reference: Glucose must also be given intravenously, if the patient does not respond to glucagon within 10 to 15 minutes.
+2021-02-01 00:39:29 | INFO | fairseq.tasks.translation | example hypothesis: Actraphane can be administered intravenously.
+2021-02-01 00:39:29 | INFO | fairseq.tasks.translation | example reference: Actrapid may also be administered intravenously, which should only be carried out by health care professionals.
+2021-02-01 00:39:30 | INFO | fairseq.tasks.translation | example hypothesis: As with any insulin therapy, injection site reactions may occur and include pain, itching, hives, swelling and inflammation.
+2021-02-01 00:39:30 | INFO | fairseq.tasks.translation | example reference: As with any insulin therapy, injection site reactions may occur and include pain, itching, hives, swelling and inflammation.
+2021-02-01 00:39:31 | INFO | fairseq.tasks.translation | example hypothesis: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with a condition termed acute painful neuropathy, which is usually reversible.
+2021-02-01 00:39:31 | INFO | fairseq.tasks.translation | example reference: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with a condition termed acute painful neuropathy, which is usually reversible.
+2021-02-01 00:39:32 | INFO | fairseq.tasks.translation | example hypothesis: Die ersten Symptome einer Hyperglykämie, wie Durstgefühl, verstärkter Harndrang, Übelkeit, Benommenheit, Benommenheit, gerötete trockene Haut, Mundtrockenheit, Appetitverlust, Appetitverlust sowie nach Aceton riechender Atem, treten in der Regel allmählich über Stunden bzw. Tage auf. They include thirst, increased frequency of urination, nausea, vomiting
+2021-02-01 00:39:32 | INFO | fairseq.tasks.translation | example reference: Die ersten Symptome einer Hyperglykämie, wie Durstgefühl, verstärkter Harndrang, Übelkeit, Erbrechen, Benommenheit, gerötete trockene Haut, Mundtrockenheit, Appetitverlust sowie nach Aceton riechender Atem, treten in der Regel allmählich über Stunden bzw. Tage auf. They include thirst, increased frequency of urination, nausea, vomiting, drowsiness, flushed dry skin, dry mouth, loss of appetite as well as acetone odour of breath.
+2021-02-01 00:39:33 | INFO | fairseq.tasks.translation | example hypothesis: Mildly sugary hypoglycaemic medicinal products can be treated by glucagon or sugary products. There is therefore recommended that the diabetic patients carry some sugar lumps, sweating, biscuits or sugary fruit juice.
+2021-02-01 00:39:33 | INFO | fairseq.tasks.translation | example reference: 5 Severe hypoglycaemic episodes, where the patient has become unconscious, can be treated by glucagon (0.5 to 1 mg) given intramuscularly or subcutaneously by a person who has received appropriate instruction, or by glucose given intravenously by a medical professional.
+2021-02-01 00:39:34 | INFO | fairseq.tasks.translation | example hypothesis: Actraphane was not indicated in type 2 diabetes, when Actraphane can produce insulin (two studies with 954), and in type 2 diabetes, when the patient has not been treated with Actraphane glycaemic control (such as itraconstipation).
+2021-02-01 00:39:34 | INFO | fairseq.tasks.translation | example reference: HbA1c levels remained fairly steady over the six months of treatment with Actrapid.
+2021-02-01 00:39:34 | INFO | valid | epoch 015 | valid on 'valid' subset | loss 3.137 | nll_loss 1.273 | ppl 2.42 | bleu 68.54 | wps 488.4 | wpb 361 | bsz 12.6 | num_updates 7806 | best_loss 2.808
+2021-02-01 00:39:34 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 00:39:46 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/EMEA_11_1/checkpoint_last.pt (epoch 15 @ 7806 updates, score 3.137) (writing took 11.356121304444969 seconds)
+2021-02-01 00:39:46 | INFO | fairseq_cli.train | end of epoch 15 (average epoch stats below)
+2021-02-01 00:39:46 | INFO | train | epoch 015 | loss 2.44 | nll_loss 0.552 | ppl 1.47 | wps 5090.8 | ups 7.76 | wpb 655.9 | bsz 19.2 | num_updates 7806 | lr 0.00035792 | gnorm 5.403 | loss_scale 0 | train_wall 46 | wall 964
+2021-02-01 00:39:46 | INFO | fairseq_cli.train | begin training epoch 15
+2021-02-01 00:39:54 | INFO | train_inner | epoch 016:     94 / 521 loss=2.399, nll_loss=0.505, ppl=1.42, wps=2220.9, ups=3.42, wpb=649.2, bsz=17.2, num_updates=7900, lr=0.000355784, gnorm=3.812, loss_scale=0, train_wall=9, wall=973
+2021-02-01 00:40:03 | INFO | train_inner | epoch 016:    194 / 521 loss=2.39, nll_loss=0.495, ppl=1.41, wps=7504.8, ups=11.07, wpb=677.8, bsz=20.8, num_updates=8000, lr=0.000353553, gnorm=3.854, loss_scale=0, train_wall=9, wall=982
+2021-02-01 00:40:12 | INFO | train_inner | epoch 016:    294 / 521 loss=2.391, nll_loss=0.5, ppl=1.41, wps=7189.1, ups=11.03, wpb=651.9, bsz=18.6, num_updates=8100, lr=0.000351364, gnorm=4.287, loss_scale=0, train_wall=9, wall=991
+2021-02-01 00:40:21 | INFO | train_inner | epoch 016:    394 / 521 loss=2.425, nll_loss=0.534, ppl=1.45, wps=7322.3, ups=11.27, wpb=649.9, bsz=18.6, num_updates=8200, lr=0.000349215, gnorm=4.094, loss_scale=0, train_wall=9, wall=1000
+2021-02-01 00:40:30 | INFO | train_inner | epoch 016:    494 / 521 loss=2.417, nll_loss=0.528, ppl=1.44, wps=7197.4, ups=11.18, wpb=643.9, bsz=20.1, num_updates=8300, lr=0.000347105, gnorm=3.894, loss_scale=0, train_wall=9, wall=1009
+2021-02-01 00:40:32 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 00:40:33 | INFO | fairseq.tasks.translation | example hypothesis: 1 x 1)
+2021-02-01 00:40:33 | INFO | fairseq.tasks.translation | example reference: 5 x (1 x 10 ml) vials
+2021-02-01 00:40:33 | INFO | fairseq.tasks.translation | example hypothesis: The advisability of driving should be considered in these circumstances.
+2021-02-01 00:40:33 | INFO | fairseq.tasks.translation | example reference: The advisability of driving should be considered in these circumstances.
+2021-02-01 00:40:34 | INFO | fairseq.tasks.translation | example hypothesis: Actrapide 40 40 IU/ ml solution for injection in a vial.
+2021-02-01 00:40:34 | INFO | fairseq.tasks.translation | example reference: Actrapid 40 IU/ ml solution for injection in a vial.
+2021-02-01 00:40:34 | INFO | fairseq.tasks.translation | example hypothesis: The physician must therefore take possible interactions into account and should always ask his patients about any medicinal products they take.
+2021-02-01 00:40:34 | INFO | fairseq.tasks.translation | example reference: The physician must therefore take possible interactions into account and should always ask his patients about any medicinal products they take.
+2021-02-01 00:40:35 | INFO | fairseq.tasks.translation | example hypothesis: Subcutaneous injection into the abdominal wall ensures a faster absorption than from other injection sites.
+2021-02-01 00:40:35 | INFO | fairseq.tasks.translation | example reference: Subcutaneous injection into the abdominal wall ensures a faster absorption than from other injection sites.
+2021-02-01 00:40:35 | INFO | fairseq.tasks.translation | example hypothesis: Glucose must also be given intravenously, if the patient does not respond to glucagon within 10 to 15 minutes.
+2021-02-01 00:40:35 | INFO | fairseq.tasks.translation | example reference: Glucose must also be given intravenously, if the patient does not respond to glucagon within 10 to 15 minutes.
+2021-02-01 00:40:36 | INFO | fairseq.tasks.translation | example hypothesis: The subcutaneous or intravenous route may also be used.
+2021-02-01 00:40:36 | INFO | fairseq.tasks.translation | example reference: Actrapid may also be administered intravenously, which should only be carried out by health care professionals.
+2021-02-01 00:40:37 | INFO | fairseq.tasks.translation | example hypothesis: As for any insulin therapy, injection site reactions may occur and include pain, itching, hives, swelling and inflammation.
+2021-02-01 00:40:37 | INFO | fairseq.tasks.translation | example reference: As with any insulin therapy, injection site reactions may occur and include pain, itching, hives, swelling and inflammation.
+2021-02-01 00:40:37 | INFO | fairseq.tasks.translation | example hypothesis: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with a condition termed acute painful neuropathy, which is usually reversible.
+2021-02-01 00:40:37 | INFO | fairseq.tasks.translation | example reference: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with a condition termed acute painful neuropathy, which is usually reversible.
+2021-02-01 00:40:39 | INFO | fairseq.tasks.translation | example hypothesis: Die Hyperglycaemia, such as thirst, verstärkter Harndrang, Übelkeit, Erbrechen, Benommenheit, Benommenheit, gerötete trockter Haut, Mundtrockenheit, Appetitverlust sowie nach Aceton riechender Atem, treten in der Regel allmählich über Stunden bzw. Tage auf. They include thirst, increased frequency of urination, nausea, vomiting, fatigue
+2021-02-01 00:40:39 | INFO | fairseq.tasks.translation | example reference: Die ersten Symptome einer Hyperglykämie, wie Durstgefühl, verstärkter Harndrang, Übelkeit, Erbrechen, Benommenheit, gerötete trockene Haut, Mundtrockenheit, Appetitverlust sowie nach Aceton riechender Atem, treten in der Regel allmählich über Stunden bzw. Tage auf. They include thirst, increased frequency of urination, nausea, vomiting, drowsiness, flushed dry skin, dry mouth, loss of appetite as well as acetone odour of breath.
+2021-02-01 00:40:40 | INFO | fairseq.tasks.translation | example hypothesis: Mildly hypoglycaemic episodes can be treated by oral administration of glucose or sugary products.
+2021-02-01 00:40:40 | INFO | fairseq.tasks.translation | example reference: 5 Severe hypoglycaemic episodes, where the patient has become unconscious, can be treated by glucagon (0.5 to 1 mg) given intramuscularly or subcutaneously by a person who has received appropriate instruction, or by glucose given intravenously by a medical professional.
+2021-02-01 00:40:42 | INFO | fairseq.tasks.translation | example hypothesis: Actrapide has been shown to be effective in patients with type 1 diabetes not receiving insulin (two studies in 654 patients) and in patients with type 2 diabetes not receiving Actrapide (a study involving patients).
+2021-02-01 00:40:42 | INFO | fairseq.tasks.translation | example reference: HbA1c levels remained fairly steady over the six months of treatment with Actrapid.
+2021-02-01 00:40:42 | INFO | valid | epoch 016 | valid on 'valid' subset | loss 3.132 | nll_loss 1.274 | ppl 2.42 | bleu 70.94 | wps 470.2 | wpb 361 | bsz 12.6 | num_updates 8327 | best_loss 2.808
+2021-02-01 00:40:42 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 00:40:48 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/EMEA_11_1/checkpoint_last.pt (epoch 16 @ 8327 updates, score 3.132) (writing took 6.107400839217007 seconds)
+2021-02-01 00:40:48 | INFO | fairseq_cli.train | end of epoch 16 (average epoch stats below)
+2021-02-01 00:40:48 | INFO | train | epoch 016 | loss 2.402 | nll_loss 0.51 | ppl 1.42 | wps 5505.2 | ups 8.39 | wpb 655.9 | bsz 19.2 | num_updates 8327 | lr 0.000346542 | gnorm 3.942 | loss_scale 0 | train_wall 46 | wall 1026
+2021-02-01 00:40:48 | INFO | fairseq_cli.train | begin training epoch 16
+2021-02-01 00:40:54 | INFO | train_inner | epoch 017:     73 / 521 loss=2.384, nll_loss=0.49, ppl=1.4, wps=2711.5, ups=4.13, wpb=656.8, bsz=21.1, num_updates=8400, lr=0.000345033, gnorm=3.603, loss_scale=0, train_wall=9, wall=1033
+2021-02-01 00:41:03 | INFO | train_inner | epoch 017:    173 / 521 loss=2.354, nll_loss=0.46, ppl=1.38, wps=7454.6, ups=11.12, wpb=670.4, bsz=19.4, num_updates=8500, lr=0.000342997, gnorm=4.333, loss_scale=0, train_wall=9, wall=1042
+2021-02-01 00:41:12 | INFO | train_inner | epoch 017:    273 / 521 loss=2.325, nll_loss=0.426, ppl=1.34, wps=7255.6, ups=11.15, wpb=650.8, bsz=18.4, num_updates=8600, lr=0.000340997, gnorm=3.534, loss_scale=0, train_wall=9, wall=1051
+2021-02-01 00:41:21 | INFO | train_inner | epoch 017:    373 / 521 loss=2.384, nll_loss=0.494, ppl=1.41, wps=7230, ups=11.11, wpb=650.6, bsz=18.3, num_updates=8700, lr=0.000339032, gnorm=3.808, loss_scale=0, train_wall=9, wall=1060
+2021-02-01 00:41:30 | INFO | train_inner | epoch 017:    473 / 521 loss=2.385, nll_loss=0.497, ppl=1.41, wps=7436.2, ups=11.11, wpb=669.1, bsz=19.2, num_updates=8800, lr=0.0003371, gnorm=3.823, loss_scale=0, train_wall=9, wall=1069
+2021-02-01 00:41:35 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 00:41:35 | INFO | fairseq.tasks.translation | example hypothesis: x 1 vial (5 x 1 ml)
+2021-02-01 00:41:35 | INFO | fairseq.tasks.translation | example reference: 5 x (1 x 10 ml) vials
+2021-02-01 00:41:35 | INFO | fairseq.tasks.translation | example hypothesis: The advisability of driving should be considered in these circumstances.
+2021-02-01 00:41:35 | INFO | fairseq.tasks.translation | example reference: The advisability of driving should be considered in these circumstances.
+2021-02-01 00:41:36 | INFO | fairseq.tasks.translation | example hypothesis: Actraphane 40 IU/ ml solution for injection in a vial.
+2021-02-01 00:41:36 | INFO | fairseq.tasks.translation | example reference: Actrapid 40 IU/ ml solution for injection in a vial.
+2021-02-01 00:41:37 | INFO | fairseq.tasks.translation | example hypothesis: The physician must therefore take possible interactions into account and should always ask his patients about any medicinal products they take.
+2021-02-01 00:41:37 | INFO | fairseq.tasks.translation | example reference: The physician must therefore take possible interactions into account and should always ask his patients about any medicinal products they take.
+2021-02-01 00:41:37 | INFO | fairseq.tasks.translation | example hypothesis: Subcutaneous injection into the abdominal wall ensures a faster absorption than from other injection sites.
+2021-02-01 00:41:37 | INFO | fairseq.tasks.translation | example reference: Subcutaneous injection into the abdominal wall ensures a faster absorption than from other injection sites.
+2021-02-01 00:41:38 | INFO | fairseq.tasks.translation | example hypothesis: Glucose must also be given intravenously, if the patient does not respond to glucagon within 10 to 15 minutes.
+2021-02-01 00:41:38 | INFO | fairseq.tasks.translation | example reference: Glucose must also be given intravenously, if the patient does not respond to glucagon within 10 to 15 minutes.
+2021-02-01 00:41:39 | INFO | fairseq.tasks.translation | example hypothesis: The intravenous route has to be used.
+2021-02-01 00:41:39 | INFO | fairseq.tasks.translation | example reference: Actrapid may also be administered intravenously, which should only be carried out by health care professionals.
+2021-02-01 00:41:39 | INFO | fairseq.tasks.translation | example hypothesis: As with any insulin therapy, injection site reactions may occur and include pain, itching, hives, swelling and inflammation.
+2021-02-01 00:41:39 | INFO | fairseq.tasks.translation | example reference: As with any insulin therapy, injection site reactions may occur and include pain, itching, hives, swelling and inflammation.
+2021-02-01 00:41:40 | INFO | fairseq.tasks.translation | example hypothesis: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with a condition termed acute painful neuropathy, which is usually reversible.
+2021-02-01 00:41:40 | INFO | fairseq.tasks.translation | example reference: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with a condition termed acute painful neuropathy, which is usually reversible.
+2021-02-01 00:41:41 | INFO | fairseq.tasks.translation | example hypothesis: Die ersten Symptome einer Hyperglykämie, wie Durstgefühl, verstärkter Harndrang, Übelkeit, Erbrechen, Benommenheit, gerötete trockene trockene Haut, Mundtrockenheit, Appetitverlust sowie nach Aceton riechender Atem, treten in der Regel allmählich über Stunden bzw. Tage auf. They include thirst, increased frequency of urination, nausea, vomiting, drowsiness
+2021-02-01 00:41:41 | INFO | fairseq.tasks.translation | example reference: Die ersten Symptome einer Hyperglykämie, wie Durstgefühl, verstärkter Harndrang, Übelkeit, Erbrechen, Benommenheit, gerötete trockene Haut, Mundtrockenheit, Appetitverlust sowie nach Aceton riechender Atem, treten in der Regel allmählich über Stunden bzw. Tage auf. They include thirst, increased frequency of urination, nausea, vomiting, drowsiness, flushed dry skin, dry mouth, loss of appetite as well as acetone odour of breath.
+2021-02-01 00:41:43 | INFO | fairseq.tasks.translation | example hypothesis: Mild hypoglycaemic agents may always be treated by oral glucose or sugary products. diabetic patients should be treated with glucose fractures, sweets, sugary products, or sugary products, including glucose by a person who has received appropriate instruction, or by glucose intramuscular instruction, and glucose intramuscular intramuscular intramuscular inhibitors (0.5 to 1 mg).
+2021-02-01 00:41:43 | INFO | fairseq.tasks.translation | example reference: 5 Severe hypoglycaemic episodes, where the patient has become unconscious, can be treated by glucagon (0.5 to 1 mg) given intramuscularly or subcutaneously by a person who has received appropriate instruction, or by glucose given intravenously by a medical professional.
+2021-02-01 00:41:44 | INFO | fairseq.tasks.translation | example hypothesis: Actrapide has not been studied in type 1 diabetes, during treatment with insulin (two studies, 954 patients) and for patients with type 2 diabetes, when the patient has not been treated with Actraphane (a type 2).
+2021-02-01 00:41:44 | INFO | fairseq.tasks.translation | example reference: HbA1c levels remained fairly steady over the six months of treatment with Actrapid.
+2021-02-01 00:41:44 | INFO | valid | epoch 017 | valid on 'valid' subset | loss 3.146 | nll_loss 1.285 | ppl 2.44 | bleu 70.63 | wps 471.5 | wpb 361 | bsz 12.6 | num_updates 8848 | best_loss 2.808
+2021-02-01 00:41:44 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 00:41:49 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/EMEA_11_1/checkpoint_last.pt (epoch 17 @ 8848 updates, score 3.146) (writing took 5.545219473540783 seconds)
+2021-02-01 00:41:49 | INFO | fairseq_cli.train | end of epoch 17 (average epoch stats below)
+2021-02-01 00:41:49 | INFO | train | epoch 017 | loss 2.366 | nll_loss 0.473 | ppl 1.39 | wps 5556.9 | ups 8.47 | wpb 655.9 | bsz 19.2 | num_updates 8848 | lr 0.000336184 | gnorm 3.98 | loss_scale 0 | train_wall 46 | wall 1088
+2021-02-01 00:41:49 | INFO | fairseq_cli.train | begin training epoch 17
+2021-02-01 00:41:54 | INFO | train_inner | epoch 018:     52 / 521 loss=2.353, nll_loss=0.458, ppl=1.37, wps=2782.9, ups=4.22, wpb=659, bsz=20.8, num_updates=8900, lr=0.000335201, gnorm=5.6, loss_scale=0, train_wall=9, wall=1093
+2021-02-01 00:42:03 | INFO | train_inner | epoch 018:    152 / 521 loss=2.361, nll_loss=0.463, ppl=1.38, wps=7509.7, ups=11.13, wpb=675, bsz=20.3, num_updates=9000, lr=0.000333333, gnorm=4.929, loss_scale=0, train_wall=9, wall=1102
+2021-02-01 00:42:12 | INFO | train_inner | epoch 018:    252 / 521 loss=2.339, nll_loss=0.444, ppl=1.36, wps=7312, ups=11.13, wpb=656.9, bsz=20, num_updates=9100, lr=0.000331497, gnorm=3.297, loss_scale=0, train_wall=9, wall=1111
+2021-02-01 00:42:21 | INFO | train_inner | epoch 018:    352 / 521 loss=2.362, nll_loss=0.472, ppl=1.39, wps=7132.4, ups=11.05, wpb=645.4, bsz=18.5, num_updates=9200, lr=0.00032969, gnorm=4.283, loss_scale=0, train_wall=9, wall=1120
+2021-02-01 00:42:30 | INFO | train_inner | epoch 018:    452 / 521 loss=2.334, nll_loss=0.44, ppl=1.36, wps=7127.1, ups=11.13, wpb=640.2, bsz=18.7, num_updates=9300, lr=0.000327913, gnorm=4.437, loss_scale=0, train_wall=9, wall=1129
+2021-02-01 00:42:36 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 00:42:36 | INFO | fairseq.tasks.translation | example hypothesis: x 1 vial (5 x 1)
+2021-02-01 00:42:36 | INFO | fairseq.tasks.translation | example reference: 5 x (1 x 10 ml) vials
+2021-02-01 00:42:37 | INFO | fairseq.tasks.translation | example hypothesis: The advisability of driving should be considered in these circumstances.
+2021-02-01 00:42:37 | INFO | fairseq.tasks.translation | example reference: The advisability of driving should be considered in these circumstances.
+2021-02-01 00:42:37 | INFO | fairseq.tasks.translation | example hypothesis: Actraphane 40 40 IU/ ml solution for injection in a vial.
+2021-02-01 00:42:37 | INFO | fairseq.tasks.translation | example reference: Actrapid 40 IU/ ml solution for injection in a vial.
+2021-02-01 00:42:38 | INFO | fairseq.tasks.translation | example hypothesis: The physician must therefore take possible interactions into account and should always ask his patients about any medicinal products they take.
+2021-02-01 00:42:38 | INFO | fairseq.tasks.translation | example reference: The physician must therefore take possible interactions into account and should always ask his patients about any medicinal products they take.
+2021-02-01 00:42:38 | INFO | fairseq.tasks.translation | example hypothesis: Subcutaneous injection into the abdominal wall ensures a faster absorption than from other injection sites.
+2021-02-01 00:42:38 | INFO | fairseq.tasks.translation | example reference: Subcutaneous injection into the abdominal wall ensures a faster absorption than from other injection sites.
+2021-02-01 00:42:39 | INFO | fairseq.tasks.translation | example hypothesis: Glucose must also be given intravenously, if the patient does not respond to glucagon within 10 to 15 minutes.
+2021-02-01 00:42:39 | INFO | fairseq.tasks.translation | example reference: Glucose must also be given intravenously, if the patient does not respond to glucagon within 10 to 15 minutes.
+2021-02-01 00:42:40 | INFO | fairseq.tasks.translation | example hypothesis: Actraphane can be administered intravenously.
+2021-02-01 00:42:40 | INFO | fairseq.tasks.translation | example reference: Actrapid may also be administered intravenously, which should only be carried out by health care professionals.
+2021-02-01 00:42:41 | INFO | fairseq.tasks.translation | example hypothesis: As with any insulin therapy, injection site reactions may occur and include pain, itching, hives, swelling and inflammation.
+2021-02-01 00:42:41 | INFO | fairseq.tasks.translation | example reference: As with any insulin therapy, injection site reactions may occur and include pain, itching, hives, swelling and inflammation.
+2021-02-01 00:42:41 | INFO | fairseq.tasks.translation | example hypothesis: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with a condition termed acute painful neuropathy, which is usually reversible.
+2021-02-01 00:42:41 | INFO | fairseq.tasks.translation | example reference: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with a condition termed acute painful neuropathy, which is usually reversible.
+2021-02-01 00:42:43 | INFO | fairseq.tasks.translation | example hypothesis: Die ersten Symptome einer Hyperglykämie, wie Durstgefühl, verstärkter Harndrang, Übelkeit, Erbrechen, Benommenheit, gerötete trockene Haut, Mundtrockenheit, Appetitverlust sowie nach Aceton riechender Atem, treten in der Regel allmählich über Stunden bzw. Tage auf. They include thirst, increased frequency of urination, nausea, vomiting, drowsiness, loss
+2021-02-01 00:42:43 | INFO | fairseq.tasks.translation | example reference: Die ersten Symptome einer Hyperglykämie, wie Durstgefühl, verstärkter Harndrang, Übelkeit, Erbrechen, Benommenheit, gerötete trockene Haut, Mundtrockenheit, Appetitverlust sowie nach Aceton riechender Atem, treten in der Regel allmählich über Stunden bzw. Tage auf. They include thirst, increased frequency of urination, nausea, vomiting, drowsiness, flushed dry skin, dry mouth, loss of appetite as well as acetone odour of breath.
+2021-02-01 00:42:44 | INFO | fairseq.tasks.translation | example hypothesis: Mildly malignant hypoglycaemic episodes can be treated by administration of glucose or sugary products.
+2021-02-01 00:42:44 | INFO | fairseq.tasks.translation | example reference: 5 Severe hypoglycaemic episodes, where the patient has become unconscious, can be treated by glucagon (0.5 to 1 mg) given intramuscularly or subcutaneously by a person who has received appropriate instruction, or by glucose given intravenously by a medical professional.
+2021-02-01 00:42:45 | INFO | fairseq.tasks.translation | example hypothesis: Actraphane concentration was not indicated in patients with type 2 diabetes, when the benefits of Actraphane are controlled with insulin (two studies), and in patients with a type 2 diabetes (a type 2).
+2021-02-01 00:42:45 | INFO | fairseq.tasks.translation | example reference: HbA1c levels remained fairly steady over the six months of treatment with Actrapid.
+2021-02-01 00:42:45 | INFO | valid | epoch 018 | valid on 'valid' subset | loss 3.113 | nll_loss 1.271 | ppl 2.41 | bleu 67.84 | wps 489.5 | wpb 361 | bsz 12.6 | num_updates 9369 | best_loss 2.808
+2021-02-01 00:42:45 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 00:42:51 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/EMEA_11_1/checkpoint_last.pt (epoch 18 @ 9369 updates, score 3.113) (writing took 5.907532826066017 seconds)
+2021-02-01 00:42:51 | INFO | fairseq_cli.train | end of epoch 18 (average epoch stats below)
+2021-02-01 00:42:51 | INFO | train | epoch 018 | loss 2.348 | nll_loss 0.454 | ppl 1.37 | wps 5561.7 | ups 8.48 | wpb 655.9 | bsz 19.2 | num_updates 9369 | lr 0.000326703 | gnorm 4.339 | loss_scale 0 | train_wall 46 | wall 1149
+2021-02-01 00:42:51 | INFO | fairseq_cli.train | begin training epoch 18
+2021-02-01 00:42:53 | INFO | train_inner | epoch 019:     31 / 521 loss=2.318, nll_loss=0.424, ppl=1.34, wps=2761, ups=4.26, wpb=648.1, bsz=17, num_updates=9400, lr=0.000326164, gnorm=3.448, loss_scale=0, train_wall=9, wall=1152
+2021-02-01 00:43:02 | INFO | train_inner | epoch 019:    131 / 521 loss=2.325, nll_loss=0.431, ppl=1.35, wps=7242.1, ups=11.21, wpb=646.2, bsz=19.4, num_updates=9500, lr=0.000324443, gnorm=3.676, loss_scale=0, train_wall=9, wall=1161
+2021-02-01 00:43:11 | INFO | train_inner | epoch 019:    231 / 521 loss=2.287, nll_loss=0.387, ppl=1.31, wps=7406, ups=11.03, wpb=671.4, bsz=19.4, num_updates=9600, lr=0.000322749, gnorm=3.243, loss_scale=0, train_wall=9, wall=1170
+2021-02-01 00:43:20 | INFO | train_inner | epoch 019:    331 / 521 loss=2.336, nll_loss=0.442, ppl=1.36, wps=7041.9, ups=11.07, wpb=636.1, bsz=18.8, num_updates=9700, lr=0.000321081, gnorm=3.95, loss_scale=0, train_wall=9, wall=1179
+2021-02-01 00:43:29 | INFO | train_inner | epoch 019:    431 / 521 loss=2.304, nll_loss=0.412, ppl=1.33, wps=7654.4, ups=11.22, wpb=681.9, bsz=20.7, num_updates=9800, lr=0.000319438, gnorm=3.523, loss_scale=0, train_wall=9, wall=1188
+2021-02-01 00:43:37 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 00:43:38 | INFO | fairseq.tasks.translation | example hypothesis: Vial 5 x 1 vial (10 x 1 ml)
+2021-02-01 00:43:38 | INFO | fairseq.tasks.translation | example reference: 5 x (1 x 10 ml) vials
+2021-02-01 00:43:38 | INFO | fairseq.tasks.translation | example hypothesis: The advisability of driving should be considered in these circumstances.
+2021-02-01 00:43:38 | INFO | fairseq.tasks.translation | example reference: The advisability of driving should be considered in these circumstances.
+2021-02-01 00:43:39 | INFO | fairseq.tasks.translation | example hypothesis: Actrapide 40 IU/ ml solution for injection in a vial.
+2021-02-01 00:43:39 | INFO | fairseq.tasks.translation | example reference: Actrapid 40 IU/ ml solution for injection in a vial.
+2021-02-01 00:43:39 | INFO | fairseq.tasks.translation | example hypothesis: The physician must therefore take possible interactions into account and should always ask his patients about any medicinal products they take.
+2021-02-01 00:43:39 | INFO | fairseq.tasks.translation | example reference: The physician must therefore take possible interactions into account and should always ask his patients about any medicinal products they take.
+2021-02-01 00:43:40 | INFO | fairseq.tasks.translation | example hypothesis: Subcutaneous injection into the abdominal wall ensures a faster absorption than from other injection sites.
+2021-02-01 00:43:40 | INFO | fairseq.tasks.translation | example reference: Subcutaneous injection into the abdominal wall ensures a faster absorption than from other injection sites.
+2021-02-01 00:43:41 | INFO | fairseq.tasks.translation | example hypothesis: Glucose must also be given intravenously, if the patient does not respond to glucagon within 10 to 15 minutes.
+2021-02-01 00:43:41 | INFO | fairseq.tasks.translation | example reference: Glucose must also be given intravenously, if the patient does not respond to glucagon within 10 to 15 minutes.
+2021-02-01 00:43:41 | INFO | fairseq.tasks.translation | example hypothesis: Actraphane can be administered subcutaneously or intravenously, which may also be administered intravenously.
+2021-02-01 00:43:41 | INFO | fairseq.tasks.translation | example reference: Actrapid may also be administered intravenously, which should only be carried out by health care professionals.
+2021-02-01 00:43:42 | INFO | fairseq.tasks.translation | example hypothesis: As with any insulin therapy, injection site reactions may occur and include pain, itching, hives, swelling and inflammation.
+2021-02-01 00:43:42 | INFO | fairseq.tasks.translation | example reference: As with any insulin therapy, injection site reactions may occur and include pain, itching, hives, swelling and inflammation.
+2021-02-01 00:43:43 | INFO | fairseq.tasks.translation | example hypothesis: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with a condition termed acute painful neuropathy, which is usually reversible.
+2021-02-01 00:43:43 | INFO | fairseq.tasks.translation | example reference: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with a condition termed acute painful neuropathy, which is usually reversible.
+2021-02-01 00:43:44 | INFO | fairseq.tasks.translation | example hypothesis: Die ersten Symptome einer Hyperglykämie, wie Durstgefühl, verstärkter Harndrang, Übelkeit, Erbrechen, gerötete trockene Haut, Mundtrockenheit, Appetitverlust sowie nach Aceton riechender Atem, treten in der Regel allmählich über Stunden bzw. Tage auf. They include thirst, increased frequency of urination, nausea, vomiting, drozziness, flushed dry skin, dry mouth
+2021-02-01 00:43:44 | INFO | fairseq.tasks.translation | example reference: Die ersten Symptome einer Hyperglykämie, wie Durstgefühl, verstärkter Harndrang, Übelkeit, Erbrechen, Benommenheit, gerötete trockene Haut, Mundtrockenheit, Appetitverlust sowie nach Aceton riechender Atem, treten in der Regel allmählich über Stunden bzw. Tage auf. They include thirst, increased frequency of urination, nausea, vomiting, drowsiness, flushed dry skin, dry mouth, loss of appetite as well as acetone odour of breath.
+2021-02-01 00:43:46 | INFO | fairseq.tasks.translation | example hypothesis: Mild hypoglycaemic episodes can be treated by oral administration of glucose or sugary products.
+2021-02-01 00:43:46 | INFO | fairseq.tasks.translation | example reference: 5 Severe hypoglycaemic episodes, where the patient has become unconscious, can be treated by glucagon (0.5 to 1 mg) given intramuscularly or subcutaneously by a person who has received appropriate instruction, or by glucose given intravenously by a medical professional.
+2021-02-01 00:43:47 | INFO | fairseq.tasks.translation | example hypothesis: Actrapide has not been studied in patients with type 1 diabetes, when blood levels of insulin were administered to patients with type 1 diabetes, and patients with type 2 diabetes, when blood glucose concentrations of Actrapide (see the HbA1c) were well tolerated human insulin), compared with the benefit of a placebo (a dummy treatment).
+2021-02-01 00:43:47 | INFO | fairseq.tasks.translation | example reference: HbA1c levels remained fairly steady over the six months of treatment with Actrapid.
+2021-02-01 00:43:47 | INFO | valid | epoch 019 | valid on 'valid' subset | loss 3.156 | nll_loss 1.297 | ppl 2.46 | bleu 71.82 | wps 445 | wpb 361 | bsz 12.6 | num_updates 9890 | best_loss 2.808
+2021-02-01 00:43:47 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 00:43:53 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/EMEA_11_1/checkpoint_last.pt (epoch 19 @ 9890 updates, score 3.156) (writing took 5.6290913093835115 seconds)
+2021-02-01 00:43:53 | INFO | fairseq_cli.train | end of epoch 19 (average epoch stats below)
+2021-02-01 00:43:53 | INFO | train | epoch 019 | loss 2.311 | nll_loss 0.416 | ppl 1.33 | wps 5508.8 | ups 8.4 | wpb 655.9 | bsz 19.2 | num_updates 9890 | lr 0.000317982 | gnorm 3.59 | loss_scale 0 | train_wall 46 | wall 1211
+2021-02-01 00:43:53 | INFO | fairseq_cli.train | begin training epoch 19
+2021-02-01 00:43:54 | INFO | train_inner | epoch 020:     10 / 521 loss=2.315, nll_loss=0.422, ppl=1.34, wps=2674.6, ups=4.13, wpb=647.4, bsz=18.5, num_updates=9900, lr=0.000317821, gnorm=3.697, loss_scale=0, train_wall=9, wall=1212
+2021-02-01 00:44:03 | INFO | train_inner | epoch 020:    110 / 521 loss=2.306, nll_loss=0.409, ppl=1.33, wps=7220.5, ups=11.12, wpb=649.3, bsz=19.4, num_updates=10000, lr=0.000316228, gnorm=5.837, loss_scale=0, train_wall=9, wall=1221
+2021-02-01 00:44:11 | INFO | train_inner | epoch 020:    210 / 521 loss=2.314, nll_loss=0.42, ppl=1.34, wps=7265.2, ups=11.2, wpb=648.8, bsz=18.9, num_updates=10100, lr=0.000314658, gnorm=5.405, loss_scale=0, train_wall=9, wall=1230
+2021-02-01 00:44:20 | INFO | train_inner | epoch 020:    310 / 521 loss=2.263, nll_loss=0.366, ppl=1.29, wps=7571.2, ups=11.17, wpb=677.5, bsz=22.6, num_updates=10200, lr=0.000313112, gnorm=3.081, loss_scale=0, train_wall=9, wall=1239
+2021-02-01 00:44:29 | INFO | train_inner | epoch 020:    410 / 521 loss=2.304, nll_loss=0.41, ppl=1.33, wps=7295.2, ups=11.07, wpb=659, bsz=17.3, num_updates=10300, lr=0.000311588, gnorm=5.749, loss_scale=0, train_wall=9, wall=1248
+2021-02-01 00:44:39 | INFO | train_inner | epoch 020:    510 / 521 loss=2.329, nll_loss=0.434, ppl=1.35, wps=7069.5, ups=11, wpb=642.6, bsz=17.4, num_updates=10400, lr=0.000310087, gnorm=5.501, loss_scale=0, train_wall=9, wall=1257
+2021-02-01 00:44:40 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 00:44:40 | INFO | fairseq.tasks.translation | example hypothesis: Vial 5 x 1 ml (10 x 1 ml)
+2021-02-01 00:44:40 | INFO | fairseq.tasks.translation | example reference: 5 x (1 x 10 ml) vials
+2021-02-01 00:44:41 | INFO | fairseq.tasks.translation | example hypothesis: The advisability of driving should be considered in these circumstances.
+2021-02-01 00:44:41 | INFO | fairseq.tasks.translation | example reference: The advisability of driving should be considered in these circumstances.
+2021-02-01 00:44:41 | INFO | fairseq.tasks.translation | example hypothesis: Actrapide 40 IU/ ml solution for injection in a vial.
+2021-02-01 00:44:41 | INFO | fairseq.tasks.translation | example reference: Actrapid 40 IU/ ml solution for injection in a vial.
+2021-02-01 00:44:42 | INFO | fairseq.tasks.translation | example hypothesis: The physician must therefore take possible interactions into account and should always ask his patients about any medicinal products they take.
+2021-02-01 00:44:42 | INFO | fairseq.tasks.translation | example reference: The physician must therefore take possible interactions into account and should always ask his patients about any medicinal products they take.
+2021-02-01 00:44:42 | INFO | fairseq.tasks.translation | example hypothesis: Subcutaneous injection into the abdominal wall ensures a faster absorption than from other injection sites.
+2021-02-01 00:44:42 | INFO | fairseq.tasks.translation | example reference: Subcutaneous injection into the abdominal wall ensures a faster absorption than from other injection sites.
+2021-02-01 00:44:43 | INFO | fairseq.tasks.translation | example hypothesis: Glucose must also be given intravenously, if the patient does not respond to glucagon within 10 to 15 minutes.
+2021-02-01 00:44:43 | INFO | fairseq.tasks.translation | example reference: Glucose must also be given intravenously, if the patient does not respond to glucagon within 10 to 15 minutes.
+2021-02-01 00:44:43 | INFO | fairseq.tasks.translation | example hypothesis: The subcutaneous route of administration or intravenous route has to be used.
+2021-02-01 00:44:43 | INFO | fairseq.tasks.translation | example reference: Actrapid may also be administered intravenously, which should only be carried out by health care professionals.
+2021-02-01 00:44:44 | INFO | fairseq.tasks.translation | example hypothesis: As with any insulin therapy, injection site reactions may occur and include pain, itching, hives, swelling and inflammation.
+2021-02-01 00:44:44 | INFO | fairseq.tasks.translation | example reference: As with any insulin therapy, injection site reactions may occur and include pain, itching, hives, swelling and inflammation.
+2021-02-01 00:44:45 | INFO | fairseq.tasks.translation | example hypothesis: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with a condition termed acute painful neuropathy, which is usually reversible.
+2021-02-01 00:44:45 | INFO | fairseq.tasks.translation | example reference: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with a condition termed acute painful neuropathy, which is usually reversible.
+2021-02-01 00:44:46 | INFO | fairseq.tasks.translation | example hypothesis: Die ersten Symptome einer Hyperglykämie, wie Durstgefühl, verstärkter Harndrang, Übelkeit, Übelkeit, Erbrechen, Benommenheit, gerötete trockene Haut, Mundtrockenheit, Appetitverlust sowie nach Aceton riechender Atem, treten in der Regel allmählich über den Regel allmählich über den Regel allmählich über Stunden bzw. Tage auf. They include thirst, increased frequency of urination
+2021-02-01 00:44:46 | INFO | fairseq.tasks.translation | example reference: Die ersten Symptome einer Hyperglykämie, wie Durstgefühl, verstärkter Harndrang, Übelkeit, Erbrechen, Benommenheit, gerötete trockene Haut, Mundtrockenheit, Appetitverlust sowie nach Aceton riechender Atem, treten in der Regel allmählich über Stunden bzw. Tage auf. They include thirst, increased frequency of urination, nausea, vomiting, drowsiness, flushed dry skin, dry mouth, loss of appetite as well as acetone odour of breath.
+2021-02-01 00:44:48 | INFO | fairseq.tasks.translation | example hypothesis: Mild hypoglycaemic episodes can be treated by oral administration of glucose or sugary products, respectively, should be treated by glucagon (0.5 to 0 mg) given intravenously by a person who has received appropriate instruction, or by glucagon.
+2021-02-01 00:44:48 | INFO | fairseq.tasks.translation | example reference: 5 Severe hypoglycaemic episodes, where the patient has become unconscious, can be treated by glucagon (0.5 to 1 mg) given intramuscularly or subcutaneously by a person who has received appropriate instruction, or by glucose given intravenously by a medical professional.
+2021-02-01 00:44:49 | INFO | fairseq.tasks.translation | example hypothesis: Actrapide has not been shown to be genic in type 1 diabetes, whilst treatment with two studies, where it was not well tolerated for patients with type 1 diabetes, and for a type 2 diabetes, when the study compared the HbA1c (a type 2 diabetes) with these patients.
+2021-02-01 00:44:49 | INFO | fairseq.tasks.translation | example reference: HbA1c levels remained fairly steady over the six months of treatment with Actrapid.
+2021-02-01 00:44:49 | INFO | valid | epoch 020 | valid on 'valid' subset | loss 3.137 | nll_loss 1.281 | ppl 2.43 | bleu 68.87 | wps 428.6 | wpb 361 | bsz 12.6 | num_updates 10411 | best_loss 2.808
+2021-02-01 00:44:49 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 00:44:55 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/EMEA_11_1/checkpoint_last.pt (epoch 20 @ 10411 updates, score 3.137) (writing took 5.966087178327143 seconds)
+2021-02-01 00:44:55 | INFO | fairseq_cli.train | end of epoch 20 (average epoch stats below)
+2021-02-01 00:44:55 | INFO | train | epoch 020 | loss 2.301 | nll_loss 0.406 | ppl 1.32 | wps 5439.6 | ups 8.29 | wpb 655.9 | bsz 19.2 | num_updates 10411 | lr 0.000309923 | gnorm 5.034 | loss_scale 0 | train_wall 46 | wall 1274
+2021-02-01 00:44:55 | INFO | fairseq_cli.train | done training in 1266.4 seconds
+
+
+###############################################################################
+Peregrine Cluster
+Job 17761739 for user 's3475743'
+Finished at: Mon Feb  1 00:44:59 CET 2021
+
+Job details:
+============
+
+Job ID              : 17761739
+Name                : EMEA_11_1
+User                : s3475743
+Partition           : gpu
+Nodes               : pg-gpu25
+Number of Nodes     : 1
+Cores               : 12
+State               : COMPLETED
+Submit              : 2021-01-31T22:39:20
+Start               : 2021-02-01T00:22:58
+End                 : 2021-02-01T00:44:59
+Reserved walltime   : 23:55:00
+Used walltime       : 00:22:01
+Used CPU time       : 00:21:52 (efficiency:  8.28%)
+% User (Computation): 75.98%
+% System (I/O)      : 24.02%
+Mem reserved        : 32G/node
+Max Mem used        : 5.63G (pg-gpu25)
+Max Disk Write      : 40.96K (pg-gpu25)
+Max Disk Read       : 2.30M (pg-gpu25)
+Average GPU usage   : 67.1% (pg-gpu25)
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/additional_information/scientific_output
+
+################################################################################
