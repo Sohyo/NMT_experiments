@@ -107,8 +107,8 @@ def main():
         train_loss, valid_loss = get_loss(file_path=join(root_path, file_name))
         valid_bleu = get_BLEU(file_path=join(root_path, file_name))
 
-        plot_loss(train_loss, valid_loss, filename=file_name)
-        plot_BLEU(valid_bleu, filename=file_name)
+        # plot_loss(train_loss, valid_loss, filename=file_name)
+        # plot_BLEU(valid_bleu, filename=file_name)
         plot_loss_BLEU(train_loss, valid_loss, valid_bleu, filename=file_name)
 
 
