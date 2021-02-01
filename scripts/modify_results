@@ -6,7 +6,7 @@ source ../../fairseq/venv/bin/activate
 # For analysis
 # grep "^[HT]" g_EMEA_base.out > ../meaningful_results/example.out
 
-results_file=g_JRC_p_11_1.out
+results_file=g_JRC5.out
 # For computing BLEU score
 grep ^H ../results/$results_file |  ./../../NMT/moses_git/mosesdecoder_soyo/scripts/tokenizer/detokenizer.perl | cut -f3- > ../meaningful_results/$results_file.sys
 grep ^T ../results/$results_file |  ./../../NMT/moses_git/mosesdecoder_soyo/scripts/tokenizer/detokenizer.perl | cut -f2- > ../meaningful_results/$results_file.ref
