@@ -1,0 +1,641 @@
+
+The following have been reloaded with a version change:
+  1) GCCcore/8.3.0 => GCCcore/9.3.0
+  2) binutils/2.32-GCCcore-8.3.0 => binutils/2.34-GCCcore-9.3.0
+  3) zlib/1.2.11-GCCcore-8.3.0 => zlib/1.2.11-GCCcore-9.3.0
+
+2021-02-01 01:31:29 | INFO | fairseq_cli.train | Namespace(activation_dropout=0.0, activation_fn='relu', adam_betas='(0.9, 0.98)', adam_eps=1e-08, adaptive_input=False, adaptive_softmax_cutoff=None, adaptive_softmax_dropout=0, all_gather_list_size=16384, arch='transformer_vaswani_wmt_en_de_big', attention_dropout=0.0, best_checkpoint_metric='loss', bf16=False, bpe=None, broadcast_buffers=False, bucket_cap_mb=25, checkpoint_suffix='', clip_norm=0.0, cpu=False, criterion='label_smoothed_cross_entropy', cross_self_attention=False, curriculum=0, data='../../../data-bin/phrase_4_0.5_tag_GNOME', data_buffer_size=10, dataset_impl=None, ddp_backend='c10d', decoder_attention_heads=16, decoder_embed_dim=1024, decoder_embed_path=None, decoder_ffn_embed_dim=4096, decoder_input_dim=1024, decoder_layerdrop=0, decoder_layers=6, decoder_layers_to_keep=None, decoder_learned_pos=False, decoder_normalize_before=False, decoder_output_dim=1024, device_id=0, disable_validation=False, distributed_backend='nccl', distributed_init_method=None, distributed_no_spawn=False, distributed_port=-1, distributed_rank=0, distributed_world_size=1, distributed_wrapper='DDP', dropout=0.2, empty_cache_freq=0, encoder_attention_heads=16, encoder_embed_dim=1024, encoder_embed_path=None, encoder_ffn_embed_dim=8192, encoder_layerdrop=0, encoder_layers=6, encoder_layers_to_keep=None, encoder_learned_pos=False, encoder_normalize_before=False, eval_bleu=True, eval_bleu_args='{"beam": 5, "max_len_a": 1.2, "max_len_b": 10}', eval_bleu_detok='moses', eval_bleu_detok_args=None, eval_bleu_print_samples=True, eval_bleu_remove_bpe='@@ ', eval_tokenized_bleu=False, fast_stat_sync=False, find_unused_parameters=False, fix_batches_to_gpus=False, fixed_validation_seed=None, fp16=True, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, keep_best_checkpoints=-1, keep_interval_updates=-1, keep_last_epochs=-1, label_smoothing=0.1, layernorm_embedding=False, left_pad_source='True', left_pad_target='False', load_alignments=False, localsgd_frequency=3, log_format=None, log_interval=100, lr=[0.000175], lr_scheduler='inverse_sqrt', max_epoch=20, max_sentences=None, max_sentences_valid=None, max_source_positions=1024, max_target_positions=1024, max_tokens=4096, max_tokens_valid=4096, max_update=0, maximize_best_checkpoint_metric=False, memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, min_lr=-1, model_parallel_size=1, no_cross_attention=False, no_epoch_checkpoints=True, no_last_checkpoints=False, no_progress_bar=False, no_save=False, no_save_optimizer_state=False, no_scale_embedding=False, no_seed_provided=True, no_token_positional_embeddings=False, nprocs_per_node=1, num_batch_buckets=0, num_workers=1, optimizer='adam', optimizer_overrides='{}', patience=-1, profile=False, quant_noise_pq=0, quant_noise_pq_block_size=8, quant_noise_scalar=0, quantization_config_path=None, required_batch_size_multiple=8, reset_dataloader=True, reset_lr_scheduler=False, reset_meters=False, reset_optimizer=True, restore_file='../../../models/wmt19.de-en.joined-dict.ensemble//model1.pt', save_dir='../checkpoints/GNOME_p_11_1', save_interval=1, save_interval_updates=0, scoring='bleu', seed=1, sentence_avg=False, share_all_embeddings=False, share_decoder_input_output_embed=True, skip_invalid_size_inputs_valid_test=False, slowmo_algorithm='LocalSGD', slowmo_momentum=None, source_lang=None, stop_time_hours=0, target_lang=None, task='translation', tensorboard_logdir='', threshold_loss_scale=None, tie_adaptive_weights=False, tokenizer=None, tpu=False, train_subset='train', truncate_source=False, update_freq=[1], upsample_primary=1, use_bmuf=False, use_old_adam=False, user_dir=None, valid_subset='valid', validate_after_updates=0, validate_interval=1, validate_interval_updates=0, warmup_init_lr=-1, warmup_updates=4000, weight_decay=0.0)
+2021-02-01 01:31:30 | INFO | fairseq.tasks.translation | [de] dictionary: 42024 types
+2021-02-01 01:31:30 | INFO | fairseq.tasks.translation | [en] dictionary: 42024 types
+2021-02-01 01:31:30 | INFO | fairseq.data.data_utils | loaded 151 examples from: ../../../data-bin/phrase_4_0.5_tag_GNOME/valid.de-en.de
+2021-02-01 01:31:30 | INFO | fairseq.data.data_utils | loaded 151 examples from: ../../../data-bin/phrase_4_0.5_tag_GNOME/valid.de-en.en
+2021-02-01 01:31:30 | INFO | fairseq.tasks.translation | ../../../data-bin/phrase_4_0.5_tag_GNOME valid de-en 151 examples
+2021-02-01 01:31:33 | INFO | fairseq_cli.train | TransformerModel(
+  (encoder): TransformerEncoder(
+    (dropout_module): FairseqDropout()
+    (embed_tokens): Embedding(42024, 1024, padding_idx=1)
+    (embed_positions): SinusoidalPositionalEmbedding()
+    (layers): ModuleList(
+      (0): TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=1024, out_features=8192, bias=True)
+        (fc2): Linear(in_features=8192, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (1): TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=1024, out_features=8192, bias=True)
+        (fc2): Linear(in_features=8192, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (2): TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=1024, out_features=8192, bias=True)
+        (fc2): Linear(in_features=8192, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (3): TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=1024, out_features=8192, bias=True)
+        (fc2): Linear(in_features=8192, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (4): TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=1024, out_features=8192, bias=True)
+        (fc2): Linear(in_features=8192, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (5): TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=1024, out_features=8192, bias=True)
+        (fc2): Linear(in_features=8192, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+    )
+  )
+  (decoder): TransformerDecoder(
+    (dropout_module): FairseqDropout()
+    (embed_tokens): Embedding(42024, 1024, padding_idx=1)
+    (embed_positions): SinusoidalPositionalEmbedding()
+    (layers): ModuleList(
+      (0): TransformerDecoderLayer(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (1): TransformerDecoderLayer(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (2): TransformerDecoderLayer(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (3): TransformerDecoderLayer(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (4): TransformerDecoderLayer(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (5): TransformerDecoderLayer(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+    )
+    (output_projection): Linear(in_features=1024, out_features=42024, bias=False)
+  )
+)
+2021-02-01 01:31:33 | INFO | fairseq_cli.train | model transformer_vaswani_wmt_en_de_big, criterion LabelSmoothedCrossEntropyCriterion
+2021-02-01 01:31:33 | INFO | fairseq_cli.train | num. model params: 312778752 (num. trained: 312778752)
+2021-02-01 01:31:40 | INFO | fairseq.trainer | detected shared parameter: decoder.embed_tokens.weight <- decoder.output_projection.weight
+2021-02-01 01:31:40 | INFO | fairseq.utils | ***********************CUDA enviroments for all 1 workers***********************
+2021-02-01 01:31:40 | INFO | fairseq.utils | rank   0: capabilities =  7.0  ; total memory = 32.000 GB ; name = GRID V100D-32Q                          
+2021-02-01 01:31:40 | INFO | fairseq.utils | ***********************CUDA enviroments for all 1 workers***********************
+2021-02-01 01:31:40 | INFO | fairseq_cli.train | training on 1 devices (GPUs/TPUs)
+2021-02-01 01:31:40 | INFO | fairseq_cli.train | max tokens per GPU = 4096 and max sentences per GPU = None
+2021-02-01 01:31:41 | INFO | fairseq.trainer | loaded checkpoint ../../../models/wmt19.de-en.joined-dict.ensemble//model1.pt (epoch 16 @ 0 updates)
+2021-02-01 01:31:41 | INFO | fairseq.trainer | loading train data for epoch 1
+2021-02-01 01:31:41 | INFO | fairseq.data.data_utils | loaded 93982 examples from: ../../../data-bin/phrase_4_0.5_tag_GNOME/train.de-en.de
+2021-02-01 01:31:42 | INFO | fairseq.data.data_utils | loaded 93982 examples from: ../../../data-bin/phrase_4_0.5_tag_GNOME/train.de-en.en
+2021-02-01 01:31:42 | INFO | fairseq.tasks.translation | ../../../data-bin/phrase_4_0.5_tag_GNOME train de-en 93982 examples
+2021-02-01 01:31:42 | INFO | fairseq_cli.train | begin training epoch 1
+2021-02-01 01:31:43 | INFO | fairseq.trainer | NOTE: overflow detected, setting loss scale to: 64.0
+2021-02-01 01:31:43 | INFO | fairseq.trainer | NOTE: overflow detected, setting loss scale to: 32.0
+2021-02-01 01:31:43 | INFO | fairseq.trainer | NOTE: overflow detected, setting loss scale to: 16.0
+2021-02-01 01:31:43 | INFO | fairseq.trainer | NOTE: overflow detected, setting loss scale to: 8.0
+2021-02-01 01:31:43 | INFO | fairseq.trainer | NOTE: overflow detected, setting loss scale to: 4.0
+2021-02-01 01:31:45 | INFO | fairseq.trainer | NOTE: overflow detected, setting loss scale to: 2.0
+2021-02-01 01:32:02 | INFO | train_inner | epoch 001:    106 / 316 loss=3.24, nll_loss=1.479, ppl=2.79, wps=19756.9, ups=5.22, wpb=3783.7, bsz=295.9, num_updates=100, lr=4.375e-06, gnorm=11.815, loss_scale=2, train_wall=19, wall=22
+2021-02-01 01:32:22 | INFO | train_inner | epoch 001:    206 / 316 loss=2.659, nll_loss=0.851, ppl=1.8, wps=19441.9, ups=5.16, wpb=3765.1, bsz=292.1, num_updates=200, lr=8.75e-06, gnorm=1.933, loss_scale=2, train_wall=19, wall=42
+2021-02-01 01:32:41 | INFO | train_inner | epoch 001:    306 / 316 loss=2.521, nll_loss=0.704, ppl=1.63, wps=20259.3, ups=5.25, wpb=3856.9, bsz=304.5, num_updates=300, lr=1.3125e-05, gnorm=1.491, loss_scale=2, train_wall=19, wall=61
+2021-02-01 01:32:43 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 01:32:44 | INFO | fairseq.tasks.translation | example hypothesis: Select the category from the list. You can select as many categories as you like.
+2021-02-01 01:32:44 | INFO | fairseq.tasks.translation | example reference: Select the category from the list. You can select as many or as few categories as you like.
+2021-02-01 01:32:45 | INFO | fairseq.tasks.translation | example hypothesis: POP downloads all messages to your local disk, but other types of connections often only download the headers, and everything else only if you really want to read the message. Before you go offline, Evolution downloads the unread messages from the folders you have selected to store.
+2021-02-01 01:32:45 | INFO | fairseq.tasks.translation | example reference: POP mail downloads all messages to your local system, but other connections usually download just the headers, and get the rest only when you want to read the message. Before you go offline, Evolution downloads the unread messages from the folders you have chosen to store.
+2021-02-01 01:32:47 | INFO | fairseq.tasks.translation | example hypothesis: If a message uses the same header more than once, Evolution only evaluates its first occurrence, even if the message defines the header differently the second time. For example, if a message defines the UNKNOWNTOKENINHYP Resent-From: UNKNOWNTOKENINHYP header as UNKNOWNTOKENINHYP engineeringUNKNOWNTOKENINHYP example.com UNKNOWNTOKENINHYP and then again as UNKNOWNTOKENINHYP marketingUNKNOWNTOKENINHYP example.com UNKNOWNTOKENINHYP, Evolution filters as if the second value did not exist. Use regular expressions to filter messages that define the same headers more than once.
+2021-02-01 01:32:47 | INFO | fairseq.tasks.translation | example reference: If a message uses a header more than once, Evolution pays attention only to the first instance, even if the message defines the header differently the second time. For example, if a message declares the Resent-From: header as UNKNOWNTOKENINREF engineering @ example.com UNKNOWNTOKENINREF and then restates it as UNKNOWNTOKENINREF marketing @ example.com UNKNOWNTOKENINREF, Evolution filters as though the second declaration did not occur. To filter on messages that use headers multiple times, use a regular expression.
+2021-02-01 01:32:47 | INFO | valid | epoch 001 | valid on 'valid' subset | loss 3.723 | nll_loss 2.018 | ppl 4.05 | bleu 34.05 | wps 1003.5 | wpb 1401.3 | bsz 50.3 | num_updates 310
+2021-02-01 01:32:47 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 01:33:16 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/GNOME_p_11_1/checkpoint_best.pt (epoch 1 @ 310 updates, score 3.723) (writing took 29.365843751467764 seconds)
+2021-02-01 01:33:16 | INFO | fairseq_cli.train | end of epoch 1 (average epoch stats below)
+2021-02-01 01:33:16 | INFO | train | epoch 001 | loss 2.794 | nll_loss 0.998 | ppl 2 | wps 12691.1 | ups 3.34 | wpb 3800.9 | bsz 297.6 | num_updates 310 | lr 1.35625e-05 | gnorm 4.965 | loss_scale 2 | train_wall 60 | wall 96
+2021-02-01 01:33:16 | INFO | fairseq_cli.train | begin training epoch 1
+2021-02-01 01:33:33 | INFO | train_inner | epoch 002:     90 / 316 loss=2.5, nll_loss=0.687, ppl=1.61, wps=7314.4, ups=1.91, wpb=3832.2, bsz=299.6, num_updates=400, lr=1.75e-05, gnorm=1.546, loss_scale=2, train_wall=19, wall=113
+2021-02-01 01:33:52 | INFO | train_inner | epoch 002:    190 / 316 loss=2.419, nll_loss=0.596, ppl=1.51, wps=20071.8, ups=5.29, wpb=3795.9, bsz=294.7, num_updates=500, lr=2.1875e-05, gnorm=1.205, loss_scale=2, train_wall=19, wall=132
+2021-02-01 01:34:11 | INFO | train_inner | epoch 002:    290 / 316 loss=2.401, nll_loss=0.578, ppl=1.49, wps=19863.5, ups=5.28, wpb=3763.4, bsz=296.6, num_updates=600, lr=2.625e-05, gnorm=1.195, loss_scale=2, train_wall=19, wall=151
+2021-02-01 01:34:16 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 01:34:17 | INFO | fairseq.tasks.translation | example hypothesis: Select the category from the list. You can select as many categories as you like.
+2021-02-01 01:34:17 | INFO | fairseq.tasks.translation | example reference: Select the category from the list. You can select as many or as few categories as you like.
+2021-02-01 01:34:18 | INFO | fairseq.tasks.translation | example hypothesis: POP downloads all messages to your local disk, but other connections often only download the headers, and everything else only if you really want to read the message. Before you go offline, Evolution downloads the unread messages from the folders you have selected to store.
+2021-02-01 01:34:18 | INFO | fairseq.tasks.translation | example reference: POP mail downloads all messages to your local system, but other connections usually download just the headers, and get the rest only when you want to read the message. Before you go offline, Evolution downloads the unread messages from the folders you have chosen to store.
+2021-02-01 01:34:20 | INFO | fairseq.tasks.translation | example hypothesis: If a message uses the same header more than once, Evolution only evaluates its first occurrence, even if the message defines the header differently the second time. For example, if a message defines the header UNKNOWNTOKENINHYP Resent-From: UNKNOWNTOKENINHYP as UNKNOWNTOKENINHYP engineeringUNKNOWNTOKENINHYP example.com UNKNOWNTOKENINHYP and then UNKNOWNTOKENINHYP marketingUNKNOWNTOKENINHYP example.com UNKNOWNTOKENINHYP again, Evolution filters as if the second value did not exist. Use regular expressions to filter messages that define the same headers more than once.
+2021-02-01 01:34:20 | INFO | fairseq.tasks.translation | example reference: If a message uses a header more than once, Evolution pays attention only to the first instance, even if the message defines the header differently the second time. For example, if a message declares the Resent-From: header as UNKNOWNTOKENINREF engineering @ example.com UNKNOWNTOKENINREF and then restates it as UNKNOWNTOKENINREF marketing @ example.com UNKNOWNTOKENINREF, Evolution filters as though the second declaration did not occur. To filter on messages that use headers multiple times, use a regular expression.
+2021-02-01 01:34:20 | INFO | valid | epoch 002 | valid on 'valid' subset | loss 3.636 | nll_loss 1.914 | ppl 3.77 | bleu 34.84 | wps 1009.5 | wpb 1401.3 | bsz 50.3 | num_updates 626 | best_loss 3.636
+2021-02-01 01:34:20 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 01:34:59 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/GNOME_p_11_1/checkpoint_best.pt (epoch 2 @ 626 updates, score 3.636) (writing took 38.90202001761645 seconds)
+2021-02-01 01:34:59 | INFO | fairseq_cli.train | end of epoch 2 (average epoch stats below)
+2021-02-01 01:34:59 | INFO | train | epoch 002 | loss 2.435 | nll_loss 0.615 | ppl 1.53 | wps 11691.3 | ups 3.08 | wpb 3797.6 | bsz 297.4 | num_updates 626 | lr 2.73875e-05 | gnorm 1.32 | loss_scale 2 | train_wall 59 | wall 199
+2021-02-01 01:34:59 | INFO | fairseq_cli.train | begin training epoch 2
+2021-02-01 01:35:13 | INFO | train_inner | epoch 003:     74 / 316 loss=2.371, nll_loss=0.545, ppl=1.46, wps=6179, ups=1.62, wpb=3813.2, bsz=300.5, num_updates=700, lr=3.0625e-05, gnorm=1.373, loss_scale=2, train_wall=19, wall=213
+2021-02-01 01:35:32 | INFO | train_inner | epoch 003:    174 / 316 loss=2.35, nll_loss=0.522, ppl=1.44, wps=20010, ups=5.27, wpb=3799.1, bsz=295.5, num_updates=800, lr=3.5e-05, gnorm=1.017, loss_scale=2, train_wall=19, wall=232
+2021-02-01 01:35:51 | INFO | train_inner | epoch 003:    274 / 316 loss=2.327, nll_loss=0.497, ppl=1.41, wps=20094.6, ups=5.29, wpb=3799.6, bsz=296.7, num_updates=900, lr=3.9375e-05, gnorm=1.01, loss_scale=2, train_wall=19, wall=251
+2021-02-01 01:35:59 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 01:35:59 | INFO | fairseq.tasks.translation | example hypothesis: Select the category from the list. You can select as many categories as you like.
+2021-02-01 01:35:59 | INFO | fairseq.tasks.translation | example reference: Select the category from the list. You can select as many or as few categories as you like.
+2021-02-01 01:36:01 | INFO | fairseq.tasks.translation | example hypothesis: POP downloads all messages to your local system, but other connections often only download the headers, and everything else until you really want to read the message. Before you go offline, Evolution downloads the unread messages from the folders you have selected to store.
+2021-02-01 01:36:01 | INFO | fairseq.tasks.translation | example reference: POP mail downloads all messages to your local system, but other connections usually download just the headers, and get the rest only when you want to read the message. Before you go offline, Evolution downloads the unread messages from the folders you have chosen to store.
+2021-02-01 01:36:03 | INFO | fairseq.tasks.translation | example hypothesis: If a message uses the same header more than once, Evolution will only evaluate its first occurrence, even if the message redefines the header the second time. For example, if a message defines the UNKNOWNTOKENINHYP Resent-From: UNKNOWNTOKENINHYP header as UNKNOWNTOKENINHYP example.com UNKNOWNTOKENINHYP and then UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP example.com UNKNOWNTOKENINHYP again, Evolution will filter as if the second value did not exist. Use regular expressions to filter messages that define the same headers more than once.
+2021-02-01 01:36:03 | INFO | fairseq.tasks.translation | example reference: If a message uses a header more than once, Evolution pays attention only to the first instance, even if the message defines the header differently the second time. For example, if a message declares the Resent-From: header as UNKNOWNTOKENINREF engineering @ example.com UNKNOWNTOKENINREF and then restates it as UNKNOWNTOKENINREF marketing @ example.com UNKNOWNTOKENINREF, Evolution filters as though the second declaration did not occur. To filter on messages that use headers multiple times, use a regular expression.
+2021-02-01 01:36:03 | INFO | valid | epoch 003 | valid on 'valid' subset | loss 3.699 | nll_loss 1.988 | ppl 3.97 | bleu 36.09 | wps 833.7 | wpb 1401.3 | bsz 50.3 | num_updates 942 | best_loss 3.636
+2021-02-01 01:36:03 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 01:36:12 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/GNOME_p_11_1/checkpoint_last.pt (epoch 3 @ 942 updates, score 3.699) (writing took 8.749245951883495 seconds)
+2021-02-01 01:36:12 | INFO | fairseq_cli.train | end of epoch 3 (average epoch stats below)
+2021-02-01 01:36:12 | INFO | train | epoch 003 | loss 2.339 | nll_loss 0.51 | ppl 1.42 | wps 16425.4 | ups 4.33 | wpb 3797.6 | bsz 297.4 | num_updates 942 | lr 4.12125e-05 | gnorm 1.104 | loss_scale 2 | train_wall 59 | wall 272
+2021-02-01 01:36:12 | INFO | fairseq_cli.train | begin training epoch 3
+2021-02-01 01:36:23 | INFO | train_inner | epoch 004:     58 / 316 loss=2.283, nll_loss=0.446, ppl=1.36, wps=11714.4, ups=3.11, wpb=3772.2, bsz=295.4, num_updates=1000, lr=4.375e-05, gnorm=1.119, loss_scale=2, train_wall=19, wall=283
+2021-02-01 01:36:42 | INFO | train_inner | epoch 004:    158 / 316 loss=2.277, nll_loss=0.44, ppl=1.36, wps=19952.2, ups=5.25, wpb=3803, bsz=296.8, num_updates=1100, lr=4.8125e-05, gnorm=1.046, loss_scale=2, train_wall=19, wall=302
+2021-02-01 01:37:01 | INFO | train_inner | epoch 004:    258 / 316 loss=2.271, nll_loss=0.435, ppl=1.35, wps=20063.4, ups=5.27, wpb=3807.7, bsz=298.3, num_updates=1200, lr=5.25e-05, gnorm=0.913, loss_scale=2, train_wall=19, wall=321
+2021-02-01 01:37:12 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 01:37:13 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Select the category from the list. You can select as many categories as you like.
+2021-02-01 01:37:13 | INFO | fairseq.tasks.translation | example reference: Select the category from the list. You can select as many or as few categories as you like.
+2021-02-01 01:37:15 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP POP downloads all messages to your local system, but other connections often only download the headers, and everything else until you really want to read the message. Before you go offline, Evolution downloads the unread messages from the folders you have chosen to store.
+2021-02-01 01:37:15 | INFO | fairseq.tasks.translation | example reference: POP mail downloads all messages to your local system, but other connections usually download just the headers, and get the rest only when you want to read the message. Before you go offline, Evolution downloads the unread messages from the folders you have chosen to store.
+2021-02-01 01:37:17 | INFO | fairseq.tasks.translation | example hypothesis: If a message uses the same header more than once, Evolution only evaluates its first occurrence, even if the message redefines the header the second time. For example, if a message defines the header UNKNOWNTOKENINHYP Resent-From: UNKNOWNTOKENINHYP as UNKNOWNTOKENINHYP engineeringUNKNOWNTOKENINHYP example.com UNKNOWNTOKENINHYP and then again as UNKNOWNTOKENINHYP marketingUNKNOWNTOKENINHYP example.com UNKNOWNTOKENINHYP, Evolution filters as if the second value did not exist. Use regular expressions to filter messages that define the same headers more than once.
+2021-02-01 01:37:17 | INFO | fairseq.tasks.translation | example reference: If a message uses a header more than once, Evolution pays attention only to the first instance, even if the message defines the header differently the second time. For example, if a message declares the Resent-From: header as UNKNOWNTOKENINREF engineering @ example.com UNKNOWNTOKENINREF and then restates it as UNKNOWNTOKENINREF marketing @ example.com UNKNOWNTOKENINREF, Evolution filters as though the second declaration did not occur. To filter on messages that use headers multiple times, use a regular expression.
+2021-02-01 01:37:17 | INFO | valid | epoch 004 | valid on 'valid' subset | loss 3.777 | nll_loss 2.067 | ppl 4.19 | bleu 36.95 | wps 715.3 | wpb 1401.3 | bsz 50.3 | num_updates 1258 | best_loss 3.636
+2021-02-01 01:37:17 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 01:37:24 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/GNOME_p_11_1/checkpoint_last.pt (epoch 4 @ 1258 updates, score 3.777) (writing took 7.432413289323449 seconds)
+2021-02-01 01:37:24 | INFO | fairseq_cli.train | end of epoch 4 (average epoch stats below)
+2021-02-01 01:37:24 | INFO | train | epoch 004 | loss 2.27 | nll_loss 0.433 | ppl 1.35 | wps 16519.6 | ups 4.35 | wpb 3797.6 | bsz 297.4 | num_updates 1258 | lr 5.50375e-05 | gnorm 1.005 | loss_scale 2 | train_wall 60 | wall 344
+2021-02-01 01:37:24 | INFO | fairseq_cli.train | begin training epoch 4
+2021-02-01 01:37:33 | INFO | train_inner | epoch 005:     42 / 316 loss=2.235, nll_loss=0.394, ppl=1.31, wps=11986.6, ups=3.17, wpb=3787.2, bsz=300.1, num_updates=1300, lr=5.6875e-05, gnorm=0.908, loss_scale=2, train_wall=19, wall=353
+2021-02-01 01:37:51 | INFO | train_inner | epoch 005:    142 / 316 loss=2.235, nll_loss=0.391, ppl=1.31, wps=19958, ups=5.29, wpb=3773.3, bsz=293.1, num_updates=1400, lr=6.125e-05, gnorm=0.98, loss_scale=2, train_wall=19, wall=371
+2021-02-01 01:38:10 | INFO | train_inner | epoch 005:    242 / 316 loss=2.204, nll_loss=0.36, ppl=1.28, wps=20052.6, ups=5.26, wpb=3810.4, bsz=298.4, num_updates=1500, lr=6.5625e-05, gnorm=0.761, loss_scale=2, train_wall=19, wall=390
+2021-02-01 01:38:25 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 01:38:25 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Select the category from the list. You can select as many categories as you like.
+2021-02-01 01:38:25 | INFO | fairseq.tasks.translation | example reference: Select the category from the list. You can select as many or as few categories as you like.
+2021-02-01 01:38:26 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP POP downloads all messages to your local system, but other connections often only download the headers, and everything else until you really want to read the message. Before you go offline, Evolution downloads the unread messages from the folders you have chosen to store.
+2021-02-01 01:38:26 | INFO | fairseq.tasks.translation | example reference: POP mail downloads all messages to your local system, but other connections usually download just the headers, and get the rest only when you want to read the message. Before you go offline, Evolution downloads the unread messages from the folders you have chosen to store.
+2021-02-01 01:38:28 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Evolution only evaluates its first occurrence, even if the message redefines the header the second time. For example, if a message defines the header UNKNOWNTOKENINHYP Resent-From: UNKNOWNTOKENINHYP as UNKNOWNTOKENINHYP engineeringUNKNOWNTOKENINHYP example.com and then again as UNKNOWNTOKENINHYP marketingUNKNOWNTOKENINHYP example.com UNKNOWNTOKENINHYP, Evolution filters as if the second value did not exist. Use regular expressions to filter messages that define the same headers more than once.
+2021-02-01 01:38:28 | INFO | fairseq.tasks.translation | example reference: If a message uses a header more than once, Evolution pays attention only to the first instance, even if the message defines the header differently the second time. For example, if a message declares the Resent-From: header as UNKNOWNTOKENINREF engineering @ example.com UNKNOWNTOKENINREF and then restates it as UNKNOWNTOKENINREF marketing @ example.com UNKNOWNTOKENINREF, Evolution filters as though the second declaration did not occur. To filter on messages that use headers multiple times, use a regular expression.
+2021-02-01 01:38:28 | INFO | valid | epoch 005 | valid on 'valid' subset | loss 3.904 | nll_loss 2.217 | ppl 4.65 | bleu 35.05 | wps 1070.4 | wpb 1401.3 | bsz 50.3 | num_updates 1574 | best_loss 3.636
+2021-02-01 01:38:28 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 01:38:35 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/GNOME_p_11_1/checkpoint_last.pt (epoch 5 @ 1574 updates, score 3.904) (writing took 7.220351189374924 seconds)
+2021-02-01 01:38:35 | INFO | fairseq_cli.train | end of epoch 5 (average epoch stats below)
+2021-02-01 01:38:35 | INFO | train | epoch 005 | loss 2.218 | nll_loss 0.374 | ppl 1.3 | wps 16930.7 | ups 4.46 | wpb 3797.6 | bsz 297.4 | num_updates 1574 | lr 6.88625e-05 | gnorm 0.862 | loss_scale 2 | train_wall 60 | wall 415
+2021-02-01 01:38:35 | INFO | fairseq_cli.train | begin training epoch 5
+2021-02-01 01:38:40 | INFO | train_inner | epoch 006:     26 / 316 loss=2.214, nll_loss=0.371, ppl=1.29, wps=12754.6, ups=3.35, wpb=3803.2, bsz=299.8, num_updates=1600, lr=7e-05, gnorm=0.891, loss_scale=2, train_wall=19, wall=420
+2021-02-01 01:38:59 | INFO | train_inner | epoch 006:    126 / 316 loss=2.184, nll_loss=0.335, ppl=1.26, wps=20066.7, ups=5.29, wpb=3795.7, bsz=295.4, num_updates=1700, lr=7.4375e-05, gnorm=0.9, loss_scale=2, train_wall=19, wall=439
+2021-02-01 01:39:18 | INFO | train_inner | epoch 006:    226 / 316 loss=2.18, nll_loss=0.332, ppl=1.26, wps=20051, ups=5.27, wpb=3807.6, bsz=294.9, num_updates=1800, lr=7.875e-05, gnorm=0.751, loss_scale=2, train_wall=19, wall=458
+2021-02-01 01:39:35 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 01:39:36 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Select the category from the list. You can select as many categories as you like.
+2021-02-01 01:39:36 | INFO | fairseq.tasks.translation | example reference: Select the category from the list. You can select as many or as few categories as you like.
+2021-02-01 01:39:37 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP POP downloads all messages to your local system, but other connections only download the headers, and everything else until you really want to read the message. Before you go offline, Evolution downloads the unread messages from the folders you have chosen to store.
+2021-02-01 01:39:37 | INFO | fairseq.tasks.translation | example reference: POP mail downloads all messages to your local system, but other connections usually download just the headers, and get the rest only when you want to read the message. Before you go offline, Evolution downloads the unread messages from the folders you have chosen to store.
+2021-02-01 01:39:39 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP re redefining the header differently the second time. For example, if a message defines the header UNKNOWNTOKENINHYP Resent-From: UNKNOWNTOKENINHYP as UNKNOWNTOKENINHYP example.com and then redefines it as UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP example.com, Evolution filters as if the second value did not exist. Use regular expressions to filter messages that define the same headers more than once.
+2021-02-01 01:39:39 | INFO | fairseq.tasks.translation | example reference: If a message uses a header more than once, Evolution pays attention only to the first instance, even if the message defines the header differently the second time. For example, if a message declares the Resent-From: header as UNKNOWNTOKENINREF engineering @ example.com UNKNOWNTOKENINREF and then restates it as UNKNOWNTOKENINREF marketing @ example.com UNKNOWNTOKENINREF, Evolution filters as though the second declaration did not occur. To filter on messages that use headers multiple times, use a regular expression.
+2021-02-01 01:39:39 | INFO | valid | epoch 006 | valid on 'valid' subset | loss 3.968 | nll_loss 2.278 | ppl 4.85 | bleu 36.19 | wps 1072.6 | wpb 1401.3 | bsz 50.3 | num_updates 1890 | best_loss 3.636
+2021-02-01 01:39:39 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 01:39:45 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/GNOME_p_11_1/checkpoint_last.pt (epoch 6 @ 1890 updates, score 3.968) (writing took 6.216888404451311 seconds)
+2021-02-01 01:39:45 | INFO | fairseq_cli.train | end of epoch 6 (average epoch stats below)
+2021-02-01 01:39:45 | INFO | train | epoch 006 | loss 2.181 | nll_loss 0.334 | ppl 1.26 | wps 17217.5 | ups 4.53 | wpb 3797.6 | bsz 297.4 | num_updates 1890 | lr 8.26875e-05 | gnorm 0.824 | loss_scale 2 | train_wall 59 | wall 485
+2021-02-01 01:39:45 | INFO | fairseq_cli.train | begin training epoch 6
+2021-02-01 01:39:47 | INFO | train_inner | epoch 007:     10 / 316 loss=2.169, nll_loss=0.32, ppl=1.25, wps=13141.5, ups=3.48, wpb=3777.8, bsz=301.3, num_updates=1900, lr=8.3125e-05, gnorm=0.76, loss_scale=2, train_wall=19, wall=487
+2021-02-01 01:40:06 | INFO | train_inner | epoch 007:    110 / 316 loss=2.147, nll_loss=0.296, ppl=1.23, wps=20184.2, ups=5.26, wpb=3835.1, bsz=303.8, num_updates=2000, lr=8.75e-05, gnorm=0.752, loss_scale=2, train_wall=19, wall=506
+2021-02-01 01:40:25 | INFO | train_inner | epoch 007:    210 / 316 loss=2.169, nll_loss=0.319, ppl=1.25, wps=19843.9, ups=5.31, wpb=3740.3, bsz=287.7, num_updates=2100, lr=9.1875e-05, gnorm=0.77, loss_scale=2, train_wall=19, wall=525
+2021-02-01 01:40:44 | INFO | train_inner | epoch 007:    310 / 316 loss=2.152, nll_loss=0.303, ppl=1.23, wps=20284, ups=5.26, wpb=3859, bsz=303.5, num_updates=2200, lr=9.625e-05, gnorm=0.734, loss_scale=2, train_wall=19, wall=544
+2021-02-01 01:40:45 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 01:40:46 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Select the category from the list. You can select as many categories as you like.
+2021-02-01 01:40:46 | INFO | fairseq.tasks.translation | example reference: Select the category from the list. You can select as many or as few categories as you like.
+2021-02-01 01:40:47 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP POP downloads all messages to your local system, but other connections often only download headers, and everything else if you really want to read the message. Before you go offline, Evolution downloads unread messages from the folders you have chosen to store.
+2021-02-01 01:40:47 | INFO | fairseq.tasks.translation | example reference: POP mail downloads all messages to your local system, but other connections usually download just the headers, and get the rest only when you want to read the message. Before you go offline, Evolution downloads the unread messages from the folders you have chosen to store.
+2021-02-01 01:40:48 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP If a message uses the same header more than once, Evolution will only evaluate its first appearance, even if the message defines the header differently the second time. For example, if a message defines the header UNKNOWNTOKENINHYP Resent-From: UNKNOWNTOKENINHYP as UNKNOWNTOKENINHYP example.com UNKNOWNTOKENINHYP and then again as UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP. Evolution filters as if the second value did not exist. Use regular expressions to filter messages that define the same headers more than once.
+2021-02-01 01:40:48 | INFO | fairseq.tasks.translation | example reference: If a message uses a header more than once, Evolution pays attention only to the first instance, even if the message defines the header differently the second time. For example, if a message declares the Resent-From: header as UNKNOWNTOKENINREF engineering @ example.com UNKNOWNTOKENINREF and then restates it as UNKNOWNTOKENINREF marketing @ example.com UNKNOWNTOKENINREF, Evolution filters as though the second declaration did not occur. To filter on messages that use headers multiple times, use a regular expression.
+2021-02-01 01:40:48 | INFO | valid | epoch 007 | valid on 'valid' subset | loss 4.234 | nll_loss 2.581 | ppl 5.98 | bleu 35.6 | wps 1066.6 | wpb 1401.3 | bsz 50.3 | num_updates 2206 | best_loss 3.636
+2021-02-01 01:40:48 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 01:40:55 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/GNOME_p_11_1/checkpoint_last.pt (epoch 7 @ 2206 updates, score 4.234) (writing took 6.529226940125227 seconds)
+2021-02-01 01:40:55 | INFO | fairseq_cli.train | end of epoch 7 (average epoch stats below)
+2021-02-01 01:40:55 | INFO | train | epoch 007 | loss 2.156 | nll_loss 0.306 | ppl 1.24 | wps 17131.1 | ups 4.51 | wpb 3797.6 | bsz 297.4 | num_updates 2206 | lr 9.65125e-05 | gnorm 0.749 | loss_scale 2 | train_wall 59 | wall 555
+2021-02-01 01:40:55 | INFO | fairseq_cli.train | begin training epoch 7
+2021-02-01 01:41:13 | INFO | train_inner | epoch 008:     94 / 316 loss=2.141, nll_loss=0.29, ppl=1.22, wps=12955.2, ups=3.43, wpb=3772.3, bsz=300.1, num_updates=2300, lr=0.000100625, gnorm=0.758, loss_scale=2, train_wall=19, wall=573
+2021-02-01 01:41:32 | INFO | train_inner | epoch 008:    194 / 316 loss=2.154, nll_loss=0.305, ppl=1.24, wps=20024.2, ups=5.27, wpb=3802, bsz=299.5, num_updates=2400, lr=0.000105, gnorm=0.72, loss_scale=2, train_wall=19, wall=592
+2021-02-01 01:41:51 | INFO | train_inner | epoch 008:    294 / 316 loss=2.128, nll_loss=0.274, ppl=1.21, wps=20193.5, ups=5.29, wpb=3815, bsz=293.1, num_updates=2500, lr=0.000109375, gnorm=0.667, loss_scale=2, train_wall=19, wall=611
+2021-02-01 01:41:55 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 01:41:56 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Select the category from the list. You can select as many categories as you like.
+2021-02-01 01:41:56 | INFO | fairseq.tasks.translation | example reference: Select the category from the list. You can select as many or as few categories as you like.
+2021-02-01 01:41:57 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP downloads all messages to your local system, but other connections only download headers, and only if you really want to read the message. Before you go offline, Evolution downloads unread messages from the folders you select to store.
+2021-02-01 01:41:57 | INFO | fairseq.tasks.translation | example reference: POP mail downloads all messages to your local system, but other connections usually download just the headers, and get the rest only when you want to read the message. Before you go offline, Evolution downloads the unread messages from the folders you have chosen to store.
+2021-02-01 01:41:59 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP redefine the header the second time. For example, if a message defines the Resent-From: UNKNOWNTOKENINHYP header as UNKNOWNTOKENINHYP engineering UNKNOWNTOKENINHYP then remedied it by UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP example.com UNKNOWNTOKENINHYP, Evolution filters as if the second value did not exist. Use regular expressions to filter messages that define the same headers more than once. If a message uses the same header more than once, Evolution redefines the UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP exampleUNKNOWNTOKENINHYP UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP header the second time.
+2021-02-01 01:41:59 | INFO | fairseq.tasks.translation | example reference: If a message uses a header more than once, Evolution pays attention only to the first instance, even if the message defines the header differently the second time. For example, if a message declares the Resent-From: header as UNKNOWNTOKENINREF engineering @ example.com UNKNOWNTOKENINREF and then restates it as UNKNOWNTOKENINREF marketing @ example.com UNKNOWNTOKENINREF, Evolution filters as though the second declaration did not occur. To filter on messages that use headers multiple times, use a regular expression.
+2021-02-01 01:41:59 | INFO | valid | epoch 008 | valid on 'valid' subset | loss 4.143 | nll_loss 2.488 | ppl 5.61 | bleu 35.73 | wps 1009.5 | wpb 1401.3 | bsz 50.3 | num_updates 2522 | best_loss 3.636
+2021-02-01 01:41:59 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 01:42:06 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/GNOME_p_11_1/checkpoint_last.pt (epoch 8 @ 2522 updates, score 4.143) (writing took 7.659048561938107 seconds)
+2021-02-01 01:42:06 | INFO | fairseq_cli.train | end of epoch 8 (average epoch stats below)
+2021-02-01 01:42:06 | INFO | train | epoch 008 | loss 2.139 | nll_loss 0.287 | ppl 1.22 | wps 16840.6 | ups 4.43 | wpb 3797.6 | bsz 297.4 | num_updates 2522 | lr 0.000110337 | gnorm 0.705 | loss_scale 2 | train_wall 59 | wall 626
+2021-02-01 01:42:06 | INFO | fairseq_cli.train | begin training epoch 8
+2021-02-01 01:42:21 | INFO | train_inner | epoch 009:     78 / 316 loss=2.115, nll_loss=0.261, ppl=1.2, wps=12615.2, ups=3.29, wpb=3833.3, bsz=301, num_updates=2600, lr=0.00011375, gnorm=0.597, loss_scale=2, train_wall=19, wall=641
+2021-02-01 01:42:40 | INFO | train_inner | epoch 009:    178 / 316 loss=2.125, nll_loss=0.272, ppl=1.21, wps=19851.7, ups=5.28, wpb=3757.8, bsz=289.8, num_updates=2700, lr=0.000118125, gnorm=0.712, loss_scale=2, train_wall=19, wall=660
+2021-02-01 01:42:59 | INFO | train_inner | epoch 009:    278 / 316 loss=2.136, nll_loss=0.286, ppl=1.22, wps=19957.3, ups=5.3, wpb=3766.5, bsz=297, num_updates=2800, lr=0.0001225, gnorm=0.75, loss_scale=2, train_wall=19, wall=679
+2021-02-01 01:43:06 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 01:43:07 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Select the category from the list. You can select as many categories as you like.
+2021-02-01 01:43:07 | INFO | fairseq.tasks.translation | example reference: Select the category from the list. You can select as many or as few categories as you like.
+2021-02-01 01:43:08 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP POP downloads all messages to your local system, but other connections only download headers, and anything else until you really want to read the message. Before you go offline, Evolution downloads unread messages from the folders you have chosen to store.
+2021-02-01 01:43:08 | INFO | fairseq.tasks.translation | example reference: POP mail downloads all messages to your local system, but other connections usually download just the headers, and get the rest only when you want to read the message. Before you go offline, Evolution downloads the unread messages from the folders you have chosen to store.
+2021-02-01 01:43:10 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP If a message uses the same header more than once, Evolution will only evaluate its first appearance, even if the message redefines the header the second time. For example, if a message defines the Resent-From: UNKNOWNTOKENINHYP header as UNKNOWNTOKENINHYP example.com UNKNOWNTOKENINHYP and then again as UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP example.com UNKNOWNTOKENINHYP, Evolution will filter as if the second value did not exist. Use regular expressions to filter messages that define the same headers more than once.
+2021-02-01 01:43:10 | INFO | fairseq.tasks.translation | example reference: If a message uses a header more than once, Evolution pays attention only to the first instance, even if the message defines the header differently the second time. For example, if a message declares the Resent-From: header as UNKNOWNTOKENINREF engineering @ example.com UNKNOWNTOKENINREF and then restates it as UNKNOWNTOKENINREF marketing @ example.com UNKNOWNTOKENINREF, Evolution filters as though the second declaration did not occur. To filter on messages that use headers multiple times, use a regular expression.
+2021-02-01 01:43:10 | INFO | valid | epoch 009 | valid on 'valid' subset | loss 4.328 | nll_loss 2.697 | ppl 6.49 | bleu 36.21 | wps 1048.1 | wpb 1401.3 | bsz 50.3 | num_updates 2838 | best_loss 3.636
+2021-02-01 01:43:10 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 01:43:16 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/GNOME_p_11_1/checkpoint_last.pt (epoch 9 @ 2838 updates, score 4.328) (writing took 5.848190505057573 seconds)
+2021-02-01 01:43:16 | INFO | fairseq_cli.train | end of epoch 9 (average epoch stats below)
+2021-02-01 01:43:16 | INFO | train | epoch 009 | loss 2.128 | nll_loss 0.276 | ppl 1.21 | wps 17300 | ups 4.56 | wpb 3797.6 | bsz 297.4 | num_updates 2838 | lr 0.000124162 | gnorm 0.688 | loss_scale 2 | train_wall 59 | wall 696
+2021-02-01 01:43:16 | INFO | fairseq_cli.train | begin training epoch 9
+2021-02-01 01:43:27 | INFO | train_inner | epoch 010:     62 / 316 loss=2.122, nll_loss=0.27, ppl=1.21, wps=13354.5, ups=3.52, wpb=3799, bsz=301.1, num_updates=2900, lr=0.000126875, gnorm=0.654, loss_scale=2, train_wall=19, wall=707
+2021-02-01 01:43:46 | INFO | train_inner | epoch 010:    162 / 316 loss=2.1, nll_loss=0.245, ppl=1.19, wps=20045.5, ups=5.28, wpb=3797.8, bsz=298.7, num_updates=3000, lr=0.00013125, gnorm=0.567, loss_scale=2, train_wall=19, wall=726
+2021-02-01 01:44:05 | INFO | train_inner | epoch 010:    262 / 316 loss=2.132, nll_loss=0.281, ppl=1.22, wps=20222.4, ups=5.31, wpb=3808.1, bsz=293.3, num_updates=3100, lr=0.000135625, gnorm=0.681, loss_scale=2, train_wall=19, wall=745
+2021-02-01 01:44:15 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 01:44:16 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Select the category from the list. You can select as many categories as you like.
+2021-02-01 01:44:16 | INFO | fairseq.tasks.translation | example reference: Select the category from the list. You can select as many or as few categories as you like.
+2021-02-01 01:44:17 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP POP will download all messages to your local system, but other connections will only download the headers, and things like that if you really want to read the message. Before you go offline, Evolution will download unread messages from the folders you choose to store.
+2021-02-01 01:44:17 | INFO | fairseq.tasks.translation | example reference: POP mail downloads all messages to your local system, but other connections usually download just the headers, and get the rest only when you want to read the message. Before you go offline, Evolution downloads the unread messages from the folders you have chosen to store.
+2021-02-01 01:44:19 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP message uses the same header more than once, Evolution will only recognize its first occurrence, even if the message redefines the header as non-existing. For example, if the message UNKNOWNTOKENINHYP Resent-From: UNKNOWNTOKENINHYP then example.com UNKNOWNTOKENINHYP, Evolution will filter as if the second value did not exist. Use regular expressions to filter messages that define the same headers more than once. Evolution uses regular expressions to filter messages UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP exampleUNKNOWNTOKENINHYP
+2021-02-01 01:44:19 | INFO | fairseq.tasks.translation | example reference: If a message uses a header more than once, Evolution pays attention only to the first instance, even if the message defines the header differently the second time. For example, if a message declares the Resent-From: header as UNKNOWNTOKENINREF engineering @ example.com UNKNOWNTOKENINREF and then restates it as UNKNOWNTOKENINREF marketing @ example.com UNKNOWNTOKENINREF, Evolution filters as though the second declaration did not occur. To filter on messages that use headers multiple times, use a regular expression.
+2021-02-01 01:44:19 | INFO | valid | epoch 010 | valid on 'valid' subset | loss 4.523 | nll_loss 2.918 | ppl 7.56 | bleu 34.97 | wps 1017.2 | wpb 1401.3 | bsz 50.3 | num_updates 3154 | best_loss 3.636
+2021-02-01 01:44:19 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 01:44:25 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/GNOME_p_11_1/checkpoint_last.pt (epoch 10 @ 3154 updates, score 4.523) (writing took 6.24303375184536 seconds)
+2021-02-01 01:44:25 | INFO | fairseq_cli.train | end of epoch 10 (average epoch stats below)
+2021-02-01 01:44:25 | INFO | train | epoch 010 | loss 2.118 | nll_loss 0.266 | ppl 1.2 | wps 17231.8 | ups 4.54 | wpb 3797.6 | bsz 297.4 | num_updates 3154 | lr 0.000137987 | gnorm 0.66 | loss_scale 2 | train_wall 59 | wall 765
+2021-02-01 01:44:25 | INFO | fairseq_cli.train | begin training epoch 10
+2021-02-01 01:44:34 | INFO | train_inner | epoch 011:     46 / 316 loss=2.122, nll_loss=0.27, ppl=1.21, wps=13098.8, ups=3.48, wpb=3769.2, bsz=296.1, num_updates=3200, lr=0.00014, gnorm=0.684, loss_scale=2, train_wall=19, wall=774
+2021-02-01 01:44:53 | INFO | train_inner | epoch 011:    146 / 316 loss=2.111, nll_loss=0.258, ppl=1.2, wps=20123.8, ups=5.31, wpb=3790.5, bsz=296, num_updates=3300, lr=0.000144375, gnorm=0.647, loss_scale=2, train_wall=19, wall=793
+2021-02-01 01:45:12 | INFO | train_inner | epoch 011:    246 / 316 loss=2.11, nll_loss=0.257, ppl=1.19, wps=20126.8, ups=5.28, wpb=3814.4, bsz=302.3, num_updates=3400, lr=0.00014875, gnorm=0.634, loss_scale=2, train_wall=19, wall=812
+2021-02-01 01:45:25 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 01:45:26 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP select the category from the list. You can select as many categories as you like.
+2021-02-01 01:45:26 | INFO | fairseq.tasks.translation | example reference: Select the category from the list. You can select as many or as few categories as you like.
+2021-02-01 01:45:27 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP downloads all messages to your local system, but other connections only download the headers and UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP Possibly you really want to read the message. Before you go offline, Evolution downloads unread messages from the folders you have chosen to store.
+2021-02-01 01:45:27 | INFO | fairseq.tasks.translation | example reference: POP mail downloads all messages to your local system, but other connections usually download just the headers, and get the rest only when you want to read the message. Before you go offline, Evolution downloads the unread messages from the folders you have chosen to store.
+2021-02-01 01:45:30 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP message uses the same header more than once, Evolution adds its first occurrence, even if the second value doesn UNKNOWNTOKENINHYP t exist. Use regular expressions to filter messages that define the same headers more than once. Evolution UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP Possibly the second value doesn UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP ExampleUNKNOWNTOKENINHYP UNKNOWNTOKENINHYP.
+2021-02-01 01:45:30 | INFO | fairseq.tasks.translation | example reference: If a message uses a header more than once, Evolution pays attention only to the first instance, even if the message defines the header differently the second time. For example, if a message declares the Resent-From: header as UNKNOWNTOKENINREF engineering @ example.com UNKNOWNTOKENINREF and then restates it as UNKNOWNTOKENINREF marketing @ example.com UNKNOWNTOKENINREF, Evolution filters as though the second declaration did not occur. To filter on messages that use headers multiple times, use a regular expression.
+2021-02-01 01:45:30 | INFO | valid | epoch 011 | valid on 'valid' subset | loss 4.728 | nll_loss 3.162 | ppl 8.95 | bleu 31.49 | wps 716.3 | wpb 1401.3 | bsz 50.3 | num_updates 3470 | best_loss 3.636
+2021-02-01 01:45:30 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 01:45:38 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/GNOME_p_11_1/checkpoint_last.pt (epoch 11 @ 3470 updates, score 4.728) (writing took 7.579098590649664 seconds)
+2021-02-01 01:45:38 | INFO | fairseq_cli.train | end of epoch 11 (average epoch stats below)
+2021-02-01 01:45:38 | INFO | train | epoch 011 | loss 2.112 | nll_loss 0.259 | ppl 1.2 | wps 16554 | ups 4.36 | wpb 3797.6 | bsz 297.4 | num_updates 3470 | lr 0.000151812 | gnorm 0.639 | loss_scale 2 | train_wall 59 | wall 838
+2021-02-01 01:45:38 | INFO | fairseq_cli.train | begin training epoch 11
+2021-02-01 01:45:44 | INFO | train_inner | epoch 012:     30 / 316 loss=2.117, nll_loss=0.265, ppl=1.2, wps=12040.2, ups=3.15, wpb=3821, bsz=297, num_updates=3500, lr=0.000153125, gnorm=0.753, loss_scale=2, train_wall=19, wall=844
+2021-02-01 01:46:02 | INFO | train_inner | epoch 012:    130 / 316 loss=2.11, nll_loss=0.257, ppl=1.2, wps=20430.2, ups=5.3, wpb=3857.8, bsz=304.1, num_updates=3600, lr=0.0001575, gnorm=0.612, loss_scale=2, train_wall=19, wall=862
+2021-02-01 01:46:21 | INFO | train_inner | epoch 012:    230 / 316 loss=2.099, nll_loss=0.247, ppl=1.19, wps=20154.8, ups=5.28, wpb=3817.9, bsz=304, num_updates=3700, lr=0.000161875, gnorm=0.512, loss_scale=2, train_wall=19, wall=881
+2021-02-01 01:46:37 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 01:46:38 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP from the list. You can select as many categories as you want. UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PIP UNKNOWNTOKENINHYP
+2021-02-01 01:46:38 | INFO | fairseq.tasks.translation | example reference: Select the category from the list. You can select as many or as few categories as you like.
+2021-02-01 01:46:40 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP POP downloads all messages to your local system, but other connections only download headers, and nothing else until you really want to read the message. Before you go offline, Evolution downloads unread messages from the folders you selected to store.
+2021-02-01 01:46:40 | INFO | fairseq.tasks.translation | example reference: POP mail downloads all messages to your local system, but other connections usually download just the headers, and get the rest only when you want to read the message. Before you go offline, Evolution downloads the unread messages from the folders you have chosen to store.
+2021-02-01 01:46:41 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP. For example, if a message defines the Header differently the second time, Evolution filters as if the second value did not exist. Use regular expressions to filter messages that define the same headers more than once. UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PIP UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PIP filters UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP
+2021-02-01 01:46:41 | INFO | fairseq.tasks.translation | example reference: If a message uses a header more than once, Evolution pays attention only to the first instance, even if the message defines the header differently the second time. For example, if a message declares the Resent-From: header as UNKNOWNTOKENINREF engineering @ example.com UNKNOWNTOKENINREF and then restates it as UNKNOWNTOKENINREF marketing @ example.com UNKNOWNTOKENINREF, Evolution filters as though the second declaration did not occur. To filter on messages that use headers multiple times, use a regular expression.
+2021-02-01 01:46:41 | INFO | valid | epoch 012 | valid on 'valid' subset | loss 4.873 | nll_loss 3.32 | ppl 9.99 | bleu 30.25 | wps 990.5 | wpb 1401.3 | bsz 50.3 | num_updates 3786 | best_loss 3.636
+2021-02-01 01:46:41 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 01:46:47 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/GNOME_p_11_1/checkpoint_last.pt (epoch 12 @ 3786 updates, score 4.873) (writing took 6.027187838219106 seconds)
+2021-02-01 01:46:47 | INFO | fairseq_cli.train | end of epoch 12 (average epoch stats below)
+2021-02-01 01:46:47 | INFO | train | epoch 012 | loss 2.109 | nll_loss 0.256 | ppl 1.19 | wps 17267.3 | ups 4.55 | wpb 3797.6 | bsz 297.4 | num_updates 3786 | lr 0.000165637 | gnorm 0.635 | loss_scale 2 | train_wall 59 | wall 907
+2021-02-01 01:46:47 | INFO | fairseq_cli.train | begin training epoch 12
+2021-02-01 01:46:50 | INFO | train_inner | epoch 013:     14 / 316 loss=2.118, nll_loss=0.265, ppl=1.2, wps=12990.2, ups=3.49, wpb=3722.7, bsz=286.3, num_updates=3800, lr=0.00016625, gnorm=0.679, loss_scale=2, train_wall=19, wall=910
+2021-02-01 01:47:09 | INFO | train_inner | epoch 013:    114 / 316 loss=2.099, nll_loss=0.245, ppl=1.18, wps=20214.6, ups=5.31, wpb=3808.2, bsz=297.6, num_updates=3900, lr=0.000170625, gnorm=0.742, loss_scale=2, train_wall=19, wall=929
+2021-02-01 01:47:28 | INFO | train_inner | epoch 013:    214 / 316 loss=2.107, nll_loss=0.255, ppl=1.19, wps=20221.7, ups=5.29, wpb=3825.8, bsz=302.8, num_updates=4000, lr=0.000175, gnorm=0.57, loss_scale=2, train_wall=19, wall=948
+2021-02-01 01:47:47 | INFO | train_inner | epoch 013:    314 / 316 loss=2.111, nll_loss=0.259, ppl=1.2, wps=19921.3, ups=5.32, wpb=3744.1, bsz=290, num_updates=4100, lr=0.000172853, gnorm=0.652, loss_scale=2, train_wall=19, wall=967
+2021-02-01 01:47:47 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 01:47:48 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP category from the list. You can select as many categories as you like.
+2021-02-01 01:47:48 | INFO | fairseq.tasks.translation | example reference: Select the category from the list. You can select as many or as few categories as you like.
+2021-02-01 01:47:49 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP downloads all messages to your local system, but other connections only download the headers, and anything else until you want to read the message. Before you go offline, Evolution downloads unread messages from folders you have chosen to store.
+2021-02-01 01:47:49 | INFO | fairseq.tasks.translation | example reference: POP mail downloads all messages to your local system, but other connections usually download just the headers, and get the rest only when you want to read the message. Before you go offline, Evolution downloads the unread messages from the folders you have chosen to store.
+2021-02-01 01:47:51 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP the same header more than once, Evolution scores its first occurrence, even if the message redefines the second value. For example, Evolution filters as if the non-exists. Use regular expressions to filter messages that define the same headers more than once.
+2021-02-01 01:47:51 | INFO | fairseq.tasks.translation | example reference: If a message uses a header more than once, Evolution pays attention only to the first instance, even if the message defines the header differently the second time. For example, if a message declares the Resent-From: header as UNKNOWNTOKENINREF engineering @ example.com UNKNOWNTOKENINREF and then restates it as UNKNOWNTOKENINREF marketing @ example.com UNKNOWNTOKENINREF, Evolution filters as though the second declaration did not occur. To filter on messages that use headers multiple times, use a regular expression.
+2021-02-01 01:47:51 | INFO | valid | epoch 013 | valid on 'valid' subset | loss 4.907 | nll_loss 3.345 | ppl 10.16 | bleu 27.7 | wps 1026.2 | wpb 1401.3 | bsz 50.3 | num_updates 4102 | best_loss 3.636
+2021-02-01 01:47:51 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 01:48:00 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/GNOME_p_11_1/checkpoint_last.pt (epoch 13 @ 4102 updates, score 4.907) (writing took 8.941171559505165 seconds)
+2021-02-01 01:48:00 | INFO | fairseq_cli.train | end of epoch 13 (average epoch stats below)
+2021-02-01 01:48:00 | INFO | train | epoch 013 | loss 2.105 | nll_loss 0.252 | ppl 1.19 | wps 16566.1 | ups 4.36 | wpb 3797.6 | bsz 297.4 | num_updates 4102 | lr 0.000172811 | gnorm 0.645 | loss_scale 2 | train_wall 59 | wall 980
+2021-02-01 01:48:00 | INFO | fairseq_cli.train | begin training epoch 13
+2021-02-01 01:48:18 | INFO | train_inner | epoch 014:     98 / 316 loss=2.101, nll_loss=0.248, ppl=1.19, wps=12060.7, ups=3.16, wpb=3822.5, bsz=296.3, num_updates=4200, lr=0.000170783, gnorm=0.62, loss_scale=2, train_wall=19, wall=998
+2021-02-01 01:48:37 | INFO | train_inner | epoch 014:    198 / 316 loss=2.099, nll_loss=0.245, ppl=1.19, wps=19882.7, ups=5.34, wpb=3722.1, bsz=291.7, num_updates=4300, lr=0.000168785, gnorm=0.597, loss_scale=2, train_wall=19, wall=1017
+2021-02-01 01:48:56 | INFO | train_inner | epoch 014:    298 / 316 loss=2.102, nll_loss=0.251, ppl=1.19, wps=20276.1, ups=5.27, wpb=3843.9, bsz=303.9, num_updates=4400, lr=0.000166856, gnorm=0.587, loss_scale=2, train_wall=19, wall=1036
+2021-02-01 01:48:59 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 01:49:00 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Select the category from the list. You can select as many categories as you like.
+2021-02-01 01:49:00 | INFO | fairseq.tasks.translation | example reference: Select the category from the list. You can select as many or as few categories as you like.
+2021-02-01 01:49:01 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP POP downloads all messages to your local system, but other connections will only download headers if you want to read the message. Before you go offline, Evolution downloads unread messages from the folders you have chosen to store.
+2021-02-01 01:49:01 | INFO | fairseq.tasks.translation | example reference: POP mail downloads all messages to your local system, but other connections usually download just the headers, and get the rest only when you want to read the message. Before you go offline, Evolution downloads the unread messages from the folders you have chosen to store.
+2021-02-01 01:49:03 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP if a message uses the same headers more than once, Evolution will only define its first occurrances, even if the second UNKNOWNTOKENINHYP example.com Header. Use regular expressions to filter messages that define the same headers more than once. If the second UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP exampleUNKNOWNTOKENINHYP UNKNOWNTOKENINHYP Possibly Evolution exists.
+2021-02-01 01:49:03 | INFO | fairseq.tasks.translation | example reference: If a message uses a header more than once, Evolution pays attention only to the first instance, even if the message defines the header differently the second time. For example, if a message declares the Resent-From: header as UNKNOWNTOKENINREF engineering @ example.com UNKNOWNTOKENINREF and then restates it as UNKNOWNTOKENINREF marketing @ example.com UNKNOWNTOKENINREF, Evolution filters as though the second declaration did not occur. To filter on messages that use headers multiple times, use a regular expression.
+2021-02-01 01:49:03 | INFO | valid | epoch 014 | valid on 'valid' subset | loss 4.945 | nll_loss 3.416 | ppl 10.67 | bleu 31.22 | wps 1215 | wpb 1401.3 | bsz 50.3 | num_updates 4418 | best_loss 3.636
+2021-02-01 01:49:03 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 01:49:09 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/GNOME_p_11_1/checkpoint_last.pt (epoch 14 @ 4418 updates, score 4.945) (writing took 6.416329231113195 seconds)
+2021-02-01 01:49:09 | INFO | fairseq_cli.train | end of epoch 14 (average epoch stats below)
+2021-02-01 01:49:09 | INFO | train | epoch 014 | loss 2.1 | nll_loss 0.247 | ppl 1.19 | wps 17310.4 | ups 4.56 | wpb 3797.6 | bsz 297.4 | num_updates 4418 | lr 0.000166516 | gnorm 0.591 | loss_scale 2 | train_wall 59 | wall 1049
+2021-02-01 01:49:09 | INFO | fairseq_cli.train | begin training epoch 14
+2021-02-01 01:49:25 | INFO | train_inner | epoch 015:     82 / 316 loss=2.085, nll_loss=0.231, ppl=1.17, wps=13190.8, ups=3.5, wpb=3773.1, bsz=297.8, num_updates=4500, lr=0.000164992, gnorm=0.472, loss_scale=2, train_wall=19, wall=1065
+2021-02-01 01:49:44 | INFO | train_inner | epoch 015:    182 / 316 loss=2.094, nll_loss=0.241, ppl=1.18, wps=20171.5, ups=5.27, wpb=3828.6, bsz=302.2, num_updates=4600, lr=0.000163188, gnorm=0.537, loss_scale=2, train_wall=19, wall=1084
+2021-02-01 01:50:02 | INFO | train_inner | epoch 015:    282 / 316 loss=2.108, nll_loss=0.256, ppl=1.19, wps=20006, ups=5.33, wpb=3751.8, bsz=290, num_updates=4700, lr=0.000161443, gnorm=0.628, loss_scale=2, train_wall=19, wall=1102
+2021-02-01 01:50:09 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 01:50:10 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Select the category from the list. You can select as many categories as you want. UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP Pick UNKNOWNTOKENINHYP
+2021-02-01 01:50:10 | INFO | fairseq.tasks.translation | example reference: Select the category from the list. You can select as many or as few categories as you like.
+2021-02-01 01:50:11 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP downloads all messages to your local system, but other connections will only download headers if you really want to read the message. Before you go offline, Evolution downloads unread messages from the folders you have chosen to store.
+2021-02-01 01:50:11 | INFO | fairseq.tasks.translation | example reference: POP mail downloads all messages to your local system, but other connections usually download just the headers, and get the rest only when you want to read the message. Before you go offline, Evolution downloads the unread messages from the folders you have chosen to store.
+2021-02-01 01:50:12 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP if a message uses the same header more than once, Evolution will only refresh its first occurrances, even if the message redefines the Header. For example, if the second value does not exist. Use regular filters that define the same headers more than once. Evolution filters regular Evolution UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 01:50:12 | INFO | fairseq.tasks.translation | example reference: If a message uses a header more than once, Evolution pays attention only to the first instance, even if the message defines the header differently the second time. For example, if a message declares the Resent-From: header as UNKNOWNTOKENINREF engineering @ example.com UNKNOWNTOKENINREF and then restates it as UNKNOWNTOKENINREF marketing @ example.com UNKNOWNTOKENINREF, Evolution filters as though the second declaration did not occur. To filter on messages that use headers multiple times, use a regular expression.
+2021-02-01 01:50:12 | INFO | valid | epoch 015 | valid on 'valid' subset | loss 5.029 | nll_loss 3.509 | ppl 11.39 | bleu 31.84 | wps 1089.7 | wpb 1401.3 | bsz 50.3 | num_updates 4734 | best_loss 3.636
+2021-02-01 01:50:12 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 01:50:20 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/GNOME_p_11_1/checkpoint_last.pt (epoch 15 @ 4734 updates, score 5.029) (writing took 7.170704131014645 seconds)
+2021-02-01 01:50:20 | INFO | fairseq_cli.train | end of epoch 15 (average epoch stats below)
+2021-02-01 01:50:20 | INFO | train | epoch 015 | loss 2.095 | nll_loss 0.243 | ppl 1.18 | wps 16989.4 | ups 4.47 | wpb 3797.6 | bsz 297.4 | num_updates 4734 | lr 0.000160862 | gnorm 0.534 | loss_scale 2 | train_wall 59 | wall 1120
+2021-02-01 01:50:20 | INFO | fairseq_cli.train | begin training epoch 15
+2021-02-01 01:50:32 | INFO | train_inner | epoch 016:     66 / 316 loss=2.084, nll_loss=0.231, ppl=1.17, wps=12674.3, ups=3.34, wpb=3789.5, bsz=290.1, num_updates=4800, lr=0.000159752, gnorm=0.534, loss_scale=2, train_wall=19, wall=1132
+2021-02-01 01:50:51 | INFO | train_inner | epoch 016:    166 / 316 loss=2.092, nll_loss=0.24, ppl=1.18, wps=20169.5, ups=5.31, wpb=3800.5, bsz=298.1, num_updates=4900, lr=0.000158114, gnorm=0.551, loss_scale=2, train_wall=19, wall=1151
+2021-02-01 01:51:10 | INFO | train_inner | epoch 016:    266 / 316 loss=2.098, nll_loss=0.246, ppl=1.19, wps=20265.1, ups=5.31, wpb=3814.4, bsz=301, num_updates=5000, lr=0.000156525, gnorm=0.568, loss_scale=2, train_wall=19, wall=1170
+2021-02-01 01:51:19 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 01:51:20 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Select the category from the list. You can select as many categories as you want. UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 01:51:20 | INFO | fairseq.tasks.translation | example reference: Select the category from the list. You can select as many or as few categories as you like.
+2021-02-01 01:51:22 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP POP downloads all the unread messages you have chosen to store. Before you download the unread messages you want to store. UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 01:51:22 | INFO | fairseq.tasks.translation | example reference: POP mail downloads all messages to your local system, but other connections usually download just the headers, and get the rest only when you want to read the message. Before you go offline, Evolution downloads the unread messages from the folders you have chosen to store.
+2021-02-01 01:51:23 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP message uses the same headers more than once, Evolution scores its first occurrances even if the second UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 01:51:23 | INFO | fairseq.tasks.translation | example reference: If a message uses a header more than once, Evolution pays attention only to the first instance, even if the message defines the header differently the second time. For example, if a message declares the Resent-From: header as UNKNOWNTOKENINREF engineering @ example.com UNKNOWNTOKENINREF and then restates it as UNKNOWNTOKENINREF marketing @ example.com UNKNOWNTOKENINREF, Evolution filters as though the second declaration did not occur. To filter on messages that use headers multiple times, use a regular expression.
+2021-02-01 01:51:23 | INFO | valid | epoch 016 | valid on 'valid' subset | loss 5.3 | nll_loss 3.821 | ppl 14.13 | bleu 25.67 | wps 1137 | wpb 1401.3 | bsz 50.3 | num_updates 5050 | best_loss 3.636
+2021-02-01 01:51:23 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 01:51:29 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/GNOME_p_11_1/checkpoint_last.pt (epoch 16 @ 5050 updates, score 5.3) (writing took 6.06882300786674 seconds)
+2021-02-01 01:51:29 | INFO | fairseq_cli.train | end of epoch 16 (average epoch stats below)
+2021-02-01 01:51:29 | INFO | train | epoch 016 | loss 2.089 | nll_loss 0.237 | ppl 1.18 | wps 17333.4 | ups 4.56 | wpb 3797.6 | bsz 297.4 | num_updates 5050 | lr 0.000155748 | gnorm 0.535 | loss_scale 2 | train_wall 59 | wall 1189
+2021-02-01 01:51:29 | INFO | fairseq_cli.train | begin training epoch 16
+2021-02-01 01:51:38 | INFO | train_inner | epoch 017:     50 / 316 loss=2.073, nll_loss=0.219, ppl=1.16, wps=13418.3, ups=3.5, wpb=3836.9, bsz=300.8, num_updates=5100, lr=0.000154983, gnorm=0.355, loss_scale=2, train_wall=19, wall=1198
+2021-02-01 01:51:57 | INFO | train_inner | epoch 017:    150 / 316 loss=2.075, nll_loss=0.22, ppl=1.17, wps=20036.1, ups=5.29, wpb=3785, bsz=299.2, num_updates=5200, lr=0.000153485, gnorm=0.431, loss_scale=2, train_wall=19, wall=1217
+2021-02-01 01:52:16 | INFO | train_inner | epoch 017:    250 / 316 loss=2.104, nll_loss=0.254, ppl=1.19, wps=20232.1, ups=5.32, wpb=3804.8, bsz=297, num_updates=5300, lr=0.00015203, gnorm=0.58, loss_scale=2, train_wall=19, wall=1236
+2021-02-01 01:52:29 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 01:52:29 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Select the category from the list. You can select many categories you want. UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 01:52:29 | INFO | fairseq.tasks.translation | example reference: Select the category from the list. You can select as many or as few categories as you like.
+2021-02-01 01:52:31 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP download all messages to your local system, but other connections only download the headers you want to store. Before you download the unread message UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 01:52:31 | INFO | fairseq.tasks.translation | example reference: POP mail downloads all messages to your local system, but other connections usually download just the headers, and get the rest only when you want to read the message. Before you go offline, Evolution downloads the unread messages from the folders you have chosen to store.
+2021-02-01 01:52:33 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP. If a message uses the same header more than once, Evolution scores only its first occurrence, even if the message does not exist. For example, Evolution filters regular headers UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP Headers UNKNOWNTOKENINHYP PUSH UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PURPOSE UNKNOWNTOKENINHYP
+2021-02-01 01:52:33 | INFO | fairseq.tasks.translation | example reference: If a message uses a header more than once, Evolution pays attention only to the first instance, even if the message defines the header differently the second time. For example, if a message declares the Resent-From: header as UNKNOWNTOKENINREF engineering @ example.com UNKNOWNTOKENINREF and then restates it as UNKNOWNTOKENINREF marketing @ example.com UNKNOWNTOKENINREF, Evolution filters as though the second declaration did not occur. To filter on messages that use headers multiple times, use a regular expression.
+2021-02-01 01:52:33 | INFO | valid | epoch 017 | valid on 'valid' subset | loss 5.282 | nll_loss 3.8 | ppl 13.93 | bleu 28.8 | wps 921.9 | wpb 1401.3 | bsz 50.3 | num_updates 5366 | best_loss 3.636
+2021-02-01 01:52:33 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 01:52:39 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/GNOME_p_11_1/checkpoint_last.pt (epoch 17 @ 5366 updates, score 5.282) (writing took 6.307150084525347 seconds)
+2021-02-01 01:52:39 | INFO | fairseq_cli.train | end of epoch 17 (average epoch stats below)
+2021-02-01 01:52:39 | INFO | train | epoch 017 | loss 2.086 | nll_loss 0.234 | ppl 1.18 | wps 17134 | ups 4.51 | wpb 3797.6 | bsz 297.4 | num_updates 5366 | lr 0.000151092 | gnorm 0.489 | loss_scale 2 | train_wall 59 | wall 1259
+2021-02-01 01:52:39 | INFO | fairseq_cli.train | begin training epoch 17
+2021-02-01 01:52:45 | INFO | train_inner | epoch 018:     34 / 316 loss=2.085, nll_loss=0.233, ppl=1.18, wps=13044.7, ups=3.41, wpb=3827, bsz=304.9, num_updates=5400, lr=0.000150616, gnorm=0.48, loss_scale=2, train_wall=19, wall=1265
+2021-02-01 01:53:04 | INFO | train_inner | epoch 018:    134 / 316 loss=2.077, nll_loss=0.223, ppl=1.17, wps=19911.8, ups=5.32, wpb=3742.8, bsz=291.3, num_updates=5500, lr=0.000149241, gnorm=0.417, loss_scale=2, train_wall=19, wall=1284
+2021-02-01 01:53:23 | INFO | train_inner | epoch 018:    234 / 316 loss=2.099, nll_loss=0.249, ppl=1.19, wps=20191.6, ups=5.3, wpb=3806.4, bsz=299.2, num_updates=5600, lr=0.000147902, gnorm=0.512, loss_scale=2, train_wall=19, wall=1303
+2021-02-01 01:53:39 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 01:53:39 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Select the category from the list. You can select as many categories as you want. UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 01:53:39 | INFO | fairseq.tasks.translation | example reference: Select the category from the list. You can select as many or as few categories as you like.
+2021-02-01 01:53:41 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP PIP downloads all messages to your local system, but other connections usually download only the headers you want to store. Before you go offline, Evolution downloads unread messages from the folders you UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 01:53:41 | INFO | fairseq.tasks.translation | example reference: POP mail downloads all messages to your local system, but other connections usually download just the headers, and get the rest only when you want to read the message. Before you go offline, Evolution downloads the unread messages from the folders you have chosen to store.
+2021-02-01 01:53:41 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP messages using the same header more than once, Evolution will only use the second time. Use regular expressions to filter messages that the same headers more than once. For example, Evolution UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 01:53:41 | INFO | fairseq.tasks.translation | example reference: If a message uses a header more than once, Evolution pays attention only to the first instance, even if the message defines the header differently the second time. For example, if a message declares the Resent-From: header as UNKNOWNTOKENINREF engineering @ example.com UNKNOWNTOKENINREF and then restates it as UNKNOWNTOKENINREF marketing @ example.com UNKNOWNTOKENINREF, Evolution filters as though the second declaration did not occur. To filter on messages that use headers multiple times, use a regular expression.
+2021-02-01 01:53:41 | INFO | valid | epoch 018 | valid on 'valid' subset | loss 5.446 | nll_loss 4.006 | ppl 16.06 | bleu 26.84 | wps 1497 | wpb 1401.3 | bsz 50.3 | num_updates 5682 | best_loss 3.636
+2021-02-01 01:53:41 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 01:53:51 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/GNOME_p_11_1/checkpoint_last.pt (epoch 18 @ 5682 updates, score 5.446) (writing took 9.468322332017124 seconds)
+2021-02-01 01:53:51 | INFO | fairseq_cli.train | end of epoch 18 (average epoch stats below)
+2021-02-01 01:53:51 | INFO | train | epoch 018 | loss 2.083 | nll_loss 0.23 | ppl 1.17 | wps 16677.3 | ups 4.39 | wpb 3797.6 | bsz 297.4 | num_updates 5682 | lr 0.000146831 | gnorm 0.444 | loss_scale 2 | train_wall 59 | wall 1331
+2021-02-01 01:53:51 | INFO | fairseq_cli.train | begin training epoch 18
+2021-02-01 01:53:54 | INFO | train_inner | epoch 019:     18 / 316 loss=2.072, nll_loss=0.217, ppl=1.16, wps=12199, ups=3.2, wpb=3808.1, bsz=292.1, num_updates=5700, lr=0.000146599, gnorm=0.422, loss_scale=2, train_wall=19, wall=1334
+2021-02-01 01:54:13 | INFO | train_inner | epoch 019:    118 / 316 loss=2.082, nll_loss=0.231, ppl=1.17, wps=20503.8, ups=5.31, wpb=3862.6, bsz=307.4, num_updates=5800, lr=0.00014533, gnorm=0.527, loss_scale=2, train_wall=19, wall=1353
+2021-02-01 01:54:32 | INFO | train_inner | epoch 019:    218 / 316 loss=2.079, nll_loss=0.227, ppl=1.17, wps=20002.5, ups=5.28, wpb=3791.1, bsz=298.1, num_updates=5900, lr=0.000144093, gnorm=0.427, loss_scale=2, train_wall=19, wall=1372
+2021-02-01 01:54:51 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 01:54:51 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP the category from the list. You can select many categories as you want. UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 01:54:51 | INFO | fairseq.tasks.translation | example reference: Select the category from the list. You can select as many or as few categories as you like.
+2021-02-01 01:54:53 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP downloads all messages to your local system, but other connections usually only download the headers you want to read the message. Before you download the unread messages from UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 01:54:53 | INFO | fairseq.tasks.translation | example reference: POP mail downloads all messages to your local system, but other connections usually download just the headers, and get the rest only when you want to read the message. Before you go offline, Evolution downloads the unread messages from the folders you have chosen to store.
+2021-02-01 01:54:53 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP messages using the same header more than once, Evolution UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 01:54:53 | INFO | fairseq.tasks.translation | example reference: If a message uses a header more than once, Evolution pays attention only to the first instance, even if the message defines the header differently the second time. For example, if a message declares the Resent-From: header as UNKNOWNTOKENINREF engineering @ example.com UNKNOWNTOKENINREF and then restates it as UNKNOWNTOKENINREF marketing @ example.com UNKNOWNTOKENINREF, Evolution filters as though the second declaration did not occur. To filter on messages that use headers multiple times, use a regular expression.
+2021-02-01 01:54:53 | INFO | valid | epoch 019 | valid on 'valid' subset | loss 5.48 | nll_loss 4.027 | ppl 16.3 | bleu 25.22 | wps 1499.5 | wpb 1401.3 | bsz 50.3 | num_updates 5998 | best_loss 3.636
+2021-02-01 01:54:53 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 01:55:00 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/GNOME_p_11_1/checkpoint_last.pt (epoch 19 @ 5998 updates, score 5.48) (writing took 6.8144637402147055 seconds)
+2021-02-01 01:55:00 | INFO | fairseq_cli.train | end of epoch 19 (average epoch stats below)
+2021-02-01 01:55:00 | INFO | train | epoch 019 | loss 2.08 | nll_loss 0.228 | ppl 1.17 | wps 17298.1 | ups 4.56 | wpb 3797.6 | bsz 297.4 | num_updates 5998 | lr 0.000142911 | gnorm 0.461 | loss_scale 2 | train_wall 59 | wall 1400
+2021-02-01 01:55:00 | INFO | fairseq_cli.train | begin training epoch 19
+2021-02-01 01:55:01 | INFO | train_inner | epoch 020:      2 / 316 loss=2.081, nll_loss=0.228, ppl=1.17, wps=13097.3, ups=3.5, wpb=3744.2, bsz=289.2, num_updates=6000, lr=0.000142887, gnorm=0.427, loss_scale=2, train_wall=19, wall=1401
+2021-02-01 01:55:20 | INFO | train_inner | epoch 020:    102 / 316 loss=2.071, nll_loss=0.217, ppl=1.16, wps=20292, ups=5.3, wpb=3828.6, bsz=298.2, num_updates=6100, lr=0.000141711, gnorm=0.406, loss_scale=2, train_wall=19, wall=1420
+2021-02-01 01:55:38 | INFO | train_inner | epoch 020:    202 / 316 loss=2.087, nll_loss=0.236, ppl=1.18, wps=20033, ups=5.32, wpb=3767.4, bsz=296.2, num_updates=6200, lr=0.000140563, gnorm=0.497, loss_scale=2, train_wall=19, wall=1438
+2021-02-01 01:55:57 | INFO | train_inner | epoch 020:    302 / 316 loss=2.08, nll_loss=0.229, ppl=1.17, wps=20054.9, ups=5.28, wpb=3798.1, bsz=301.1, num_updates=6300, lr=0.000139443, gnorm=0.416, loss_scale=2, train_wall=19, wall=1457
+2021-02-01 01:56:00 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 01:56:01 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP category from the list. You can select many categories as you want. UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 01:56:01 | INFO | fairseq.tasks.translation | example reference: Select the category from the list. You can select as many or as few categories as you like.
+2021-02-01 01:56:02 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP POP downloads all messages to your local system, but other connections you most often download the headers only if you want to read the message. Before you go offline, Evolution downloads unread messages UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 01:56:02 | INFO | fairseq.tasks.translation | example reference: POP mail downloads all messages to your local system, but other connections usually download just the headers, and get the rest only when you want to read the message. Before you go offline, Evolution downloads the unread messages from the folders you have chosen to store.
+2021-02-01 01:56:03 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP the same header more than once, Evolution defines the message as UNKNOWNTOKENINHYP exampleUNKNOWNTOKENINHYP. For example, if the second value does not exist. UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 01:56:03 | INFO | fairseq.tasks.translation | example reference: If a message uses a header more than once, Evolution pays attention only to the first instance, even if the message defines the header differently the second time. For example, if a message declares the Resent-From: header as UNKNOWNTOKENINREF engineering @ example.com UNKNOWNTOKENINREF and then restates it as UNKNOWNTOKENINREF marketing @ example.com UNKNOWNTOKENINREF, Evolution filters as though the second declaration did not occur. To filter on messages that use headers multiple times, use a regular expression.
+2021-02-01 01:56:03 | INFO | valid | epoch 020 | valid on 'valid' subset | loss 6.02 | nll_loss 4.617 | ppl 24.55 | bleu 22.01 | wps 1429.7 | wpb 1401.3 | bsz 50.3 | num_updates 6314 | best_loss 3.636
+2021-02-01 01:56:03 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 01:56:09 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/GNOME_p_11_1/checkpoint_last.pt (epoch 20 @ 6314 updates, score 6.02) (writing took 5.998381399549544 seconds)
+2021-02-01 01:56:09 | INFO | fairseq_cli.train | end of epoch 20 (average epoch stats below)
+2021-02-01 01:56:09 | INFO | train | epoch 020 | loss 2.078 | nll_loss 0.226 | ppl 1.17 | wps 17455.8 | ups 4.6 | wpb 3797.6 | bsz 297.4 | num_updates 6314 | lr 0.000139289 | gnorm 0.436 | loss_scale 2 | train_wall 59 | wall 1469
+2021-02-01 01:56:09 | INFO | fairseq_cli.train | done training in 1466.7 seconds
+
+
+###############################################################################
+Peregrine Cluster
+Job 17763013 for user 's3475743'
+Finished at: Mon Feb  1 01:56:19 CET 2021
+
+Job details:
+============
+
+Job ID              : 17763013
+Name                : GNOME_p_11_1
+User                : s3475743
+Partition           : gpu
+Nodes               : pg-gpu30
+Number of Nodes     : 1
+Cores               : 12
+State               : COMPLETED
+Submit              : 2021-02-01T01:30:55
+Start               : 2021-02-01T01:31:23
+End                 : 2021-02-01T01:56:18
+Reserved walltime   : 23:55:00
+Used walltime       : 00:24:55
+Used CPU time       : 00:26:19 (efficiency:  8.80%)
+% User (Computation): 68.34%
+% System (I/O)      : 31.66%
+Mem reserved        : 32G/node
+Max Mem used        : 5.61G (pg-gpu30)
+Max Disk Write      : 40.96K (pg-gpu30)
+Max Disk Read       : 2.30M (pg-gpu30)
+Average GPU usage   : 78.5% (pg-gpu30)
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
+
+################################################################################
