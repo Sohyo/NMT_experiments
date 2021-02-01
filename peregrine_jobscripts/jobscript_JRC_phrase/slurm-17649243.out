@@ -1,0 +1,722 @@
+
+The following have been reloaded with a version change:
+  1) GCCcore/8.3.0 => GCCcore/9.3.0
+  2) binutils/2.32-GCCcore-8.3.0 => binutils/2.34-GCCcore-9.3.0
+  3) zlib/1.2.11-GCCcore-8.3.0 => zlib/1.2.11-GCCcore-9.3.0
+
+2021-01-26 10:53:15 | INFO | fairseq_cli.generate | Namespace(all_gather_list_size=16384, beam=5, bf16=False, bpe=None, broadcast_buffers=False, bucket_cap_mb=25, checkpoint_suffix='', cpu=False, criterion='cross_entropy', data='../../../data-bin/phrase4_0.5_tag_JRC_short/', data_buffer_size=10, dataset_impl=None, ddp_backend='c10d', decoding_format=None, device_id=0, distributed_backend='nccl', distributed_init_method=None, distributed_no_spawn=False, distributed_port=-1, distributed_rank=0, distributed_world_size=1, distributed_wrapper='DDP', diverse_beam_groups=-1, diverse_beam_strength=0.5, diversity_rate=-1.0, empty_cache_freq=0, eval_bleu=True, eval_bleu_args=None, eval_bleu_detok='space', eval_bleu_detok_args=None, eval_bleu_print_samples=False, eval_bleu_remove_bpe=None, eval_tokenized_bleu=False, fast_stat_sync=False, find_unused_parameters=False, fix_batches_to_gpus=False, force_anneal=None, fp16=True, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, gen_subset='test', iter_decode_eos_penalty=0.0, iter_decode_force_max_iter=False, iter_decode_max_iter=10, iter_decode_with_beam=1, iter_decode_with_external_reranker=False, left_pad_source='True', left_pad_target='False', lenpen=1, load_alignments=False, localsgd_frequency=3, log_format=None, log_interval=100, lr_scheduler='fixed', lr_shrink=0.1, match_source_len=False, max_len_a=0, max_len_b=200, max_sentences=128, max_source_positions=1024, max_target_positions=1024, max_tokens=None, memory_efficient_bf16=False, memory_efficient_fp16=False, min_len=1, min_loss_scale=0.0001, model_overrides='{}', model_parallel_size=1, momentum=0.99, nbest=1, no_beamable_mm=False, no_early_stop=False, no_progress_bar=False, no_repeat_ngram_size=0, no_seed_provided=True, nprocs_per_node=1, num_batch_buckets=0, num_shards=1, num_workers=1, optimizer='nag', path='../checkpoints/JRC_p_7/checkpoint_best.pt', prefix_size=0, print_alignment=False, print_step=False, profile=False, quantization_config_path=None, quiet=False, remove_bpe='@@ ', replace_unk=None, required_batch_size_multiple=8, results_path=None, retain_dropout=False, retain_dropout_modules=None, retain_iter_history=False, sacrebleu=False, sampling=False, sampling_topk=-1, sampling_topp=-1.0, score_reference=False, scoring='sacrebleu', seed=1, shard_id=0, skip_invalid_size_inputs_valid_test=False, slowmo_algorithm='LocalSGD', slowmo_momentum=None, source_lang=None, target_lang=None, task='translation', temperature=1.0, tensorboard_logdir='', threshold_loss_scale=None, tokenizer=None, tpu=False, truncate_source=False, unkpen=0, unnormalized=False, upsample_primary=1, user_dir=None, warmup_updates=0, weight_decay=0.0)
+2021-01-26 10:53:15 | INFO | fairseq.tasks.translation | [de] dictionary: 42024 types
+2021-01-26 10:53:15 | INFO | fairseq.tasks.translation | [en] dictionary: 42024 types
+2021-01-26 10:53:15 | INFO | fairseq.data.data_utils | loaded 133 examples from: ../../../data-bin/phrase4_0.5_tag_JRC_short/test.de-en.de
+2021-01-26 10:53:15 | INFO | fairseq.data.data_utils | loaded 133 examples from: ../../../data-bin/phrase4_0.5_tag_JRC_short/test.de-en.en
+2021-01-26 10:53:15 | INFO | fairseq.tasks.translation | ../../../data-bin/phrase4_0.5_tag_JRC_short/ test de-en 133 examples
+2021-01-26 10:53:15 | INFO | fairseq_cli.generate | loading model(s) from ../checkpoints/JRC_p_7/checkpoint_best.pt
+S-9	Die Streitparteien unterrichten das Exekutivorgan über ihre Streitigkeit .
+T-9	The parties to the dispute shall inform the Executive Body of their dispute .
+H-9	-0.43700748682022095	The parties to the dispute shall inform the executive body of their dispute .
+D-9	-0.43700748682022095	The parties to the dispute shall inform the executive body of their dispute .
+P-9	-0.4169 -0.9070 -1.2928 -0.5793 -0.1166 -0.0784 -0.6415 -0.0485 -0.2789 -0.3333 -0.7196 -0.5411 -0.5054 -0.2488 -0.1617 -0.1220
+S-8	Überprüfung durch die Vertragsparteien auf den Tagungen des Exekutivorgans
+T-8	Reviews by the Parties at sessions of the Executive Body
+H-8	-0.6134862899780273	Review by Parties at meetings of the Executive Body
+D-8	-0.6134862899780273	Review by Parties at meetings of the Executive Body
+P-8	-0.6261 -0.2312 -0.9892 -0.0166 -0.8484 -1.2086 -0.2323 -0.3073 -0.6067 -1.5069 -0.1749
+S-75	Chemikalien im freiwilligen Verfahren der vorherigen Zustimmung nach Inkenntnissetzung
+T-75	Chemicals in the voluntary Prior Informed Consent procedure
+H-75	-0.41967180371284485	Chemicals under the voluntary prior informed consent procedure
+D-75	-0.41967180371284485	Chemicals under the voluntary prior informed consent procedure
+P-75	-0.3457 -0.0378 -2.0134 -0.6341 -0.1286 -0.0436 -0.5678 -0.2540 -0.0297 -0.3906 -0.1712
+S-24	c ) den Zeitpunkt des Inkrafttretens dieses Übereinkommens ;
+T-24	( c ) the date of entry into force of this Convention ;
+H-24	-0.22919853031635284	( c ) the date of entry into force of this Convention ;
+D-24	-0.22919853031635284	( c ) the date of entry into force of this Convention ;
+P-24	-0.4672 -0.0849 -0.1214 -0.5049 -0.2316 -0.3653 -0.1365 -0.1069 -0.0420 -0.2351 -0.4257 -0.1117 -0.2506 -0.1249
+S-99	iii ) nicht mit Bankkonten verbundene finanzielle Transaktionen .
+T-99	( iii ) financial transactions unrelated to accounts .
+H-99	-0.37923192977905273	( iii ) financial transactions other than bank accounts .
+D-99	-0.37923192977905273	( iii ) financial transactions other than bank accounts .
+P-99	-0.2579 -0.1261 -0.1513 -0.1714 -0.1219 -0.8652 -0.1234 -2.2445 -0.1235 -0.2602 -0.1004 -0.2605 -0.1237
+S-100	Begrenzte Verwendung zum Schutz personenbezogener und sonstiger Daten
+T-100	Limitations on use to protect personal and other data
+H-100	-0.3842014670372009	Limited use to protect personal and other data
+D-100	-0.3842014670372009	Limited use to protect personal and other data
+P-100	-0.3255 -0.3105 -1.5087 -0.3147 -0.1483 -0.3406 -0.1113 -0.1905 -0.2078
+S-71	a ) verbotene oder strengen Beschränkungen unterliegende Chemikalien und
+T-71	( a ) banned or severely restricted chemicals ; and
+H-71	-0.47751957178115845	( a ) chemicals prohibited or subject to strict restrictions ; and
+D-71	-0.47751957178115845	( a ) chemicals prohibited or subject to strict restrictions ; and
+P-71	-0.3077 -0.2058 -0.1177 -0.9734 -1.5940 -0.0399 -0.1548 -0.9259 -0.2590 -0.6733 -0.1467 -0.8893 -0.2754 -0.1224
+S-12	a ) die Angabe des Abgangs- und Bestimmungsorts ;
+T-12	( a ) an indication of the places of departure and destination ;
+H-12	-0.5280156135559082	( a ) indication of the place of departure and destination ;
+D-12	-0.5280156135559082	( a ) indication of the place of departure and destination ;
+P-12	-0.6849 -0.2002 -0.1198 -1.9120 -0.2139 -0.9786 -0.7864 -0.2345 -0.9537 -0.2036 -0.2055 -0.2466 -0.1247
+S-18	Tod und Körperverletzung von Reisenden - Beschädigung von Reisegepäck
+T-18	Death and injury of passengers - damage to baggage
+H-18	-0.5474587082862854	Death and bodily injury of passengers - damage to luggage
+D-18	-0.5474587082862854	Death and bodily injury of passengers - damage to luggage
+P-18	-1.1237 -0.2922 -1.2495 -0.0186 -0.0677 -0.5315 -0.7968 -0.9029 -0.4250 -0.6908 -0.4182 -0.9044 -0.0837 -0.1596
+S-13	a ) die Angabe des Abgangs- und Bestimmungsorts ;
+T-13	( a ) an indication of the places of departure and destination ;
+H-13	-0.5280156135559082	( a ) indication of the place of departure and destination ;
+D-13	-0.5280156135559082	( a ) indication of the place of departure and destination ;
+P-13	-0.6849 -0.2002 -0.1198 -1.9120 -0.2139 -0.9786 -0.7864 -0.2345 -0.9537 -0.2036 -0.2055 -0.2466 -0.1247
+S-32	Übereinkommen von 2001 über die Satzung der Internationalen Jute-Studiengruppe
+T-32	Agreement establishing the Terms of Reference of the International Jute Study Group , 2001
+H-32	-0.3218996226787567	2001 Convention on the Statutes of the International Jute Study Group
+D-32	-0.3218996226787567	2001 Convention on the Statutes of the International Jute Study Group
+P-32	-1.4317 -0.1376 -0.9272 -0.3210 -0.1637 -0.5381 -0.2452 -0.2626 -0.0770 -0.1582 -0.0668 -0.1846 -0.0527 -0.0967 -0.1656
+S-26	Verhältnis zu anderen mit dem Warschauer Abkommen zusammenhängenden Übereinkünften
+T-26	Relationship with other Warsaw Convention Instruments
+H-26	-0.570945680141449	Relationship with other agreements related to the Warsaw Convention
+D-26	-0.570945680141449	Relationship with other agreements related to the Warsaw Convention
+P-26	-0.5024 -1.0972 -0.1291 -0.7535 -0.1424 -1.5823 -1.4355 -0.2713 -0.2616 -0.1484 -0.1032 -0.7787 -0.2169
+S-85	Ecurie-Vereinbarungen und sonstige einschlägige internationale Übereinkommen
+T-85	Ecurie arrangements and other international conventions in the same field
+H-85	-0.5347521305084229	Ecuria agreements and other relevant international conventions
+D-85	-0.5347521305084229	Ecuria agreements and other relevant international conventions
+P-85	-0.3338 -2.0817 -1.2048 -0.2097 -0.1430 -0.1515 -0.1097 -0.7863 -0.0551 -0.2718
+S-90	Übermittlung von Unterlagen im Anschluss an die vorläufige Verhaftung
+T-90	Transmission of documents following provisional arrest
+H-90	-0.5337954759597778	Transmission of documents following the provisional arrest
+D-90	-0.5337954759597778	Transmission of documents following the provisional arrest
+P-90	-2.2135 -0.1265 -0.2244 -0.7089 -0.3442 -0.9819 -0.6010 -0.0060 -0.0423 -0.3666 -0.2565
+S-41	RUMÄNIEN , nachstehend <unk> Rumänien <unk> genannt ,
+T-41	ROMANIA , hereinafter referred to as <<unk>> Romania <<unk>> ,
+H-41	-0.5003897547721863	ROMANIA , hereinafter referred to <unk> Romania ,
+D-41	-0.5003897547721863	ROMANIA , hereinafter referred to <unk> Romania ,
+P-41	-0.1687 -0.1031 -0.0487 -0.0573 -0.6146 -2.0896 -0.1203 -0.1568 -0.6729 -1.0036 -0.4992 -0.4403 -0.9117 -0.1186
+S-44	- hinsichtlich Rumäniens das Hoheitsgebiet Rumäniens .
+T-44	- means for Romania , the territory of Romania .
+H-44	-0.4711873531341553	- concerning Romania , the territory of Romania .
+D-44	-0.4711873531341553	- concerning Romania , the territory of Romania .
+P-44	-0.5918 -1.9316 -0.0758 -0.7983 -0.5528 -0.1051 -0.2174 -0.0850 -0.2294 -0.1246
+S-55	- Bosnien und Herzegowina dieses Angebot angenommen hat ,
+T-55	- the acceptance by Bosnia and Herzegovina of that offer ,
+H-55	-0.3429296910762787	- Bosnia and Herzegovina accepted this offer ,
+D-55	-0.3429296910762787	- Bosnia and Herzegovina accepted this offer ,
+P-55	-0.4091 -0.3225 -0.0272 -0.2834 -0.0959 -0.0600 -0.0455 -0.1037 -0.0424 -1.2585 -0.6662 -0.1476 -1.2061 -0.1328
+S-31	Genehmigung des Verwaltungshaushalts und Festsetzung der Beiträge
+T-31	Determination of the Administrative Budget and assessment of contributions
+H-31	-0.4149504601955414	Approval of the administrative budget and determination of contributions
+D-31	-0.4149504601955414	Approval of the administrative budget and determination of contributions
+P-31	-0.5394 -0.0406 -0.0210 -0.2500 -0.8514 -0.2545 -0.0870 -0.2132 -1.9459 -0.2174 -0.3952 -0.1639
+S-73	f ) als Lebensmittelzusatzstoffe verwendete Chemikalien ;
+T-73	( f ) chemicals used as food additives ;
+H-73	-0.1623798906803131	( f ) chemicals used as food additives ;
+D-73	-0.1623798906803131	( f ) chemicals used as food additives ;
+P-73	-0.2603 -0.0785 -0.1200 -0.3779 -0.1848 -0.2680 -0.0588 -0.0351 -0.0274 -0.2500 -0.1253
+S-59	Ferner sind folgende Fahrten von der Genehmigungspflicht befreit :
+T-59	The following shall also be exempted from authorisation :
+H-59	-0.6361874938011169	Furthermore , the following journeys are exempt from authorisation :
+D-59	-0.6361874938011169	Furthermore , the following journeys are exempt from authorisation :
+P-59	-2.6182 -0.0647 -0.1155 -0.7205 -0.6295 -0.1365 -0.5444 -0.0287 -1.0764 -0.2049 -0.6020 -0.4258 -2.3257 -0.0620 -0.5022 -0.1219
+S-11	Staatlich ausgeführte Beförderung und Beförderung von Postsendungen
+T-11	Carriage performed by State and carriage of postal items
+H-11	-0.9052218794822693	State @-@ carried transport and transport of mail
+D-11	-0.9052218794822693	State @-@ carried transport and transport of mail
+P-11	-0.4950 -0.8340 -2.0033 -0.9540 -0.2731 -1.6405 -0.2241 -1.1364 -0.5866
+S-42	Im Sinne dieses Abkommens gelten folgende Begriffsbestimmungen :
+T-42	For the purpose of this Agreement , the following definitions shall apply :
+H-42	-0.5698187351226807	For the purposes of this Agreement the following definitions shall apply :
+D-42	-0.5698187351226807	For the purposes of this Agreement the following definitions shall apply :
+P-42	-2.6313 -0.3477 -0.4646 -0.2101 -0.6547 -0.2110 -0.0190 -1.6114 -1.2511 -0.0234 -0.0622 -0.5716 -0.1972 -0.1715 -0.1205
+S-6	d ) den Einsatz weniger umweltbelastender Energiequellen fördern ;
+T-6	( d ) encourage the use of less polluting energy sources
+H-6	-0.3237696886062622	( d ) Promote the use of less polluting energy sources ;
+D-6	-0.3237696886062622	( d ) Promote the use of less polluting energy sources ;
+P-6	-0.2031 -0.1625 -0.1190 -1.4861 -0.2332 -0.5430 -0.1793 -0.2081 -0.4682 -0.0457 -0.0461 -0.5266 -0.2539 -0.2584 -0.1233
+S-72	a ) Suchtstoffe und psychotrope Substanzen ;
+T-72	( a ) narcotic drugs and psychotropic substances ;
+H-72	-0.2674608826637268	( a ) Narcotic drugs and psychotropic substances ;
+D-72	-0.2674608826637268	( a ) Narcotic drugs and psychotropic substances ;
+P-72	-0.4782 -0.1893 -0.1205 -1.4688 -0.0325 -0.3052 -0.7520 -0.2009 -0.0728 -0.0482 -0.0329 -0.0639 -0.1215 -0.0172 -0.2511 -0.1243
+S-49	- gewährleistet eine reibungslose Durchführung dieses Abkommens ; insbesondere
+T-49	- ensure the proper implementation of this Agreement and , in particular , shall :
+H-49	-0.6206488609313965	- ensure the smooth implementation of this Agreement , in particular :
+D-49	-0.6206488609313965	- ensure the smooth implementation of this Agreement , in particular :
+P-49	-0.7088 -1.0228 -1.4904 -0.6359 -0.1982 -0.2246 -0.9069 -0.1458 -0.0175 -1.3647 -0.6803 -0.0597 -1.1134 -0.1202
+S-47	Bei Fahrzeugkombinationen ist sie im Kraftfahrzeug mitzuführen .
+T-47	In the case of a coupled combination of vehicles it must accompany the motor vehicle .
+H-47	-0.6306759715080261	In the case of vehicle combinations , it must be carried in the vehicle .
+D-47	-0.6306759715080261	In the case of vehicle combinations , it must be carried in the vehicle .
+P-47	-1.9213 -1.5095 -0.4430 -0.2118 -0.7373 -0.1692 -0.0310 -0.0588 -0.7567 -1.3385 -1.2833 -0.2332 -0.5153 -0.6693 -0.5368 -0.6534 -0.1610 -0.1229
+S-79	( 1 ) Hiermit wird ein Sekretariat eingerichtet .
+T-79	( 1 ) Hiermit wird ein Sekretariat eingerichtet . A Secretariat is hereby established .
+H-79	-0.5216718316078186	( 1 ) Hereby a Secretariat shall be established .
+D-79	-0.5216718316078186	( 1 ) Hereby a Secretariat shall be established .
+P-79	-0.5109 -0.1008 -0.1205 -3.0052 -0.3103 -1.0368 -0.8356 -0.0171 -0.1854 -0.1610 -0.1614 -0.5627 -0.1727 -0.1229
+S-94	c ) jeweiliges Interesse der ersuchenden Staaten ;
+T-94	( c ) the respective interests of the requesting States ;
+H-94	-0.4775647222995758	( c ) the respective interests of the requesting States ;
+D-94	-0.4775647222995758	( c ) the respective interests of the requesting States ;
+P-94	-0.3815 -0.0868 -0.1211 -1.1580 -2.2027 -0.6942 -0.2221 -0.6598 -0.1585 -0.0881 -0.0695 -0.2424 -0.1238
+S-19	c ) eine Kriegshandlung oder ein bewaffneter Konflikt ;
+T-19	( c ) an act of war or an armed conflict ;
+H-19	-0.24045491218566895	( c ) an act of war or armed conflict ;
+D-19	-0.24045491218566895	( c ) an act of war or armed conflict ;
+P-19	-0.6709 -0.0879 -0.1206 -0.6193 -0.1177 -0.2079 -0.1085 -0.1749 -0.3395 -0.0754 -0.2379 -0.1249
+S-91	Auslieferungs- und Überstellungsersuchen von Seiten mehrerer Staaten
+T-91	Requests for extradition or surrender made by several States
+H-91	-0.5033129453659058	Extradition and transfer requests by several States
+D-91	-0.5033129453659058	Extradition and transfer requests by several States
+P-91	-0.6342 -0.2563 -0.1961 -0.8220 -0.0941 -1.5625 -0.5325 -0.1945 -0.2376
+S-78	c ) das Verfallsdatum der Chemikalie ;
+T-78	( c ) the expiry date of the chemical ;
+H-78	-0.36860620975494385	( c ) the expiry date of the chemical ;
+D-78	-0.36860620975494385	( c ) the expiry date of the chemical ;
+P-78	-0.5521 -0.0797 -0.1206 -0.9393 -0.8934 -0.5337 -0.0594 -0.4374 -0.3189 -0.1240 -0.2393 -0.1255
+S-66	a ) Folgender Gedankenstrich wird angefügt :
+T-66	( a ) the following indent shall be added :
+H-66	-0.39563265442848206	( a ) The following indent shall be added :
+D-66	-0.39563265442848206	( a ) The following indent shall be added :
+P-66	-0.5014 -0.2041 -0.1185 -1.6040 -0.1989 -0.1801 -0.0168 -0.9889 -0.1867 -0.4020 -0.2249 -0.1212
+S-64	a ) Folgender Gedankenstrich wird angefügt :
+T-64	( a ) the following indent shall be added :
+H-64	-0.39563265442848206	( a ) The following indent shall be added :
+D-64	-0.39563265442848206	( a ) The following indent shall be added :
+P-64	-0.5014 -0.2041 -0.1185 -1.6040 -0.1989 -0.1801 -0.0168 -0.9889 -0.1867 -0.4020 -0.2249 -0.1212
+S-39	16. a ) Die Gruppe besitzt internationale Rechtspersönlichkeit .
+T-39	16 . ( a ) The Group shall have international legal personality .
+H-39	-0.25122228264808655	16. a ) The Group shall have international legal personality .
+D-39	-0.25122228264808655	16. a ) The Group shall have international legal personality .
+P-39	-0.3962 -0.2568 -0.1290 -0.3736 -0.2104 -0.1304 -0.7215 -0.2691 -0.0918 -0.1367 -0.1757 -0.1235
+S-2	a ) den kommerziellen Austausch verfügbarer Technologien ;
+T-2	( a ) the commercial exchange of available technology
+H-2	-0.3501884639263153	( a ) commercial exchange of available technologies ;
+D-2	-0.3501884639263153	( a ) commercial exchange of available technologies ;
+P-2	-0.4110 -0.2056 -0.1187 -1.2083 -0.3453 -0.2283 -0.3249 -0.2571 -0.2759 -0.1269
+S-104	( nachstehend <unk> die Vertragsparteien <unk> genannt ) -
+T-104	( hereinafter referred to as <<unk>> the Parties <<unk>> )
+H-104	-0.46976831555366516	( hereinafter referred to <unk> the Parties ) -
+D-104	-0.46976831555366516	( hereinafter referred to <unk> the Parties ) -
+P-104	-0.4491 -0.2571 -0.1350 -0.1087 -0.6276 -0.6224 -1.1993 -1.3337 -0.4433 -0.0110 -0.1996 -0.5944 -0.1258
+S-14	c ) die Angabe des Gewichts der Sendung .
+T-14	( c ) an indication of the weight of the consignment .
+H-14	-0.4712929129600525	c ) indication of the weight of the shipment .
+D-14	-0.4712929129600525	c ) indication of the weight of the shipment .
+P-14	-0.5277 -0.1264 -2.2584 -0.2209 -0.6017 -0.1420 -0.2425 -0.4212 -0.6901 -0.0275 -0.2731 -0.1240
+S-109	ii ) mit der Mitteilung der Beschwerdepunkte ;
+T-109	( ii ) the issuance of a Statement of Objections ;
+H-109	-0.4726523458957672	( ii ) the Statement of Objections ;
+D-109	-0.4726523458957672	( ii ) the Statement of Objections ;
+P-109	-0.2226 -0.1391 -0.1126 -0.1216 -2.7860 -1.0430 -0.2172 -0.0329 -0.0129 -0.3844 -0.1269
+S-37	b ) Der Beirat besteht aus assoziierten Mitgliedern .
+T-37	( b ) The Consultative Board shall consist of associate members .
+H-37	-0.3775467872619629	b ) The Advisory Board shall consist of associated members .
+D-37	-0.3775467872619629	b ) The Advisory Board shall consist of associated members .
+P-37	-0.6032 -0.1328 -0.3493 -0.7602 -0.0129 -0.0374 -0.7558 -0.7298 -0.6495 -0.0658 -0.2284 -0.8708 -0.1655 -0.1802 -0.1214
+S-105	c ) <unk> zuständige Wettbewerbsbehörde<unk> n ) <unk> :
+T-105	( c ) the terms <<unk>> competition authority <<unk>> and <<unk>> competition authorities <<unk>> mean :
+H-105	-0.5278645157814026	( c ) <unk> competent competition authorities <unk> :
+D-105	-0.5278645157814026	( c ) <unk> competent competition authorities <unk> :
+P-105	-1.3600 -0.0970 -0.1146 -0.5058 -1.3710 -0.0618 -0.4539 -0.2096 -1.0576 -0.4480 -0.1273
+S-80	( 2 ) Das Sekretariat hat folgende Aufgaben :
+T-80	( 2 ) Das Sekretariat hat folgende Aufgaben : The functions of the Secretariat shall be :
+H-80	-0.4132833778858185	( 2 ) The Secretariat shall :
+D-80	-0.4132833778858185	( 2 ) The Secretariat shall :
+P-80	-1.0259 -0.0892 -0.1217 -0.2386 -0.5636 -0.0195 -0.1884 -0.0611 -1.7046 -0.1202
+S-68	Anhang XX des Abkommens wird wie folgt geändert :
+T-68	Annex XX to the Agreement shall be amended as follows .
+H-68	-0.2340019941329956	Annex XX to the Agreement shall be amended as follows :
+D-68	-0.2340019941329956	Annex XX to the Agreement shall be amended as follows :
+P-68	-0.0896 -0.0653 -0.0945 -0.0842 -1.1299 -0.2898 -0.2276 -0.0184 -0.4389 -0.1731 -0.2426 -0.0617 -0.4480 -0.0610 -0.1987 -0.1209
+S-20	Schadenersatz<unk> 8 ) bei Tod oder Körperverletzung von Reisenden
+T-20	Compensation in case of death or injury of passengers
+H-20	-0.7251614928245544	8 ) in the event of death or bodily injury of travellers
+D-20	-0.7251614928245544	8 ) in the event of death or bodily injury of travellers
+P-20	-0.7229 -0.1353 -3.5377 -1.0974 -0.2518 -0.2461 -0.5481 -0.1720 -1.5189 -0.0186 -0.0711 -0.7738 -0.7721 -1.3717 -0.0945 -0.2705
+S-28	gemeinsam nachstehend <unk> teilnehmende Parteien <unk> genannt -
+T-28	Together hereinafter called the <<unk>> Participating Parties <<unk>> ,
+H-28	-0.9447962045669556	jointly hereinafter referred to <unk> participating parties -
+D-28	-0.9447962045669556	jointly hereinafter referred to <unk> participating parties -
+P-28	-4.7810 -0.0754 -0.0483 -2.1688 -0.5339 -0.2332 -1.5744 -0.9860 -0.4255 -1.3658 -0.0813 -0.2372 -0.5845 -0.1319
+S-86	Die Ökokarte wird wie folgt entwertet :
+T-86	The ecocard shall be cancelled by any one of the following methods :
+H-86	-0.5619615316390991	The eco @-@ map shall be validated as follows :
+D-86	-0.5619615316390991	The eco @-@ map shall be validated as follows :
+P-86	-0.4069 -0.3660 -0.7318 -1.0357 -0.6425 -1.6043 -0.1762 -1.5071 -0.0476 -0.3910 -0.0918 -0.1822 -0.1226
+S-116	gemeinsam nachstehend <unk> teilnehmende Parteien <unk> genannt -
+T-116	Together hereinafter referred to as the Participating Parties ,
+H-116	-0.9447962045669556	jointly hereinafter referred to <unk> participating parties -
+D-116	-0.9447962045669556	jointly hereinafter referred to <unk> participating parties -
+P-116	-4.7810 -0.0754 -0.0483 -2.1688 -0.5339 -0.2332 -1.5744 -0.9860 -0.4255 -1.3658 -0.0813 -0.2372 -0.5845 -0.1319
+S-120	gemeinsam nachstehend <unk> teilnehmende Parteien <unk> genannt -
+T-120	together hereinafter referred to as the <<unk>> Participating Parties <<unk>> ,
+H-120	-0.9447962045669556	jointly hereinafter referred to <unk> participating parties -
+D-120	-0.9447962045669556	jointly hereinafter referred to <unk> participating parties -
+P-120	-4.7810 -0.0754 -0.0483 -2.1688 -0.5339 -0.2332 -1.5744 -0.9860 -0.4255 -1.3658 -0.0813 -0.2372 -0.5845 -0.1319
+S-82	Die Vergleichskommission erstellt einen Bericht mit Empfehlungen .
+T-82	The conciliation commission shall render a report with recommendations .
+H-82	-0.6113746166229248	The Comparison Commission shall prepare a report with recommendations .
+D-82	-0.6113746166229248	The Comparison Commission shall prepare a report with recommendations .
+P-82	-0.3432 -1.3454 -0.6024 -0.7512 -0.2434 -1.2587 -1.0944 -0.2698 -0.1473 -1.5210 -0.0730 -0.1751 -0.1229
+S-101	Künftige bilaterale Verträge mit Mitgliedstaaten über Rechtshilfe
+T-101	Future bilateral mutual legal assistance treaties with Member States
+H-101	-0.3671704828739166	Future bilateral agreements with Member States on mutual legal assistance
+D-101	-0.3671704828739166	Future bilateral agreements with Member States on mutual legal assistance
+P-101	-0.6976 -0.0781 -0.0227 -0.9486 -0.4672 -0.1825 -0.0566 -0.5011 -0.1046 -1.0154 -0.0615 -0.2702
+S-74	i ) zu Forschungs- oder Analysezwecken oder
+T-74	( i ) for the purpose of research or analysis ; or
+H-74	-0.3562244772911072	( i ) for research or analysis purposes , or
+D-74	-0.3562244772911072	( i ) for research or analysis purposes , or
+P-74	-0.2080 -0.1255 -0.1194 -0.5921 -0.2350 -0.2023 -0.2802 -0.4090 -1.4502 -0.1720 -0.1249
+S-54	gemeinsam nachstehend <unk> teilnehmende Parteien <unk> genannt -
+T-54	Together hereinafter referred to as the <<unk>> Participating Parties <<unk>> ,
+H-54	-0.9447962045669556	jointly hereinafter referred to <unk> participating parties -
+D-54	-0.9447962045669556	jointly hereinafter referred to <unk> participating parties -
+P-54	-4.7810 -0.0754 -0.0483 -2.1688 -0.5339 -0.2332 -1.5744 -0.9860 -0.4255 -1.3658 -0.0813 -0.2372 -0.5845 -0.1319
+S-16	Vorschriften der Zoll- , der Polizei- und anderer Behörden
+T-16	Formalities of customs , police or other public authorities
+H-16	-0.5862578749656677	Provisions of customs , police and other authorities
+D-16	-0.5862578749656677	Provisions of customs , police and other authorities
+P-16	-1.9598 -0.1027 -1.4960 -0.3993 -0.7559 -0.1768 -0.3650 -0.0909 -0.3308 -0.1854
+S-123	gemeinsam nachstehend <unk> teilnehmende Parteien <unk> genannt -
+T-123	together hereinafter referred to as the <<unk>> Participating Parties <<unk>> ,
+H-123	-0.9447962045669556	jointly hereinafter referred to <unk> participating parties -
+D-123	-0.9447962045669556	jointly hereinafter referred to <unk> participating parties -
+P-123	-4.7810 -0.0754 -0.0483 -2.1688 -0.5339 -0.2332 -1.5744 -0.9860 -0.4255 -1.3658 -0.0813 -0.2372 -0.5845 -0.1319
+S-126	gemeinsam nachstehend <unk> teilnehmende Parteien <unk> genannt -
+T-126	together hereinafter referred to as the <<unk>> Participating Parties <<unk>> ,
+H-126	-0.9447962045669556	jointly hereinafter referred to <unk> participating parties -
+D-126	-0.9447962045669556	jointly hereinafter referred to <unk> participating parties -
+P-126	-4.7810 -0.0754 -0.0483 -2.1688 -0.5339 -0.2332 -1.5744 -0.9860 -0.4255 -1.3658 -0.0813 -0.2372 -0.5845 -0.1319
+S-129	gemeinsam nachstehend <unk> teilnehmende Parteien <unk> genannt -
+T-129	together hereinafter referred to as the <<unk>> Participating Parties <<unk>> ,
+H-129	-0.9447962045669556	jointly hereinafter referred to <unk> participating parties -
+D-129	-0.9447962045669556	jointly hereinafter referred to <unk> participating parties -
+P-129	-4.7810 -0.0754 -0.0483 -2.1688 -0.5339 -0.2332 -1.5744 -0.9860 -0.4255 -1.3658 -0.0813 -0.2372 -0.5845 -0.1319
+S-132	gemeinsam nachstehend <unk> teilnehmende Parteien <unk> genannt -
+T-132	together hereinafter referred to as the <<unk>> Participating Parties <<unk>> ,
+H-132	-0.9447962045669556	jointly hereinafter referred to <unk> participating parties -
+D-132	-0.9447962045669556	jointly hereinafter referred to <unk> participating parties -
+P-132	-4.7810 -0.0754 -0.0483 -2.1688 -0.5339 -0.2332 -1.5744 -0.9860 -0.4255 -1.3658 -0.0813 -0.2372 -0.5845 -0.1319
+S-63	Laufzeit des Übereinkommens - Bewertung seiner Wirksamkeit
+T-63	Duration of the Agreement - Evaluation of the functioning of the Agreement
+H-63	-0.33481112122535706	Duration of the Convention - evaluation of its effectiveness
+D-63	-0.33481112122535706	Duration of the Convention - evaluation of its effectiveness
+P-63	-0.3400 -0.0742 -0.2506 -0.2847 -0.2704 -0.5018 -1.9260 -0.0659 -0.0377 -0.2280 -0.3115 -0.2282 -0.0351 -0.1333
+S-65	b ) Anpassung e ) erhält folgende Fassung :
+T-65	( b ) the text of adaptation ( e ) shall be replaced by the following :
+H-65	-0.5476440191268921	( b ) Adaptation ( e ) shall be as follows :
+D-65	-0.5476440191268921	( b ) Adaptation ( e ) shall be as follows :
+P-65	-0.4507 -0.1283 -0.1168 -1.7039 -0.2667 -0.1361 -0.6377 -0.1381 -0.1184 -0.3725 -2.0246 -1.7276 -0.0765 -0.1957 -0.1211
+S-22	( 3 ) Im Sinne des Absatzes 2 bedeutet
+T-22	( 3 ) Im Sinne des Absatzes 2 bedeutet For the purposes of paragraph 2 ,
+H-22	-0.45616278052330017	( 3 ) Within the meaning of paragraph 2 ,
+D-22	-0.45616278052330017	( 3 ) Within the meaning of paragraph 2 ,
+P-22	-0.2968 -0.1017 -0.1187 -1.7114 -0.2443 -0.0400 -0.2137 -0.2946 -0.0142 -0.0125 -0.0783 -0.1654 -1.5101 -1.5846
+S-40	22. Vorbehalte zu dieser Satzung sind nicht zulässig .
+T-40	22. Vorbehalte zu dieser Satzung sind nicht zulässig . No reservations may be made to any of the provisions of these Terms of Reference .
+H-40	-0.4841017425060272	22 . Reservations to these Articles of Association shall not be permitted .
+D-40	-0.4841017425060272	22 . Reservations to these Articles of Association shall not be permitted .
+P-40	-0.1063 -0.1416 -0.1309 -0.1155 -0.0550 -1.7342 -0.8426 -1.5232 -0.0489 -0.7147 -0.2063 -0.9405 -0.2152 -0.1855 -1.2316 -0.2399 -0.1604 -0.1216
+S-29	Die künftigen Missionsleiter werden ebenfalls so ernannt .
+T-29	Any future Head of Mission shall also be so appointed .
+H-29	-0.5628490447998047	The future Heads of Mission shall also be appointed accordingly .
+D-29	-0.5628490447998047	The future Heads of Mission shall also be appointed accordingly .
+P-29	-0.8392 -0.3287 -0.2073 -0.0226 -0.2197 -0.1075 -1.2714 -0.6549 -0.2545 -0.7267 -2.9017 -0.0686 -0.1544 -0.1226
+S-69	1. Nummer 2en wird zu Nummer 2ena .
+T-69	1. Nummer 2en wird zu Nummer 2ena . The present point 2en shall become point 2ena .
+H-69	-0.32063695788383484	1 . Number 2en becomes number 2ena .
+D-69	-0.32063695788383484	1 . Number 2en becomes number 2ena .
+P-69	-0.2229 -0.1850 -0.2270 -0.2363 -0.2431 -1.4782 -0.4525 -0.0819 -0.0830 -0.1905 -0.1267
+S-51	( 3 ) Verfahrenssprache ist Englisch .
+T-51	( 3 ) Verfahrenssprache ist Englisch . The language to be employed during arbitration shall be English .
+H-51	-0.24773186445236206	( 3 ) The language of the proceedings shall be English .
+D-51	-0.24773186445236206	( 3 ) The language of the proceedings shall be English .
+P-51	-0.1416 -0.0923 -0.1165 -0.9057 -0.0447 -0.2525 -0.9657 -0.0506 -0.1310 -0.1511 -0.0783 -0.1676 -0.1228
+S-1	Das Abkommen ersetzt die Vereinbarung vom 13. Juli 1991.
+T-1	This Agreement shall replace the Memorandum of Understanding of 13 July 1991 .
+H-1	-0.28996551036834717	The Agreement replaces the Agreement of 13 July 1991 .
+D-1	-0.28996551036834717	The Agreement replaces the Agreement of 13 July 1991 .
+P-1	-0.6189 -0.3267 -0.0166 -0.8003 -0.0216 -0.3118 -0.5097 -0.0176 -0.4303 -0.1089 -0.0787 -0.4817 -0.2126 -0.1242
+S-50	( 2 ) Es wird ein Schiedsrichter ernannt .
+T-50	( 2 ) Es wird ein Schiedsrichter ernannt . There shall be one arbitrator .
+H-50	-0.14770294725894928	( 2 ) An arbitrator shall be appointed .
+D-50	-0.14770294725894928	( 2 ) An arbitrator shall be appointed .
+P-50	-0.2393 -0.0900 -0.1193 -0.4813 -0.1061 -0.0078 -0.0593 -0.0883 -0.1535 -0.1247 -0.1795 -0.1232
+S-83	Vorbehalte zu diesem Übereinkommen sind nicht zulässig .
+T-83	No reservations may be made to this Convention .
+H-83	-0.47289323806762695	Reservations to this Convention shall not be permitted .
+D-83	-0.47289323806762695	Reservations to this Convention shall not be permitted .
+P-83	-0.4936 -0.1146 -0.0544 -1.5083 -0.5717 -0.1166 -0.6870 -0.2243 -0.1810 -1.7679 -0.1456 -0.1600 -0.1225
+S-114	i ) der Einleitung eines Strafverfahrens ,
+T-114	( i ) the filing of a criminal accusation ;
+H-114	-0.431307315826416	( i ) initiation of criminal proceedings ;
+D-114	-0.431307315826416	( i ) initiation of criminal proceedings ;
+P-114	-0.3440 -0.1185 -0.1191 -1.5600 -0.6525 -0.2130 -0.1632 -0.0717 -0.9433 -0.1280
+S-56	Dieses Abkommen tritt mit seiner Unterzeichnung in Kraft .
+T-56	This Agreement shall enter into force upon signature .
+H-56	-0.3556743562221527	This Agreement shall enter into force upon its signature .
+D-56	-0.3556743562221527	This Agreement shall enter into force upon its signature .
+P-56	-1.1184 -0.1289 -0.0146 -0.2283 -0.1407 -0.0863 -0.0607 -0.8856 -1.1677 -0.1576 -0.1573 -0.1221
+S-4	d ) die Gewährung technischer Hilfe .
+T-4	( d ) the provision of technical assistance .
+H-4	-0.41963598132133484	( d ) provision of technical assistance .
+D-4	-0.41963598132133484	( d ) provision of technical assistance .
+P-4	-0.2876 -0.1632 -0.1202 -2.5036 -0.2162 -0.0721 -0.0499 -0.2402 -0.1238
+S-122	Dieses Abkommen tritt mit seiner Unterzeichnung in Kraft .
+T-122	This Agreement shall enter into force upon signature .
+H-122	-0.3556743562221527	This Agreement shall enter into force upon its signature .
+D-122	-0.3556743562221527	This Agreement shall enter into force upon its signature .
+P-122	-1.1184 -0.1289 -0.0146 -0.2283 -0.1407 -0.0863 -0.0607 -0.8856 -1.1677 -0.1576 -0.1573 -0.1221
+S-125	Dieses Abkommen tritt mit seiner Unterzeichnung in Kraft .
+T-125	This Agreement shall enter into force upon signature .
+H-125	-0.3556743562221527	This Agreement shall enter into force upon its signature .
+D-125	-0.3556743562221527	This Agreement shall enter into force upon its signature .
+P-125	-1.1184 -0.1289 -0.0146 -0.2283 -0.1407 -0.0863 -0.0607 -0.8856 -1.1677 -0.1576 -0.1573 -0.1221
+S-128	Dieses Abkommen tritt mit seiner Unterzeichnung in Kraft .
+T-128	This Agreement shall enter into force upon signature .
+H-128	-0.3556743562221527	This Agreement shall enter into force upon its signature .
+D-128	-0.3556743562221527	This Agreement shall enter into force upon its signature .
+P-128	-1.1184 -0.1289 -0.0146 -0.2283 -0.1407 -0.0863 -0.0607 -0.8856 -1.1677 -0.1576 -0.1573 -0.1221
+S-131	Dieses Abkommen tritt mit seiner Unterzeichnung in Kraft .
+T-131	This Agreement shall enter into force upon signature .
+H-131	-0.3556743562221527	This Agreement shall enter into force upon its signature .
+D-131	-0.3556743562221527	This Agreement shall enter into force upon its signature .
+P-131	-1.1184 -0.1289 -0.0146 -0.2283 -0.1407 -0.0863 -0.0607 -0.8856 -1.1677 -0.1576 -0.1573 -0.1221
+S-119	Dieses Abkommen tritt mit seiner Unterzeichnung in Kraft .
+T-119	This Agreement shall enter into force upon signature .
+H-119	-0.3556743562221527	This Agreement shall enter into force upon its signature .
+D-119	-0.3556743562221527	This Agreement shall enter into force upon its signature .
+P-119	-1.1184 -0.1289 -0.0146 -0.2283 -0.1407 -0.0863 -0.0607 -0.8856 -1.1677 -0.1576 -0.1573 -0.1221
+S-5	( 2 ) Eine Vertragspartei kann außerdem :
+T-5	( 2 ) Eine Vertragspartei kann außerdem : A Party may , in addition :
+H-5	-0.2777930498123169	( 2 ) A Contracting Party may also :
+D-5	-0.2777930498123169	( 2 ) A Contracting Party may also :
+P-5	-0.3319 -0.0899 -0.1219 -0.6087 -0.8884 -0.0036 -0.0265 -0.0417 -0.2258 -0.7266 -0.1484 -0.1202
+S-67	b ) Folgende Anpassung wird angefügt :
+T-67	( b ) the following adaptation shall be added :
+H-67	-0.5348624587059021	( b ) The following adjustment shall be added :
+D-67	-0.5348624587059021	( b ) The following adjustment shall be added :
+P-67	-0.7427 -0.0986 -0.1180 -1.3954 -0.1507 -1.3095 -0.0451 -0.2850 -0.5969 -0.2050 -1.6558 -0.2292 -0.1214
+S-76	ii ) der Einfuhr nicht zuzustimmen oder
+T-76	( ii ) not to consent to import ; or
+H-76	-0.5504263043403625	( ii ) not to consent to imports , or
+D-76	-0.5504263043403625	( ii ) not to consent to imports , or
+P-76	-0.1660 -0.1395 -0.1158 -0.1212 -0.9712 -1.1071 -1.3654 -0.4052 -0.6399 -0.2252 -1.5832 -0.1871 -0.1288
+S-93	b ) Orte der Begehung der Straftaten ;
+T-93	( b ) the places where each of the offences was committed ;
+H-93	-0.7235202789306641	( b ) places where offences are committed ;
+D-93	-0.7235202789306641	( b ) places where offences are committed ;
+P-93	-0.8854 -0.1207 -0.1203 -1.6052 -1.4771 -1.8590 -0.7149 -0.1086 -0.2185 -0.1256
+S-10	a ) Vorlage der Streitigkeit beim Internationalen Gerichtshof ;
+T-10	( a ) submission of the dispute to the International Court of Justice
+H-10	-0.3045421540737152	( a ) submission of the dispute to the International Court of Justice ;
+D-10	-0.3045421540737152	( a ) submission of the dispute to the International Court of Justice ;
+P-10	-0.6913 -0.2082 -0.1201 -0.8288 -0.3346 -0.3229 -0.5671 -0.1152 -0.3552 -0.2535 -0.2529 -0.0638 -0.3271 -0.0273 -0.2808 -0.1237
+S-112	i ) der Mitteilung der Beschwerdepunkte oder
+T-112	( i ) the issuance of a Statement of Objections ; and
+H-112	-0.5337826609611511	( i ) a statement of objections , or
+D-112	-0.5337826609611511	( i ) a statement of objections , or
+P-112	-0.4104 -0.1162 -0.1203 -2.1187 -0.9264 -0.2187 -0.0181 -0.0571 -1.6074 -0.1589 -0.1193
+S-70	( 1 ) Dieses Übereinkommen findet Anwendung auf :
+T-70	( 1 ) Dieses Übereinkommen findet Anwendung auf : This Convention applies to :
+H-70	-0.1909806877374649	( 1 ) This Convention shall apply to :
+D-70	-0.1909806877374649	( 1 ) This Convention shall apply to :
+P-70	-0.2255 -0.1041 -0.1191 -0.4853 -0.0544 -0.0704 -0.0814 -0.3378 -0.3092 -0.1226
+S-81	b ) Vorlage der Streitigkeit beim Internationalen Gerichtshof .
+T-81	( b ) submission of the dispute to the International Court of Justice .
+H-81	-0.3729155659675598	b ) submission of the dispute to the International Court of Justice .
+D-81	-0.3729155659675598	b ) submission of the dispute to the International Court of Justice .
+P-81	-1.4541 -0.1259 -1.0316 -0.2257 -0.2806 -0.6530 -0.1201 -0.3809 -0.2589 -0.2383 -0.0695 -0.3205 -0.0287 -0.2836 -0.1223
+S-60	Dieser Ausschuss besteht aus Vertretern der Vertragsparteien .
+T-60	This Committee shall be made up of representatives of the Contracting Parties .
+H-60	-0.33542734384536743	This Committee shall consist of representatives of the Parties .
+D-60	-0.33542734384536743	This Committee shall consist of representatives of the Parties .
+P-60	-0.8194 -0.3348 -0.3862 -1.0580 -0.0681 -0.2221 -0.1387 -0.2612 -0.3189 -0.4286 -0.0170 -0.1845 -0.1230
+S-43	f ) <unk> Gebiet der Vertragspartei <unk>
+T-43	( f ) territory of the Contracting Party :
+H-43	-0.543695867061615	( f ) Territory of the Contracting Party
+D-43	-0.543695867061615	( f ) Territory of the Contracting Party
+P-43	-1.3711 -0.0802 -0.1170 -2.3101 -0.0484 -0.3777 -0.6350 -0.8538 -0.0032 -0.0220 -0.1270 -0.5787
+S-36	c ) Alle Mitglieder haben insgesamt 2000 Stimmen .
+T-36	( c ) All members shall together hold 2000 votes .
+H-36	-0.5987755060195923	( c ) All members have 2000 votes in total .
+D-36	-0.5987755060195923	( c ) All members have 2000 votes in total .
+P-36	-1.2996 -0.0804 -0.1193 -0.6408 -0.5922 -0.9877 -1.0662 -0.0899 -1.6070 -0.3351 -0.2448 -0.1224
+S-118	nachstehend <unk> Vertragsparteien <unk> genannt -
+T-118	Hereinafter referred to as the <<unk>> Parties <<unk>> ,
+H-118	-0.625271737575531	<unk> Contracting Parties <unk> -
+D-118	-0.625271737575531	<unk> Contracting Parties <unk> -
+P-118	-0.0994 -2.0481 -0.0025 -0.0176 -0.0415 -0.0073 -1.0674 -2.2145 -0.1291
+S-30	Dieses Abkommen tritt mit Unterzeichnung in Kraft .
+T-30	This Agreement shall enter into force upon signature .
+H-30	-0.21414980292320251	This Agreement shall enter into force upon signature .
+D-30	-0.21414980292320251	This Agreement shall enter into force upon signature .
+P-30	-0.8143 -0.1203 -0.0148 -0.1497 -0.1083 -0.0866 -0.0535 -0.5875 -0.0982 -0.2000 -0.1223
+S-3	c ) den Austausch von Informationen und Erfahrungen und
+T-3	( c ) the exchange of information and experience and
+H-3	-0.4290716052055359	( c ) exchange of information and experience ; and
+D-3	-0.4290716052055359	( c ) exchange of information and experience ; and
+P-3	-0.4993 -0.0833 -0.1196 -1.1966 -0.2994 -0.0816 -0.1807 -0.4129 -1.3263 -0.3956 -0.1245
+S-46	Die Lizenz ist im Fahrzeug mitzuführen .
+T-46	The authorisation must be kept in the vehicle .
+H-46	-0.4841674864292145	The license must be carried in the vehicle .
+D-46	-0.4841674864292145	The license must be carried in the vehicle .
+P-46	-0.6057 -0.9315 -1.1491 -0.2751 -0.5128 -0.5252 -0.3695 -0.1626 -0.1850 -0.1250
+S-84	e ) die Ergebnisse der Umweltüberwachung ;
+T-84	( e ) the results of environmental monitoring ;
+H-84	-0.30984392762184143	( e ) the results of environmental monitoring ;
+D-84	-0.30984392762184143	( e ) the results of environmental monitoring ;
+P-84	-0.3435 -0.1179 -0.1201 -1.0784 -0.3333 -0.2538 -0.2032 -0.2157 -0.3073 -0.1254
+S-45	3000 Marken für jeden Mitgliedstaat der Gemeinschaft .
+T-45	3000 adhesive stamps for each Member State of the Community ;
+H-45	-0.5182999968528748	3000 trademarks for each Member State of the Community .
+D-45	-0.5182999968528748	3000 trademarks for each Member State of the Community .
+P-45	-1.1777 -1.7867 -0.0208 -0.8334 -0.2575 -0.7655 -0.1053 -0.4395 -0.2392 -0.1624 -0.3081 -0.1235
+S-48	Für Beförderungen nach diesem Abkommen gilt :
+T-48	In the case of transport operations in accordance with this Agreement :
+H-48	-0.5511756539344788	For carriage under this Agreement :
+D-48	-0.5511756539344788	For carriage under this Agreement :
+P-48	-1.4373 -1.0272 -0.0423 -0.4134 -0.5623 -0.2944 -0.0152 -1.0468 -0.1215
+S-92	a ) vertragliche Grundlage der Ersuchen ;
+T-92	( a ) whether the requests were made pursuant to a treaty ;
+H-92	-0.5016948580741882	( a ) the contractual basis of requests ;
+D-92	-0.5016948580741882	( a ) the contractual basis of requests ;
+P-92	-0.4585 -0.1986 -0.1193 -1.4951 -0.5665 -0.0848 -0.0435 -0.1199 -0.8939 -1.6651 -0.2515 -0.1235
+S-77	( 1 ) Jede ausführende Vertragspartei
+T-77	( 1 ) Jede ausführende Vertragspartei Each exporting Party shall :
+H-77	-0.4303467571735382	( 1 ) Each implementing Contracting Party
+D-77	-0.4303467571735382	( 1 ) Each implementing Contracting Party
+P-77	-0.2654 -0.1056 -0.1184 -0.4147 -2.6076 -0.1031 -0.6799 -0.0034 -0.0226 -0.0662 -0.3470
+S-53	nachstehend <unk> Aufnahmepartei <unk> genannt ,
+T-53	hereinafter referred to as the <<unk>> Host Party <<unk>> ,
+H-53	-1.006069540977478	<unk> host party <unk> hereinafter referred ,
+D-53	-1.006069540977478	<unk> host party <unk> hereinafter referred ,
+P-53	-0.3343 -1.8335 -0.3592 -1.4905 -2.1545 -0.3670 -0.1657 -0.6977 -2.5365 -0.1218
+S-61	( 2 ) Der Gemeinsame Ausschuss soll insbesondere
+T-61	( 2 ) Der Gemeinsame Ausschuss soll insbesondere The Joint Committee shall in particular :
+H-61	-0.37517231702804565	( 2 ) The Joint Committee shall in particular :
+D-61	-0.37517231702804565	( 2 ) The Joint Committee shall in particular :
+P-61	-0.6937 -0.0848 -0.1188 -0.4456 -0.0768 -0.1441 -0.1092 -2.0444 -0.0497 -0.2400 -0.1198
+S-115	( 6 ) Die Wettbewerbsbehörde der Europäischen Gemeinschaft
+T-115	( 6 ) Die Wettbewerbsbehörde der Europäischen Gemeinschaft The competition authority of the European Community ,
+H-115	-0.3165401518344879	( 6 ) The Competition Authority of the European Community
+D-115	-0.3165401518344879	( 6 ) The Competition Authority of the European Community
+P-115	-0.4707 -0.1000 -0.1211 -0.2609 -1.4356 -0.0515 -0.0993 -0.3188 -0.2544 -0.1500 -0.2668 -0.2692
+S-15	Rechtsverhältnisse zwischen Absender und Empfänger oder Dritten
+T-15	Relations of consignor and consignee or mutual relations of third parties
+H-15	-0.3929772675037384	Legal relations between sender and recipient or third parties
+D-15	-0.3929772675037384	Legal relations between sender and recipient or third parties
+P-15	-0.6453 -0.0901 -0.9681 -0.1439 -0.5434 -0.1991 -1.1424 -0.0607 -0.3128 -0.1740 -0.2951 -0.1409
+S-0	Dieses Abkommen tritt mit Unterzeichnung in Kraft .
+T-0	This Agreement shall enter into force upon signature .
+H-0	-0.21414980292320251	This Agreement shall enter into force upon signature .
+D-0	-0.21414980292320251	This Agreement shall enter into force upon signature .
+P-0	-0.8143 -0.1203 -0.0148 -0.1497 -0.1083 -0.0866 -0.0535 -0.5875 -0.0982 -0.2000 -0.1223
+S-96	e ) Staatsangehörigkeit des Opfers ;
+T-96	( e ) the nationality of the victim ;
+H-96	-0.2886582911014557	( e ) nationality of the victim ;
+D-96	-0.2886582911014557	( e ) nationality of the victim ;
+P-96	-0.7016 -0.1073 -0.1208 -0.6627 -0.0763 -0.2457 -0.4133 -0.1461 -0.2880 -0.1248
+S-103	a ) die Vereinigten Staaten von Amerika ;
+T-103	( a ) to the United States of America ;
+H-103	-0.24717608094215393	( a ) the United States of America ;
+D-103	-0.24717608094215393	( a ) the United States of America ;
+P-103	-0.6754 -0.1897 -0.1179 -0.5896 -0.1041 -0.0526 -0.3181 -0.0875 -0.2129 -0.1240
+S-98	a ) die Vereinigten Staaten von Amerika ;
+T-98	( a ) to the United States of America ;
+H-98	-0.24717608094215393	( a ) the United States of America ;
+D-98	-0.24717608094215393	( a ) the United States of America ;
+P-98	-0.6754 -0.1897 -0.1179 -0.5896 -0.1041 -0.0526 -0.3181 -0.0875 -0.2129 -0.1240
+S-111	a ) im Fall der Europäischen Gemeinschaft :
+T-111	( a ) in the case of the European Community :
+H-111	-0.30163154006004333	( a ) in the case of the European Community :
+D-111	-0.30163154006004333	( a ) in the case of the European Community :
+P-111	-0.4856 -0.1962 -0.1177 -0.9913 -0.3373 -0.2431 -0.2242 -0.2574 -0.1391 -0.1147 -0.3913 -0.1215
+S-35	Der Rat tritt mindestens einmal jährlich zusammen .
+T-35	The Council shall meet at least once every year .
+H-35	-0.23468329012393951	The Council shall meet at least once a year .
+D-35	-0.23468329012393951	The Council shall meet at least once a year .
+P-35	-0.3497 -0.0938 -0.5152 -0.2009 -0.2925 -0.0847 -0.1798 -0.4702 -0.1176 -0.1547 -0.1223
+S-130	In dieser Vereinbarung wird Folgendes festgehalten :
+T-130	This arrangement shall include the following provisions on :
+H-130	-0.6535684466362	This Agreement stipulates that :
+D-130	-0.6535684466362	This Agreement stipulates that :
+P-130	-1.4526 -0.6241 -0.0152 -2.6557 -0.0091 -0.0837 -0.6567 -0.2634 -0.1216
+S-127	In dieser Vereinbarung wird Folgendes festgehalten :
+T-127	This arrangement shall include the following provisions on :
+H-127	-0.6535684466362	This Agreement stipulates that :
+D-127	-0.6535684466362	This Agreement stipulates that :
+P-127	-1.4526 -0.6241 -0.0152 -2.6557 -0.0091 -0.0837 -0.6567 -0.2634 -0.1216
+S-124	In dieser Vereinbarung wird Folgendes festgehalten :
+T-124	This arrangement shall include the following provisions on :
+H-124	-0.6535684466362	This Agreement stipulates that :
+D-124	-0.6535684466362	This Agreement stipulates that :
+P-124	-1.4526 -0.6241 -0.0152 -2.6557 -0.0091 -0.0837 -0.6567 -0.2634 -0.1216
+S-108	a ) im Fall der Europäischen Gemeinschaft :
+T-108	( a ) in the case of the European Community :
+H-108	-0.30163154006004333	( a ) in the case of the European Community :
+D-108	-0.30163154006004333	( a ) in the case of the European Community :
+P-108	-0.4856 -0.1962 -0.1177 -0.9913 -0.3373 -0.2431 -0.2242 -0.2574 -0.1391 -0.1147 -0.3913 -0.1215
+S-117	In dieser Vereinbarung wird Folgendes festgehalten :
+T-117	This arrangement shall include the following provisions on :
+H-117	-0.6535684466362	This Agreement stipulates that :
+D-117	-0.6535684466362	This Agreement stipulates that :
+P-117	-1.4526 -0.6241 -0.0152 -2.6557 -0.0091 -0.0837 -0.6567 -0.2634 -0.1216
+S-25	e ) jede Kündigung nach Artikel 54.
+T-25	( e ) any denunciation under Article 54 .
+H-25	-0.39473551511764526	( e ) any denunciation under Article 54 .
+D-25	-0.39473551511764526	( e ) any denunciation under Article 54 .
+P-25	-0.4577 -0.1159 -0.1206 -0.5673 -0.8390 -0.0595 -0.0455 -0.1000 -2.0657 -0.2454 -0.0646 -0.3255 -0.1249
+S-87	b ) es werden keine Waren transportiert ;
+T-87	( b ) no goods are transported on the journey ;
+H-87	-0.3866405189037323	( b ) no goods shall be transported ;
+D-87	-0.3866405189037323	( b ) no goods shall be transported ;
+P-87	-0.9916 -0.1147 -0.1200 -0.8913 -0.2539 -1.0808 -0.1882 -0.1666 -0.0822 -0.2383 -0.1255
+S-58	( 1 ) Dieses Übereinkommen gilt für
+T-58	( 1 ) Dieses Übereinkommen gilt für This Agreement shall apply :
+H-58	-0.23128579556941986	( 1 ) This Convention shall apply to
+D-58	-0.23128579556941986	( 1 ) This Convention shall apply to
+P-58	-0.2335 -0.1047 -0.1188 -0.3709 -0.0678 -0.1152 -0.1431 -0.3675 -0.5602
+S-62	Die Schiedsrichter treffen eine Mehrheitsentscheidung .
+T-62	The arbitrators <<unk>> decisions shall be taken by majority vote .
+H-62	-0.4677492380142212	The arbitrators shall make a majority decision .
+D-62	-0.4677492380142212	The arbitrators shall make a majority decision .
+P-62	-0.5782 -0.6813 -0.0117 -0.0404 -0.0572 -1.3672 -1.8675 -0.4388 -0.1492 -0.1280 -0.1706 -0.1230
+S-97	( 1 ) Dieses Abkommen gilt für :
+T-97	( 1 ) Dieses Abkommen gilt für : This Agreement shall apply :
+H-97	-0.24935321509838104	( 1 ) This Agreement shall apply to :
+D-97	-0.24935321509838104	( 1 ) This Agreement shall apply to :
+P-97	-0.7305 -0.1023 -0.1189 -0.3983 -0.2695 -0.0140 -0.1323 -0.1815 -0.3755 -0.2995 -0.1205
+S-102	( 1 ) Dieses Abkommen gilt für :
+T-102	( 1 ) Dieses Abkommen gilt für : This Agreement shall apply :
+H-102	-0.24935321509838104	( 1 ) This Agreement shall apply to :
+D-102	-0.24935321509838104	( 1 ) This Agreement shall apply to :
+P-102	-0.7305 -0.1023 -0.1189 -0.3983 -0.2695 -0.0140 -0.1323 -0.1815 -0.3755 -0.2995 -0.1205
+S-107	i ) zumindest eines der beteiligten Unternehmen oder
+T-107	( i ) one or more of the parties to the transaction ; or
+H-107	-0.37331143021583557	( i ) at least one of the undertakings concerned ; or
+D-107	-0.37331143021583557	( i ) at least one of the undertakings concerned ; or
+P-107	-0.2574 -0.1324 -0.1190 -0.3217 -0.0743 -0.1555 -0.3193 -0.2634 -0.7831 -0.0134 -0.0178 -1.4523 -1.3107 -0.2596 -0.1197
+S-34	3. Die Ziele der Gruppe bestehen darin ,
+T-34	3. Die Ziele der Gruppe bestehen darin , The objectives of the Group shall be to :
+H-34	-0.39070940017700195	3 . The objectives of the Group shall be :
+D-34	-0.39070940017700195	3 . The objectives of the Group shall be :
+P-34	-0.2614 -0.1824 -0.3269 -0.4687 -0.0331 -0.2262 -0.2850 -0.2908 -0.5391 -0.2860 -1.6700 -0.1190
+S-33	2. Für die Zwecke dieser Satzung
+T-33	2. Für die Zwecke dieser Satzung For the purpose of these Terms of Reference :
+H-33	-0.3713342845439911	2 . For the purposes of these Articles of Association
+D-33	-0.3713342845439911	2 . For the purposes of these Articles of Association
+P-33	-0.1427 -0.1520 -0.2483 -0.5465 -0.2335 -0.2326 -0.7894 -1.1359 -0.0509 -0.5232 -0.2446 -0.1564
+S-121	In dieser Vereinbarung wird Folgendes festgehalten :
+T-121	This arrangement shall include the following provisions on :
+H-121	-0.6535684466362	This Agreement stipulates that :
+D-121	-0.6535684466362	This Agreement stipulates that :
+P-121	-1.4526 -0.6241 -0.0152 -2.6557 -0.0091 -0.0837 -0.6567 -0.2634 -0.1216
+S-88	a ) ein Frachtbrief oder
+T-88	( a ) a bill of lading ; or
+H-88	-0.4337800145149231	( a ) a waybill or
+D-88	-0.4337800145149231	( a ) a waybill or
+P-88	-0.9074 -0.2024 -0.1181 -0.5102 -0.7646 -0.0622 -0.0221 -1.1516 -0.1654
+S-113	b ) im Fall Japans :
+T-113	( b ) in the case of Japan :
+H-113	-0.5488903522491455	b ) in the case of Japan :
+D-113	-0.5488903522491455	b ) in the case of Japan :
+P-113	-2.4377 -0.1342 -0.8878 -0.5588 -0.1464 -0.2254 -0.0680 -0.3599 -0.1218
+S-89	Im Namen des Rates der Europäischen Union
+T-89	On behalf of the Council of the European Union
+H-89	-0.2401096671819687	On behalf of the Council of the European Union
+D-89	-0.2401096671819687	On behalf of the Council of the European Union
+P-89	-0.2859 -0.0552 -0.2133 -0.2385 -0.1008 -0.2395 -0.2578 -0.1211 -0.0860 -0.8031
+S-95	d ) Schwere der Straftaten ;
+T-95	( d ) the seriousness of the offences ;
+H-95	-0.5140911936759949	( d ) the gravity of the offences ;
+D-95	-0.5140911936759949	( d ) the gravity of the offences ;
+P-95	-0.6245 -0.1278 -0.1202 -1.7433 -0.8688 -0.0703 -0.2175 -1.2187 -0.2815 -0.2583 -0.1242
+S-106	d ) <unk> Wettbewerbsrecht <unk> :
+T-106	( d ) the term <<unk>> competition laws <<unk>> means :
+H-106	-0.4073837399482727	d ) <unk> competition law <unk> :
+D-106	-0.4073837399482727	d ) <unk> competition law <unk> :
+P-106	-0.8882 -0.1208 -0.1074 -1.1343 -0.2577 -0.3988 -0.2268 -0.1250
+S-38	Das Personal ist dem Generalsekretär verantwortlich .
+T-38	The staff shall be responsible to the Secretary-General .
+H-38	-0.5551963448524475	The staff shall be accountable to the Secretary General .
+D-38	-0.5551963448524475	The staff shall be accountable to the Secretary General .
+P-38	-1.3333 -0.7269 -1.0330 -0.2773 -1.2075 -0.0414 -0.2718 -0.2537 -0.1909 -1.0375 -0.1665 -0.1227
+S-110	b ) im Fall Japans :
+T-110	( b ) in the case of Japan :
+H-110	-0.5488903522491455	b ) in the case of Japan :
+D-110	-0.5488903522491455	b ) in the case of Japan :
+P-110	-2.4377 -0.1342 -0.8878 -0.5588 -0.1464 -0.2254 -0.0680 -0.3599 -0.1218
+S-52	( UNRWA )
+T-52	Für das Hilfswerk der Vereinten Nationen für Palästina-Flüchtlinge ( UNRWA )
+H-52	-0.1402186006307602	( UNRWA )
+D-52	-0.1402186006307602	( UNRWA )
+P-52	-0.1900 -0.0700 -0.1855 -0.1086 -0.1231 -0.1642
+S-27	andererseits ,
+T-27	<<unk>> Host Party <<unk>> , on the other hand ,
+H-27	-2.198246479034424	on the other hand
+D-27	-2.198246479034424	on the other hand
+P-27	-7.1545 -0.2881 -0.1478 -0.3072 -3.0936
+S-23	LUFTBEFÖRDERUNG DURCH EINEN ANDEREN ALS DEN VERTRAGLICHEN LUFTFRACHTFÜHRER
+T-23	Carriage by air performed by a person other than the contracting carrier
+H-23	-0.6388067007064819	AVIATION PROVIDENCE BY ANY OTHER THAN THE CONTRACT AVIATIONS
+D-23	-0.6388067007064819	AVIATION PROVIDENCE BY ANY OTHER THAN THE CONTRACT AVIATIONS
+P-23	-1.3033 -0.4376 -0.0488 -0.0262 -1.6111 -0.0553 -0.6413 -0.2181 -0.6587 -0.4652 -0.6262 -0.0308 -0.4583 -1.2052 -1.4039 -0.0501 -0.0359 -1.0049 -0.7159 -0.4194 -2.1214 -0.3781 -0.1295 -2.5136 -0.2061 -0.0399 -2.0153 -0.0090 -0.1650 -0.1700
+S-17	HAFTUNG DES LUFTFRACHTFÜHRERS UND UMFANG DES SCHADENERSATZES<unk> 4 )
+T-17	Liability of the carrier and extent of compensation for damage
+H-17	-0.5242724418640137	LIABILITY OF THE AVIATION GUIDE AND THE REPLACEMENT OF DAMAGE ( 4 )
+D-17	-0.5242724418640137	LIABILITY OF THE AVIATION GUIDE AND THE REPLACEMENT OF DAMAGE ( 4 )
+P-17	-0.9756 -0.1096 -0.0087 -0.0199 -0.0746 -0.1616 -0.0405 -1.3416 -2.7213 -0.5676 -0.1360 -0.3161 -2.6783 -0.0469 -0.0592 -0.4420 -0.1275 -1.1664 -1.7448 -1.2016 -0.2613 -0.0820 -0.0150 -0.1465 -0.2007 -0.0378 -0.3695 -0.0590 -0.0037 -0.7431 -1.3900 -0.2790 -0.1263 -0.1716
+S-7	b ) Schadstoffpfade und -verzeichnisse in repräsentativen Ökosystemen ;
+T-7	( b ) pollutant pathways and inventories in representative ecosystems
+H-7	-0.2582469880580902	( b ) pollutant paths and inventories in representative ecosystems ;
+D-7	-0.2582469880580902	( b ) pollutant paths and inventories in representative ecosystems ;
+P-7	-0.2812 -0.1160 -0.1185 -1.2075 -0.0974 -0.1612 -1.4127 -0.0359 -0.1829 -0.0494 -0.0639 -0.4994 -0.0498 -0.1155 -0.0692 -0.0398 -0.0196 -0.2617 -0.1251
+S-57	über die Personenbeförderung im grenzüberschreitenden Gelegenheitsverkehr mit Omnibussen
+T-57	on the international occasional carriage of passengers by coach and bus
+H-57	-0.6392201781272888	on the occasional international carriage of passengers by bus and coach
+D-57	-0.6392201781272888	on the occasional international carriage of passengers by bus and coach
+P-57	-1.8316 -0.7468 -2.0832 -0.0638 -0.2834 -1.2142 -0.0103 -0.2679 -0.3592 -0.4822 -0.5710 -0.6813 -0.1501 -0.2042
+S-21	Haftungshöchstbeträge bei Verspätung sowie für Reisegepäck und Güter
+T-21	Limits of liability in relation to delay , baggage and cargo
+H-21	-0.733970582485199	Maximum liability amounts for delays as well as baggage and goods
+D-21	-0.733970582485199	Maximum liability amounts for delays as well as baggage and goods
+P-21	-2.7690 -0.0980 -0.3192 -0.1233 -0.9851 -1.1360 -1.0315 -2.1648 -0.1257 -0.1980 -1.4265 -0.0316 -0.2235 -0.2014 -0.1761
+2021-01-26 10:53:25 | INFO | fairseq_cli.generate | NOTE: hypothesis and token scores are output in base 2
+2021-01-26 10:53:25 | INFO | fairseq_cli.generate | Translated 133 sentences (1646 tokens) in 1.2s (115.01 sentences/s, 1423.38 tokens/s)
+Generate test with beam=5: BLEU = 37.81 77.0/57.6/42.9/30.6 (BP = 0.770 ratio = 0.793 hyp_len = 1278 ref_len = 1612)
+
+
+###############################################################################
+Peregrine Cluster
+Job 17649243 for user 's3475743'
+Finished at: Tue Jan 26 10:53:26 CET 2021
+
+Job details:
+============
+
+Job ID              : 17649243
+Name                : g_JRC_p7_short
+User                : s3475743
+Partition           : gpu
+Nodes               : pg-gpu22
+Number of Nodes     : 1
+Cores               : 12
+State               : COMPLETED
+Submit              : 2021-01-26T10:50:46
+Start               : 2021-01-26T10:53:13
+End                 : 2021-01-26T10:53:26
+Reserved walltime   : 23:55:00
+Used walltime       : 00:00:13
+Used CPU time       : 00:00:14 (efficiency:  9.42%)
+% User (Computation): 72.90%
+% System (I/O)      : 27.10%
+Mem reserved        : 32G/node
+Max Mem used        : 0.00  (pg-gpu22)
+Max Disk Write      : 0.00  (pg-gpu22)
+Max Disk Read       : 0.00  (pg-gpu22)
+Average GPU usage   : No GPU metrics available (pg-gpu22)
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
+
+################################################################################

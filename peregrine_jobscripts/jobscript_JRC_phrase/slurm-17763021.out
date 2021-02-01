@@ -1,0 +1,690 @@
+
+The following have been reloaded with a version change:
+  1) GCCcore/8.3.0 => GCCcore/9.3.0
+  2) binutils/2.32-GCCcore-8.3.0 => binutils/2.34-GCCcore-9.3.0
+  3) zlib/1.2.11-GCCcore-8.3.0 => zlib/1.2.11-GCCcore-9.3.0
+
+2021-02-01 01:50:08 | INFO | fairseq_cli.train | Namespace(activation_dropout=0.0, activation_fn='relu', adam_betas='(0.9, 0.98)', adam_eps=1e-08, adaptive_input=False, adaptive_softmax_cutoff=None, adaptive_softmax_dropout=0, all_gather_list_size=16384, arch='transformer_vaswani_wmt_en_de_big', attention_dropout=0.0, best_checkpoint_metric='bleu', bf16=False, bpe=None, broadcast_buffers=False, bucket_cap_mb=25, checkpoint_suffix='', clip_norm=0.0, cpu=False, criterion='label_smoothed_cross_entropy', cross_self_attention=False, curriculum=0, data='../../../data-bin/phrase_4_0.5_tag_JRC', data_buffer_size=10, dataset_impl=None, ddp_backend='c10d', decoder_attention_heads=16, decoder_embed_dim=1024, decoder_embed_path=None, decoder_ffn_embed_dim=4096, decoder_input_dim=1024, decoder_layerdrop=0, decoder_layers=6, decoder_layers_to_keep=None, decoder_learned_pos=False, decoder_normalize_before=False, decoder_output_dim=1024, device_id=0, disable_validation=False, distributed_backend='nccl', distributed_init_method=None, distributed_no_spawn=False, distributed_port=-1, distributed_rank=0, distributed_world_size=1, distributed_wrapper='DDP', dropout=0.5, empty_cache_freq=0, encoder_attention_heads=16, encoder_embed_dim=1024, encoder_embed_path=None, encoder_ffn_embed_dim=8192, encoder_layerdrop=0, encoder_layers=6, encoder_layers_to_keep=None, encoder_learned_pos=False, encoder_normalize_before=False, eval_bleu=True, eval_bleu_args='{"beam": 5, "max_len_a": 1.2, "max_len_b": 10}', eval_bleu_detok='moses', eval_bleu_detok_args=None, eval_bleu_print_samples=True, eval_bleu_remove_bpe='@@ ', eval_tokenized_bleu=False, fast_stat_sync=False, find_unused_parameters=False, fix_batches_to_gpus=False, fixed_validation_seed=None, fp16=True, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, keep_best_checkpoints=-1, keep_interval_updates=-1, keep_last_epochs=-1, label_smoothing=0.1, layernorm_embedding=False, left_pad_source='True', left_pad_target='False', load_alignments=False, localsgd_frequency=3, log_format=None, log_interval=100, lr=[0.000175], lr_scheduler='inverse_sqrt', max_epoch=20, max_sentences=None, max_sentences_valid=None, max_source_positions=1024, max_target_positions=1024, max_tokens=4096, max_tokens_valid=4096, max_update=0, maximize_best_checkpoint_metric=True, memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, min_lr=-1, model_parallel_size=1, no_cross_attention=False, no_epoch_checkpoints=True, no_last_checkpoints=False, no_progress_bar=False, no_save=False, no_save_optimizer_state=False, no_scale_embedding=False, no_seed_provided=True, no_token_positional_embeddings=False, nprocs_per_node=1, num_batch_buckets=0, num_workers=1, optimizer='adam', optimizer_overrides='{}', patience=-1, profile=False, quant_noise_pq=0, quant_noise_pq_block_size=8, quant_noise_scalar=0, quantization_config_path=None, required_batch_size_multiple=8, reset_dataloader=True, reset_lr_scheduler=False, reset_meters=False, reset_optimizer=True, restore_file='../../../models/wmt19.de-en.joined-dict.ensemble//model1.pt', save_dir='../checkpoints/JRC_p_11', save_interval=1, save_interval_updates=0, scoring='bleu', seed=1, sentence_avg=False, share_all_embeddings=False, share_decoder_input_output_embed=True, skip_invalid_size_inputs_valid_test=False, slowmo_algorithm='LocalSGD', slowmo_momentum=None, source_lang=None, stop_time_hours=0, target_lang=None, task='translation', tensorboard_logdir='', threshold_loss_scale=None, tie_adaptive_weights=False, tokenizer=None, tpu=False, train_subset='train', truncate_source=False, update_freq=[1], upsample_primary=1, use_bmuf=False, use_old_adam=False, user_dir=None, valid_subset='valid', validate_after_updates=0, validate_interval=1, validate_interval_updates=0, warmup_init_lr=-1, warmup_updates=4000, weight_decay=0.0)
+2021-02-01 01:50:08 | INFO | fairseq.tasks.translation | [de] dictionary: 42024 types
+2021-02-01 01:50:08 | INFO | fairseq.tasks.translation | [en] dictionary: 42024 types
+2021-02-01 01:50:08 | INFO | fairseq.data.data_utils | loaded 151 examples from: ../../../data-bin/phrase_4_0.5_tag_JRC/valid.de-en.de
+2021-02-01 01:50:08 | INFO | fairseq.data.data_utils | loaded 151 examples from: ../../../data-bin/phrase_4_0.5_tag_JRC/valid.de-en.en
+2021-02-01 01:50:08 | INFO | fairseq.tasks.translation | ../../../data-bin/phrase_4_0.5_tag_JRC valid de-en 151 examples
+2021-02-01 01:50:13 | INFO | fairseq_cli.train | TransformerModel(
+  (encoder): TransformerEncoder(
+    (dropout_module): FairseqDropout()
+    (embed_tokens): Embedding(42024, 1024, padding_idx=1)
+    (embed_positions): SinusoidalPositionalEmbedding()
+    (layers): ModuleList(
+      (0): TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=1024, out_features=8192, bias=True)
+        (fc2): Linear(in_features=8192, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (1): TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=1024, out_features=8192, bias=True)
+        (fc2): Linear(in_features=8192, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (2): TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=1024, out_features=8192, bias=True)
+        (fc2): Linear(in_features=8192, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (3): TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=1024, out_features=8192, bias=True)
+        (fc2): Linear(in_features=8192, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (4): TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=1024, out_features=8192, bias=True)
+        (fc2): Linear(in_features=8192, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (5): TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=1024, out_features=8192, bias=True)
+        (fc2): Linear(in_features=8192, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+    )
+  )
+  (decoder): TransformerDecoder(
+    (dropout_module): FairseqDropout()
+    (embed_tokens): Embedding(42024, 1024, padding_idx=1)
+    (embed_positions): SinusoidalPositionalEmbedding()
+    (layers): ModuleList(
+      (0): TransformerDecoderLayer(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (1): TransformerDecoderLayer(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (2): TransformerDecoderLayer(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (3): TransformerDecoderLayer(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (4): TransformerDecoderLayer(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (5): TransformerDecoderLayer(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+    )
+    (output_projection): Linear(in_features=1024, out_features=42024, bias=False)
+  )
+)
+2021-02-01 01:50:13 | INFO | fairseq_cli.train | model transformer_vaswani_wmt_en_de_big, criterion LabelSmoothedCrossEntropyCriterion
+2021-02-01 01:50:13 | INFO | fairseq_cli.train | num. model params: 312778752 (num. trained: 312778752)
+2021-02-01 01:50:18 | INFO | fairseq.trainer | detected shared parameter: decoder.embed_tokens.weight <- decoder.output_projection.weight
+2021-02-01 01:50:18 | INFO | fairseq.utils | ***********************CUDA enviroments for all 1 workers***********************
+2021-02-01 01:50:18 | INFO | fairseq.utils | rank   0: capabilities =  7.0  ; total memory = 32.000 GB ; name = GRID V100D-32Q                          
+2021-02-01 01:50:18 | INFO | fairseq.utils | ***********************CUDA enviroments for all 1 workers***********************
+2021-02-01 01:50:18 | INFO | fairseq_cli.train | training on 1 devices (GPUs/TPUs)
+2021-02-01 01:50:18 | INFO | fairseq_cli.train | max tokens per GPU = 4096 and max sentences per GPU = None
+2021-02-01 01:50:27 | INFO | fairseq.trainer | loaded checkpoint ../../../models/wmt19.de-en.joined-dict.ensemble//model1.pt (epoch 16 @ 0 updates)
+2021-02-01 01:50:27 | INFO | fairseq.trainer | loading train data for epoch 1
+2021-02-01 01:50:27 | INFO | fairseq.data.data_utils | loaded 111965 examples from: ../../../data-bin/phrase_4_0.5_tag_JRC/train.de-en.de
+2021-02-01 01:50:27 | INFO | fairseq.data.data_utils | loaded 111965 examples from: ../../../data-bin/phrase_4_0.5_tag_JRC/train.de-en.en
+2021-02-01 01:50:27 | INFO | fairseq.tasks.translation | ../../../data-bin/phrase_4_0.5_tag_JRC train de-en 111965 examples
+2021-02-01 01:50:28 | INFO | fairseq_cli.train | begin training epoch 1
+2021-02-01 01:50:29 | INFO | fairseq.trainer | NOTE: overflow detected, setting loss scale to: 64.0
+2021-02-01 01:50:29 | INFO | fairseq.trainer | NOTE: overflow detected, setting loss scale to: 32.0
+2021-02-01 01:50:29 | INFO | fairseq.trainer | NOTE: overflow detected, setting loss scale to: 16.0
+2021-02-01 01:50:29 | INFO | fairseq.trainer | NOTE: overflow detected, setting loss scale to: 8.0
+2021-02-01 01:50:30 | INFO | fairseq.trainer | NOTE: overflow detected, setting loss scale to: 4.0
+2021-02-01 01:50:30 | INFO | fairseq.trainer | NOTE: overflow detected, setting loss scale to: 2.0
+2021-02-01 01:50:49 | INFO | train_inner | epoch 001:    106 / 363 loss=4.792, nll_loss=3.234, ppl=9.41, wps=20347.8, ups=5.28, wpb=3858.7, bsz=309.3, num_updates=100, lr=4.375e-06, gnorm=19.113, loss_scale=2, train_wall=19, wall=31
+2021-02-01 01:51:08 | INFO | train_inner | epoch 001:    206 / 363 loss=3.19, nll_loss=1.412, ppl=2.66, wps=20312.8, ups=5.26, wpb=3860.7, bsz=308.2, num_updates=200, lr=8.75e-06, gnorm=5.025, loss_scale=2, train_wall=19, wall=50
+2021-02-01 01:51:27 | INFO | train_inner | epoch 001:    306 / 363 loss=2.878, nll_loss=1.08, ppl=2.11, wps=20243.2, ups=5.27, wpb=3843.4, bsz=307.5, num_updates=300, lr=1.3125e-05, gnorm=3.489, loss_scale=2, train_wall=19, wall=69
+2021-02-01 01:51:37 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 01:51:39 | INFO | fairseq.tasks.translation | example hypothesis: - improving the competitiveness of all types of combined transport vis-à-vis road transport by providing financial support for new Community or Bulgarian CHP projects;
+2021-02-01 01:51:39 | INFO | fairseq.tasks.translation | example reference: - improving the competitiveness of all types of combined transport vis-à-vis road through financial assistance to new combined transport projects by the Community or Bulgaria,
+2021-02-01 01:51:40 | INFO | fairseq.tasks.translation | example hypothesis: These Protocols shall be approved by the persons selected by the Parties to co-chair the meetings and shall be forwarded together with the annual report to the officials of the Parties competent at ministerial level.
+2021-02-01 01:51:40 | INFO | fairseq.tasks.translation | example reference: These Minutes shall be approved by those persons selected from each side to jointly chair the meeting, and shall, together with the annual report, be made available to appropriate Minister-level officials of each Party.
+2021-02-01 01:51:41 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Vocational training institution UNKNOWNTOKENINHYP all types of governmental, parapublic or private entities which, in accordance with applicable legislation and practices, design or implement measures of vocational training, continuing vocational training, retraining or retraining, regardless of their respective designation; and
+2021-02-01 01:51:41 | INFO | fairseq.tasks.translation | example reference: 2. UNKNOWNTOKENINREF vocational education and training institutions UNKNOWNTOKENINREF means any type of public, semi-public or private body, which, irrespective of the designation given to it, in accordance with the applicable laws and practices, designs or undertakes vocational education or training, further vocational training, refresher vocational training or retraining; and
+2021-02-01 01:51:43 | INFO | fairseq.tasks.translation | example hypothesis: CONSIDERING that the New Transatlantic Agenda adopted at the EU-US Summit in Madrid in December 1995 under Area IV - Bridging the Atlantic - concerning the Agreement establishing a cooperation programme in the field of higher education and vocational training between the EC and the US, notes that it could stimulate a wide range of innovative cooperative activities directly benefiting students and teachers and refers to the introduction of new technologies in schools enabling closer relations between schools in the United States of America and those in the European Union and promoting the teaching of the language, history and culture of the partner;
+2021-02-01 01:51:43 | INFO | fairseq.tasks.translation | example reference: NOTING that the new Transatlantic Agenda adopted at the EU-US Summit in December 1995 in Madrid refers under Action IV - Building bridges across the Atlantic - to the EC / US Agreement establishing a cooperation programme in education and vocational training as a potential catalyst for a broad spectrum of innovative cooperative activities of direct benefit to students and teachers and refers to the introduction of new technologies into classrooms, linking educational establishments in the United States of America with those in the European Union and encouraging teaching of each other UNKNOWNTOKENINREF s languages, history and culture;
+2021-02-01 01:51:43 | INFO | valid | epoch 001 | valid on 'valid' subset | loss 3.906 | nll_loss 2.137 | ppl 4.4 | bleu 40.18 | wps 1077.4 | wpb 1528 | bsz 37.8 | num_updates 357
+2021-02-01 01:51:43 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 01:52:13 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/JRC_p_11/checkpoint_best.pt (epoch 1 @ 357 updates, score 40.18) (writing took 29.848847999237478 seconds)
+2021-02-01 01:52:13 | INFO | fairseq_cli.train | end of epoch 1 (average epoch stats below)
+2021-02-01 01:52:13 | INFO | train | epoch 001 | loss 3.48 | nll_loss 1.753 | ppl 3.37 | wps 13252.7 | ups 3.44 | wpb 3849.8 | bsz 309 | num_updates 357 | lr 1.56188e-05 | gnorm 8.198 | loss_scale 2 | train_wall 69 | wall 116
+2021-02-01 01:52:13 | INFO | fairseq_cli.train | begin training epoch 1
+2021-02-01 01:52:22 | INFO | train_inner | epoch 002:     43 / 363 loss=2.727, nll_loss=0.923, ppl=1.9, wps=7068.7, ups=1.82, wpb=3878.5, bsz=315.5, num_updates=400, lr=1.75e-05, gnorm=2.733, loss_scale=2, train_wall=19, wall=124
+2021-02-01 01:52:40 | INFO | train_inner | epoch 002:    143 / 363 loss=2.696, nll_loss=0.893, ppl=1.86, wps=20271.4, ups=5.3, wpb=3823.2, bsz=304.9, num_updates=500, lr=2.1875e-05, gnorm=2.381, loss_scale=2, train_wall=19, wall=143
+2021-02-01 01:52:59 | INFO | train_inner | epoch 002:    243 / 363 loss=2.601, nll_loss=0.789, ppl=1.73, wps=20441.7, ups=5.24, wpb=3897.5, bsz=313.2, num_updates=600, lr=2.625e-05, gnorm=2.055, loss_scale=2, train_wall=19, wall=162
+2021-02-01 01:53:18 | INFO | train_inner | epoch 002:    343 / 363 loss=2.563, nll_loss=0.75, ppl=1.68, wps=20037.1, ups=5.27, wpb=3803.8, bsz=307, num_updates=700, lr=3.0625e-05, gnorm=2.057, loss_scale=2, train_wall=19, wall=181
+2021-02-01 01:53:22 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 01:53:23 | INFO | fairseq.tasks.translation | example hypothesis: - improving the competitiveness of all types of combined transport vis-à-vis road transport by providing financial support for new Community or Bulgarian CHP projects;
+2021-02-01 01:53:23 | INFO | fairseq.tasks.translation | example reference: - improving the competitiveness of all types of combined transport vis-à-vis road through financial assistance to new combined transport projects by the Community or Bulgaria,
+2021-02-01 01:53:24 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP These Protocols shall be approved by persons selected by the Parties for the joint chairing of meetings and shall be transmitted together with the annual report to the competent officials of the Parties at ministerial level.
+2021-02-01 01:53:24 | INFO | fairseq.tasks.translation | example reference: These Minutes shall be approved by those persons selected from each side to jointly chair the meeting, and shall, together with the annual report, be made available to appropriate Minister-level officials of each Party.
+2021-02-01 01:53:25 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Vocational training institutions which, in accordance with applicable legislation and practices, design or implement measures of vocational training, continuing training, retraining or retraining, irrespective of their respective designation; and
+2021-02-01 01:53:25 | INFO | fairseq.tasks.translation | example reference: 2. UNKNOWNTOKENINREF vocational education and training institutions UNKNOWNTOKENINREF means any type of public, semi-public or private body, which, irrespective of the designation given to it, in accordance with the applicable laws and practices, designs or undertakes vocational education or training, further vocational training, refresher vocational training or retraining; and
+2021-02-01 01:53:27 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP CONSIDERING that the New Transatlantic Agenda adopted at the EU-US Summit in Madrid in December 1995 under Area IV - Bridging the Atlantic, with regard to the Agreement establishing a programme of cooperation in higher education and vocational training between the EC and the United States, notes that it could stimulate a wide range of innovative cooperative activities directly benefiting students and teachers and underlines the introduction of new technologies in schools enabling closer relations between schools in the United States and those in the European Union and promoting the teaching of languages, history and culture of the partner;
+2021-02-01 01:53:27 | INFO | fairseq.tasks.translation | example reference: NOTING that the new Transatlantic Agenda adopted at the EU-US Summit in December 1995 in Madrid refers under Action IV - Building bridges across the Atlantic - to the EC / US Agreement establishing a cooperation programme in education and vocational training as a potential catalyst for a broad spectrum of innovative cooperative activities of direct benefit to students and teachers and refers to the introduction of new technologies into classrooms, linking educational establishments in the United States of America with those in the European Union and encouraging teaching of each other UNKNOWNTOKENINREF s languages, history and culture;
+2021-02-01 01:53:27 | INFO | valid | epoch 002 | valid on 'valid' subset | loss 3.879 | nll_loss 2.107 | ppl 4.31 | bleu 39.07 | wps 1144.3 | wpb 1528 | bsz 37.8 | num_updates 720 | best_bleu 40.18
+2021-02-01 01:53:27 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 01:53:32 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/JRC_p_11/checkpoint_last.pt (epoch 2 @ 720 updates, score 39.07) (writing took 5.607235070317984 seconds)
+2021-02-01 01:53:32 | INFO | fairseq_cli.train | end of epoch 2 (average epoch stats below)
+2021-02-01 01:53:32 | INFO | train | epoch 002 | loss 2.64 | nll_loss 0.833 | ppl 1.78 | wps 17615.1 | ups 4.58 | wpb 3844.1 | bsz 308.4 | num_updates 720 | lr 3.15e-05 | gnorm 2.246 | loss_scale 2 | train_wall 68 | wall 195
+2021-02-01 01:53:32 | INFO | fairseq_cli.train | begin training epoch 2
+2021-02-01 01:53:48 | INFO | train_inner | epoch 003:     80 / 363 loss=2.538, nll_loss=0.723, ppl=1.65, wps=12995.6, ups=3.39, wpb=3831.5, bsz=311, num_updates=800, lr=3.5e-05, gnorm=1.996, loss_scale=2, train_wall=19, wall=210
+2021-02-01 01:54:07 | INFO | train_inner | epoch 003:    180 / 363 loss=2.623, nll_loss=0.818, ppl=1.76, wps=20065.2, ups=5.33, wpb=3762.6, bsz=294.6, num_updates=900, lr=3.9375e-05, gnorm=2.097, loss_scale=2, train_wall=19, wall=229
+2021-02-01 01:54:26 | INFO | train_inner | epoch 003:    280 / 363 loss=2.494, nll_loss=0.675, ppl=1.6, wps=20337.7, ups=5.25, wpb=3876.9, bsz=311.3, num_updates=1000, lr=4.375e-05, gnorm=1.651, loss_scale=2, train_wall=19, wall=248
+2021-02-01 01:54:42 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 01:54:42 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP improving the competitiveness of all types of combined transport against road by providing financial support to new CCT projects of the Community or Bulgaria;
+2021-02-01 01:54:42 | INFO | fairseq.tasks.translation | example reference: - improving the competitiveness of all types of combined transport vis-à-vis road through financial assistance to new combined transport projects by the Community or Bulgaria,
+2021-02-01 01:54:43 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP These Protocols shall be approved by persons selected by the Parties for the joint chairing of meetings and, together with the annual report, shall be transmitted to the officials of the Parties competent at ministerial level.
+2021-02-01 01:54:43 | INFO | fairseq.tasks.translation | example reference: These Minutes shall be approved by those persons selected from each side to jointly chair the meeting, and shall, together with the annual report, be made available to appropriate Minister-level officials of each Party.
+2021-02-01 01:54:45 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Vocational Training Establishment shall design or implement, in accordance with applicable laws and practices, measures of vocational training, continuing training, retraining or retraining, irrespective of their respective description; and
+2021-02-01 01:54:45 | INFO | fairseq.tasks.translation | example reference: 2. UNKNOWNTOKENINREF vocational education and training institutions UNKNOWNTOKENINREF means any type of public, semi-public or private body, which, irrespective of the designation given to it, in accordance with the applicable laws and practices, designs or undertakes vocational education or training, further vocational training, refresher vocational training or retraining; and
+2021-02-01 01:54:47 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP CONSIDERING that the New Transatlantic Agenda adopted at the EU / US Summit in Madrid in December 1995 under Area IV - Bridging the Atlantic - with respect to the Agreement establishing a programme of cooperation in higher education and vocational training between the EC and the United States, notes that it could provide the impetus for a wide range of innovative cooperative activities directly benefiting students and teachers and refers to the introduction of new technologies in schools which enable closer relations between schools in the United States and those in the European Union and encourage the teaching of languages, history and culture of the partner;
+2021-02-01 01:54:47 | INFO | fairseq.tasks.translation | example reference: NOTING that the new Transatlantic Agenda adopted at the EU-US Summit in December 1995 in Madrid refers under Action IV - Building bridges across the Atlantic - to the EC / US Agreement establishing a cooperation programme in education and vocational training as a potential catalyst for a broad spectrum of innovative cooperative activities of direct benefit to students and teachers and refers to the introduction of new technologies into classrooms, linking educational establishments in the United States of America with those in the European Union and encouraging teaching of each other UNKNOWNTOKENINREF s languages, history and culture;
+2021-02-01 01:54:47 | INFO | valid | epoch 003 | valid on 'valid' subset | loss 3.874 | nll_loss 2.086 | ppl 4.25 | bleu 37.99 | wps 1057.8 | wpb 1528 | bsz 37.8 | num_updates 1083 | best_bleu 40.18
+2021-02-01 01:54:47 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 01:54:54 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/JRC_p_11/checkpoint_last.pt (epoch 3 @ 1083 updates, score 37.99) (writing took 7.219349359162152 seconds)
+2021-02-01 01:54:54 | INFO | fairseq_cli.train | end of epoch 3 (average epoch stats below)
+2021-02-01 01:54:54 | INFO | train | epoch 003 | loss 2.532 | nll_loss 0.718 | ppl 1.64 | wps 17157.7 | ups 4.46 | wpb 3844.1 | bsz 308.4 | num_updates 1083 | lr 4.73812e-05 | gnorm 1.827 | loss_scale 2 | train_wall 68 | wall 276
+2021-02-01 01:54:54 | INFO | fairseq_cli.train | begin training epoch 3
+2021-02-01 01:54:57 | INFO | train_inner | epoch 004:     17 / 363 loss=2.512, nll_loss=0.698, ppl=1.62, wps=12253.7, ups=3.17, wpb=3865.6, bsz=312.3, num_updates=1100, lr=4.8125e-05, gnorm=1.749, loss_scale=2, train_wall=19, wall=280
+2021-02-01 01:55:16 | INFO | train_inner | epoch 004:    117 / 363 loss=2.464, nll_loss=0.642, ppl=1.56, wps=20261.5, ups=5.24, wpb=3869.2, bsz=309.2, num_updates=1200, lr=5.25e-05, gnorm=1.534, loss_scale=2, train_wall=19, wall=299
+2021-02-01 01:55:35 | INFO | train_inner | epoch 004:    217 / 363 loss=2.481, nll_loss=0.663, ppl=1.58, wps=20263, ups=5.27, wpb=3845.9, bsz=308, num_updates=1300, lr=5.6875e-05, gnorm=1.69, loss_scale=2, train_wall=19, wall=318
+2021-02-01 01:55:54 | INFO | train_inner | epoch 004:    317 / 363 loss=2.46, nll_loss=0.638, ppl=1.56, wps=20286.5, ups=5.26, wpb=3854.6, bsz=307.1, num_updates=1400, lr=6.125e-05, gnorm=1.435, loss_scale=2, train_wall=19, wall=337
+2021-02-01 01:56:03 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 01:56:04 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP improving the competitiveness of all types of combined road transport through financial support for new ICD projects of the Community or Bulgaria;
+2021-02-01 01:56:04 | INFO | fairseq.tasks.translation | example reference: - improving the competitiveness of all types of combined transport vis-à-vis road through financial assistance to new combined transport projects by the Community or Bulgaria,
+2021-02-01 01:56:05 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP These Protocols shall be approved by persons selected by the Parties for joint chairing meetings and transmitted together with the annual report to the Parties UNKNOWNTOKENINHYP s competent officials at ministerial level.
+2021-02-01 01:56:05 | INFO | fairseq.tasks.translation | example reference: These Minutes shall be approved by those persons selected from each side to jointly chair the meeting, and shall, together with the annual report, be made available to appropriate Minister-level officials of each Party.
+2021-02-01 01:56:06 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP any public, paragraph governmental or private entities which, in accordance with applicable laws and practices, design or implement vocational training, retraining or retraining measures, irrespective of their respective description; and
+2021-02-01 01:56:06 | INFO | fairseq.tasks.translation | example reference: 2. UNKNOWNTOKENINREF vocational education and training institutions UNKNOWNTOKENINREF means any type of public, semi-public or private body, which, irrespective of the designation given to it, in accordance with the applicable laws and practices, designs or undertakes vocational education or training, further vocational training, refresher vocational training or retraining; and
+2021-02-01 01:56:08 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP CONSIDERING that the New Transatlantic Agenda adopted at the EU / US Summit in Madrid in December 1995 under Area IV - Bridging the Atlantic - concerning the Agreement establishing a programme of cooperation in higher education and vocational training between the EC and the United States, notes that it could provide the impetus for a broad range of innovative cooperative activities which directly benefit students and teachers and the introduction of new technologies in schools which enable closer relations between schools in the United States of America and those in the European Union and encourage the teaching of languages, history and culture of the partner,
+2021-02-01 01:56:08 | INFO | fairseq.tasks.translation | example reference: NOTING that the new Transatlantic Agenda adopted at the EU-US Summit in December 1995 in Madrid refers under Action IV - Building bridges across the Atlantic - to the EC / US Agreement establishing a cooperation programme in education and vocational training as a potential catalyst for a broad spectrum of innovative cooperative activities of direct benefit to students and teachers and refers to the introduction of new technologies into classrooms, linking educational establishments in the United States of America with those in the European Union and encouraging teaching of each other UNKNOWNTOKENINREF s languages, history and culture;
+2021-02-01 01:56:08 | INFO | valid | epoch 004 | valid on 'valid' subset | loss 4.007 | nll_loss 2.233 | ppl 4.7 | bleu 36.06 | wps 970.5 | wpb 1528 | bsz 37.8 | num_updates 1446 | best_bleu 40.18
+2021-02-01 01:56:08 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 01:56:15 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/JRC_p_11/checkpoint_last.pt (epoch 4 @ 1446 updates, score 36.06) (writing took 6.396335706114769 seconds)
+2021-02-01 01:56:15 | INFO | fairseq_cli.train | end of epoch 4 (average epoch stats below)
+2021-02-01 01:56:15 | INFO | train | epoch 004 | loss 2.473 | nll_loss 0.653 | ppl 1.57 | wps 17228.9 | ups 4.48 | wpb 3844.1 | bsz 308.4 | num_updates 1446 | lr 6.32625e-05 | gnorm 1.591 | loss_scale 2 | train_wall 68 | wall 357
+2021-02-01 01:56:15 | INFO | fairseq_cli.train | begin training epoch 4
+2021-02-01 01:56:25 | INFO | train_inner | epoch 005:     54 / 363 loss=2.449, nll_loss=0.628, ppl=1.55, wps=12412.7, ups=3.24, wpb=3828.1, bsz=309.3, num_updates=1500, lr=6.5625e-05, gnorm=1.564, loss_scale=2, train_wall=19, wall=367
+2021-02-01 01:56:44 | INFO | train_inner | epoch 005:    154 / 363 loss=2.444, nll_loss=0.621, ppl=1.54, wps=19905.4, ups=5.28, wpb=3768, bsz=298.9, num_updates=1600, lr=7e-05, gnorm=1.543, loss_scale=2, train_wall=19, wall=386
+2021-02-01 01:57:03 | INFO | train_inner | epoch 005:    254 / 363 loss=2.407, nll_loss=0.583, ppl=1.5, wps=20406.4, ups=5.23, wpb=3901.2, bsz=318.9, num_updates=1700, lr=7.4375e-05, gnorm=1.424, loss_scale=2, train_wall=19, wall=405
+2021-02-01 01:57:22 | INFO | train_inner | epoch 005:    354 / 363 loss=2.453, nll_loss=0.633, ppl=1.55, wps=20330.1, ups=5.26, wpb=3867, bsz=309.9, num_updates=1800, lr=7.875e-05, gnorm=1.449, loss_scale=2, train_wall=19, wall=425
+2021-02-01 01:57:24 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 01:57:25 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP improving the competitiveness of all types of combined transport against road transport through financial support to new ICD projects of the Community or Bulgaria;
+2021-02-01 01:57:25 | INFO | fairseq.tasks.translation | example reference: - improving the competitiveness of all types of combined transport vis-à-vis road through financial assistance to new combined transport projects by the Community or Bulgaria,
+2021-02-01 01:57:26 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP These Protocols shall be approved by persons selected by the Parties for joint chairing meetings and transmitted together with the annual report to the Parties UNKNOWNTOKENINHYP s competent officials.
+2021-02-01 01:57:26 | INFO | fairseq.tasks.translation | example reference: These Minutes shall be approved by those persons selected from each side to jointly chair the meeting, and shall, together with the annual report, be made available to appropriate Minister-level officials of each Party.
+2021-02-01 01:57:27 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP vocational training entity UNKNOWNTOKENINHYP all kinds of public, paragraph or private entities which, in accordance with applicable legislation and practices, design or implement vocational training, retraining or retraining measures, irrespective of their respective description; and
+2021-02-01 01:57:27 | INFO | fairseq.tasks.translation | example reference: 2. UNKNOWNTOKENINREF vocational education and training institutions UNKNOWNTOKENINREF means any type of public, semi-public or private body, which, irrespective of the designation given to it, in accordance with the applicable laws and practices, designs or undertakes vocational education or training, further vocational training, refresher vocational training or retraining; and
+2021-02-01 01:57:29 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP CONSIDERING that the New Transatlantic Agenda adopted at the EU -US Summit in Madrid in December 1995, under Area IV - Bridging the Atlantic, with respect to the Agreement establishing a programme of cooperation in higher education and vocational training which might directly benefit students and teachers and encourage the teaching of new technologies between schools in the United States of America and those in the European Union and the UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP languages, history and culture of the UNKNOWNTOKENINHYP
+2021-02-01 01:57:29 | INFO | fairseq.tasks.translation | example reference: NOTING that the new Transatlantic Agenda adopted at the EU-US Summit in December 1995 in Madrid refers under Action IV - Building bridges across the Atlantic - to the EC / US Agreement establishing a cooperation programme in education and vocational training as a potential catalyst for a broad spectrum of innovative cooperative activities of direct benefit to students and teachers and refers to the introduction of new technologies into classrooms, linking educational establishments in the United States of America with those in the European Union and encouraging teaching of each other UNKNOWNTOKENINREF s languages, history and culture;
+2021-02-01 01:57:29 | INFO | valid | epoch 005 | valid on 'valid' subset | loss 4.171 | nll_loss 2.423 | ppl 5.36 | bleu 33.95 | wps 1182.5 | wpb 1528 | bsz 37.8 | num_updates 1809 | best_bleu 40.18
+2021-02-01 01:57:29 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 01:57:34 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/JRC_p_11/checkpoint_last.pt (epoch 5 @ 1809 updates, score 33.95) (writing took 5.765721836127341 seconds)
+2021-02-01 01:57:34 | INFO | fairseq_cli.train | end of epoch 5 (average epoch stats below)
+2021-02-01 01:57:34 | INFO | train | epoch 005 | loss 2.432 | nll_loss 0.609 | ppl 1.53 | wps 17539.5 | ups 4.56 | wpb 3844.1 | bsz 308.4 | num_updates 1809 | lr 7.91437e-05 | gnorm 1.461 | loss_scale 2 | train_wall 68 | wall 437
+2021-02-01 01:57:34 | INFO | fairseq_cli.train | begin training epoch 5
+2021-02-01 01:57:52 | INFO | train_inner | epoch 006:     91 / 363 loss=2.398, nll_loss=0.571, ppl=1.49, wps=12882.9, ups=3.39, wpb=3796.8, bsz=303.1, num_updates=1900, lr=8.3125e-05, gnorm=1.373, loss_scale=2, train_wall=19, wall=454
+2021-02-01 01:58:11 | INFO | train_inner | epoch 006:    191 / 363 loss=2.395, nll_loss=0.57, ppl=1.48, wps=20190.5, ups=5.25, wpb=3844.1, bsz=313, num_updates=2000, lr=8.75e-05, gnorm=1.406, loss_scale=2, train_wall=19, wall=473
+2021-02-01 01:58:30 | INFO | train_inner | epoch 006:    291 / 363 loss=2.413, nll_loss=0.589, ppl=1.5, wps=20170.4, ups=5.27, wpb=3829.1, bsz=305.6, num_updates=2100, lr=9.1875e-05, gnorm=1.453, loss_scale=2, train_wall=19, wall=492
+2021-02-01 01:58:43 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 01:58:44 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP improving the competitiveness of all types of combined transport against road through financial support for new ICD projects of the Community or Bulgaria;
+2021-02-01 01:58:44 | INFO | fairseq.tasks.translation | example reference: - improving the competitiveness of all types of combined transport vis-à-vis road through financial assistance to new combined transport projects by the Community or Bulgaria,
+2021-02-01 01:58:45 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Protocols shall be approved by persons selected by the Parties to jointly chair the meetings and transmitted together with the annual report to the Parties UNKNOWNTOKENINHYP s responsible officials.
+2021-02-01 01:58:45 | INFO | fairseq.tasks.translation | example reference: These Minutes shall be approved by those persons selected from each side to jointly chair the meeting, and shall, together with the annual report, be made available to appropriate Minister-level officials of each Party.
+2021-02-01 01:58:46 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP vocational training establishments UNKNOWNTOKENINHYP all kinds of governmental, semigovernmental or private entities which design or implement measures of vocational training, retraining or retraining in accordance with applicable laws and practices; and
+2021-02-01 01:58:46 | INFO | fairseq.tasks.translation | example reference: 2. UNKNOWNTOKENINREF vocational education and training institutions UNKNOWNTOKENINREF means any type of public, semi-public or private body, which, irrespective of the designation given to it, in accordance with the applicable laws and practices, designs or undertakes vocational education or training, further vocational training, refresher vocational training or retraining; and
+2021-02-01 01:58:48 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP CONSIDERING that the New Transatlantic Agenda adopted at the EU / US Summit in Madrid in December 1995 under Area IV - Bridging the Atlantic - with respect to the Agreement establishing a programme of cooperation in the field of higher education and training that might directly benefit students and teachers and encourage the teaching of languages, history and culture of the UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP
+2021-02-01 01:58:48 | INFO | fairseq.tasks.translation | example reference: NOTING that the new Transatlantic Agenda adopted at the EU-US Summit in December 1995 in Madrid refers under Action IV - Building bridges across the Atlantic - to the EC / US Agreement establishing a cooperation programme in education and vocational training as a potential catalyst for a broad spectrum of innovative cooperative activities of direct benefit to students and teachers and refers to the introduction of new technologies into classrooms, linking educational establishments in the United States of America with those in the European Union and encouraging teaching of each other UNKNOWNTOKENINREF s languages, history and culture;
+2021-02-01 01:58:48 | INFO | valid | epoch 006 | valid on 'valid' subset | loss 4.346 | nll_loss 2.635 | ppl 6.21 | bleu 31.53 | wps 1301.5 | wpb 1528 | bsz 37.8 | num_updates 2172 | best_bleu 40.18
+2021-02-01 01:58:48 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 01:58:55 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/JRC_p_11/checkpoint_last.pt (epoch 6 @ 2172 updates, score 31.53) (writing took 7.511028857901692 seconds)
+2021-02-01 01:58:55 | INFO | fairseq_cli.train | end of epoch 6 (average epoch stats below)
+2021-02-01 01:58:55 | INFO | train | epoch 006 | loss 2.4 | nll_loss 0.574 | ppl 1.49 | wps 17238.9 | ups 4.48 | wpb 3844.1 | bsz 308.4 | num_updates 2172 | lr 9.5025e-05 | gnorm 1.391 | loss_scale 2 | train_wall 68 | wall 518
+2021-02-01 01:58:55 | INFO | fairseq_cli.train | begin training epoch 6
+2021-02-01 01:59:01 | INFO | train_inner | epoch 007:     28 / 363 loss=2.394, nll_loss=0.57, ppl=1.48, wps=12516.3, ups=3.23, wpb=3876.6, bsz=312.2, num_updates=2200, lr=9.625e-05, gnorm=1.311, loss_scale=2, train_wall=19, wall=523
+2021-02-01 01:59:20 | INFO | train_inner | epoch 007:    128 / 363 loss=2.354, nll_loss=0.524, ppl=1.44, wps=20468.4, ups=5.25, wpb=3896.9, bsz=312.2, num_updates=2300, lr=0.000100625, gnorm=1.215, loss_scale=2, train_wall=19, wall=542
+2021-02-01 01:59:39 | INFO | train_inner | epoch 007:    228 / 363 loss=2.389, nll_loss=0.562, ppl=1.48, wps=20127.7, ups=5.3, wpb=3799.6, bsz=302.6, num_updates=2400, lr=0.000105, gnorm=1.463, loss_scale=2, train_wall=19, wall=561
+2021-02-01 01:59:58 | INFO | train_inner | epoch 007:    328 / 363 loss=2.383, nll_loss=0.558, ppl=1.47, wps=20204.7, ups=5.26, wpb=3839.9, bsz=308.6, num_updates=2500, lr=0.000109375, gnorm=1.268, loss_scale=2, train_wall=19, wall=580
+2021-02-01 02:00:04 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 02:00:05 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP improving the competitiveness of all types of combined transport against road through financial support for new ICD projects of the Community or Bulgaria;
+2021-02-01 02:00:05 | INFO | fairseq.tasks.translation | example reference: - improving the competitiveness of all types of combined transport vis-à-vis road through financial assistance to new combined transport projects by the Community or Bulgaria,
+2021-02-01 02:00:06 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP These Protocols shall be approved by persons selected by the Parties for joint chairman of the meetings and transmitted together with the annual report to the Parties UNKNOWNTOKENINHYP s responsible officials.
+2021-02-01 02:00:06 | INFO | fairseq.tasks.translation | example reference: These Minutes shall be approved by those persons selected from each side to jointly chair the meeting, and shall, together with the annual report, be made available to appropriate Minister-level officials of each Party.
+2021-02-01 02:00:07 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP vocational training establishments designing or implementing, in accordance with applicable legislation and practices, vocational training or retraining, whatever their respective description; and
+2021-02-01 02:00:07 | INFO | fairseq.tasks.translation | example reference: 2. UNKNOWNTOKENINREF vocational education and training institutions UNKNOWNTOKENINREF means any type of public, semi-public or private body, which, irrespective of the designation given to it, in accordance with the applicable laws and practices, designs or undertakes vocational education or training, further vocational training, refresher vocational training or retraining; and
+2021-02-01 02:00:09 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP CONSIDERING that the New Transatlantic Agenda under Area IV - Bridging the Atlantic, adopted by the EC and the United States of America in December 1995, could stimulate a broad range of innovative cooperative activities which directly benefit students and teachers and the introduction of new technologies in the Schools enabling closer relations between the United States and those in the European Union and promoting the teaching languages, history and culture of their partners;
+2021-02-01 02:00:09 | INFO | fairseq.tasks.translation | example reference: NOTING that the new Transatlantic Agenda adopted at the EU-US Summit in December 1995 in Madrid refers under Action IV - Building bridges across the Atlantic - to the EC / US Agreement establishing a cooperation programme in education and vocational training as a potential catalyst for a broad spectrum of innovative cooperative activities of direct benefit to students and teachers and refers to the introduction of new technologies into classrooms, linking educational establishments in the United States of America with those in the European Union and encouraging teaching of each other UNKNOWNTOKENINREF s languages, history and culture;
+2021-02-01 02:00:09 | INFO | valid | epoch 007 | valid on 'valid' subset | loss 4.374 | nll_loss 2.633 | ppl 6.2 | bleu 30.91 | wps 1243.1 | wpb 1528 | bsz 37.8 | num_updates 2535 | best_bleu 40.18
+2021-02-01 02:00:09 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 02:00:15 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/JRC_p_11/checkpoint_last.pt (epoch 7 @ 2535 updates, score 30.91) (writing took 5.809901501983404 seconds)
+2021-02-01 02:00:15 | INFO | fairseq_cli.train | end of epoch 7 (average epoch stats below)
+2021-02-01 02:00:15 | INFO | train | epoch 007 | loss 2.374 | nll_loss 0.547 | ppl 1.46 | wps 17608.3 | ups 4.58 | wpb 3844.1 | bsz 308.4 | num_updates 2535 | lr 0.000110906 | gnorm 1.295 | loss_scale 2 | train_wall 68 | wall 597
+2021-02-01 02:00:15 | INFO | fairseq_cli.train | begin training epoch 7
+2021-02-01 02:00:27 | INFO | train_inner | epoch 008:     65 / 363 loss=2.347, nll_loss=0.519, ppl=1.43, wps=13149.3, ups=3.4, wpb=3866.8, bsz=313.3, num_updates=2600, lr=0.00011375, gnorm=1.158, loss_scale=2, train_wall=19, wall=609
+2021-02-01 02:00:46 | INFO | train_inner | epoch 008:    165 / 363 loss=2.36, nll_loss=0.53, ppl=1.44, wps=20242.4, ups=5.26, wpb=3846.4, bsz=307, num_updates=2700, lr=0.000118125, gnorm=1.168, loss_scale=2, train_wall=19, wall=628
+2021-02-01 02:01:05 | INFO | train_inner | epoch 008:    265 / 363 loss=2.323, nll_loss=0.492, ppl=1.41, wps=20126.3, ups=5.25, wpb=3836.3, bsz=310.2, num_updates=2800, lr=0.0001225, gnorm=1.148, loss_scale=2, train_wall=19, wall=647
+2021-02-01 02:01:24 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 02:01:25 | INFO | fairseq.tasks.translation | example hypothesis: - improving the competitiveness of all types of combined transport against road UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 02:01:25 | INFO | fairseq.tasks.translation | example reference: - improving the competitiveness of all types of combined transport vis-à-vis road through financial assistance to new combined transport projects by the Community or Bulgaria,
+2021-02-01 02:01:26 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Protocols shall be approved by persons selected by the Parties for the joint chairman of meetings and transmitted together with the annual report to the Parties UNKNOWNTOKENINHYP s competent officials.
+2021-02-01 02:01:26 | INFO | fairseq.tasks.translation | example reference: These Minutes shall be approved by those persons selected from each side to jointly chair the meeting, and shall, together with the annual report, be made available to appropriate Minister-level officials of each Party.
+2021-02-01 02:01:27 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP vocational training or retraining establishments, whatever their respective description; and
+2021-02-01 02:01:27 | INFO | fairseq.tasks.translation | example reference: 2. UNKNOWNTOKENINREF vocational education and training institutions UNKNOWNTOKENINREF means any type of public, semi-public or private body, which, irrespective of the designation given to it, in accordance with the applicable laws and practices, designs or undertakes vocational education or training, further vocational training, refresher vocational training or retraining; and
+2021-02-01 02:01:28 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP CONSIDERING that the New Transatlantic Agenda adopted at the Madrid December 1995, under Area IV - Bridging the Atlantic, and pointing to the introduction of new technologies in Schools in the United States of America and those in the European Union and teaching languages, history and culture of partners,
+2021-02-01 02:01:28 | INFO | fairseq.tasks.translation | example reference: NOTING that the new Transatlantic Agenda adopted at the EU-US Summit in December 1995 in Madrid refers under Action IV - Building bridges across the Atlantic - to the EC / US Agreement establishing a cooperation programme in education and vocational training as a potential catalyst for a broad spectrum of innovative cooperative activities of direct benefit to students and teachers and refers to the introduction of new technologies into classrooms, linking educational establishments in the United States of America with those in the European Union and encouraging teaching of each other UNKNOWNTOKENINREF s languages, history and culture;
+2021-02-01 02:01:28 | INFO | valid | epoch 008 | valid on 'valid' subset | loss 4.736 | nll_loss 3.048 | ppl 8.27 | bleu 27.75 | wps 1341.4 | wpb 1528 | bsz 37.8 | num_updates 2898 | best_bleu 40.18
+2021-02-01 02:01:28 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 02:01:34 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/JRC_p_11/checkpoint_last.pt (epoch 8 @ 2898 updates, score 27.75) (writing took 6.26113841868937 seconds)
+2021-02-01 02:01:34 | INFO | fairseq_cli.train | end of epoch 8 (average epoch stats below)
+2021-02-01 02:01:34 | INFO | train | epoch 008 | loss 2.351 | nll_loss 0.521 | ppl 1.44 | wps 17536.7 | ups 4.56 | wpb 3844.1 | bsz 308.4 | num_updates 2898 | lr 0.000126787 | gnorm 1.221 | loss_scale 2 | train_wall 68 | wall 676
+2021-02-01 02:01:34 | INFO | fairseq_cli.train | begin training epoch 8
+2021-02-01 02:01:35 | INFO | train_inner | epoch 009:      2 / 363 loss=2.372, nll_loss=0.544, ppl=1.46, wps=12992.6, ups=3.39, wpb=3832.7, bsz=303.6, num_updates=2900, lr=0.000126875, gnorm=1.378, loss_scale=2, train_wall=19, wall=677
+2021-02-01 02:01:54 | INFO | train_inner | epoch 009:    102 / 363 loss=2.326, nll_loss=0.494, ppl=1.41, wps=20327.3, ups=5.28, wpb=3853.2, bsz=313.3, num_updates=3000, lr=0.00013125, gnorm=1.137, loss_scale=2, train_wall=19, wall=696
+2021-02-01 02:02:13 | INFO | train_inner | epoch 009:    202 / 363 loss=2.356, nll_loss=0.528, ppl=1.44, wps=20110.9, ups=5.28, wpb=3808.2, bsz=303.3, num_updates=3100, lr=0.000135625, gnorm=1.427, loss_scale=2, train_wall=19, wall=715
+2021-02-01 02:02:32 | INFO | train_inner | epoch 009:    302 / 363 loss=2.306, nll_loss=0.47, ppl=1.39, wps=20319, ups=5.23, wpb=3881.4, bsz=311, num_updates=3200, lr=0.00014, gnorm=1.184, loss_scale=2, train_wall=19, wall=734
+2021-02-01 02:02:43 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 02:02:44 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP improving the competitiveness of all types of combined transport with respect to road through funding new RTD projects of the Community or Bulgaria;
+2021-02-01 02:02:44 | INFO | fairseq.tasks.translation | example reference: - improving the competitiveness of all types of combined transport vis-à-vis road through financial assistance to new combined transport projects by the Community or Bulgaria,
+2021-02-01 02:02:45 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Protocols shall be approved by persons selected by the Parties for the joint chairman of the meetings and transmitted together with the annual report to the Parties UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP
+2021-02-01 02:02:45 | INFO | fairseq.tasks.translation | example reference: These Minutes shall be approved by those persons selected from each side to jointly chair the meeting, and shall, together with the annual report, be made available to appropriate Minister-level officials of each Party.
+2021-02-01 02:02:46 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP vocational training or re-training provided for in applicable legislation and practices; and
+2021-02-01 02:02:46 | INFO | fairseq.tasks.translation | example reference: 2. UNKNOWNTOKENINREF vocational education and training institutions UNKNOWNTOKENINREF means any type of public, semi-public or private body, which, irrespective of the designation given to it, in accordance with the applicable laws and practices, designs or undertakes vocational education or training, further vocational training, refresher vocational training or retraining; and
+2021-02-01 02:02:47 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP PROCUREMENT that the Agreement between the EC and the United States of America on cooperative activities in the field of education and training, and on the promotion of language, culture and culture of the UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 02:02:47 | INFO | fairseq.tasks.translation | example reference: NOTING that the new Transatlantic Agenda adopted at the EU-US Summit in December 1995 in Madrid refers under Action IV - Building bridges across the Atlantic - to the EC / US Agreement establishing a cooperation programme in education and vocational training as a potential catalyst for a broad spectrum of innovative cooperative activities of direct benefit to students and teachers and refers to the introduction of new technologies into classrooms, linking educational establishments in the United States of America with those in the European Union and encouraging teaching of each other UNKNOWNTOKENINREF s languages, history and culture;
+2021-02-01 02:02:47 | INFO | valid | epoch 009 | valid on 'valid' subset | loss 4.945 | nll_loss 3.298 | ppl 9.84 | bleu 22.27 | wps 1575.4 | wpb 1528 | bsz 37.8 | num_updates 3261 | best_bleu 40.18
+2021-02-01 02:02:47 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 02:02:55 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/JRC_p_11/checkpoint_last.pt (epoch 9 @ 3261 updates, score 22.27) (writing took 8.358596454374492 seconds)
+2021-02-01 02:02:55 | INFO | fairseq_cli.train | end of epoch 9 (average epoch stats below)
+2021-02-01 02:02:55 | INFO | train | epoch 009 | loss 2.333 | nll_loss 0.501 | ppl 1.42 | wps 17200.7 | ups 4.47 | wpb 3844.1 | bsz 308.4 | num_updates 3261 | lr 0.000142669 | gnorm 1.243 | loss_scale 2 | train_wall 68 | wall 758
+2021-02-01 02:02:55 | INFO | fairseq_cli.train | begin training epoch 9
+2021-02-01 02:03:03 | INFO | train_inner | epoch 010:     39 / 363 loss=2.328, nll_loss=0.496, ppl=1.41, wps=12160.2, ups=3.21, wpb=3784.8, bsz=302.6, num_updates=3300, lr=0.000144375, gnorm=1.2, loss_scale=2, train_wall=19, wall=765
+2021-02-01 02:03:22 | INFO | train_inner | epoch 010:    139 / 363 loss=2.322, nll_loss=0.489, ppl=1.4, wps=20244, ups=5.28, wpb=3834, bsz=307.2, num_updates=3400, lr=0.00014875, gnorm=1.298, loss_scale=2, train_wall=19, wall=784
+2021-02-01 02:03:41 | INFO | train_inner | epoch 010:    239 / 363 loss=2.337, nll_loss=0.507, ppl=1.42, wps=20306.2, ups=5.27, wpb=3856, bsz=310.2, num_updates=3500, lr=0.000153125, gnorm=1.824, loss_scale=2, train_wall=19, wall=803
+2021-02-01 02:04:00 | INFO | train_inner | epoch 010:    339 / 363 loss=2.311, nll_loss=0.478, ppl=1.39, wps=20323.9, ups=5.24, wpb=3876.3, bsz=311, num_updates=3600, lr=0.0001575, gnorm=1.2, loss_scale=2, train_wall=19, wall=822
+2021-02-01 02:04:04 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 02:04:05 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP improving competition of all types of combined transport with road projects of the Community or Bulgaria;
+2021-02-01 02:04:05 | INFO | fairseq.tasks.translation | example reference: - improving the competitiveness of all types of combined transport vis-à-vis road through financial assistance to new combined transport projects by the Community or Bulgaria,
+2021-02-01 02:04:06 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP These Protocols shall be approved by persons selected by the Parties for the joint chairman of meetings and transmitted together with the annual report to the Parties UNKNOWNTOKENINHYP officials.
+2021-02-01 02:04:06 | INFO | fairseq.tasks.translation | example reference: These Minutes shall be approved by those persons selected from each side to jointly chair the meeting, and shall, together with the annual report, be made available to appropriate Minister-level officials of each Party.
+2021-02-01 02:04:07 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP vocational training or retraining according to the applicable laws and practices; and
+2021-02-01 02:04:07 | INFO | fairseq.tasks.translation | example reference: 2. UNKNOWNTOKENINREF vocational education and training institutions UNKNOWNTOKENINREF means any type of public, semi-public or private body, which, irrespective of the designation given to it, in accordance with the applicable laws and practices, designs or undertakes vocational education or training, further vocational training, refresher vocational training or retraining; and
+2021-02-01 02:04:08 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP PROCUREMENT that the Agreement concluded between the EC and the United States of America and those in the European Union might stimulate a broad range of innovative cooperative activities that help students and teachers and the introduction of new technologies in the education, culture and culture of the UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 02:04:08 | INFO | fairseq.tasks.translation | example reference: NOTING that the new Transatlantic Agenda adopted at the EU-US Summit in December 1995 in Madrid refers under Action IV - Building bridges across the Atlantic - to the EC / US Agreement establishing a cooperation programme in education and vocational training as a potential catalyst for a broad spectrum of innovative cooperative activities of direct benefit to students and teachers and refers to the introduction of new technologies into classrooms, linking educational establishments in the United States of America with those in the European Union and encouraging teaching of each other UNKNOWNTOKENINREF s languages, history and culture;
+2021-02-01 02:04:08 | INFO | valid | epoch 010 | valid on 'valid' subset | loss 5.129 | nll_loss 3.489 | ppl 11.23 | bleu 23.87 | wps 1502.5 | wpb 1528 | bsz 37.8 | num_updates 3624 | best_bleu 40.18
+2021-02-01 02:04:08 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 02:04:14 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/JRC_p_11/checkpoint_last.pt (epoch 10 @ 3624 updates, score 23.87) (writing took 5.697445987723768 seconds)
+2021-02-01 02:04:14 | INFO | fairseq_cli.train | end of epoch 10 (average epoch stats below)
+2021-02-01 02:04:14 | INFO | train | epoch 010 | loss 2.319 | nll_loss 0.485 | ppl 1.4 | wps 17750.9 | ups 4.62 | wpb 3844.1 | bsz 308.4 | num_updates 3624 | lr 0.00015855 | gnorm 1.437 | loss_scale 2 | train_wall 68 | wall 836
+2021-02-01 02:04:14 | INFO | fairseq_cli.train | begin training epoch 10
+2021-02-01 02:04:28 | INFO | train_inner | epoch 011:     76 / 363 loss=2.311, nll_loss=0.475, ppl=1.39, wps=13261.8, ups=3.49, wpb=3795.7, bsz=295.7, num_updates=3700, lr=0.000161875, gnorm=1.426, loss_scale=2, train_wall=19, wall=851
+2021-02-01 02:04:47 | INFO | train_inner | epoch 011:    176 / 363 loss=2.265, nll_loss=0.426, ppl=1.34, wps=20222.4, ups=5.24, wpb=3859.3, bsz=313.2, num_updates=3800, lr=0.00016625, gnorm=1.078, loss_scale=2, train_wall=19, wall=870
+2021-02-01 02:05:06 | INFO | train_inner | epoch 011:    276 / 363 loss=2.309, nll_loss=0.475, ppl=1.39, wps=20214.5, ups=5.27, wpb=3838.9, bsz=312.2, num_updates=3900, lr=0.000170625, gnorm=1.296, loss_scale=2, train_wall=19, wall=889
+2021-02-01 02:05:23 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 02:05:24 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP improving the competition of all types of combined transport with road projects or Bulgaria; UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 02:05:24 | INFO | fairseq.tasks.translation | example reference: - improving the competitiveness of all types of combined transport vis-à-vis road through financial assistance to new combined transport projects by the Community or Bulgaria,
+2021-02-01 02:05:25 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP These Protocols shall be approved by the Parties for the joint chairman of the meetings and shall be transmitted, together with the annual report UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 02:05:25 | INFO | fairseq.tasks.translation | example reference: These Minutes shall be approved by those persons selected from each side to jointly chair the meeting, and shall, together with the annual report, be made available to appropriate Minister-level officials of each Party.
+2021-02-01 02:05:26 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP all types of public or private institutions conducting vocational training or re-training in accordance with their respective legislation and practices; and UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 02:05:26 | INFO | fairseq.tasks.translation | example reference: 2. UNKNOWNTOKENINREF vocational education and training institutions UNKNOWNTOKENINREF means any type of public, semi-public or private body, which, irrespective of the designation given to it, in accordance with the applicable laws and practices, designs or undertakes vocational education or training, further vocational training, refresher vocational training or retraining; and
+2021-02-01 02:05:27 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP that the Agreement establishing a cooperative and vocational training programme between the European Union and the United States of UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 02:05:27 | INFO | fairseq.tasks.translation | example reference: NOTING that the new Transatlantic Agenda adopted at the EU-US Summit in December 1995 in Madrid refers under Action IV - Building bridges across the Atlantic - to the EC / US Agreement establishing a cooperation programme in education and vocational training as a potential catalyst for a broad spectrum of innovative cooperative activities of direct benefit to students and teachers and refers to the introduction of new technologies into classrooms, linking educational establishments in the United States of America with those in the European Union and encouraging teaching of each other UNKNOWNTOKENINREF s languages, history and culture;
+2021-02-01 02:05:27 | INFO | valid | epoch 011 | valid on 'valid' subset | loss 5.564 | nll_loss 4.028 | ppl 16.31 | bleu 19.91 | wps 1628.4 | wpb 1528 | bsz 37.8 | num_updates 3987 | best_bleu 40.18
+2021-02-01 02:05:27 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 02:05:34 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/JRC_p_11/checkpoint_last.pt (epoch 11 @ 3987 updates, score 19.91) (writing took 7.528488534502685 seconds)
+2021-02-01 02:05:34 | INFO | fairseq_cli.train | end of epoch 11 (average epoch stats below)
+2021-02-01 02:05:34 | INFO | train | epoch 011 | loss 2.303 | nll_loss 0.468 | ppl 1.38 | wps 17393 | ups 4.52 | wpb 3844.1 | bsz 308.4 | num_updates 3987 | lr 0.000174431 | gnorm 1.182 | loss_scale 2 | train_wall 68 | wall 916
+2021-02-01 02:05:34 | INFO | fairseq_cli.train | begin training epoch 11
+2021-02-01 02:05:37 | INFO | train_inner | epoch 012:     13 / 363 loss=2.32, nll_loss=0.49, ppl=1.4, wps=12881.8, ups=3.3, wpb=3900.3, bsz=312.2, num_updates=4000, lr=0.000175, gnorm=1.073, loss_scale=2, train_wall=19, wall=919
+2021-02-01 02:05:56 | INFO | train_inner | epoch 012:    113 / 363 loss=2.294, nll_loss=0.46, ppl=1.38, wps=20387.5, ups=5.27, wpb=3871.7, bsz=314.4, num_updates=4100, lr=0.000172853, gnorm=1.333, loss_scale=2, train_wall=19, wall=938
+2021-02-01 02:06:15 | INFO | train_inner | epoch 012:    213 / 363 loss=2.267, nll_loss=0.429, ppl=1.35, wps=20151.2, ups=5.26, wpb=3832, bsz=309.6, num_updates=4200, lr=0.000170783, gnorm=0.909, loss_scale=2, train_wall=19, wall=957
+2021-02-01 02:06:34 | INFO | train_inner | epoch 012:    313 / 363 loss=2.308, nll_loss=0.475, ppl=1.39, wps=20140.5, ups=5.28, wpb=3815.6, bsz=305.5, num_updates=4300, lr=0.000168785, gnorm=1.448, loss_scale=2, train_wall=19, wall=976
+2021-02-01 02:06:43 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 02:06:44 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP improving the competition of all types of combined transport against road projects of the Community or Bulgaria; UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 02:06:44 | INFO | fairseq.tasks.translation | example reference: - improving the competitiveness of all types of combined transport vis-à-vis road through financial assistance to new combined transport projects by the Community or Bulgaria,
+2021-02-01 02:06:45 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP These Protocols shall be approved by persons selected by the Parties for the joint chairman of the meetings and together with the annual report to the competent officials of the Parties.
+2021-02-01 02:06:45 | INFO | fairseq.tasks.translation | example reference: These Minutes shall be approved by those persons selected from each side to jointly chair the meeting, and shall, together with the annual report, be made available to appropriate Minister-level officials of each Party.
+2021-02-01 02:06:46 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP all types of governmental, intergovernmental or private institutions conducting, in accordance with applicable legislation and practices of vocational training, vocational re-training or re-training, and UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 02:06:46 | INFO | fairseq.tasks.translation | example reference: 2. UNKNOWNTOKENINREF vocational education and training institutions UNKNOWNTOKENINREF means any type of public, semi-public or private body, which, irrespective of the designation given to it, in accordance with the applicable laws and practices, designs or undertakes vocational education or training, further vocational training, refresher vocational training or retraining; and
+2021-02-01 02:06:47 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP PROCUREMENT of the Agreement between the United States of America and those in the European Union on the promotion of a broad range of cooperative activities that will directly benefit students and teachers and the introduction of new technologies in the Schools UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 02:06:47 | INFO | fairseq.tasks.translation | example reference: NOTING that the new Transatlantic Agenda adopted at the EU-US Summit in December 1995 in Madrid refers under Action IV - Building bridges across the Atlantic - to the EC / US Agreement establishing a cooperation programme in education and vocational training as a potential catalyst for a broad spectrum of innovative cooperative activities of direct benefit to students and teachers and refers to the introduction of new technologies into classrooms, linking educational establishments in the United States of America with those in the European Union and encouraging teaching of each other UNKNOWNTOKENINREF s languages, history and culture;
+2021-02-01 02:06:47 | INFO | valid | epoch 012 | valid on 'valid' subset | loss 5.651 | nll_loss 4.087 | ppl 16.99 | bleu 22.77 | wps 1466.1 | wpb 1528 | bsz 37.8 | num_updates 4350 | best_bleu 40.18
+2021-02-01 02:06:47 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 02:06:55 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/JRC_p_11/checkpoint_last.pt (epoch 12 @ 4350 updates, score 22.77) (writing took 7.923483606427908 seconds)
+2021-02-01 02:06:55 | INFO | fairseq_cli.train | end of epoch 12 (average epoch stats below)
+2021-02-01 02:06:55 | INFO | train | epoch 012 | loss 2.29 | nll_loss 0.454 | ppl 1.37 | wps 17231.8 | ups 4.48 | wpb 3844.1 | bsz 308.4 | num_updates 4350 | lr 0.000167812 | gnorm 1.22 | loss_scale 2 | train_wall 68 | wall 997
+2021-02-01 02:06:55 | INFO | fairseq_cli.train | begin training epoch 12
+2021-02-01 02:07:05 | INFO | train_inner | epoch 013:     50 / 363 loss=2.295, nll_loss=0.458, ppl=1.37, wps=12412.2, ups=3.22, wpb=3849.3, bsz=302.8, num_updates=4400, lr=0.000166856, gnorm=1.2, loss_scale=2, train_wall=19, wall=1007
+2021-02-01 02:07:24 | INFO | train_inner | epoch 013:    150 / 363 loss=2.267, nll_loss=0.43, ppl=1.35, wps=20427, ups=5.25, wpb=3887.8, bsz=315.8, num_updates=4500, lr=0.000164992, gnorm=1.062, loss_scale=2, train_wall=19, wall=1026
+2021-02-01 02:07:43 | INFO | train_inner | epoch 013:    250 / 363 loss=2.284, nll_loss=0.447, ppl=1.36, wps=20326.7, ups=5.27, wpb=3858.3, bsz=306.1, num_updates=4600, lr=0.000163188, gnorm=1.105, loss_scale=2, train_wall=19, wall=1045
+2021-02-01 02:08:02 | INFO | train_inner | epoch 013:    350 / 363 loss=2.267, nll_loss=0.428, ppl=1.35, wps=19973.3, ups=5.26, wpb=3795.9, bsz=304.6, num_updates=4700, lr=0.000161443, gnorm=1.124, loss_scale=2, train_wall=19, wall=1064
+2021-02-01 02:08:04 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 02:08:05 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP improving competition of all types of combined transport against road projects of the Community or Bulgaria; UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 02:08:05 | INFO | fairseq.tasks.translation | example reference: - improving the competitiveness of all types of combined transport vis-à-vis road through financial assistance to new combined transport projects by the Community or Bulgaria,
+2021-02-01 02:08:06 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP PROCEDURES HAVE been selected by the Parties for the joint chairman of the meetings and together with the report to the Parties UNKNOWNTOKENINHYP officials.
+2021-02-01 02:08:06 | INFO | fairseq.tasks.translation | example reference: These Minutes shall be approved by those persons selected from each side to jointly chair the meeting, and shall, together with the annual report, be made available to appropriate Minister-level officials of each Party.
+2021-02-01 02:08:07 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP all types of governmental, intergovernmental or private training provided for in applicable legislation and practices, including training or training, and UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 02:08:07 | INFO | fairseq.tasks.translation | example reference: 2. UNKNOWNTOKENINREF vocational education and training institutions UNKNOWNTOKENINREF means any type of public, semi-public or private body, which, irrespective of the designation given to it, in accordance with the applicable laws and practices, designs or undertakes vocational education or training, further vocational training, refresher vocational training or retraining; and
+2021-02-01 02:08:08 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP PROCUREMENT of the agreement between the United States and the European Union on cooperation activities, including students and teachers, and the education and culture of the UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 02:08:08 | INFO | fairseq.tasks.translation | example reference: NOTING that the new Transatlantic Agenda adopted at the EU-US Summit in December 1995 in Madrid refers under Action IV - Building bridges across the Atlantic - to the EC / US Agreement establishing a cooperation programme in education and vocational training as a potential catalyst for a broad spectrum of innovative cooperative activities of direct benefit to students and teachers and refers to the introduction of new technologies into classrooms, linking educational establishments in the United States of America with those in the European Union and encouraging teaching of each other UNKNOWNTOKENINREF s languages, history and culture;
+2021-02-01 02:08:08 | INFO | valid | epoch 013 | valid on 'valid' subset | loss 6.327 | nll_loss 4.876 | ppl 29.37 | bleu 17.08 | wps 1474.5 | wpb 1528 | bsz 37.8 | num_updates 4713 | best_bleu 40.18
+2021-02-01 02:08:08 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 02:08:14 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/JRC_p_11/checkpoint_last.pt (epoch 13 @ 4713 updates, score 17.08) (writing took 5.727864004671574 seconds)
+2021-02-01 02:08:14 | INFO | fairseq_cli.train | end of epoch 13 (average epoch stats below)
+2021-02-01 02:08:14 | INFO | train | epoch 013 | loss 2.274 | nll_loss 0.437 | ppl 1.35 | wps 17721.2 | ups 4.61 | wpb 3844.1 | bsz 308.4 | num_updates 4713 | lr 0.00016122 | gnorm 1.112 | loss_scale 2 | train_wall 68 | wall 1076
+2021-02-01 02:08:14 | INFO | fairseq_cli.train | begin training epoch 13
+2021-02-01 02:08:30 | INFO | train_inner | epoch 014:     87 / 363 loss=2.265, nll_loss=0.425, ppl=1.34, wps=13337.7, ups=3.48, wpb=3831.6, bsz=308.2, num_updates=4800, lr=0.000159752, gnorm=1.058, loss_scale=2, train_wall=19, wall=1093
+2021-02-01 02:08:49 | INFO | train_inner | epoch 014:    187 / 363 loss=2.274, nll_loss=0.438, ppl=1.35, wps=20572.6, ups=5.28, wpb=3895.7, bsz=311.5, num_updates=4900, lr=0.000158114, gnorm=1.012, loss_scale=2, train_wall=19, wall=1112
+2021-02-01 02:09:08 | INFO | train_inner | epoch 014:    287 / 363 loss=2.249, nll_loss=0.409, ppl=1.33, wps=20007.3, ups=5.27, wpb=3799.4, bsz=304.2, num_updates=5000, lr=0.000156525, gnorm=0.909, loss_scale=2, train_wall=19, wall=1131
+2021-02-01 02:09:23 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 02:09:24 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP improving competition of all types of combined transport against road traffic by supporting new Community or Bulgaria UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 02:09:24 | INFO | fairseq.tasks.translation | example reference: - improving the competitiveness of all types of combined transport vis-à-vis road through financial assistance to new combined transport projects by the Community or Bulgaria,
+2021-02-01 02:09:25 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP PROCEDURES HAVE been approved by the Parties for the joint chairman of the meetings, and together with the report UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 02:09:25 | INFO | fairseq.tasks.translation | example reference: These Minutes shall be approved by those persons selected from each side to jointly chair the meeting, and shall, together with the annual report, be made available to appropriate Minister-level officials of each Party.
+2021-02-01 02:09:26 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP all types of governmental or private institutions which, in accordance with applicable legislation and practices, UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 02:09:26 | INFO | fairseq.tasks.translation | example reference: 2. UNKNOWNTOKENINREF vocational education and training institutions UNKNOWNTOKENINREF means any type of public, semi-public or private body, which, irrespective of the designation given to it, in accordance with the applicable laws and practices, designs or undertakes vocational education or training, further vocational training, refresher vocational training or retraining; and
+2021-02-01 02:09:27 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP PALLING that the new cooperation activities between the United States of America and those in the European Union UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 02:09:27 | INFO | fairseq.tasks.translation | example reference: NOTING that the new Transatlantic Agenda adopted at the EU-US Summit in December 1995 in Madrid refers under Action IV - Building bridges across the Atlantic - to the EC / US Agreement establishing a cooperation programme in education and vocational training as a potential catalyst for a broad spectrum of innovative cooperative activities of direct benefit to students and teachers and refers to the introduction of new technologies into classrooms, linking educational establishments in the United States of America with those in the European Union and encouraging teaching of each other UNKNOWNTOKENINREF s languages, history and culture;
+2021-02-01 02:09:27 | INFO | valid | epoch 014 | valid on 'valid' subset | loss 6.324 | nll_loss 4.862 | ppl 29.07 | bleu 15.85 | wps 1580.4 | wpb 1528 | bsz 37.8 | num_updates 5076 | best_bleu 40.18
+2021-02-01 02:09:27 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 02:09:33 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/JRC_p_11/checkpoint_last.pt (epoch 14 @ 5076 updates, score 15.85) (writing took 6.1774752121418715 seconds)
+2021-02-01 02:09:33 | INFO | fairseq_cli.train | end of epoch 14 (average epoch stats below)
+2021-02-01 02:09:33 | INFO | train | epoch 014 | loss 2.26 | nll_loss 0.422 | ppl 1.34 | wps 17645.1 | ups 4.59 | wpb 3844.1 | bsz 308.4 | num_updates 5076 | lr 0.000155349 | gnorm 1.001 | loss_scale 2 | train_wall 68 | wall 1155
+2021-02-01 02:09:33 | INFO | fairseq_cli.train | begin training epoch 14
+2021-02-01 02:09:38 | INFO | train_inner | epoch 015:     24 / 363 loss=2.244, nll_loss=0.404, ppl=1.32, wps=13060.1, ups=3.42, wpb=3813.9, bsz=310.2, num_updates=5100, lr=0.000154983, gnorm=1.035, loss_scale=2, train_wall=19, wall=1160
+2021-02-01 02:09:56 | INFO | train_inner | epoch 015:    124 / 363 loss=2.252, nll_loss=0.411, ppl=1.33, wps=20316.2, ups=5.3, wpb=3835.1, bsz=307.2, num_updates=5200, lr=0.000153485, gnorm=1.021, loss_scale=2, train_wall=19, wall=1179
+2021-02-01 02:10:16 | INFO | train_inner | epoch 015:    224 / 363 loss=2.227, nll_loss=0.386, ppl=1.31, wps=20459.7, ups=5.22, wpb=3919.7, bsz=317.8, num_updates=5300, lr=0.00015203, gnorm=0.849, loss_scale=2, train_wall=19, wall=1198
+2021-02-01 02:10:35 | INFO | train_inner | epoch 015:    324 / 363 loss=2.277, nll_loss=0.44, ppl=1.36, wps=20232.3, ups=5.29, wpb=3827.1, bsz=301.8, num_updates=5400, lr=0.000150616, gnorm=1.111, loss_scale=2, train_wall=19, wall=1217
+2021-02-01 02:10:42 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 02:10:43 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP improving competition of all types of combined transport with new Community or Bulgaria UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 02:10:43 | INFO | fairseq.tasks.translation | example reference: - improving the competitiveness of all types of combined transport vis-à-vis road through financial assistance to new combined transport projects by the Community or Bulgaria,
+2021-02-01 02:10:44 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP shall be approved by persons who have been designated by the Parties for the joint chairman of the meetings and together with the annual report to officials UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 02:10:44 | INFO | fairseq.tasks.translation | example reference: These Minutes shall be approved by those persons selected from each side to jointly chair the meeting, and shall, together with the annual report, be made available to appropriate Minister-level officials of each Party.
+2021-02-01 02:10:45 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP all types of government, intergovernmental or private institutions conducting training in accordance with applicable legislation and practices UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 02:10:45 | INFO | fairseq.tasks.translation | example reference: 2. UNKNOWNTOKENINREF vocational education and training institutions UNKNOWNTOKENINREF means any type of public, semi-public or private body, which, irrespective of the designation given to it, in accordance with the applicable laws and practices, designs or undertakes vocational education or training, further vocational training, refresher vocational training or retraining; and
+2021-02-01 02:10:45 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP PROCUREMENT that closer cooperation between the United States of America and those in the European Union could encourage a broad range of cooperative activities and culture of students and teachers in the education UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 02:10:45 | INFO | fairseq.tasks.translation | example reference: NOTING that the new Transatlantic Agenda adopted at the EU-US Summit in December 1995 in Madrid refers under Action IV - Building bridges across the Atlantic - to the EC / US Agreement establishing a cooperation programme in education and vocational training as a potential catalyst for a broad spectrum of innovative cooperative activities of direct benefit to students and teachers and refers to the introduction of new technologies into classrooms, linking educational establishments in the United States of America with those in the European Union and encouraging teaching of each other UNKNOWNTOKENINREF s languages, history and culture;
+2021-02-01 02:10:45 | INFO | valid | epoch 015 | valid on 'valid' subset | loss 6.578 | nll_loss 5.157 | ppl 35.68 | bleu 16.32 | wps 1753.4 | wpb 1528 | bsz 37.8 | num_updates 5439 | best_bleu 40.18
+2021-02-01 02:10:45 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 02:10:51 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/JRC_p_11/checkpoint_last.pt (epoch 15 @ 5439 updates, score 16.32) (writing took 5.62491728272289 seconds)
+2021-02-01 02:10:51 | INFO | fairseq_cli.train | end of epoch 15 (average epoch stats below)
+2021-02-01 02:10:51 | INFO | train | epoch 015 | loss 2.252 | nll_loss 0.412 | ppl 1.33 | wps 17885.5 | ups 4.65 | wpb 3844.1 | bsz 308.4 | num_updates 5439 | lr 0.000150075 | gnorm 0.987 | loss_scale 2 | train_wall 68 | wall 1233
+2021-02-01 02:10:51 | INFO | fairseq_cli.train | begin training epoch 15
+2021-02-01 02:11:02 | INFO | train_inner | epoch 016:     61 / 363 loss=2.259, nll_loss=0.419, ppl=1.34, wps=13477.8, ups=3.58, wpb=3769.1, bsz=299.5, num_updates=5500, lr=0.000149241, gnorm=0.979, loss_scale=2, train_wall=19, wall=1245
+2021-02-01 02:11:21 | INFO | train_inner | epoch 016:    161 / 363 loss=2.242, nll_loss=0.402, ppl=1.32, wps=20392.5, ups=5.26, wpb=3877, bsz=311.9, num_updates=5600, lr=0.000147902, gnorm=0.886, loss_scale=2, train_wall=19, wall=1264
+2021-02-01 02:11:40 | INFO | train_inner | epoch 016:    261 / 363 loss=2.243, nll_loss=0.404, ppl=1.32, wps=20230.2, ups=5.28, wpb=3832.4, bsz=311.7, num_updates=5700, lr=0.000146599, gnorm=0.866, loss_scale=2, train_wall=19, wall=1283
+2021-02-01 02:11:59 | INFO | train_inner | epoch 016:    361 / 363 loss=2.223, nll_loss=0.38, ppl=1.3, wps=20330.3, ups=5.25, wpb=3874.9, bsz=309.1, num_updates=5800, lr=0.00014533, gnorm=0.827, loss_scale=2, train_wall=19, wall=1302
+2021-02-01 02:12:00 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 02:12:01 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP improving competition of all types of combined transport with financial assistance from the Community or Bulgaria UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 02:12:01 | INFO | fairseq.tasks.translation | example reference: - improving the competitiveness of all types of combined transport vis-à-vis road through financial assistance to new combined transport projects by the Community or Bulgaria,
+2021-02-01 02:12:02 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP these Protocols designated by the Parties for the joint chairman of the meetings UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 02:12:02 | INFO | fairseq.tasks.translation | example reference: These Minutes shall be approved by those persons selected from each side to jointly chair the meeting, and shall, together with the annual report, be made available to appropriate Minister-level officials of each Party.
+2021-02-01 02:12:02 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP all types of public, intergovernmental or private training, according to applicable legislation and practices UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 02:12:02 | INFO | fairseq.tasks.translation | example reference: 2. UNKNOWNTOKENINREF vocational education and training institutions UNKNOWNTOKENINREF means any type of public, semi-public or private body, which, irrespective of the designation given to it, in accordance with the applicable laws and practices, designs or undertakes vocational education or training, further vocational training, refresher vocational training or retraining; and
+2021-02-01 02:12:03 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP PALLING that closer cooperation between the European Union and the UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 02:12:03 | INFO | fairseq.tasks.translation | example reference: NOTING that the new Transatlantic Agenda adopted at the EU-US Summit in December 1995 in Madrid refers under Action IV - Building bridges across the Atlantic - to the EC / US Agreement establishing a cooperation programme in education and vocational training as a potential catalyst for a broad spectrum of innovative cooperative activities of direct benefit to students and teachers and refers to the introduction of new technologies into classrooms, linking educational establishments in the United States of America with those in the European Union and encouraging teaching of each other UNKNOWNTOKENINREF s languages, history and culture;
+2021-02-01 02:12:03 | INFO | valid | epoch 016 | valid on 'valid' subset | loss 7.207 | nll_loss 5.869 | ppl 58.46 | bleu 12.04 | wps 1837 | wpb 1528 | bsz 37.8 | num_updates 5802 | best_bleu 40.18
+2021-02-01 02:12:03 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 02:12:10 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/JRC_p_11/checkpoint_last.pt (epoch 16 @ 5802 updates, score 12.04) (writing took 6.507785811088979 seconds)
+2021-02-01 02:12:10 | INFO | fairseq_cli.train | end of epoch 16 (average epoch stats below)
+2021-02-01 02:12:10 | INFO | train | epoch 016 | loss 2.24 | nll_loss 0.399 | ppl 1.32 | wps 17710 | ups 4.61 | wpb 3844.1 | bsz 308.4 | num_updates 5802 | lr 0.000145305 | gnorm 0.887 | loss_scale 2 | train_wall 68 | wall 1312
+2021-02-01 02:12:10 | INFO | fairseq_cli.train | begin training epoch 16
+2021-02-01 02:12:28 | INFO | train_inner | epoch 017:     98 / 363 loss=2.218, nll_loss=0.377, ppl=1.3, wps=13370.1, ups=3.45, wpb=3876.8, bsz=314.4, num_updates=5900, lr=0.000144093, gnorm=0.765, loss_scale=2, train_wall=19, wall=1331
+2021-02-01 02:12:47 | INFO | train_inner | epoch 017:    198 / 363 loss=2.241, nll_loss=0.4, ppl=1.32, wps=20366.7, ups=5.27, wpb=3862.4, bsz=309.5, num_updates=6000, lr=0.000142887, gnorm=1.017, loss_scale=2, train_wall=19, wall=1350
+2021-02-01 02:13:06 | INFO | train_inner | epoch 017:    298 / 363 loss=2.237, nll_loss=0.396, ppl=1.32, wps=19995.4, ups=5.29, wpb=3783.3, bsz=303.1, num_updates=6100, lr=0.000141711, gnorm=0.983, loss_scale=2, train_wall=19, wall=1369
+2021-02-01 02:13:19 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 02:13:20 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP improving competition of all types of combined transport with financial support for the Community or Bulgaria UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 02:13:20 | INFO | fairseq.tasks.translation | example reference: - improving the competitiveness of all types of combined transport vis-à-vis road through financial assistance to new combined transport projects by the Community or Bulgaria,
+2021-02-01 02:13:21 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP shall be approved by the Parties joint chairman of the meetings, and provided with the report UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 02:13:21 | INFO | fairseq.tasks.translation | example reference: These Minutes shall be approved by those persons selected from each side to jointly chair the meeting, and shall, together with the annual report, be made available to appropriate Minister-level officials of each Party.
+2021-02-01 02:13:21 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP all types of public, intergovernmental or private institutions, training or vocational training in accordance with applicable legislation and practices, UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 02:13:21 | INFO | fairseq.tasks.translation | example reference: 2. UNKNOWNTOKENINREF vocational education and training institutions UNKNOWNTOKENINREF means any type of public, semi-public or private body, which, irrespective of the designation given to it, in accordance with the applicable laws and practices, designs or undertakes vocational education or training, further vocational training, refresher vocational training or retraining; and
+2021-02-01 02:13:22 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP the fact that the new inter-university and vocational linkages between the European Union, particularly inter-Atlantic activities directly benefiting students and teachers, and the education and culture of the UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 02:13:22 | INFO | fairseq.tasks.translation | example reference: NOTING that the new Transatlantic Agenda adopted at the EU-US Summit in December 1995 in Madrid refers under Action IV - Building bridges across the Atlantic - to the EC / US Agreement establishing a cooperation programme in education and vocational training as a potential catalyst for a broad spectrum of innovative cooperative activities of direct benefit to students and teachers and refers to the introduction of new technologies into classrooms, linking educational establishments in the United States of America with those in the European Union and encouraging teaching of each other UNKNOWNTOKENINREF s languages, history and culture;
+2021-02-01 02:13:22 | INFO | valid | epoch 017 | valid on 'valid' subset | loss 7.014 | nll_loss 5.665 | ppl 50.74 | bleu 15.12 | wps 1638.2 | wpb 1528 | bsz 37.8 | num_updates 6165 | best_bleu 40.18
+2021-02-01 02:13:22 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 02:13:28 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/JRC_p_11/checkpoint_last.pt (epoch 17 @ 6165 updates, score 15.12) (writing took 5.807687926106155 seconds)
+2021-02-01 02:13:28 | INFO | fairseq_cli.train | end of epoch 17 (average epoch stats below)
+2021-02-01 02:13:28 | INFO | train | epoch 017 | loss 2.233 | nll_loss 0.392 | ppl 1.31 | wps 17790.4 | ups 4.63 | wpb 3844.1 | bsz 308.4 | num_updates 6165 | lr 0.000140962 | gnorm 0.916 | loss_scale 2 | train_wall 68 | wall 1390
+2021-02-01 02:13:28 | INFO | fairseq_cli.train | begin training epoch 17
+2021-02-01 02:13:35 | INFO | train_inner | epoch 018:     35 / 363 loss=2.23, nll_loss=0.389, ppl=1.31, wps=13543, ups=3.5, wpb=3865.6, bsz=307, num_updates=6200, lr=0.000140563, gnorm=0.854, loss_scale=2, train_wall=19, wall=1397
+2021-02-01 02:13:54 | INFO | train_inner | epoch 018:    135 / 363 loss=2.209, nll_loss=0.366, ppl=1.29, wps=20055.2, ups=5.27, wpb=3803.2, bsz=315.2, num_updates=6300, lr=0.000139443, gnorm=0.776, loss_scale=2, train_wall=19, wall=1416
+2021-02-01 02:14:13 | INFO | train_inner | epoch 018:    235 / 363 loss=2.226, nll_loss=0.384, ppl=1.3, wps=20329.4, ups=5.29, wpb=3846.5, bsz=306.2, num_updates=6400, lr=0.00013835, gnorm=0.868, loss_scale=2, train_wall=19, wall=1435
+2021-02-01 02:14:32 | INFO | train_inner | epoch 018:    335 / 363 loss=2.251, nll_loss=0.413, ppl=1.33, wps=20329.6, ups=5.27, wpb=3860.1, bsz=307.5, num_updates=6500, lr=0.000137281, gnorm=0.984, loss_scale=2, train_wall=19, wall=1454
+2021-02-01 02:14:37 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 02:14:38 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP improving competition of all types of combined transport with financial assistance from the Community or Bulgaria UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 02:14:38 | INFO | fairseq.tasks.translation | example reference: - improving the competitiveness of all types of combined transport vis-à-vis road through financial assistance to new combined transport projects by the Community or Bulgaria,
+2021-02-01 02:14:39 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP these Protocols designated by the Parties for the joint chairman of the meetings, and together with the report UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 02:14:39 | INFO | fairseq.tasks.translation | example reference: These Minutes shall be approved by those persons selected from each side to jointly chair the meeting, and shall, together with the annual report, be made available to appropriate Minister-level officials of each Party.
+2021-02-01 02:14:40 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP all types of vocational training or private institutions operating in accordance with applicable legislation, training or practices, UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 02:14:40 | INFO | fairseq.tasks.translation | example reference: 2. UNKNOWNTOKENINREF vocational education and training institutions UNKNOWNTOKENINREF means any type of public, semi-public or private body, which, irrespective of the designation given to it, in accordance with the applicable laws and practices, designs or undertakes vocational education or training, further vocational training, refresher vocational training or retraining; and
+2021-02-01 02:14:41 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP that the EU-US Summits in Madrid in December 1995 might encourage cooperative activities between the students and teachers directly UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 02:14:41 | INFO | fairseq.tasks.translation | example reference: NOTING that the new Transatlantic Agenda adopted at the EU-US Summit in December 1995 in Madrid refers under Action IV - Building bridges across the Atlantic - to the EC / US Agreement establishing a cooperation programme in education and vocational training as a potential catalyst for a broad spectrum of innovative cooperative activities of direct benefit to students and teachers and refers to the introduction of new technologies into classrooms, linking educational establishments in the United States of America with those in the European Union and encouraging teaching of each other UNKNOWNTOKENINREF s languages, history and culture;
+2021-02-01 02:14:41 | INFO | valid | epoch 018 | valid on 'valid' subset | loss 7.214 | nll_loss 5.902 | ppl 59.78 | bleu 12.64 | wps 1665.9 | wpb 1528 | bsz 37.8 | num_updates 6528 | best_bleu 40.18
+2021-02-01 02:14:41 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 02:14:47 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/JRC_p_11/checkpoint_last.pt (epoch 18 @ 6528 updates, score 12.64) (writing took 5.768444788642228 seconds)
+2021-02-01 02:14:47 | INFO | fairseq_cli.train | end of epoch 18 (average epoch stats below)
+2021-02-01 02:14:47 | INFO | train | epoch 018 | loss 2.225 | nll_loss 0.383 | ppl 1.3 | wps 17804.8 | ups 4.63 | wpb 3844.1 | bsz 308.4 | num_updates 6528 | lr 0.000136987 | gnorm 0.857 | loss_scale 2 | train_wall 68 | wall 1469
+2021-02-01 02:14:47 | INFO | fairseq_cli.train | begin training epoch 18
+2021-02-01 02:15:00 | INFO | train_inner | epoch 019:     72 / 363 loss=2.219, nll_loss=0.374, ppl=1.3, wps=13443.2, ups=3.52, wpb=3818.6, bsz=298.9, num_updates=6600, lr=0.000136237, gnorm=0.889, loss_scale=2, train_wall=19, wall=1482
+2021-02-01 02:15:19 | INFO | train_inner | epoch 019:    172 / 363 loss=2.223, nll_loss=0.383, ppl=1.3, wps=20224.7, ups=5.27, wpb=3834.4, bsz=311.8, num_updates=6700, lr=0.000135217, gnorm=0.785, loss_scale=2, train_wall=19, wall=1501
+2021-02-01 02:15:38 | INFO | train_inner | epoch 019:    272 / 363 loss=2.21, nll_loss=0.369, ppl=1.29, wps=20419, ups=5.25, wpb=3890.5, bsz=320.1, num_updates=6800, lr=0.000134219, gnorm=0.837, loss_scale=2, train_wall=19, wall=1520
+2021-02-01 02:15:55 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 02:15:56 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP improving all types of combined transport projects with financial support from the Community or Bulgaria; UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 02:15:56 | INFO | fairseq.tasks.translation | example reference: - improving the competitiveness of all types of combined transport vis-à-vis road through financial assistance to new combined transport projects by the Community or Bulgaria,
+2021-02-01 02:15:57 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP shall be approved by the Parties concerned, and together with the report UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 02:15:57 | INFO | fairseq.tasks.translation | example reference: These Minutes shall be approved by those persons selected from each side to jointly chair the meeting, and shall, together with the annual report, be made available to appropriate Minister-level officials of each Party.
+2021-02-01 02:15:58 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP all kinds of public, intergovernmental or private training which, in accordance with applicable legislation and practices UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 02:15:58 | INFO | fairseq.tasks.translation | example reference: 2. UNKNOWNTOKENINREF vocational education and training institutions UNKNOWNTOKENINREF means any type of public, semi-public or private body, which, irrespective of the designation given to it, in accordance with the applicable laws and practices, designs or undertakes vocational education or training, further vocational training, refresher vocational training or retraining; and
+2021-02-01 02:15:59 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP fact that the Inter-university and training between the European Union UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 02:15:59 | INFO | fairseq.tasks.translation | example reference: NOTING that the new Transatlantic Agenda adopted at the EU-US Summit in December 1995 in Madrid refers under Action IV - Building bridges across the Atlantic - to the EC / US Agreement establishing a cooperation programme in education and vocational training as a potential catalyst for a broad spectrum of innovative cooperative activities of direct benefit to students and teachers and refers to the introduction of new technologies into classrooms, linking educational establishments in the United States of America with those in the European Union and encouraging teaching of each other UNKNOWNTOKENINREF s languages, history and culture;
+2021-02-01 02:15:59 | INFO | valid | epoch 019 | valid on 'valid' subset | loss 7.566 | nll_loss 6.276 | ppl 77.5 | bleu 12.15 | wps 1814.1 | wpb 1528 | bsz 37.8 | num_updates 6891 | best_bleu 40.18
+2021-02-01 02:15:59 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 02:16:05 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/JRC_p_11/checkpoint_last.pt (epoch 19 @ 6891 updates, score 12.15) (writing took 5.760650750249624 seconds)
+2021-02-01 02:16:05 | INFO | fairseq_cli.train | end of epoch 19 (average epoch stats below)
+2021-02-01 02:16:05 | INFO | train | epoch 019 | loss 2.219 | nll_loss 0.377 | ppl 1.3 | wps 17882 | ups 4.65 | wpb 3844.1 | bsz 308.4 | num_updates 6891 | lr 0.00013333 | gnorm 0.846 | loss_scale 2 | train_wall 68 | wall 1547
+2021-02-01 02:16:05 | INFO | fairseq_cli.train | begin training epoch 19
+2021-02-01 02:16:06 | INFO | train_inner | epoch 020:      9 / 363 loss=2.219, nll_loss=0.374, ppl=1.3, wps=13650.4, ups=3.55, wpb=3841.4, bsz=300.2, num_updates=6900, lr=0.000133243, gnorm=0.84, loss_scale=2, train_wall=19, wall=1549
+2021-02-01 02:16:25 | INFO | train_inner | epoch 020:    109 / 363 loss=2.202, nll_loss=0.358, ppl=1.28, wps=20447.7, ups=5.26, wpb=3887.5, bsz=315.6, num_updates=7000, lr=0.000132288, gnorm=0.771, loss_scale=2, train_wall=19, wall=1568
+2021-02-01 02:16:44 | INFO | train_inner | epoch 020:    209 / 363 loss=2.22, nll_loss=0.379, ppl=1.3, wps=20359.3, ups=5.25, wpb=3878.8, bsz=312.3, num_updates=7100, lr=0.000131353, gnorm=0.817, loss_scale=2, train_wall=19, wall=1587
+2021-02-01 02:17:03 | INFO | train_inner | epoch 020:    309 / 363 loss=2.211, nll_loss=0.368, ppl=1.29, wps=20175.1, ups=5.27, wpb=3828.8, bsz=308.7, num_updates=7200, lr=0.000130437, gnorm=0.793, loss_scale=2, train_wall=19, wall=1606
+2021-02-01 02:17:14 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-01 02:17:14 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP improving competition against road projects; or Bulgaria, through financial support for new CVD projects; UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 02:17:14 | INFO | fairseq.tasks.translation | example reference: - improving the competitiveness of all types of combined transport vis-à-vis road through financial assistance to new combined transport projects by the Community or Bulgaria,
+2021-02-01 02:17:15 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP PROTOCOL shall be approved by the Parties for the joint chairman of meetings, and shall be transmitted to the UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 02:17:15 | INFO | fairseq.tasks.translation | example reference: These Minutes shall be approved by those persons selected from each side to jointly chair the meeting, and shall, together with the annual report, be made available to appropriate Minister-level officials of each Party.
+2021-02-01 02:17:16 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP all kinds of training, intergovernmental or private institutions operating in conformity with their respective laws and regulations, and practices UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 02:17:16 | INFO | fairseq.tasks.translation | example reference: 2. UNKNOWNTOKENINREF vocational education and training institutions UNKNOWNTOKENINREF means any type of public, semi-public or private body, which, irrespective of the designation given to it, in accordance with the applicable laws and practices, designs or undertakes vocational education or training, further vocational training, refresher vocational training or retraining; and
+2021-02-01 02:17:17 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP - promoting inter-university and vocational cooperation between the European Union in December 1995, which might UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP PTUNKNOWNTOKENINHYP
+2021-02-01 02:17:17 | INFO | fairseq.tasks.translation | example reference: NOTING that the new Transatlantic Agenda adopted at the EU-US Summit in December 1995 in Madrid refers under Action IV - Building bridges across the Atlantic - to the EC / US Agreement establishing a cooperation programme in education and vocational training as a potential catalyst for a broad spectrum of innovative cooperative activities of direct benefit to students and teachers and refers to the introduction of new technologies into classrooms, linking educational establishments in the United States of America with those in the European Union and encouraging teaching of each other UNKNOWNTOKENINREF s languages, history and culture;
+2021-02-01 02:17:17 | INFO | valid | epoch 020 | valid on 'valid' subset | loss 7.599 | nll_loss 6.303 | ppl 78.94 | bleu 12.9 | wps 1818.6 | wpb 1528 | bsz 37.8 | num_updates 7254 | best_bleu 40.18
+2021-02-01 02:17:17 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-01 02:17:24 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/JRC_p_11/checkpoint_last.pt (epoch 20 @ 7254 updates, score 12.9) (writing took 7.257255299948156 seconds)
+2021-02-01 02:17:24 | INFO | fairseq_cli.train | end of epoch 20 (average epoch stats below)
+2021-02-01 02:17:24 | INFO | train | epoch 020 | loss 2.213 | nll_loss 0.371 | ppl 1.29 | wps 17537.4 | ups 4.56 | wpb 3844.1 | bsz 308.4 | num_updates 7254 | lr 0.000129951 | gnorm 0.803 | loss_scale 2 | train_wall 68 | wall 1626
+2021-02-01 02:17:24 | INFO | fairseq_cli.train | done training in 1616.2 seconds
+
+
+###############################################################################
+Peregrine Cluster
+Job 17763021 for user 's3475743'
+Finished at: Mon Feb  1 02:17:28 CET 2021
+
+Job details:
+============
+
+Job ID              : 17763021
+Name                : JRC_p_11
+User                : s3475743
+Partition           : gpu
+Nodes               : pg-gpu33
+Number of Nodes     : 1
+Cores               : 12
+State               : COMPLETED
+Submit              : 2021-02-01T01:31:27
+Start               : 2021-02-01T01:49:59
+End                 : 2021-02-01T02:17:28
+Reserved walltime   : 23:55:00
+Used walltime       : 00:27:29
+Used CPU time       : 00:29:37 (efficiency:  8.98%)
+% User (Computation): 69.80%
+% System (I/O)      : 30.20%
+Mem reserved        : 32G/node
+Max Mem used        : 5.59G (pg-gpu33)
+Max Disk Write      : 40.96K (pg-gpu33)
+Max Disk Read       : 2.30M (pg-gpu33)
+Average GPU usage   : 75.0% (pg-gpu33)
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
+
+################################################################################
