@@ -367,7 +367,7 @@ fairseq-preprocess \
     --trainpref ../extract_phrases/fastBPE/EMEA/phrase4_0.5/train  \
     --validpref ../extract_phrases/fastBPE/EMEA/phrase4_0.5/valid \
     --testpref ../extract_phrases/fastBPE/EMEA/phrase4_0.5/test \
-    --destdir ../data-bin/phrase4_0.5_new_EMEA  --workers 20 \
+    --destdir ../data-bin/phrase4_0.5_EMEA  --workers 20 \
     --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
 
 
@@ -376,7 +376,7 @@ fairseq-preprocess \
     --trainpref ../extract_phrases/fastBPE/GNOME/phrase4_0.5/train  \
     --validpref ../extract_phrases/fastBPE/GNOME/phrase4_0.5/valid \
     --testpref ../extract_phrases/fastBPE/GNOME/phrase4_0.5/test \
-    --destdir ../data-bin/phrase4_0.5_new_GNOME  --workers 20 \
+    --destdir ../data-bin/phrase4_0.5_GNOME  --workers 20 \
     --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
 
     fairseq-preprocess \
@@ -384,5 +384,33 @@ fairseq-preprocess \
     --trainpref ../extract_phrases/fastBPE/JRC/phrase4_0.5/train  \
     --validpref ../extract_phrases/fastBPE/JRC/phrase4_0.5/valid \
     --testpref ../extract_phrases/fastBPE/JRC/phrase4_0.5/test \
-    --destdir ../data-bin/phrase4_0.5_new_JRC  --workers 20 \
+    --destdir ../data-bin/phrase4_0.5_JRC  --workers 20 \
+    --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+
+
+========== phrase4_0.5_tag_rare
+
+fairseq-preprocess \
+    --source-lang de --target-lang en \
+    --trainpref ../extract_phrases/fastBPE/EMEA/phrase4_0.5_tag_rare/train  \
+    --validpref ../extract_phrases/fastBPE/EMEA/phrase4_0.5_tag_rare/valid \
+    --testpref ../extract_phrases/fastBPE/EMEA/phrase4_0.5_tag_rare/test \
+    --destdir ../data-bin/phrase4_0.5_tag_rare_EMEA  --workers 20 \
+    --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+
+
+fairseq-preprocess \
+    --source-lang de --target-lang en \
+    --trainpref ../extract_phrases/fastBPE/GNOME/phrase4_0.5_tag_rare/train  \
+    --validpref ../extract_phrases/fastBPE/GNOME/phrase4_0.5_tag_rare/valid \
+    --testpref ../extract_phrases/fastBPE/GNOME/phrase4_0.5_tag_rare/test \
+    --destdir ../data-bin/phrase4_0.5_tag_rare_GNOME  --workers 20 \
+    --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+
+    fairseq-preprocess \
+    --source-lang de --target-lang en \
+    --trainpref ../extract_phrases/fastBPE/JRC/phrase4_0.5_tag_rare/train  \
+    --validpref ../extract_phrases/fastBPE/JRC/phrase4_0.5_tag_rare/valid \
+    --testpref ../extract_phrases/fastBPE/JRC/phrase4_0.5_tag_rare/test \
+    --destdir ../data-bin/phrase4_0.5_tag_rare  --workers 20 \
     --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
