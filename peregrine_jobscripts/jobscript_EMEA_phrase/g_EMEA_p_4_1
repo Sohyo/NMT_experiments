@@ -13,7 +13,7 @@ source ../../../venv/bin/activate
 
 
 MODEL_DIR=../checkpoints/EMEA_p_4_1
-fairseq-generate ../../../data-bin/phrase_4_0.5_EMEA/  \
+fairseq-generate ../../../data-bin/phrase4_0.5_EMEA/  \
   --path $MODEL_DIR/checkpoint_best.pt  \
   --batch-size 128 --beam 5   \
   --remove-bpe \

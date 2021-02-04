@@ -12,7 +12,7 @@ ml Python/3.8.2-GCCcore-9.3.0
 source ../../../venv/bin/activate
 
 MODEL_DIR=../checkpoints/JRC_p_7_2
-fairseq-generate ../../../data-bin/phrase_4_tag_GNOME/    \
+fairseq-generate ../../../data-bin/phrase_4_0.5_GNOME/    \
   --path $MODEL_DIR/checkpoint_best.pt  \
   --batch-size 128 --beam 5   \
   --remove-bpe \
