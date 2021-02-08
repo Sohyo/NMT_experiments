@@ -412,5 +412,5 @@ fairseq-preprocess \
     --trainpref ../extract_phrases/fastBPE/JRC/phrase4_0.5_tag_rare/train  \
     --validpref ../extract_phrases/fastBPE/JRC/phrase4_0.5_tag_rare/valid \
     --testpref ../extract_phrases/fastBPE/JRC/phrase4_0.5_tag_rare/test \
-    --destdir ../data-bin/phrase4_0.5_tag_rare  --workers 20 \
+    --destdir ../data-bin/phrase4_0.5_tag_rare_JRC  --workers 20 \
     --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
