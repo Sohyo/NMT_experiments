@@ -494,3 +494,16 @@ JRC
 
 ./fast applybpe ../extract_phrases/fastBPE/JRC/phrase4_0.5_tag_rare/test.de  ../extract_phrases/JRC/phrase4_0.5_tag_rare/test.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
 ./fast applybpe ../extract_phrases/fastBPE/JRC/phrase4_0.5_tag_rare/test.en  ../extract_phrases/JRC/phrase4_0.5_tag_rare/test.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+
+=======
+
+
+./fast applybpe ../extract_phrases/fastBPE/EMEA/phrase4_0.5_tag_TP/train.de  ../extract_phrases/EMEA/phrase4_0.5_tag_TP/train.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../extract_phrases/fastBPE/EMEA/phrase4_0.5_tag_TP//train.en  ../extract_phrases/EMEA/phrase4_0.5_tag_TP/train.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+./fast applybpe ../extract_phrases/fastBPE/EMEA/phrase4_0.5_tag_TP//valid.de  ../extract_phrases/EMEA/phrase4_0.5_tag_TP/valid.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../extract_phrases/fastBPE/EMEA/phrase4_0.5_tag_TP//valid.en  ../extract_phrases/EMEA/phrase4_0.5_tag_TP/valid.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+./fast applybpe ../extract_phrases/fastBPE/EMEA/phrase4_0.5_tag_TP/test.de  ../extract_phrases/EMEA/phrase4_0.5_tag_TP/test.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../extract_phrases/fastBPE/EMEA/phrase4_0.5_tag_TP/test.en  ../extract_phrases/EMEA/phrase4_0.5_tag_TP/test.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt

@@ -414,3 +414,12 @@ fairseq-preprocess \
     --testpref ../extract_phrases/fastBPE/JRC/phrase4_0.5_tag_rare/test \
     --destdir ../data-bin/phrase4_0.5_tag_rare_JRC  --workers 20 \
     --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+
+
+fairseq-preprocess \
+    --source-lang de --target-lang en \
+    --trainpref ../extract_phrases/fastBPE/EMEA/phrase4_0.5_tag_TP/train  \
+    --validpref ../extract_phrases/fastBPE/EMEA/phrase4_0.5_tag_TP/valid \
+    --testpref ../extract_phrases/fastBPE/EMEA/phrase4_0.5_tag_TP/test \
+    --destdir ../data-bin/phrase4_0.5_tag_TP_EMEA  --workers 20 \
+    --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
