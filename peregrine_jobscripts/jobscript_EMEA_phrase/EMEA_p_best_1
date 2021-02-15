@@ -12,7 +12,7 @@ ml Python/3.8.2-GCCcore-9.3.0
 source ../../../venv/bin/activate
 
 MODEL_DIR=../../../models/wmt19.de-en.joined-dict.ensemble/
-DATA_DIR=../../../data-bin/phrase4_0.5_EMEA
+DATA_DIR=../../../data-bin/phrase7_0.5_EMEA
 
 CUDA_VISIBLE_DEVICES=0 fairseq-train \
     $DATA_DIR \
