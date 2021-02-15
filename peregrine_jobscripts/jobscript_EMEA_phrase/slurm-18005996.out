@@ -1,0 +1,521 @@
+
+The following have been reloaded with a version change:
+  1) GCCcore/8.3.0 => GCCcore/9.3.0
+  2) binutils/2.32-GCCcore-8.3.0 => binutils/2.34-GCCcore-9.3.0
+  3) zlib/1.2.11-GCCcore-8.3.0 => zlib/1.2.11-GCCcore-9.3.0
+
+2021-02-15 19:21:14 | INFO | fairseq_cli.train | Namespace(activation_dropout=0.0, activation_fn='relu', adam_betas='(0.9, 0.98)', adam_eps=1e-08, adaptive_input=False, adaptive_softmax_cutoff=None, adaptive_softmax_dropout=0, all_gather_list_size=16384, arch='transformer_vaswani_wmt_en_de_big', attention_dropout=0.0, best_checkpoint_metric='bleu', bf16=False, bpe=None, broadcast_buffers=False, bucket_cap_mb=25, checkpoint_suffix='', clip_norm=0.0, cpu=False, criterion='label_smoothed_cross_entropy', cross_self_attention=False, curriculum=0, data='../../../data-bin/phrase7_0.5_tag_EMEA', data_buffer_size=10, dataset_impl=None, ddp_backend='c10d', decoder_attention_heads=16, decoder_embed_dim=1024, decoder_embed_path=None, decoder_ffn_embed_dim=4096, decoder_input_dim=1024, decoder_layerdrop=0, decoder_layers=6, decoder_layers_to_keep=None, decoder_learned_pos=False, decoder_normalize_before=False, decoder_output_dim=1024, device_id=0, disable_validation=False, distributed_backend='nccl', distributed_init_method=None, distributed_no_spawn=False, distributed_port=-1, distributed_rank=0, distributed_world_size=1, distributed_wrapper='DDP', dropout=0.2, empty_cache_freq=0, encoder_attention_heads=16, encoder_embed_dim=1024, encoder_embed_path=None, encoder_ffn_embed_dim=8192, encoder_layerdrop=0, encoder_layers=6, encoder_layers_to_keep=None, encoder_learned_pos=False, encoder_normalize_before=False, eval_bleu=True, eval_bleu_args='{"beam": 5, "max_len_a": 1.2, "max_len_b": 10}', eval_bleu_detok='moses', eval_bleu_detok_args=None, eval_bleu_print_samples=True, eval_bleu_remove_bpe='@@ ', eval_tokenized_bleu=False, fast_stat_sync=False, find_unused_parameters=False, fix_batches_to_gpus=False, fixed_validation_seed=None, fp16=True, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, keep_best_checkpoints=-1, keep_interval_updates=-1, keep_last_epochs=-1, label_smoothing=0.1, layernorm_embedding=False, left_pad_source='True', left_pad_target='False', load_alignments=False, localsgd_frequency=3, log_format=None, log_interval=100, lr=[5e-05], lr_scheduler='inverse_sqrt', max_epoch=10, max_sentences=None, max_sentences_valid=None, max_source_positions=1024, max_target_positions=1024, max_tokens=4096, max_tokens_valid=4096, max_update=0, maximize_best_checkpoint_metric=True, memory_efficient_bf16=False, memory_efficient_fp16=False, min_loss_scale=0.0001, min_lr=-1, model_parallel_size=1, no_cross_attention=False, no_epoch_checkpoints=True, no_last_checkpoints=False, no_progress_bar=False, no_save=False, no_save_optimizer_state=False, no_scale_embedding=False, no_seed_provided=True, no_token_positional_embeddings=False, nprocs_per_node=1, num_batch_buckets=0, num_workers=1, optimizer='adam', optimizer_overrides='{}', patience=-1, profile=False, quant_noise_pq=0, quant_noise_pq_block_size=8, quant_noise_scalar=0, quantization_config_path=None, required_batch_size_multiple=8, reset_dataloader=True, reset_lr_scheduler=False, reset_meters=False, reset_optimizer=True, restore_file='../../../models/wmt19.de-en.joined-dict.ensemble//model1.pt', save_dir='../checkpoints/EMEA_p_best_2', save_interval=1, save_interval_updates=0, scoring='bleu', seed=1, sentence_avg=False, share_all_embeddings=False, share_decoder_input_output_embed=True, skip_invalid_size_inputs_valid_test=False, slowmo_algorithm='LocalSGD', slowmo_momentum=None, source_lang=None, stop_time_hours=0, target_lang=None, task='translation', tensorboard_logdir='', threshold_loss_scale=None, tie_adaptive_weights=False, tokenizer=None, tpu=False, train_subset='train', truncate_source=False, update_freq=[1], upsample_primary=1, use_bmuf=False, use_old_adam=False, user_dir=None, valid_subset='valid', validate_after_updates=0, validate_interval=1, validate_interval_updates=0, warmup_init_lr=-1, warmup_updates=4000, weight_decay=0.0001)
+2021-02-15 19:21:14 | INFO | fairseq.tasks.translation | [de] dictionary: 42024 types
+2021-02-15 19:21:14 | INFO | fairseq.tasks.translation | [en] dictionary: 42024 types
+2021-02-15 19:21:14 | INFO | fairseq.data.data_utils | loaded 151 examples from: ../../../data-bin/phrase7_0.5_tag_EMEA/valid.de-en.de
+2021-02-15 19:21:14 | INFO | fairseq.data.data_utils | loaded 151 examples from: ../../../data-bin/phrase7_0.5_tag_EMEA/valid.de-en.en
+2021-02-15 19:21:14 | INFO | fairseq.tasks.translation | ../../../data-bin/phrase7_0.5_tag_EMEA valid de-en 151 examples
+2021-02-15 19:21:19 | INFO | fairseq_cli.train | TransformerModel(
+  (encoder): TransformerEncoder(
+    (dropout_module): FairseqDropout()
+    (embed_tokens): Embedding(42024, 1024, padding_idx=1)
+    (embed_positions): SinusoidalPositionalEmbedding()
+    (layers): ModuleList(
+      (0): TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=1024, out_features=8192, bias=True)
+        (fc2): Linear(in_features=8192, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (1): TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=1024, out_features=8192, bias=True)
+        (fc2): Linear(in_features=8192, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (2): TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=1024, out_features=8192, bias=True)
+        (fc2): Linear(in_features=8192, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (3): TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=1024, out_features=8192, bias=True)
+        (fc2): Linear(in_features=8192, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (4): TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=1024, out_features=8192, bias=True)
+        (fc2): Linear(in_features=8192, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (5): TransformerEncoderLayer(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=1024, out_features=8192, bias=True)
+        (fc2): Linear(in_features=8192, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+    )
+  )
+  (decoder): TransformerDecoder(
+    (dropout_module): FairseqDropout()
+    (embed_tokens): Embedding(42024, 1024, padding_idx=1)
+    (embed_positions): SinusoidalPositionalEmbedding()
+    (layers): ModuleList(
+      (0): TransformerDecoderLayer(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (1): TransformerDecoderLayer(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (2): TransformerDecoderLayer(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (3): TransformerDecoderLayer(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (4): TransformerDecoderLayer(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+      (5): TransformerDecoderLayer(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (v_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (q_proj): Linear(in_features=1024, out_features=1024, bias=True)
+          (out_proj): Linear(in_features=1024, out_features=1024, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=1024, out_features=4096, bias=True)
+        (fc2): Linear(in_features=4096, out_features=1024, bias=True)
+        (final_layer_norm): LayerNorm((1024,), eps=1e-05, elementwise_affine=True)
+      )
+    )
+    (output_projection): Linear(in_features=1024, out_features=42024, bias=False)
+  )
+)
+2021-02-15 19:21:19 | INFO | fairseq_cli.train | model transformer_vaswani_wmt_en_de_big, criterion LabelSmoothedCrossEntropyCriterion
+2021-02-15 19:21:19 | INFO | fairseq_cli.train | num. model params: 312778752 (num. trained: 312778752)
+2021-02-15 19:21:27 | INFO | fairseq.trainer | detected shared parameter: decoder.embed_tokens.weight <- decoder.output_projection.weight
+2021-02-15 19:21:27 | INFO | fairseq.utils | ***********************CUDA enviroments for all 1 workers***********************
+2021-02-15 19:21:27 | INFO | fairseq.utils | rank   0: capabilities =  7.0  ; total memory = 32.000 GB ; name = GRID V100D-32Q                          
+2021-02-15 19:21:27 | INFO | fairseq.utils | ***********************CUDA enviroments for all 1 workers***********************
+2021-02-15 19:21:27 | INFO | fairseq_cli.train | training on 1 devices (GPUs/TPUs)
+2021-02-15 19:21:27 | INFO | fairseq_cli.train | max tokens per GPU = 4096 and max sentences per GPU = None
+2021-02-15 19:21:35 | INFO | fairseq.trainer | loaded checkpoint ../../../models/wmt19.de-en.joined-dict.ensemble//model1.pt (epoch 16 @ 0 updates)
+2021-02-15 19:21:35 | INFO | fairseq.trainer | loading train data for epoch 1
+2021-02-15 19:21:35 | INFO | fairseq.data.data_utils | loaded 133090 examples from: ../../../data-bin/phrase7_0.5_tag_EMEA/train.de-en.de
+2021-02-15 19:21:35 | INFO | fairseq.data.data_utils | loaded 133090 examples from: ../../../data-bin/phrase7_0.5_tag_EMEA/train.de-en.en
+2021-02-15 19:21:35 | INFO | fairseq.tasks.translation | ../../../data-bin/phrase7_0.5_tag_EMEA train de-en 133090 examples
+2021-02-15 19:21:36 | INFO | fairseq_cli.train | begin training epoch 1
+2021-02-15 19:21:37 | INFO | fairseq.trainer | NOTE: overflow detected, setting loss scale to: 64.0
+2021-02-15 19:21:38 | INFO | fairseq.trainer | NOTE: overflow detected, setting loss scale to: 32.0
+2021-02-15 19:21:38 | INFO | fairseq.trainer | NOTE: overflow detected, setting loss scale to: 16.0
+2021-02-15 19:21:38 | INFO | fairseq.trainer | NOTE: overflow detected, setting loss scale to: 8.0
+2021-02-15 19:21:38 | INFO | fairseq.trainer | NOTE: overflow detected, setting loss scale to: 4.0
+2021-02-15 19:21:39 | INFO | fairseq.trainer | NOTE: overflow detected, setting loss scale to: 2.0
+2021-02-15 19:21:58 | INFO | train_inner | epoch 001:    106 / 537 loss=3.881, nll_loss=2.186, ppl=4.55, wps=19410.1, ups=5.08, wpb=3822.4, bsz=249.7, num_updates=100, lr=1.25e-06, gnorm=19.352, loss_scale=2, train_wall=20, wall=31
+2021-02-15 19:22:18 | INFO | train_inner | epoch 001:    206 / 537 loss=3.027, nll_loss=1.236, ppl=2.35, wps=19475.7, ups=5.09, wpb=3827.7, bsz=247, num_updates=200, lr=2.5e-06, gnorm=3.53, loss_scale=2, train_wall=19, wall=51
+2021-02-15 19:22:37 | INFO | train_inner | epoch 001:    306 / 537 loss=2.839, nll_loss=1.039, ppl=2.05, wps=19436.8, ups=5.12, wpb=3798.2, bsz=246.7, num_updates=300, lr=3.75e-06, gnorm=2.455, loss_scale=2, train_wall=19, wall=70
+2021-02-15 19:22:57 | INFO | train_inner | epoch 001:    406 / 537 loss=2.705, nll_loss=0.897, ppl=1.86, wps=19169.3, ups=5.11, wpb=3751.6, bsz=243.8, num_updates=400, lr=5e-06, gnorm=1.796, loss_scale=2, train_wall=19, wall=90
+2021-02-15 19:23:16 | INFO | train_inner | epoch 001:    506 / 537 loss=2.651, nll_loss=0.839, ppl=1.79, wps=19244.1, ups=5.1, wpb=3770.7, bsz=250.1, num_updates=500, lr=6.25e-06, gnorm=1.537, loss_scale=2, train_wall=19, wall=109
+2021-02-15 19:23:22 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-15 19:23:24 | INFO | fairseq.tasks.translation | example hypothesis: Actrapid contains metacresol, which can cause allergic reactions.
+2021-02-15 19:23:24 | INFO | fairseq.tasks.translation | example reference: Actrapid contains metacresol, which may cause allergic reactions.
+2021-02-15 19:23:24 | INFO | fairseq.tasks.translation | example hypothesis: Actrapid is a fast-acting insulin and can be used together with long-acting insulin preparations.
+2021-02-15 19:23:24 | INFO | fairseq.tasks.translation | example reference: Actrapid is a fast-acting insulin and may be used with long-acting insulins.
+2021-02-15 19:23:25 | INFO | fairseq.tasks.translation | example hypothesis: Nervous system disorders Occasional - Peripheral neuropathy Rapid improvement in blood glucose control may be associated with symptoms known as acute painful neuropathy, which are usually reversible.
+2021-02-15 19:23:25 | INFO | fairseq.tasks.translation | example reference: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with a condition termed acute painful neuropathy, which is usually reversible.
+2021-02-15 19:23:28 | INFO | fairseq.tasks.translation | example hypothesis: Actrapid has been studied in patients with type 1 diabetes in which the pancreas is unable to produce insulin (two trials with 1 954 patients) and in patients with type 2 diabetes in which the body is unable to process insulin effectively (one trial with 182 patients) .In the trials, Actrapid was compared to a human insulin analogue (insulin Aspart) by measuring the concentration in the blood of a substance called glycosylated haemoglobin (HbA1c), which indicates how well the blood sugar is regulated.What benefit has Actrapid shown in these trials? Concentrations of HbA1c remained relatively stable during the 6-month treatment with Actrapid.
+2021-02-15 19:23:28 | INFO | fairseq.tasks.translation | example reference: HbA1c levels remained fairly steady over the six months of treatment with Actrapid.
+2021-02-15 19:23:28 | INFO | valid | epoch 001 | valid on 'valid' subset | loss 3.685 | nll_loss 1.957 | ppl 3.88 | bleu 37.68 | wps 880.4 | wpb 1083 | bsz 37.8 | num_updates 531
+2021-02-15 19:23:28 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-15 19:24:16 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/EMEA_p_best_2/checkpoint_best.pt (epoch 1 @ 531 updates, score 37.68) (writing took 48.56852049194276 seconds)
+2021-02-15 19:24:16 | INFO | fairseq_cli.train | end of epoch 1 (average epoch stats below)
+2021-02-15 19:24:17 | INFO | train | epoch 001 | loss 3.002 | nll_loss 1.22 | ppl 2.33 | wps 12725.6 | ups 3.35 | wpb 3796.4 | bsz 247.7 | num_updates 531 | lr 6.6375e-06 | gnorm 5.483 | loss_scale 2 | train_wall 105 | wall 170
+2021-02-15 19:24:17 | INFO | fairseq_cli.train | begin training epoch 1
+2021-02-15 19:24:30 | INFO | train_inner | epoch 002:     69 / 537 loss=2.583, nll_loss=0.765, ppl=1.7, wps=5206.6, ups=1.36, wpb=3841.3, bsz=252.8, num_updates=600, lr=7.5e-06, gnorm=1.357, loss_scale=2, train_wall=19, wall=183
+2021-02-15 19:24:49 | INFO | train_inner | epoch 002:    169 / 537 loss=2.556, nll_loss=0.735, ppl=1.66, wps=19354.9, ups=5.15, wpb=3756.8, bsz=247.2, num_updates=700, lr=8.75e-06, gnorm=1.345, loss_scale=2, train_wall=19, wall=202
+2021-02-15 19:25:09 | INFO | train_inner | epoch 002:    269 / 537 loss=2.47, nll_loss=0.64, ppl=1.56, wps=19500.4, ups=5.1, wpb=3822.5, bsz=257.4, num_updates=800, lr=1e-05, gnorm=1.175, loss_scale=2, train_wall=19, wall=222
+2021-02-15 19:25:29 | INFO | train_inner | epoch 002:    369 / 537 loss=2.46, nll_loss=0.631, ppl=1.55, wps=19503.8, ups=5.09, wpb=3832.5, bsz=251.8, num_updates=900, lr=1.125e-05, gnorm=1.213, loss_scale=2, train_wall=19, wall=242
+2021-02-15 19:25:48 | INFO | train_inner | epoch 002:    469 / 537 loss=2.399, nll_loss=0.562, ppl=1.48, wps=19378.1, ups=5.1, wpb=3802.7, bsz=240.6, num_updates=1000, lr=1.25e-05, gnorm=1.112, loss_scale=2, train_wall=19, wall=261
+2021-02-15 19:26:02 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-15 19:26:02 | INFO | fairseq.tasks.translation | example hypothesis: Actrapid contains metacresol, which can cause allergic reactions.
+2021-02-15 19:26:02 | INFO | fairseq.tasks.translation | example reference: Actrapid contains metacresol, which may cause allergic reactions.
+2021-02-15 19:26:03 | INFO | fairseq.tasks.translation | example hypothesis: Actrapid is a fast-acting insulin and can be used in conjunction with long-acting insulin preparations.
+2021-02-15 19:26:03 | INFO | fairseq.tasks.translation | example reference: Actrapid is a fast-acting insulin and may be used with long-acting insulins.
+2021-02-15 19:26:04 | INFO | fairseq.tasks.translation | example hypothesis: Nervous system disorders Uncommon - Peripheral neuropathy Rapid improvement in glycaemic control may be associated with conditions known as acute painful neuropathy, which are usually reversible.
+2021-02-15 19:26:04 | INFO | fairseq.tasks.translation | example reference: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with a condition termed acute painful neuropathy, which is usually reversible.
+2021-02-15 19:26:07 | INFO | fairseq.tasks.translation | example hypothesis: Actrapid has been studied in patients with type 1 diabetes in which the pancreas is unable to produce insulin (two trials with 1 954 patients) and in patients with type 2 diabetes in which the body is unable to process insulin effectively (one trial with 182 patients) .In the trials, Actrapid was compared with a human insulin analogue (Insulin Aspart) by measuring the concentration in the blood of a substance known as glycosylated haemoglobin (HbA1c), indicating how well the glucose is regulated.What benefit has Actrapid shown in these trials? Concentrations of HbA1c remained relatively stable during the 6 month treatment with Actrapid.
+2021-02-15 19:26:07 | INFO | fairseq.tasks.translation | example reference: HbA1c levels remained fairly steady over the six months of treatment with Actrapid.
+2021-02-15 19:26:07 | INFO | valid | epoch 002 | valid on 'valid' subset | loss 3.529 | nll_loss 1.773 | ppl 3.42 | bleu 43.33 | wps 852 | wpb 1083 | bsz 37.8 | num_updates 1068 | best_bleu 43.33
+2021-02-15 19:26:07 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-15 19:27:00 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/EMEA_p_best_2/checkpoint_best.pt (epoch 2 @ 1068 updates, score 43.33) (writing took 53.50427240785211 seconds)
+2021-02-15 19:27:00 | INFO | fairseq_cli.train | end of epoch 2 (average epoch stats below)
+2021-02-15 19:27:00 | INFO | train | epoch 002 | loss 2.47 | nll_loss 0.641 | ppl 1.56 | wps 12469.4 | ups 3.28 | wpb 3797.3 | bsz 247.8 | num_updates 1068 | lr 1.335e-05 | gnorm 1.206 | loss_scale 2 | train_wall 104 | wall 333
+2021-02-15 19:27:00 | INFO | fairseq_cli.train | begin training epoch 2
+2021-02-15 19:27:08 | INFO | train_inner | epoch 003:     32 / 537 loss=2.375, nll_loss=0.536, ppl=1.45, wps=4680.5, ups=1.25, wpb=3750, bsz=236.6, num_updates=1100, lr=1.375e-05, gnorm=1.001, loss_scale=2, train_wall=19, wall=341
+2021-02-15 19:27:28 | INFO | train_inner | epoch 003:    132 / 537 loss=2.345, nll_loss=0.503, ppl=1.42, wps=19087.5, ups=5.11, wpb=3736.3, bsz=246.6, num_updates=1200, lr=1.5e-05, gnorm=0.967, loss_scale=2, train_wall=19, wall=361
+2021-02-15 19:27:48 | INFO | train_inner | epoch 003:    232 / 537 loss=2.333, nll_loss=0.491, ppl=1.41, wps=19445.4, ups=5.11, wpb=3808.3, bsz=246.7, num_updates=1300, lr=1.625e-05, gnorm=0.902, loss_scale=2, train_wall=19, wall=381
+2021-02-15 19:28:07 | INFO | train_inner | epoch 003:    332 / 537 loss=2.324, nll_loss=0.48, ppl=1.39, wps=19262.1, ups=5.13, wpb=3756.6, bsz=245.3, num_updates=1400, lr=1.75e-05, gnorm=1.085, loss_scale=2, train_wall=19, wall=400
+2021-02-15 19:28:27 | INFO | train_inner | epoch 003:    432 / 537 loss=2.267, nll_loss=0.419, ppl=1.34, wps=19718.1, ups=5.08, wpb=3882.7, bsz=257.8, num_updates=1500, lr=1.875e-05, gnorm=0.814, loss_scale=2, train_wall=20, wall=420
+2021-02-15 19:28:46 | INFO | train_inner | epoch 003:    532 / 537 loss=2.32, nll_loss=0.477, ppl=1.39, wps=19404.6, ups=5.12, wpb=3788.2, bsz=245.4, num_updates=1600, lr=2e-05, gnorm=0.936, loss_scale=2, train_wall=19, wall=439
+2021-02-15 19:28:47 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-15 19:28:48 | INFO | fairseq.tasks.translation | example hypothesis: Actrapid contains metacresol, which can cause allergic reactions.
+2021-02-15 19:28:48 | INFO | fairseq.tasks.translation | example reference: Actrapid contains metacresol, which may cause allergic reactions.
+2021-02-15 19:28:49 | INFO | fairseq.tasks.translation | example hypothesis: Actrapid is a fast-acting insulin and can be used concomitantly with long-acting insulin products.
+2021-02-15 19:28:49 | INFO | fairseq.tasks.translation | example reference: Actrapid is a fast-acting insulin and may be used with long-acting insulins.
+2021-02-15 19:28:50 | INFO | fairseq.tasks.translation | example hypothesis: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with conditions known as acute painful neuropathy, which are usually reversible.
+2021-02-15 19:28:50 | INFO | fairseq.tasks.translation | example reference: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with a condition termed acute painful neuropathy, which is usually reversible.
+2021-02-15 19:28:52 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Actrapid has been studied in patients with type 1 diabetes in which the pancreas is unable to produce insulin (two trials involving 1,954 patients) and in patients with type 2 diabetes in which the body is unable to process insulin effectively (one trial involving 182 patients) .UNKNOWNTOKENINHYP Actrapid has been compared to a human insulin analogue (Insulin Aspart) by measuring the concentration in the blood of a substance known as glycosylated haemoglobin (HbA1c), indicating how well the blood glucose is controlledUNKNOWNTOKENINHYP What benefit has Actrapid shown in these trials? HbA1c concentrations have remained relatively stable during the 6 month treatment with Actrapid.
+2021-02-15 19:28:52 | INFO | fairseq.tasks.translation | example reference: HbA1c levels remained fairly steady over the six months of treatment with Actrapid.
+2021-02-15 19:28:52 | INFO | valid | epoch 003 | valid on 'valid' subset | loss 3.522 | nll_loss 1.762 | ppl 3.39 | bleu 47.42 | wps 853.3 | wpb 1083 | bsz 37.8 | num_updates 1605 | best_bleu 47.42
+2021-02-15 19:28:52 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-15 19:29:43 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/EMEA_p_best_2/checkpoint_best.pt (epoch 3 @ 1605 updates, score 47.42) (writing took 50.843714320100844 seconds)
+2021-02-15 19:29:43 | INFO | fairseq_cli.train | end of epoch 3 (average epoch stats below)
+2021-02-15 19:29:43 | INFO | train | epoch 003 | loss 2.319 | nll_loss 0.475 | ppl 1.39 | wps 12512 | ups 3.29 | wpb 3797.3 | bsz 247.8 | num_updates 1605 | lr 2.00625e-05 | gnorm 0.936 | loss_scale 2 | train_wall 104 | wall 496
+2021-02-15 19:29:43 | INFO | fairseq_cli.train | begin training epoch 3
+2021-02-15 19:30:02 | INFO | train_inner | epoch 004:     95 / 537 loss=2.294, nll_loss=0.445, ppl=1.36, wps=4971.9, ups=1.33, wpb=3741.7, bsz=234.1, num_updates=1700, lr=2.125e-05, gnorm=0.856, loss_scale=2, train_wall=19, wall=515
+2021-02-15 19:30:21 | INFO | train_inner | epoch 004:    195 / 537 loss=2.234, nll_loss=0.38, ppl=1.3, wps=19343.7, ups=5.11, wpb=3784.4, bsz=245.4, num_updates=1800, lr=2.25e-05, gnorm=0.902, loss_scale=2, train_wall=19, wall=534
+2021-02-15 19:30:41 | INFO | train_inner | epoch 004:    295 / 537 loss=2.203, nll_loss=0.348, ppl=1.27, wps=19860.1, ups=5.1, wpb=3896.4, bsz=261.1, num_updates=1900, lr=2.375e-05, gnorm=0.825, loss_scale=2, train_wall=19, wall=554
+2021-02-15 19:31:00 | INFO | train_inner | epoch 004:    395 / 537 loss=2.239, nll_loss=0.388, ppl=1.31, wps=19327.9, ups=5.12, wpb=3775.5, bsz=247.1, num_updates=2000, lr=2.5e-05, gnorm=0.767, loss_scale=2, train_wall=19, wall=573
+2021-02-15 19:31:20 | INFO | train_inner | epoch 004:    495 / 537 loss=2.187, nll_loss=0.332, ppl=1.26, wps=19380.5, ups=5.09, wpb=3808, bsz=247, num_updates=2100, lr=2.625e-05, gnorm=0.672, loss_scale=2, train_wall=19, wall=593
+2021-02-15 19:31:28 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-15 19:31:29 | INFO | fairseq.tasks.translation | example hypothesis: Actrapid contains metacresol, which can cause allergic reactions.
+2021-02-15 19:31:29 | INFO | fairseq.tasks.translation | example reference: Actrapid contains metacresol, which may cause allergic reactions.
+2021-02-15 19:31:29 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Actrapid is fast-acting insulin and can be used concomitantly with long-acting insulin preparations.
+2021-02-15 19:31:29 | INFO | fairseq.tasks.translation | example reference: Actrapid is a fast-acting insulin and may be used with long-acting insulins.
+2021-02-15 19:31:30 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with symptoms known as acute painful neuropathy that are usually reversible.
+2021-02-15 19:31:30 | INFO | fairseq.tasks.translation | example reference: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with a condition termed acute painful neuropathy, which is usually reversible.
+2021-02-15 19:31:33 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Actrapid was studied in patients with type 1 diabetes in whom the pancreas is unable to produce insulin (two trials with 1,954 patients), and in patients with type 2 diabetes in whom the body cannot process insulin effectively (one study with 182 patients) .UNKNOWNTOKENINHYP Actrapid was compared with a human insulin analogue (Insulin Aspart) by measuring in the blood for six months the level of a substance called glycosylated haemoglobin (HbA1c) that indicates how well the blood glucose is controlledUNKNOWNTOKENINHYP What benefit has Actrapid shown in these trials UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP HbA1c concentrations remained relatively stable during the 6 month treatment with Actrapid.
+2021-02-15 19:31:33 | INFO | fairseq.tasks.translation | example reference: HbA1c levels remained fairly steady over the six months of treatment with Actrapid.
+2021-02-15 19:31:33 | INFO | valid | epoch 004 | valid on 'valid' subset | loss 3.554 | nll_loss 1.796 | ppl 3.47 | bleu 48.18 | wps 856.5 | wpb 1083 | bsz 37.8 | num_updates 2142 | best_bleu 48.18
+2021-02-15 19:31:33 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-15 19:32:25 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/EMEA_p_best_2/checkpoint_best.pt (epoch 4 @ 2142 updates, score 48.18) (writing took 51.57874087896198 seconds)
+2021-02-15 19:32:25 | INFO | fairseq_cli.train | end of epoch 4 (average epoch stats below)
+2021-02-15 19:32:25 | INFO | train | epoch 004 | loss 2.228 | nll_loss 0.375 | ppl 1.3 | wps 12626.4 | ups 3.33 | wpb 3797.3 | bsz 247.8 | num_updates 2142 | lr 2.6775e-05 | gnorm 0.797 | loss_scale 2 | train_wall 104 | wall 658
+2021-02-15 19:32:25 | INFO | fairseq_cli.train | begin training epoch 4
+2021-02-15 19:32:39 | INFO | train_inner | epoch 005:     58 / 537 loss=2.196, nll_loss=0.34, ppl=1.27, wps=4852.3, ups=1.27, wpb=3812, bsz=253.8, num_updates=2200, lr=2.75e-05, gnorm=0.737, loss_scale=2, train_wall=19, wall=672
+2021-02-15 19:32:58 | INFO | train_inner | epoch 005:    158 / 537 loss=2.164, nll_loss=0.306, ppl=1.24, wps=19385.3, ups=5.12, wpb=3788.6, bsz=245.9, num_updates=2300, lr=2.875e-05, gnorm=0.715, loss_scale=2, train_wall=19, wall=691
+2021-02-15 19:33:18 | INFO | train_inner | epoch 005:    258 / 537 loss=2.17, nll_loss=0.313, ppl=1.24, wps=19349.7, ups=5.11, wpb=3783.7, bsz=247.9, num_updates=2400, lr=3e-05, gnorm=0.642, loss_scale=2, train_wall=19, wall=711
+2021-02-15 19:33:37 | INFO | train_inner | epoch 005:    358 / 537 loss=2.167, nll_loss=0.309, ppl=1.24, wps=19359.3, ups=5.11, wpb=3790.7, bsz=245.9, num_updates=2500, lr=3.125e-05, gnorm=0.643, loss_scale=2, train_wall=19, wall=730
+2021-02-15 19:33:57 | INFO | train_inner | epoch 005:    458 / 537 loss=2.17, nll_loss=0.313, ppl=1.24, wps=19390.7, ups=5.11, wpb=3794.3, bsz=250.1, num_updates=2600, lr=3.25e-05, gnorm=0.729, loss_scale=2, train_wall=19, wall=750
+2021-02-15 19:34:12 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-15 19:34:13 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Actrapid contains metacresol, which may cause allergic reactions.
+2021-02-15 19:34:13 | INFO | fairseq.tasks.translation | example reference: Actrapid contains metacresol, which may cause allergic reactions.
+2021-02-15 19:34:14 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Actrapid is a fast- acting insulin and can be used concomitantly with long-acting insulin preparations.
+2021-02-15 19:34:14 | INFO | fairseq.tasks.translation | example reference: Actrapid is a fast-acting insulin and may be used with long-acting insulins.
+2021-02-15 19:34:15 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in glycaemic control may be associated with symptoms known as acute painful neuropathy that are usually reversible.
+2021-02-15 19:34:15 | INFO | fairseq.tasks.translation | example reference: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with a condition termed acute painful neuropathy, which is usually reversible.
+2021-02-15 19:34:17 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Actrapid was studied in patients with type 1 diabetes in whom the pancreas is unable to produce insulin (two trials in 1,954 patients), and in patients with type 2 diabetes in whom the body cannot process insulin effectively (a study in 182 patients) .UNKNOWNTOKENINHYP Actrapid was compared with a human insulin analogue (Insulin Aspart) by measuring in the blood for six months the level of a substance known as glycosylated haemoglobin (HbA1c) that indicates how well the blood glucose is controlledUNKNOWNTOKENINHYP What benefit has Actrapid shown in these trials UNKNOWNTOKENINHYP HbA1c concentrations have remained relatively stable during the 6-month treatment with Actrapid.
+2021-02-15 19:34:17 | INFO | fairseq.tasks.translation | example reference: HbA1c levels remained fairly steady over the six months of treatment with Actrapid.
+2021-02-15 19:34:17 | INFO | valid | epoch 005 | valid on 'valid' subset | loss 3.59 | nll_loss 1.85 | ppl 3.61 | bleu 49.94 | wps 842.2 | wpb 1083 | bsz 37.8 | num_updates 2679 | best_bleu 49.94
+2021-02-15 19:34:17 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-15 19:35:09 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/EMEA_p_best_2/checkpoint_best.pt (epoch 5 @ 2679 updates, score 49.94) (writing took 51.70656420849264 seconds)
+2021-02-15 19:35:09 | INFO | fairseq_cli.train | end of epoch 5 (average epoch stats below)
+2021-02-15 19:35:09 | INFO | train | epoch 005 | loss 2.169 | nll_loss 0.311 | ppl 1.24 | wps 12405 | ups 3.27 | wpb 3797.3 | bsz 247.8 | num_updates 2679 | lr 3.34875e-05 | gnorm 0.7 | loss_scale 2 | train_wall 104 | wall 822
+2021-02-15 19:35:09 | INFO | fairseq_cli.train | begin training epoch 5
+2021-02-15 19:35:13 | INFO | train_inner | epoch 006:     21 / 537 loss=2.155, nll_loss=0.295, ppl=1.23, wps=4983.7, ups=1.31, wpb=3804.1, bsz=245.6, num_updates=2700, lr=3.375e-05, gnorm=0.694, loss_scale=2, train_wall=19, wall=826
+2021-02-15 19:35:33 | INFO | train_inner | epoch 006:    121 / 537 loss=2.128, nll_loss=0.266, ppl=1.2, wps=19248.5, ups=5.15, wpb=3740.9, bsz=236.8, num_updates=2800, lr=3.5e-05, gnorm=0.543, loss_scale=2, train_wall=19, wall=846
+2021-02-15 19:35:52 | INFO | train_inner | epoch 006:    221 / 537 loss=2.157, nll_loss=0.299, ppl=1.23, wps=19731.8, ups=5.15, wpb=3832.6, bsz=249.8, num_updates=2900, lr=3.625e-05, gnorm=0.649, loss_scale=2, train_wall=19, wall=865
+2021-02-15 19:36:12 | INFO | train_inner | epoch 006:    321 / 537 loss=2.126, nll_loss=0.266, ppl=1.2, wps=19694.8, ups=5.1, wpb=3865.5, bsz=255.4, num_updates=3000, lr=3.75e-05, gnorm=0.672, loss_scale=2, train_wall=19, wall=885
+2021-02-15 19:36:31 | INFO | train_inner | epoch 006:    421 / 537 loss=2.12, nll_loss=0.26, ppl=1.2, wps=19177.8, ups=5.12, wpb=3742.2, bsz=250.4, num_updates=3100, lr=3.875e-05, gnorm=0.547, loss_scale=2, train_wall=19, wall=904
+2021-02-15 19:36:51 | INFO | train_inner | epoch 006:    521 / 537 loss=2.126, nll_loss=0.266, ppl=1.2, wps=19418, ups=5.1, wpb=3810.9, bsz=250.4, num_updates=3200, lr=4e-05, gnorm=0.634, loss_scale=2, train_wall=19, wall=924
+2021-02-15 19:36:54 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-15 19:36:54 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Actrapide contains metacresol, which may cause allergic reactions.
+2021-02-15 19:36:54 | INFO | fairseq.tasks.translation | example reference: Actrapid contains metacresol, which may cause allergic reactions.
+2021-02-15 19:36:55 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Actrapide is fast-acting insulin and can be used concomitantly with long-acting insulin preparations.
+2021-02-15 19:36:55 | INFO | fairseq.tasks.translation | example reference: Actrapid is a fast-acting insulin and may be used with long-acting insulins.
+2021-02-15 19:36:56 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with symptoms known as acute painful neuropathy and are usually reversible.
+2021-02-15 19:36:56 | INFO | fairseq.tasks.translation | example reference: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with a condition termed acute painful neuropathy, which is usually reversible.
+2021-02-15 19:36:59 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Actrapid was studied in patients with type 1 diabetes, in which the pancreas is unable to produce insulin (two trials with 1,954 patients), and in patients with type 2 diabetes, in which the body cannot process insulin effectively (a study in 182 patients) .UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP Actrapid was compared with a human insulin analogue (Insulin Aspart) by measuring in the blood for six months the level of a substance known as glycosylated haemoglobin (HbA1c) that indicates how well the blood glucose is controlledUNKNOWNTOKENINHYP UNKNOWNTOKENINHYP What benefit has Actrapid shown in these trials UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP HbA1c concentrations have been relatively stable during the 6-month treatment with Actrapid.
+2021-02-15 19:36:59 | INFO | fairseq.tasks.translation | example reference: HbA1c levels remained fairly steady over the six months of treatment with Actrapid.
+2021-02-15 19:36:59 | INFO | valid | epoch 006 | valid on 'valid' subset | loss 3.69 | nll_loss 1.966 | ppl 3.91 | bleu 49.04 | wps 856.3 | wpb 1083 | bsz 37.8 | num_updates 3216 | best_bleu 49.94
+2021-02-15 19:36:59 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-15 19:37:08 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/EMEA_p_best_2/checkpoint_last.pt (epoch 6 @ 3216 updates, score 49.04) (writing took 9.030530603602529 seconds)
+2021-02-15 19:37:08 | INFO | fairseq_cli.train | end of epoch 6 (average epoch stats below)
+2021-02-15 19:37:08 | INFO | train | epoch 006 | loss 2.131 | nll_loss 0.271 | ppl 1.21 | wps 17155.4 | ups 4.52 | wpb 3797.3 | bsz 247.8 | num_updates 3216 | lr 4.02e-05 | gnorm 0.605 | loss_scale 2 | train_wall 104 | wall 941
+2021-02-15 19:37:08 | INFO | fairseq_cli.train | begin training epoch 6
+2021-02-15 19:37:24 | INFO | train_inner | epoch 007:     84 / 537 loss=2.101, nll_loss=0.239, ppl=1.18, wps=11369.7, ups=2.97, wpb=3827.6, bsz=251, num_updates=3300, lr=4.125e-05, gnorm=0.462, loss_scale=2, train_wall=20, wall=957
+2021-02-15 19:37:44 | INFO | train_inner | epoch 007:    184 / 537 loss=2.116, nll_loss=0.255, ppl=1.19, wps=19589.9, ups=5.11, wpb=3836.4, bsz=250, num_updates=3400, lr=4.25e-05, gnorm=0.589, loss_scale=2, train_wall=19, wall=977
+2021-02-15 19:38:04 | INFO | train_inner | epoch 007:    284 / 537 loss=2.112, nll_loss=0.25, ppl=1.19, wps=19303.3, ups=5.12, wpb=3772.8, bsz=244.3, num_updates=3500, lr=4.375e-05, gnorm=0.628, loss_scale=2, train_wall=19, wall=997
+2021-02-15 19:38:23 | INFO | train_inner | epoch 007:    384 / 537 loss=2.117, nll_loss=0.255, ppl=1.19, wps=19225.9, ups=5.15, wpb=3735.9, bsz=239.1, num_updates=3600, lr=4.5e-05, gnorm=0.54, loss_scale=2, train_wall=19, wall=1016
+2021-02-15 19:38:42 | INFO | train_inner | epoch 007:    484 / 537 loss=2.1, nll_loss=0.239, ppl=1.18, wps=19330.8, ups=5.12, wpb=3776.2, bsz=247.1, num_updates=3700, lr=4.625e-05, gnorm=0.527, loss_scale=2, train_wall=19, wall=1036
+2021-02-15 19:38:54 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-15 19:38:55 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Actrapide contains metacresol, which may cause allergic reactions.
+2021-02-15 19:38:55 | INFO | fairseq.tasks.translation | example reference: Actrapid contains metacresol, which may cause allergic reactions.
+2021-02-15 19:38:56 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Actrapide is fast-acting insulin and can be used concomitantly with long-acting insulin preparations.
+2021-02-15 19:38:56 | INFO | fairseq.tasks.translation | example reference: Actrapid is a fast-acting insulin and may be used with long-acting insulins.
+2021-02-15 19:38:56 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with symptoms known as acute painful neuropathy which are usually reversible.
+2021-02-15 19:38:56 | INFO | fairseq.tasks.translation | example reference: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with a condition termed acute painful neuropathy, which is usually reversible.
+2021-02-15 19:38:59 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Actrapid was studied in patients with type 1 diabetes in which the pancreas cannot produce insulin (two trials involving 1,954 patients), and in patients with type 2 diabetes in which the body cannot process insulin effectively .UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP Actrapid was compared to a human insulin analogue (Insulin Aspart) by measuring in the blood for six months the level of a substance called glycosylated haemoglobin (HbA1c) that indicates how well the blood glucose is controlledUNKNOWNTOKENINHYP What benefit has Actrapid shown in these trials UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP HbA1c concentrations have been relatively stable during the six month treatment with Actrapid.
+2021-02-15 19:38:59 | INFO | fairseq.tasks.translation | example reference: HbA1c levels remained fairly steady over the six months of treatment with Actrapid.
+2021-02-15 19:38:59 | INFO | valid | epoch 007 | valid on 'valid' subset | loss 3.715 | nll_loss 2.002 | ppl 4.01 | bleu 50.14 | wps 843.5 | wpb 1083 | bsz 37.8 | num_updates 3753 | best_bleu 50.14
+2021-02-15 19:38:59 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-15 19:39:58 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/EMEA_p_best_2/checkpoint_best.pt (epoch 7 @ 3753 updates, score 50.14) (writing took 58.946175270713866 seconds)
+2021-02-15 19:39:58 | INFO | fairseq_cli.train | end of epoch 7 (average epoch stats below)
+2021-02-15 19:39:58 | INFO | train | epoch 007 | loss 2.107 | nll_loss 0.245 | ppl 1.19 | wps 11982.7 | ups 3.16 | wpb 3797.3 | bsz 247.8 | num_updates 3753 | lr 4.69125e-05 | gnorm 0.536 | loss_scale 2 | train_wall 105 | wall 1111
+2021-02-15 19:39:58 | INFO | fairseq_cli.train | begin training epoch 7
+2021-02-15 19:40:08 | INFO | train_inner | epoch 008:     47 / 537 loss=2.089, nll_loss=0.228, ppl=1.17, wps=4497.5, ups=1.17, wpb=3837.1, bsz=257, num_updates=3800, lr=4.75e-05, gnorm=0.437, loss_scale=2, train_wall=20, wall=1121
+2021-02-15 19:40:27 | INFO | train_inner | epoch 008:    147 / 537 loss=2.09, nll_loss=0.229, ppl=1.17, wps=19455.8, ups=5.13, wpb=3791.1, bsz=247, num_updates=3900, lr=4.875e-05, gnorm=0.436, loss_scale=2, train_wall=19, wall=1140
+2021-02-15 19:40:47 | INFO | train_inner | epoch 008:    247 / 537 loss=2.1, nll_loss=0.239, ppl=1.18, wps=19376.6, ups=5.12, wpb=3784.6, bsz=248.1, num_updates=4000, lr=5e-05, gnorm=0.469, loss_scale=2, train_wall=19, wall=1160
+2021-02-15 19:41:06 | INFO | train_inner | epoch 008:    347 / 537 loss=2.093, nll_loss=0.233, ppl=1.17, wps=19444.9, ups=5.13, wpb=3790.9, bsz=255.8, num_updates=4100, lr=4.93865e-05, gnorm=0.477, loss_scale=2, train_wall=19, wall=1179
+2021-02-15 19:41:26 | INFO | train_inner | epoch 008:    447 / 537 loss=2.077, nll_loss=0.215, ppl=1.16, wps=19366.2, ups=5.09, wpb=3805.2, bsz=244, num_updates=4200, lr=4.8795e-05, gnorm=0.374, loss_scale=2, train_wall=19, wall=1199
+2021-02-15 19:41:44 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-15 19:41:44 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Actrapide contains metacresol, which may cause allergic reactions.
+2021-02-15 19:41:44 | INFO | fairseq.tasks.translation | example reference: Actrapid contains metacresol, which may cause allergic reactions.
+2021-02-15 19:41:45 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Actrapide is a fast-acting insulin and can be given concomitantly with long-acting insulin preparations.
+2021-02-15 19:41:45 | INFO | fairseq.tasks.translation | example reference: Actrapid is a fast-acting insulin and may be used with long-acting insulins.
+2021-02-15 19:41:46 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with symptoms known as acute pain neuropathy which are usually reversible.
+2021-02-15 19:41:46 | INFO | fairseq.tasks.translation | example reference: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with a condition termed acute painful neuropathy, which is usually reversible.
+2021-02-15 19:41:48 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Actrapid was studied in patients with type 1 diabetes in which the pancreas cannot produce insulin (two studies with 1,954 patients), and in patients with type 2 diabetes in which the body cannot process insulin effectively (a study of 182 patients) .UNKNOWNTOKENINHYP Actrapid was compared with a human insulin analogue (insulin Aspart) by measuring in the blood for six months the level of a substance called glycosylated haemoglobin (HbA1c) that indicates how well the blood glucose is controlledUNKNOWNTOKENINHYP What benefit has Actrapid shown in these trials UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP HbA1c concentrations have been relatively stable during the six month treatment with Actrapid.
+2021-02-15 19:41:48 | INFO | fairseq.tasks.translation | example reference: HbA1c levels remained fairly steady over the six months of treatment with Actrapid.
+2021-02-15 19:41:48 | INFO | valid | epoch 008 | valid on 'valid' subset | loss 3.81 | nll_loss 2.123 | ppl 4.36 | bleu 50.39 | wps 874.5 | wpb 1083 | bsz 37.8 | num_updates 4290 | best_bleu 50.39
+2021-02-15 19:41:48 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-15 19:42:38 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/EMEA_p_best_2/checkpoint_best.pt (epoch 8 @ 4290 updates, score 50.39) (writing took 49.57100871577859 seconds)
+2021-02-15 19:42:38 | INFO | fairseq_cli.train | end of epoch 8 (average epoch stats below)
+2021-02-15 19:42:38 | INFO | train | epoch 008 | loss 2.089 | nll_loss 0.228 | ppl 1.17 | wps 12749.1 | ups 3.36 | wpb 3797.3 | bsz 247.8 | num_updates 4290 | lr 4.82805e-05 | gnorm 0.449 | loss_scale 2 | train_wall 104 | wall 1271
+2021-02-15 19:42:38 | INFO | fairseq_cli.train | begin training epoch 8
+2021-02-15 19:42:40 | INFO | train_inner | epoch 009:     10 / 537 loss=2.089, nll_loss=0.228, ppl=1.17, wps=5123.9, ups=1.35, wpb=3787.4, bsz=239.9, num_updates=4300, lr=4.82243e-05, gnorm=0.495, loss_scale=2, train_wall=19, wall=1273
+2021-02-15 19:42:59 | INFO | train_inner | epoch 009:    110 / 537 loss=2.075, nll_loss=0.212, ppl=1.16, wps=19425.2, ups=5.13, wpb=3783.1, bsz=237.6, num_updates=4400, lr=4.76731e-05, gnorm=0.404, loss_scale=2, train_wall=19, wall=1292
+2021-02-15 19:43:19 | INFO | train_inner | epoch 009:    210 / 537 loss=2.075, nll_loss=0.215, ppl=1.16, wps=19722, ups=5.12, wpb=3851.5, bsz=254.8, num_updates=4500, lr=4.71405e-05, gnorm=0.382, loss_scale=2, train_wall=19, wall=1312
+2021-02-15 19:43:38 | INFO | train_inner | epoch 009:    310 / 537 loss=2.081, nll_loss=0.221, ppl=1.17, wps=19340.8, ups=5.14, wpb=3765.8, bsz=252.8, num_updates=4600, lr=4.66252e-05, gnorm=0.416, loss_scale=2, train_wall=19, wall=1331
+2021-02-15 19:43:58 | INFO | train_inner | epoch 009:    410 / 537 loss=2.076, nll_loss=0.215, ppl=1.16, wps=19370, ups=5.09, wpb=3804.6, bsz=241.9, num_updates=4700, lr=4.61266e-05, gnorm=0.623, loss_scale=2, train_wall=19, wall=1351
+2021-02-15 19:44:18 | INFO | train_inner | epoch 009:    510 / 537 loss=2.077, nll_loss=0.217, ppl=1.16, wps=19489.4, ups=5.11, wpb=3815, bsz=255.2, num_updates=4800, lr=4.56435e-05, gnorm=0.479, loss_scale=2, train_wall=19, wall=1371
+2021-02-15 19:44:23 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-15 19:44:23 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Actrapide contains metacresol, which may cause allergic reactions.
+2021-02-15 19:44:23 | INFO | fairseq.tasks.translation | example reference: Actrapid contains metacresol, which may cause allergic reactions.
+2021-02-15 19:44:24 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Actrapid is a fast-acting insulin and can be used concomitantly with long- acting insulin preparations.
+2021-02-15 19:44:24 | INFO | fairseq.tasks.translation | example reference: Actrapid is a fast-acting insulin and may be used with long-acting insulins.
+2021-02-15 19:44:25 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with symptoms known as acute pain neuropathy and are usually reversible.
+2021-02-15 19:44:25 | INFO | fairseq.tasks.translation | example reference: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with a condition termed acute painful neuropathy, which is usually reversible.
+2021-02-15 19:44:27 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Actrapid was studied in patients with type 1 diabetes in which the pancreas cannot produce insulin (two trials involving 1,954 patients), and in patients with type 2 diabetes in which the body cannot process insulin effectively .UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP Actrapid was compared with a human insulin analogue (Insulin Aspart) by measuring in the blood for six months the level of a substance called glycosylated haemoglobin (HbA1c) that indicates how well the blood glucose is controlledUNKNOWNTOKENINHYP What benefit has Actrapid shown in these trials UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP HbA1c concentrations have been relatively stable during the 6-month treatment with Actrapid.
+2021-02-15 19:44:27 | INFO | fairseq.tasks.translation | example reference: HbA1c levels remained fairly steady over the six months of treatment with Actrapid.
+2021-02-15 19:44:27 | INFO | valid | epoch 009 | valid on 'valid' subset | loss 3.916 | nll_loss 2.24 | ppl 4.72 | bleu 50.09 | wps 893.9 | wpb 1083 | bsz 37.8 | num_updates 4827 | best_bleu 50.39
+2021-02-15 19:44:27 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-15 19:44:40 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/EMEA_p_best_2/checkpoint_last.pt (epoch 9 @ 4827 updates, score 50.09) (writing took 12.364501917734742 seconds)
+2021-02-15 19:44:40 | INFO | fairseq_cli.train | end of epoch 9 (average epoch stats below)
+2021-02-15 19:44:40 | INFO | train | epoch 009 | loss 2.078 | nll_loss 0.217 | ppl 1.16 | wps 16714.9 | ups 4.4 | wpb 3797.3 | bsz 247.8 | num_updates 4827 | lr 4.55157e-05 | gnorm 0.46 | loss_scale 2 | train_wall 104 | wall 1393
+2021-02-15 19:44:40 | INFO | fairseq_cli.train | begin training epoch 9
+2021-02-15 19:44:54 | INFO | train_inner | epoch 010:     73 / 537 loss=2.074, nll_loss=0.213, ppl=1.16, wps=10254.3, ups=2.73, wpb=3750.5, bsz=238.6, num_updates=4900, lr=4.51754e-05, gnorm=0.378, loss_scale=2, train_wall=19, wall=1407
+2021-02-15 19:45:14 | INFO | train_inner | epoch 010:    173 / 537 loss=2.067, nll_loss=0.207, ppl=1.15, wps=19539.9, ups=5.12, wpb=3818.1, bsz=253.7, num_updates=5000, lr=4.47214e-05, gnorm=0.425, loss_scale=2, train_wall=19, wall=1427
+2021-02-15 19:45:33 | INFO | train_inner | epoch 010:    273 / 537 loss=2.073, nll_loss=0.213, ppl=1.16, wps=19364.5, ups=5.12, wpb=3780, bsz=250.9, num_updates=5100, lr=4.42807e-05, gnorm=0.376, loss_scale=2, train_wall=19, wall=1446
+2021-02-15 19:45:53 | INFO | train_inner | epoch 010:    373 / 537 loss=2.067, nll_loss=0.207, ppl=1.15, wps=19342, ups=5.1, wpb=3790.3, bsz=246.2, num_updates=5200, lr=4.38529e-05, gnorm=0.353, loss_scale=2, train_wall=19, wall=1466
+2021-02-15 19:46:12 | INFO | train_inner | epoch 010:    473 / 537 loss=2.06, nll_loss=0.199, ppl=1.15, wps=19402.8, ups=5.09, wpb=3808.7, bsz=242.6, num_updates=5300, lr=4.34372e-05, gnorm=0.322, loss_scale=2, train_wall=19, wall=1485
+2021-02-15 19:46:25 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2021-02-15 19:46:26 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Actrapide contains metacresol, which may cause allergic reactions.
+2021-02-15 19:46:26 | INFO | fairseq.tasks.translation | example reference: Actrapid contains metacresol, which may cause allergic reactions.
+2021-02-15 19:46:26 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Actrapide is a fast-acting insulin and can be given concomitantly with long-acting insulin preparations.
+2021-02-15 19:46:26 | INFO | fairseq.tasks.translation | example reference: Actrapid is a fast-acting insulin and may be used with long-acting insulins.
+2021-02-15 19:46:27 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with symptoms known as acute pain neuropathy and is usually reversible.
+2021-02-15 19:46:27 | INFO | fairseq.tasks.translation | example reference: Nervous system disorders Uncommon - Peripheral neuropathy Fast improvement in blood glucose control may be associated with a condition termed acute painful neuropathy, which is usually reversible.
+2021-02-15 19:46:30 | INFO | fairseq.tasks.translation | example hypothesis: UNKNOWNTOKENINHYP Actrapid was studied in patients with type 1 diabetes in which the pancreas cannot produce insulin (two trials involving 1,954 patients), and in patients with type 2 diabetes in which the body cannot process insulin effectively (a study in 182 patients) .UNKNOWNTOKENINHYP Actrapid was compared with a human insulin analogue (insulin Aspart) by measuring in the blood for six months the level of a substance called glycosylated haemoglobin (HbA1c) that indicates how well the blood glucose is controlledUNKNOWNTOKENINHYP What benefit has Actrapid shown in these trials UNKNOWNTOKENINHYP UNKNOWNTOKENINHYP HbA1c concentrations have been comparatively stable during the 6-month treatment with Actrapid.
+2021-02-15 19:46:30 | INFO | fairseq.tasks.translation | example reference: HbA1c levels remained fairly steady over the six months of treatment with Actrapid.
+2021-02-15 19:46:30 | INFO | valid | epoch 010 | valid on 'valid' subset | loss 3.972 | nll_loss 2.318 | ppl 4.99 | bleu 50.55 | wps 878.9 | wpb 1083 | bsz 37.8 | num_updates 5364 | best_bleu 50.55
+2021-02-15 19:46:30 | INFO | fairseq_cli.train | begin save checkpoint
+2021-02-15 19:47:23 | INFO | fairseq.checkpoint_utils | saved checkpoint ../checkpoints/EMEA_p_best_2/checkpoint_best.pt (epoch 10 @ 5364 updates, score 50.55) (writing took 52.819926287047565 seconds)
+2021-02-15 19:47:23 | INFO | fairseq_cli.train | end of epoch 10 (average epoch stats below)
+2021-02-15 19:47:23 | INFO | train | epoch 010 | loss 2.066 | nll_loss 0.206 | ppl 1.15 | wps 12537.4 | ups 3.3 | wpb 3797.3 | bsz 247.8 | num_updates 5364 | lr 4.31773e-05 | gnorm 0.361 | loss_scale 2 | train_wall 104 | wall 1556
+2021-02-15 19:47:23 | INFO | fairseq_cli.train | done training in 1546.2 seconds
+
+
+###############################################################################
+Peregrine Cluster
+Job 18005996 for user 's3475743'
+Finished at: Mon Feb 15 19:47:28 CET 2021
+
+Job details:
+============
+
+Job ID              : 18005996
+Name                : EMEA_p_best_2
+User                : s3475743
+Partition           : gpu
+Nodes               : pg-gpu23
+Number of Nodes     : 1
+Cores               : 12
+State               : COMPLETED
+Submit              : 2021-02-15T18:34:08
+Start               : 2021-02-15T19:20:45
+End                 : 2021-02-15T19:47:28
+Reserved walltime   : 23:55:00
+Used walltime       : 00:26:43
+Used CPU time       : 00:22:57 (efficiency:  7.16%)
+% User (Computation): 66.86%
+% System (I/O)      : 33.14%
+Mem reserved        : 32G/node
+Max Mem used        : 5.60G (pg-gpu23)
+Max Disk Write      : 40.96K (pg-gpu23)
+Max Disk Read       : 2.30M (pg-gpu23)
+Average GPU usage   : 67.7% (pg-gpu23)
+
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Peregrine in your publications:
+
+https://wiki.hpc.rug.nl/peregrine/introduction/scientific_output
+
+################################################################################
