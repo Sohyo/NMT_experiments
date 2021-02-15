@@ -1,6 +1,5 @@
 import os
 
-
 #
 # new_sys = []
 # with open(os.path.join(orig_dir, file_name)) as f:
@@ -37,5 +36,5 @@ def remove_unk(orig_dir, file_name):
 
 
 orig_dir = "../meaningful_results"
-file_name = "g_EMEA_p_4_old.out.sys"
+file_name = "g_GNOME_p_9.out.sys"
 remove_unk(orig_dir=orig_dir, file_name=file_name)

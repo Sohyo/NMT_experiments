@@ -507,3 +507,84 @@ JRC
 
 ./fast applybpe ../extract_phrases/fastBPE/EMEA/phrase4_0.5_tag_TP/test.de  ../extract_phrases/EMEA/phrase4_0.5_tag_TP/test.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
 ./fast applybpe ../extract_phrases/fastBPE/EMEA/phrase4_0.5_tag_TP/test.en  ../extract_phrases/EMEA/phrase4_0.5_tag_TP/test.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+
+--
+
+./fast applybpe ../extract_phrases/fastBPE/GNOME/phrase4_0.5_tag_TP/train.de  ../extract_phrases/GNOME/phrase4_0.5_tag_TP/train.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../extract_phrases/fastBPE/GNOME/phrase4_0.5_tag_TP/train.en  ../extract_phrases/GNOME/phrase4_0.5_tag_TP/train.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+./fast applybpe ../extract_phrases/fastBPE/GNOME/phrase4_0.5_tag_TP/valid.de  ../extract_phrases/GNOME/phrase4_0.5_tag_TP/valid.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../extract_phrases/fastBPE/GNOME/phrase4_0.5_tag_TP/valid.en  ../extract_phrases/GNOME/phrase4_0.5_tag_TP/valid.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+./fast applybpe ../extract_phrases/fastBPE/GNOME/phrase4_0.5_tag_TP/test.de  ../extract_phrases/GNOME/phrase4_0.5_tag_TP/test.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../extract_phrases/fastBPE/GNOME/phrase4_0.5_tag_TP/test.en  ../extract_phrases/GNOME/phrase4_0.5_tag_TP/test.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+
+
+---
+./fast applybpe ../extract_phrases/fastBPE/EMEA/phrase7_0.5/train.de  ../extract_phrases/EMEA/phrase7_0.5/train.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../extract_phrases/fastBPE/EMEA/phrase7_0.5/train.en  ../extract_phrases/EMEA/phrase7_0.5/train.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+./fast applybpe ../extract_phrases/fastBPE/EMEA/phrase7_0.5/valid.de  ../extract_phrases/EMEA/phrase7_0.5/valid.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../extract_phrases/fastBPE/EMEA/phrase7_0.5/valid.en  ../extract_phrases/EMEA/phrase7_0.5/valid.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+./fast applybpe ../extract_phrases/fastBPE/EMEA/phrase7_0.5/test.de  ../extract_phrases/EMEA/phrase7_0.5/test.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../extract_phrases/fastBPE/EMEA/phrase7_0.5/test.en  ../extract_phrases/EMEA/phrase7_0.5/test.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+-
+
+./fast applybpe ../extract_phrases/fastBPE/EMEA/phrase7_0.5_tag/train.de  ../extract_phrases/EMEA/phrase7_0.5_tag/train.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../extract_phrases/fastBPE/EMEA/phrase7_0.5_tag/train.en  ../extract_phrases/EMEA/phrase7_0.5_tag/train.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+./fast applybpe ../extract_phrases/fastBPE/EMEA/phrase7_0.5_tag/valid.de  ../extract_phrases/EMEA/phrase7_0.5_tag/valid.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../extract_phrases/fastBPE/EMEA/phrase7_0.5_tag/valid.en  ../extract_phrases/EMEA/phrase7_0.5_tag/valid.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+./fast applybpe ../extract_phrases/fastBPE/EMEA/phrase7_0.5_tag/test.de  ../extract_phrases/EMEA/phrase7_0.5_tag/test.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../extract_phrases/fastBPE/EMEA/phrase7_0.5_tag/test.en  ../extract_phrases/EMEA/phrase7_0.5_tag/test.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+
+---
+
+./fast applybpe ../extract_phrases/fastBPE/GNOME/phrase7_0.5/train.de  ../extract_phrases/GNOME/phrase7_0.5/train.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../extract_phrases/fastBPE/GNOME/phrase7_0.5/train.en  ../extract_phrases/GNOME/phrase7_0.5/train.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+./fast applybpe ../extract_phrases/fastBPE/GNOME/phrase7_0.5/valid.de  ../extract_phrases/GNOME/phrase7_0.5/valid.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../extract_phrases/fastBPE/GNOME/phrase7_0.5/valid.en  ../extract_phrases/GNOME/phrase7_0.5/valid.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+./fast applybpe ../extract_phrases/fastBPE/GNOME/phrase7_0.5/test.de  ../extract_phrases/GNOME/phrase7_0.5/test.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../extract_phrases/fastBPE/GNOME/phrase7_0.5/test.en  ../extract_phrases/GNOME/phrase7_0.5/test.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+-
+
+./fast applybpe ../extract_phrases/fastBPE/GNOME/phrase7_0.5_tag/train.de  ../extract_phrases/GNOME/phrase7_0.5_tag/train.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../extract_phrases/fastBPE/GNOME/phrase7_0.5_tag/train.en  ../extract_phrases/GNOME/phrase7_0.5_tag/train.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+./fast applybpe ../extract_phrases/fastBPE/GNOME/phrase7_0.5_tag/valid.de  ../extract_phrases/GNOME/phrase7_0.5_tag/valid.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../extract_phrases/fastBPE/GNOME/phrase7_0.5_tag/valid.en  ../extract_phrases/GNOME/phrase7_0.5_tag/valid.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+./fast applybpe ../extract_phrases/fastBPE/GNOME/phrase7_0.5_tag/test.de  ../extract_phrases/GNOME/phrase7_0.5_tag/test.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../extract_phrases/fastBPE/GNOME/phrase7_0.5_tag/test.en  ../extract_phrases/GNOME/phrase7_0.5_tag/test.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+-
+
+
+./fast applybpe ../extract_phrases/fastBPE/JRC/phrase7_0.5/train.de  ../extract_phrases/JRC/phrase7_0.5/train.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../extract_phrases/fastBPE/JRC/phrase7_0.5/train.en  ../extract_phrases/JRC/phrase7_0.5/train.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+./fast applybpe ../extract_phrases/fastBPE/JRC/phrase7_0.5/valid.de  ../extract_phrases/JRC/phrase7_0.5/valid.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../extract_phrases/fastBPE/JRC/phrase7_0.5/valid.en  ../extract_phrases/JRC/phrase7_0.5/valid.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+./fast applybpe ../extract_phrases/fastBPE/JRC/phrase7_0.5/test.de  ../extract_phrases/JRC/phrase7_0.5/test.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../extract_phrases/fastBPE/JRC/phrase7_0.5/test.en  ../extract_phrases/JRC/phrase7_0.5/test.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+-
+
+./fast applybpe ../extract_phrases/fastBPE/JRC/phrase7_0.5_tag/train.de  ../extract_phrases/JRC/phrase7_0.5_tag/train.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../extract_phrases/fastBPE/JRC/phrase7_0.5_tag/train.en  ../extract_phrases/JRC/phrase7_0.5_tag/train.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+./fast applybpe ../extract_phrases/fastBPE/JRC/phrase7_0.5_tag/valid.de  ../extract_phrases/JRC/phrase7_0.5_tag/valid.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../extract_phrases/fastBPE/JRC/phrase7_0.5_tag/valid.en  ../extract_phrases/JRC/phrase7_0.5_tag/valid.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt
+
+./fast applybpe ../extract_phrases/fastBPE/JRC/phrase7_0.5_tag/test.de  ../extract_phrases/JRC/phrase7_0.5_tag/test.de  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+./fast applybpe ../extract_phrases/fastBPE/JRC/phrase7_0.5_tag/test.en  ../extract_phrases/JRC/phrase7_0.5_tag/test.en  ../models/wmt19.de-en.joined-dict.ensemble/bpecodes  ../models/wmt19.de-en.joined-dict.ensemble/dict.en.txt

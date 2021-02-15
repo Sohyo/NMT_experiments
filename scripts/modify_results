@@ -6,10 +6,16 @@ source ../../fairseq/venv/bin/activate
 # For analysis
 # grep "^[HT]" g_EMEA_base.out > ../meaningful_results/example.out
 
-results_file=g_GNOME_base_long.out
+results_file=g_EMEA_p_4_tp.out
 # For computing BLEU score
 grep ^H ../results/$results_file |  ./../../NMT/moses_git/mosesdecoder_soyo/scripts/tokenizer/detokenizer.perl | cut -f3- > ../meaningful_results/$results_file.sys
 grep ^T ../results/$results_file |  ./../../NMT/moses_git/mosesdecoder_soyo/scripts/tokenizer/detokenizer.perl | cut -f2- > ../meaningful_results/$results_file.ref
 
 # Calculate BLEU score
 cd ../../fairseq | fairseq-score --sys ../meaningful_results/$results_file.sys --ref ../meaningful_results/$results_file.ref --sacrebleu
+
+paste -d\\n REF OUT1 OUT2 /dev/null | less
+
+
+paste -d\\n g_JRC_base.out.ref g_JRC7.out.sys g_JRC_p_7.out.sys /dev/null | less
+
