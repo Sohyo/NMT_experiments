@@ -1,0 +1,21 @@
+# EMEA
+
+root=../final_results/EMEA
+paste -d\\n $root/EMEA_base.ref $root/EMEA_base.sys $root/EMEA_genuine.sys $root/EMEA_phrase_4_0.5_tag.sys $root/EMEA_phrase_4_0.5_no_tag.sys $root/EMEA_phrase_7_0.5_tag.sys $root/EMEA_phrase_7_0.5_no_tag.sys /dev/null | less > ../final_results/EMEA.analysis
+
+
+
+# GNOME
+
+root=../final_results/GNOME
+paste -d\\n $root/GNOME_base.ref $root/GNOME_base.sys $root/GNOME_genuine.sys $root/GNOME_phrase_4_0.5_tag.sys $root/GNOME_phrase_4_0.5_no_tag.sys $root/GNOME_phrase_7_0.5_tag.sys $root/GNOME_phrase_7_0.5_no_tag.sys /dev/null | less > ../final_results/GNOME.analysis
+
+
+# JRC
+
+root=../final_results/JRC
+paste -d\\n $root/JRC_base.ref $root/JRC_base.sys $root/JRC_genuine.sys $root/JRC_phrase_4_0.5_tag.sys $root/JRC_phrase_4_0.5_no_tag.sys $root/JRC_phrase_7_0.5_tag.sys $root/JRC_phrase_7_0.5_no_tag.sys /dev/null | less > ../final_results/JRC.analysis
+
+
+#$root/JRC_phrase_4_0.5_no_tag.sys $root/JRC_phrase_7_0.5_tag.sys $root/JRC_phrase_7_0.5_no_tag.sys
+#$root/JRC_genuine.sys $root/JRC_phrase_4_0.5_tag.sys $root/JRC_phrase_4_0.5_no_tag.sys $root/JRC_phrase_7_0.5_tag.sys $root/JRC_phrase_7_0.5_no_tag.sys /dev/null | less > ../final_results/JRC.analysis

@@ -36,5 +36,5 @@ def remove_unk(orig_dir, file_name):
 
 
 orig_dir = "../meaningful_results"
-file_name = "g_GNOME_p_9.out.sys"
+file_name = "GNOME_phrase_4_0.5_tag.sys"
 remove_unk(orig_dir=orig_dir, file_name=file_name)
