@@ -1,14 +1,14 @@
 # EMEA
 #
 root=../final_results/EMEA
-paste -d\\n $root/reference $root/baseline $root/original $root/phrase_4 $root/phrase_4_tag /dev/null  | less > ../final_results/EMEA_all.analysis
+paste -d\\n $root/source $root/reference $root/baseline $root/phrase_4 $root/phrase_4_tag $root/phrase_7 $root/phrase_7_tag $root/original /dev/null  | less > ../final_results/final_EMEA_all.analysis
 #
 #
 #
 ## GNOME
 #
 root=../final_results/GNOME
-paste -d\\n $root/reference $root/baseline $root/original $root/phrase_4 $root/phrase_4_tag /dev/null  | less > ../final_results/GNOME_all.analysis
+paste -d\\n $root/source $root/reference $root/baseline $root/phrase_4 $root/phrase_4_tag $root/phrase_7 $root/phrase_7_tag $root/original /dev/null  | less > ../final_results/final_GNOME_all.analysis
 #
 
 # JRC
@@ -17,7 +17,7 @@ paste -d\\n $root/reference $root/baseline $root/original $root/phrase_4 $root/p
 #paste -d\\n $root/JRC/JRC_base.ref $root/JRC/JRC_base.sys $root/JRC_genuine.sys $root/JRC_phrase_4_0.5_tag.sys $root/JRC_phrase_4_0.5_no_tag.sys $root/JRC_phrase_7_0.5_tag.sys $root/JRC_phrase_7_0.5_no_tag.sys /dev/null | less > ../final_results/JRC.analysis
 
 root=../final_results/JRC
-paste -d\\n $root/reference $root/baseline $root/original $root/phrase_4 $root/phrase_4_tag /dev/null  | less > ../final_results/JRC_all.analysis
+paste -d\\n $root/source $root/reference $root/baseline $root/phrase_4 $root/phrase_4_tag $root/phrase_7 $root/phrase_7_tag $root/original /dev/null  | less > ../final_results/final_JRC_all.analysis
 
 
 #$root/JRC_phrase_4_0.5_no_tag.sys $root/JRC_phrase_7_0.5_tag.sys $root/JRC_phrase_7_0.5_no_tag.sys

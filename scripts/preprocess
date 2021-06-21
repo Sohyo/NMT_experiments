@@ -566,3 +566,42 @@ fairseq-preprocess \
     --testpref ../extract_phrases/fastBPE/JRC/phrase1_0.5_tag/test \
     --destdir ../data-bin/phrase1_0.5_tag_JRC  --workers 20 \
     --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+
+
+$TEXT=../custom_data_nmt/fastBPE/JRC_new
+fairseq-preprocess \
+    --source-lang de --target-lang en \
+    --trainpref ../custom_data_nmt/fastBPE/JRC_new/train \
+    --validpref ../custom_data_nmt/fastBPE/JRC_new/valid \
+    --testpref ../custom_data_nmt/fastBPE/JRC_new/test \
+    --destdir ../data-bin/orig_JRC_new --workers 20 \
+    --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+
+
+
+
+fairseq-preprocess \
+    --source-lang de --target-lang en \
+    --trainpref ../extract_phrases/fastBPE/EMEA/mixed_7/train  \
+    --validpref ../extract_phrases/fastBPE/EMEA/mixed_7/valid \
+    --testpref ../extract_phrases/fastBPE/EMEA/mixed_7/test \
+    --destdir ../data-bin/mixed_7_EMEA  --workers 20 \
+    --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+
+
+fairseq-preprocess \
+    --source-lang de --target-lang en \
+    --trainpref ../extract_phrases/fastBPE/GNOME/mixed_7/train  \
+    --validpref ../extract_phrases/fastBPE/GNOME/mixed_7/valid \
+    --testpref ../extract_phrases/fastBPE/GNOME/mixed_7/test \
+    --destdir ../data-bin/mixed_7_GNOME  --workers 20 \
+    --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+
+
+fairseq-preprocess \
+    --source-lang de --target-lang en \
+    --trainpref ../extract_phrases/fastBPE/JRC/mixed_7/train  \
+    --validpref ../extract_phrases/fastBPE/JRC/mixed_7/valid \
+    --testpref ../extract_phrases/fastBPE/JRC/mixed_7/test \
+    --destdir ../data-bin/mixed_7_JRC  --workers 20 \
+    --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt

@@ -10,8 +10,8 @@ source ../../fairseq/venv/bin/activate
 results_file=g_JRC_mix_1.out
 
 # For computing BLEU score
- grep ^H ../results/$results_file |  ./../../NMT/moses_git/mosesdecoder_soyo/scripts/tokenizer/detokenizer.perl | cut -f3- > ../meaningful_results/$results_file.sys
- grep ^T ../results/$results_file |  ./../../NMT/moses_git/mosesdecoder_soyo/scripts/tokenizer/detokenizer.perl | cut -f2- > ../meaningful_results/$results_file.ref
+grep ^H ../results/$results_file |  ./../../NMT/moses_git/mosesdecoder_soyo/scripts/tokenizer/detokenizer.perl | cut -f3- > ../meaningful_results/$results_file.sys
+grep ^T ../results/$results_file |  ./../../NMT/moses_git/mosesdecoder_soyo/scripts/tokenizer/detokenizer.perl | cut -f2- > ../meaningful_results/$results_file.ref
 
 # Calculate BLEU score
 cd ../../fairseq | fairseq-score --sys ../meaningful_results/$results_file.sys --ref ../meaningful_results/$results_file.ref --sacrebleu
@@ -19,6 +19,7 @@ cd ../../fairseq | fairseq-score --sys ../meaningful_results/$results_file.sys -
 #
 #grep ^H ../results/$results_file |  ./../../NMT/moses_git/mosesdecoder_soyo/scripts/tokenizer/detokenizer.perl | cut -c 3- | sort -k 1,1n | cut -f3- > ../final_results/$results_file.sys
 #grep ^T ../results/$results_file |  ./../../NMT/moses_git/mosesdecoder_soyo/scripts/tokenizer/detokenizer.perl | cut -c 3- | sort -k 1,1n | cut -f2- > ../final_results/$results_file.ref
+grep ^S ../results/$results_file |  ./../../NMT/moses_git/mosesdecoder_soyo/scripts/tokenizer/detokenizer.perl | cut -c 3- | sort -k 1,1n | cut -f2- > ../final_results/$results_file.src
 
 
 
