@@ -605,3 +605,13 @@ fairseq-preprocess \
     --testpref ../extract_phrases/fastBPE/JRC/mixed_7/test \
     --destdir ../data-bin/mixed_7_JRC  --workers 20 \
     --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+
+
+$TEXT=../extract_phrases/fastBPE/JRC_new
+fairseq-preprocess \
+    --source-lang de --target-lang en \
+    --trainpref ../extract_phrases/fastBPE/JRC_new/train \
+    --validpref ../extract_phrases/fastBPE/JRC_new/valid \
+    --testpref ../extract_phrases/fastBPE/JRC_new/test \
+    --destdir ../data-bin/phrase_JRC_new --workers 20 \
+    --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
