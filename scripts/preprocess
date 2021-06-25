@@ -615,3 +615,33 @@ fairseq-preprocess \
     --testpref ../extract_phrases/fastBPE/JRC_new/test \
     --destdir ../data-bin/phrase_JRC_new --workers 20 \
     --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+
+
+++++++
+
+
+fairseq-preprocess \
+    --source-lang de --target-lang en \
+    --trainpref ../extract_phrases/fastBPE/EMEA/min_5_7/train  \
+    --validpref ../extract_phrases/fastBPE/EMEA/min_5_7/valid \
+    --testpref ../extract_phrases/fastBPE/EMEA/min_5_7/test \
+    --destdir ../data-bin/min_5_7_EMEA  --workers 20 \
+    --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+
+
+fairseq-preprocess \
+    --source-lang de --target-lang en \
+    --trainpref ../extract_phrases/fastBPE/GNOME/min_5_7/train  \
+    --validpref ../extract_phrases/fastBPE/GNOME/min_5_7/valid \
+    --testpref ../extract_phrases/fastBPE/GNOME/min_5_7/test \
+    --destdir ../data-bin/min_5_7_GNOME  --workers 20 \
+    --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
+
+
+fairseq-preprocess \
+    --source-lang de --target-lang en \
+    --trainpref ../extract_phrases/fastBPE/JRC/min_5_7/train  \
+    --validpref ../extract_phrases/fastBPE/JRC/min_5_7/valid \
+    --testpref ../extract_phrases/fastBPE/JRC/min_5_7/test \
+    --destdir ../data-bin/min_5_7_JRC  --workers 20 \
+    --joined-dictionary --srcdict ../models/wmt19.de-en.joined-dict.ensemble/dict.de.txt
